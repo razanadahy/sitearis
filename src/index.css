@@ -163,3 +163,16 @@ html {
 .bg-edit{
     background-color: #1A2135 !important;
 }
+
+.color-red{
+    color: #ea5471 !important;
+}
+.color-orange{
+    color: #ea7f54 !important;
+}
+.color-semi-orange{
+    color: #b47d69 !important;
+}
+.color-semi-purpule{
+    color: #a169b4 !important;
+}

@@ -14,7 +14,7 @@ const Offre = () => {
                     <div className="row">
                         <div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
                             <div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">
-                                <div className="card-body">
+                                <div className="card-body color-semi-purpule">
                                     <div className="mt-4 mb-3 text-center w-100">
                                         <i className="fas fa-people-carry fa-2xl"/>
                                     </div>
@@ -24,7 +24,7 @@ const Offre = () => {
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch mb-lg-4 mb-2" style={{transform: `translateY(${isMediumOrLarger ? '0' : '30px'})`}}>
                             <div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">
-                                <div className="card-body">
+                                <div className="card-body color-semi-orange">
                                     <div className="mt-4 mb-3 text-center w-100">
                                         <i className="fas fa-handshake fa-2xl"/>
                                     </div>
@@ -34,7 +34,7 @@ const Offre = () => {
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
                             <div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">
-                                <div className="card-body">
+                                <div className="card-body color-orange">
                                     <div className="mt-4 mb-3 text-center w-100">
                                         <i className="fas fa-city fa-2xl"/>
                                     </div>
@@ -44,7 +44,7 @@ const Offre = () => {
                         </div>
                         <div className="col-lg-5 offset-lg-1 col-md-6 col-sm-12 d-flex align-items-stretch mb-2 mt-lg-4">
                             <div className="card h-100 rounded-4 mx-auto shadow content-contribution w-100 cursor-pointer showTop">
-                                <div className="card-body">
+                                <div className="card-body color-red">
                                     <div className="mt-4 mb-3 text-center w-100">
                                         <i className="fas fa-lightbulb fa-2xl"/>
                                     </div>
@@ -56,9 +56,9 @@ const Offre = () => {
                             <div className="card h-100 rounded-4 mx-auto shadow content-contribution w-100 cursor-pointer showTop">
                                 <div className="card-body">
                                     <div className="mt-4 mb-3 text-center w-100">
-                                        <i className="fas fa-user-friends fa-2xl"/>
+                                        <i className="fas fa-user-friends fa-2xl color-cyan"/>
                                     </div>
-                                    <h3 className="text-center mb-3 px-3">Une équipe selon vos besoins?</h3>
+                                    <h3 className="text-center mb-3 px-3 color-cyan">Une équipe selon vos besoins?</h3>
                                 </div>
                             </div>
                         </div>

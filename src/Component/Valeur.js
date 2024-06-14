@@ -1,5 +1,6 @@
 import React from 'react'
 import ElementShowTitle from "./ElementShowTitle";
+import DisplayValeur from "./DisplayValeur";
 
 const Valeur = () => {
     return (
@@ -10,46 +11,18 @@ const Valeur = () => {
             <div className="row m-0 p-0">
                 <div className="card border-0">
                     <div className="card-body">
-                        <div className="row m-4 p-2">
-                            <div className="col-3 d-flex align-items-stretch mb-2">
-                                <div className="card h-100 w-100 rounded-4 mx-auto shadow cursor-pointer bg-info text-bg-primary">
-                                    <div className="card-body">
-                                        <div className="mt-4 mb-3 text-center w-100">
-                                            <i className="fas fa-cogs fa-2xl"/>
-                                        </div>
-                                        <h3 className="text-center mb-3 px-3">Savoir-faire</h3>
-                                    </div>
-                                </div>
+                        <div className="row m-0 p-2">
+                            <div className="col-lg-3 offset-lg-0 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
+                                <DisplayValeur emplacement={0} text={'Savoir-faire'} icon={'fa-cogs'} bg={'bg-info'}/>
                             </div>
-                            <div className="col-3 d-flex align-items-stretch mb-2">
-                                <div className="card h-100 w-100 rounded-4 mx-auto shadow cursor-pointer bg-cyan text-white">
-                                    <div className="card-body">
-                                        <div className="mt-4 mb-3 text-center w-100">
-                                            <i className="fas fa-award fa-2xl"/>
-                                        </div>
-                                        <h3 className="text-center mb-3 px-3">Qualité</h3>
-                                    </div>
-                                </div>
+                            <div className="col-lg-3 offset-lg-0 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
+                                <DisplayValeur emplacement={1} icon={'fa-award'} text={'Qualité'} bg={'bg-cyan'}/>
                             </div>
-                            <div className="col-3 d-flex align-items-stretch mb-2">
-                                <div className="card h-100 w-100 rounded-4 mx-auto shadow cursor-pointer bg-mi-blue text-white">
-                                    <div className="card-body">
-                                        <div className="mt-4 mb-3 text-center w-100">
-                                            <i className="fas fa-flag fa-2xl"/>
-                                        </div>
-                                        <h3 className="text-center mb-3 px-3">Engagement</h3>
-                                    </div>
-                                </div>
+                            <div className="col-lg-3 offset-lg-0 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
+                                <DisplayValeur emplacement={2} text={'Engagement'} icon={'fa-flag'} bg={'bg-mi-blue'}/>
                             </div>
-                            <div className="col-3 d-flex align-items-stretch mb-2">
-                                <div className="card h-100 w-100 rounded-4 mx-auto shadow cursor-pointer bg-blue text-white">
-                                    <div className="card-body">
-                                        <div className="mt-4 mb-3 text-center w-100">
-                                            <i className="fas fa-tags fa-2xl"/>
-                                        </div>
-                                        <h3 className="text-center mb-3 px-3">Disponibilité</h3>
-                                    </div>
-                                </div>
+                            <div className="col-lg-3 offset-lg-0 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
+                                <DisplayValeur emplacement={3} icon={'fa-tags'} text={'Disponibilité'} bg={'bg-blue'}/>
                             </div>
                         </div>
                     </div>

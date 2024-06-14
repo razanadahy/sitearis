@@ -79,3 +79,19 @@ html::-webkit-scrollbar-thumb {
 html:hover::-webkit-scrollbar-thumb {
     background: #355368;
 }
+
+@keyframes blinkType {
+    from, to {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+.typing .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    width: 1px;
+    background-color: black;
+    animation: blinkType 1s step-end infinite;
+}

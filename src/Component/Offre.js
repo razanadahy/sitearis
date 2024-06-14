@@ -2,6 +2,7 @@ import React from 'react'
 import ElementShowTitle from "./ElementShowTitle";
 import {useMediaQuery} from "react-responsive";
 import CardCollaboration from "./CardCollaboration";
+import DisplayText from "./DisplayText";
 
 const Offre = () => {
     const isMediumOrLarger = useMediaQuery({ query: '(max-width: 992px)' });
@@ -74,7 +75,8 @@ const Offre = () => {
             <div className="row m-0 p-3 w-100">
                 <div className="card mx-auto rounded-4 bg-edit border-2 border-success ">
                     <div className="card-body p-4 text-center text-white">
-                        <h2><i className="fa-solid fa-right-long p-2"></i>Nous sommes là pour vous accompagner et collaborer avec vous!!!</h2>
+                        {/*<h2><i className="fa-solid fa-right-long p-2"></i>Nous sommes là pour vous accompagner et collaborer avec vous!!!</h2>*/}
+                        <DisplayText/>
                     </div>
                 </div>
             </div>

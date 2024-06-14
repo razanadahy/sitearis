@@ -28,7 +28,6 @@ const InfoE = () => {
         };
     }, [fullText]);
 
-
     return (
         <div className="row bg-gradient-info-dark w-100 text-white mt-md-3 mt-sm-2 mx-0 mb-3 font-roboto">
             <br/>

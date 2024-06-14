@@ -6,21 +6,28 @@ const InfoE = () => {
 
     useEffect(() => {
         let index = 0;
-        const intervalId = setInterval(() => {
-            setDisplayedText((prev) => {
-                if (index < fullText.length) {
-                    const nextChar = fullText[index];
-                    index += 1;
-                    return prev + nextChar;
-                } else {
-                    clearInterval(intervalId);
-                    return prev;
-                }
-            });
-        }, 50);
+        const startInterval = () => {
+            const intervalId = setInterval(() => {
+                setDisplayedText((prev) => {
+                    if (index < fullText.length) {
+                        const nextChar = fullText[index];
+                        index += 1;
+                        return prev + nextChar;
+                    } else {
+                        clearInterval(intervalId);
+                        return prev;
+                    }
+                });
+            }, 50);
+        };
 
-        return () => clearInterval(intervalId);
+        const timeoutId = setTimeout(startInterval, 1100);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
     }, [fullText]);
+
 
     return (
         <div className="row bg-gradient-info-dark w-100 text-white mt-md-3 mt-sm-2 mx-0 mb-3 font-roboto">

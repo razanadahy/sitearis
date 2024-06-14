@@ -1,6 +1,7 @@
 import React from 'react'
 import ElementShowTitle from "./ElementShowTitle";
 import {useMediaQuery} from "react-responsive";
+import CardCollaboration from "./CardCollaboration";
 
 const Offre = () => {
     const isMediumOrLarger = useMediaQuery({ query: '(max-width: 992px)' });
@@ -13,54 +14,59 @@ const Offre = () => {
                 <div className="card border-0 mb-4">
                     <div className="row">
                         <div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
-                            <div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">
-                                <div className="card-body color-semi-purpule">
-                                    <div className="mt-4 mb-3 text-center w-100">
-                                        <i className="fas fa-people-carry fa-2xl"/>
-                                    </div>
-                                    <h3 className="text-center mb-3 px-3">Coworking?</h3>
-                                </div>
-                            </div>
+                            {/*<div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">*/}
+                            {/*    <div className="card-body color-semi-purpule">*/}
+                            {/*        <div className="mt-4 mb-3 text-center w-100">*/}
+                            {/*            <i className="fas fa-people-carry fa-2xl"/>*/}
+                            {/*        </div>*/}
+                            {/*        <h3 className="text-center mb-3 px-3">Coworking?</h3>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            <CardCollaboration color={"color-semi-purpule"} emplacement={0} icon={'fa-people-carry'} text={'Coworking?'}/>
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch mb-lg-4 mb-2" style={{transform: `translateY(${isMediumOrLarger ? '0' : '30px'})`}}>
-                            <div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">
-                                <div className="card-body color-semi-orange">
-                                    <div className="mt-4 mb-3 text-center w-100">
-                                        <i className="fas fa-handshake fa-2xl"/>
-                                    </div>
-                                    <h3 className="text-center mb-3 px-3">Sous-traitance?</h3>
-                                </div>
-                            </div>
+                            {/*<div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">*/}
+                            {/*    <div className="card-body color-semi-orange">*/}
+                            {/*        <div className="mt-4 mb-3 text-center w-100">*/}
+                            {/*            <i className="fas fa-handshake fa-2xl"/>*/}
+                            {/*        </div>*/}
+                            {/*        <h3 className="text-center mb-3 px-3">Sous-traitance?</h3>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            <CardCollaboration color={'color-semi-orange'} emplacement={1} icon={'fa-handshake'} text={'Sous-traitance?'}/>
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch mb-2">
-                            <div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">
-                                <div className="card-body color-orange">
-                                    <div className="mt-4 mb-3 text-center w-100">
-                                        <i className="fas fa-city fa-2xl"/>
-                                    </div>
-                                    <h3 className="text-center mb-3 px-3">Un centre offshore?</h3>
-                                </div>
-                            </div>
+                            {/*<div className="card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer showTop">*/}
+                            {/*    <div className="card-body color-orange">*/}
+                            {/*        <div className="mt-4 mb-3 text-center w-100">*/}
+                            {/*            <i className="fas fa-city fa-2xl"/>*/}
+                            {/*        </div>*/}
+                            {/*        <h3 className="text-center mb-3 px-3">Un centre offshore?</h3>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            <CardCollaboration color={'color-orange'} icon={'fa-city'} emplacement={2} text={'Un centre offshore?'}/>
                         </div>
                         <div className="col-lg-5 offset-lg-1 col-md-6 col-sm-12 d-flex align-items-stretch mb-2 mt-lg-4">
-                            <div className="card h-100 rounded-4 mx-auto shadow content-contribution w-100 cursor-pointer showTop">
-                                <div className="card-body color-red">
-                                    <div className="mt-4 mb-3 text-center w-100">
-                                        <i className="fas fa-lightbulb fa-2xl"/>
-                                    </div>
-                                    <h3 className="text-center mb-3 px-3">Pourquoi externaliser?</h3>
-                                </div>
-                            </div>
+                            {/*<div className="card h-100 rounded-4 mx-auto shadow content-contribution w-100 cursor-pointer showTop">*/}
+                            {/*    <div className="card-body color-red">*/}
+                            {/*        <div className="mt-4 mb-3 text-center w-100">*/}
+                            {/*            <i className="fas fa-lightbulb fa-2xl"/>*/}
+                            {/*        </div>*/}
+                            {/*        <h3 className="text-center mb-3 px-3">Pourquoi externaliser?</h3>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            <CardCollaboration color={'color-red'} icon={'fa-lightbulb'} emplacement={3} text={'Pourquoi externaliser?'}/>
                         </div>
                         <div className="col-lg-5 col-sm-12 d-flex align-items-stretch mb-2 mt-lg-4">
-                            <div className="card h-100 rounded-4 mx-auto shadow content-contribution w-100 cursor-pointer showTop">
-                                <div className="card-body">
-                                    <div className="mt-4 mb-3 text-center w-100">
-                                        <i className="fas fa-user-friends fa-2xl color-cyan"/>
-                                    </div>
-                                    <h3 className="text-center mb-3 px-3 color-cyan">Une équipe selon vos besoins?</h3>
-                                </div>
-                            </div>
+                            {/*<div className="card h-100 rounded-4 mx-auto shadow content-contribution w-100 cursor-pointer showTop">*/}
+                            {/*    <div className="card-body">*/}
+                            {/*        <div className="mt-4 mb-3 text-center w-100">*/}
+                            {/*            <i className="fas fa-user-friends fa-2xl color-cyan"/>*/}
+                            {/*        </div>*/}
+                            {/*        <h3 className="text-center mb-3 px-3 color-cyan">Une équipe selon vos besoins?</h3>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            <CardCollaboration color={'color-cyan'} icon={'fa-user-friends'} emplacement={4} text={'Une équipe selon vos besoins?'}/>
                         </div>
                     </div>
                 </div>

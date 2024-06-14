@@ -20,7 +20,10 @@ const ElementH5 = ({stylePositionTop,texte,isWhite=true}) => {
         };
     }, []);
     return(
-        <h5 ref={elementRef} className={`${isWhite ? 'text-white' : 'text-black'} ${isVisible ? stylePositionTop ? 'showTop' : 'arrow-div' : ''}`}>
+        <h5 ref={elementRef}
+            className={`${isWhite ? 'text-white' : 'text-black'} ${isVisible ? stylePositionTop ? 'showTop' : 'arrow-div' : ''}`}
+            style={{opacity: isVisible ? 1 : 0 }}
+        >
             {texte}
         </h5>
     )

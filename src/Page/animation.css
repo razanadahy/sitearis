@@ -47,3 +47,35 @@
     transform: scale(1.1);
     transition: all 0.4s ease-in-out;
 }
+
+html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+html:hover {
+    scrollbar-width: thin;
+}
+
+html:hover::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #99a4c4;
+    border-radius: 3px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #21449e;
+    border-radius: 10px;
+}
+
+html:hover::-webkit-scrollbar-thumb {
+    background: #355368;
+}

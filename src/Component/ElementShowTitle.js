@@ -22,7 +22,7 @@ const ElementShowTitle = ({title}) => {
     }, []);
     return(
         <>
-            <div ref={elementRef} className={`col-md-10 col-sm-11 arrow-shape bg-gradient-info-dark pt-5  pb-3  text-white ${isVisible && 'arrow-div'}`}>
+            <div ref={elementRef} className={`col-md-10 col-sm-11 arrow-shape bg-gradient-info-dark pt-5  pb-3  text-white ${isVisible ? 'arrow-div' : 'd-none'}`}>
                 <h2 className="text-center fs-4 text-uppercase ">{title}</h2>
             </div>
         </>

@@ -9,10 +9,10 @@ const Activity = () => {
 
     return (
         <>
-            <div className="row w-100 m-0 pt-4 pb-4 pr-4 pe-0" id="ac">
+            <div className="row w-100 m-0 pt-4 pb-4 pr-4 pe-0">
                 <ElementShowTitle title={"Nos secteurs"}/>
             </div>
-            <div className="row m-0 p-4 w-100" id="activity">
+            <div className="row m-0 p-4 w-100">
                 <div className="card border-0">
                     <Carousel data-bs-theme="dark" pause={"hover"}>
                         <Carousel.Item interval={1000}>

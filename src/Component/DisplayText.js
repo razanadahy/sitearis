@@ -2,36 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 
 const DisplayText = () => {
     const elementRef = useRef(null);
-
     const [displayedText, setDisplayedText] = useState('');
     const fullText = 'Nous sommes là pour vous accompagner et collaborer avec vous!!!';
-    const [hasStarted, setHasStarted] = useState(false);
     const [endTyping,setEndTyping]=useState(false)
+
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             if (elementRef.current) {
                 const top = elementRef.current.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                if (top < windowHeight && !hasStarted) {
-                    setHasStarted(true);
-                    setTimeout(() => {
-                        let index = 0;
-                        const intervalId = setInterval(() => {
-                            setDisplayedText((prev) => {
-                                if (index < fullText.length) {
-                                    const nextChar = fullText[index];
-                                    index += 1;
-                                    return prev + nextChar;
-                                } else {
-                                    clearInterval(intervalId);
-                                    setEndTyping(true)
-                                    return prev;
-                                }
-                            });
-                        }, 50);
-                    }, 500);
-                }
+                setIsVisible(top < windowHeight);
             }
         };
 
@@ -41,10 +23,40 @@ const DisplayText = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [hasStarted, fullText]);
+    }, []);
+
+    const [isDisplayed,setIsDisplay]=useState(false)
+    useEffect(() => {
+        if (isVisible && !isDisplayed){
+            let index = 0;
+            const startInterval = () => {
+                const intervalId = setInterval(() => {
+                    setDisplayedText((prev) => {
+                        if (index < fullText.length) {
+                            const nextChar = fullText[index];
+                            index += 1;
+                            return prev + nextChar;
+                        } else {
+                            setEndTyping(true)
+                            setIsDisplay(true)
+                            clearInterval(intervalId);
+                            return prev;
+                        }
+                    });
+                }, 50);
+            };
+
+            const timeoutId = setTimeout(startInterval, 900);
+
+            return () => {
+                clearTimeout(timeoutId);
+            };
+        }
+
+    }, [isVisible]);
 
     return (
-        <h2 ref={elementRef} className="typing"><i className="fa-solid fa-right-long p-2"/>{displayedText} {!endTyping && <span className="cursor">|</span>}</h2>
+        <h2 ref={elementRef} className="typing font-consolas"><i className="fa-solid fa-right-long p-2"/>{displayedText} {!endTyping && <span className="cursor">|</span>}</h2>
     );
 }
 

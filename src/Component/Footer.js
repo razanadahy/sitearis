@@ -68,8 +68,8 @@ const Footer = () => {
                 <div className="text-center pb-1">
                     <hr className="border-dark-subtle"/>
                 </div>
-                <div className="row m-0 p-0">
-                    <div className="col-8 col-sm-7 text-start text-light d-inline-flex">
+                <div className="m-0 p-0 w-100">
+                    <div className="float-start text-light d-inline-flex">
                         <span className="p-2">© 2024 Aris Concept company</span>
                         <ul className="list-inline">
                             <li className="list-inline-item rounded-circle w-h-30 border d-inline-flex  justify-content-center align-items-center">
@@ -92,10 +92,9 @@ const Footer = () => {
                                     <i className="fa-brands fa-instagram"/>
                                 </a>
                             </li>
-                           
                         </ul>
                     </div>
-                    <div className="col-4 text-end text-light col-sm-5">
+                    <div className="float-end text-light p-2">
                         <span> Tous droits réservés.</span>
                     </div>
                 </div>

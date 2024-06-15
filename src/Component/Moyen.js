@@ -8,7 +8,7 @@ const Moyen = () => {
     return (
         <>
             <div className="row w-100 m-0 pt-4 pb-4 pr-4 pe-0 " id="moyen">
-                <ElementShowTitle title={"Notre équipements"}/>
+                <ElementShowTitle title={"Nos équipements"}/>
             </div>
             <div className="container">
                 <div className="card border-0">

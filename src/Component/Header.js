@@ -29,7 +29,6 @@ const Header = () => {
 
     const isMediumOrLarger = useMediaQuery({ query: '(min-width: 992px)' });
 
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -64,11 +63,11 @@ const Header = () => {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="#activity">Nos Domaines d'Activités</Dropdown.Item>
-                                        <Dropdown.Item href="#moyen">Nos Moyens Materiels et Humais</Dropdown.Item>
-                                        <Dropdown.Item href="#">Nos Solutions</Dropdown.Item>
-                                        <Dropdown.Item href="#">Nos Perspectives et Objectifs</Dropdown.Item>
-                                        <Dropdown.Item href="#">Nos Valeurs</Dropdown.Item>
+                                        <Dropdown.Item href="#activity">Nos secteur</Dropdown.Item>
+                                        <Dropdown.Item href="#moyen">Nos équipements</Dropdown.Item>
+                                        <Dropdown.Item href="#collaboration">Notre collaboration</Dropdown.Item>
+                                        <Dropdown.Item href="#aspiration">Nos aspirations</Dropdown.Item>
+                                        <Dropdown.Item href="#valeur">Nos Valeurs</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </div>
@@ -124,11 +123,11 @@ const Header = () => {
                                                 </Dropdown.Toggle>
 
                                                 <Dropdown.Menu >
-                                                    <Dropdown.Item href="#activity" className="p-3 fs-5">Nos Domaines d'Activités</Dropdown.Item>
-                                                    <Dropdown.Item href="#moyen">Nos Moyens Materiels et Humais</Dropdown.Item>
-                                                    <Dropdown.Item href="#">Nos Solutions</Dropdown.Item>
-                                                    <Dropdown.Item href="#">Nos Perspectives et Objectifs</Dropdown.Item>
-                                                    <Dropdown.Item href="#">Nos Valeurs</Dropdown.Item>
+                                                    <Dropdown.Item href="#activity">Nos secteur</Dropdown.Item>
+                                                    <Dropdown.Item href="#moyen">Nos équipements</Dropdown.Item>
+                                                    <Dropdown.Item href="#collaboration">Notre collaboration</Dropdown.Item>
+                                                    <Dropdown.Item href="#aspiration">Nos aspirations</Dropdown.Item>
+                                                    <Dropdown.Item href="#valeur">Nos Valeurs</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </li>

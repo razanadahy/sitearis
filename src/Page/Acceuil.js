@@ -13,11 +13,11 @@ const Acceuil = () => {
         <>
             <Header/>
             <InfoE/>
-            <Activity/>
-            <Moyen/>
-            <Offre/>
-            <Objectif/>
-            <Valeur/>
+            <div id="activity"><Activity/></div>
+            <div id="moyen"><Moyen/></div>
+            <div id="collaboration"><Offre/></div>
+            <div id="aspiration"><Objectif/></div>
+            <div id="valeur"><Valeur/></div>
             <Footer/>
         </>
     )

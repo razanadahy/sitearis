@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../img/logoA.png';
-import { Dropdown,Modal,Button } from 'react-bootstrap';
+import { Dropdown,Modal } from 'react-bootstrap';
 import {useMediaQuery} from "react-responsive";
-import {DropDirection} from "react-bootstrap/DropdownContext";
 
 const Header = () => {
     const [hasShadow, setHasShadow] = useState(false);

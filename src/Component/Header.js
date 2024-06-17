@@ -96,7 +96,7 @@ const Header = ({idActive}) => {
 
                             </div>
                             <div className={`col-2 slideInFromLeft`}>
-                                <button type="button" className={`btn text-white fs-5 ${idActive===2 ? 'active' : ''}`} onClick={servicePage}>Service</button>
+                                <button type="button" className={`btn text-white fs-5 ${idActive===2 ? 'active' : ''}`} onClick={servicePage}>Services</button>
                             </div>
                             <div className={`col-2 slideInFromLeft`}>
                                 <button type="button" className={`btn text-white fs-5 ${idActive===3 ? 'active' : ''}`} onClick={contactPage}>Contact</button>
@@ -162,7 +162,7 @@ const Header = ({idActive}) => {
                                             </li>
                                         )}
                                         <li onClick={servicePage} className="a-label rounded-2 p-3 d-flex align-items-center cursor-pointer mt-2">
-                                            <span className="text-center w-100 fs-3">Nos serivce?</span>
+                                            <span className="text-center w-100 fs-3">Nos serivces?</span>
                                         </li>
                                         <li onClick={contactPage} className="a-label rounded-2 p-3 d-flex align-items-center cursor-pointer mt-2">
                                             <span className="text-center w-100 fs-3">Contactez-nous!</span>

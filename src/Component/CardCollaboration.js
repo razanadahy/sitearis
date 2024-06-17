@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const CardCollaboration = ({color, text, icon, emplacement}) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -27,11 +28,20 @@ const CardCollaboration = ({color, text, icon, emplacement}) => {
         };
     }, [emplacement]);
 
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        const anchors = ["coworking", "sous-traitance", "centre-offshore", "pourquoi-externaliser", "une-equipe-selon-vos-besoins"];
+        navigate(`/service#${anchors[emplacement]}`);
+    };
+
     return (
         <div
             ref={elementRef}
             className={`card h-100 rounded-4 w-100 mx-auto shadow content-contribution cursor-pointer ${isVisible ? 'showTop' : ''}`}
-            style={{ opacity: isVisible ? 1 : 0 }}>
+            style={{ opacity: isVisible ? 1 : 0 }}
+            onClick={handleClick}
+        >
             <div className={`card-body ${color}`}>
                 <div className="mt-4 mb-3 text-center w-100">
                     <i className={`fas fa-2xl ${icon}`}/>

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import logo from '../img/logoA.png';
 import { Dropdown,Modal } from 'react-bootstrap';
 import {useMediaQuery} from "react-responsive";
+import {useNavigate} from "react-router-dom";
 
-const Header = () => {
+const Header = ({idActive}) => {
     const [hasShadow, setHasShadow] = useState(false);
 
     const handleScroll = () => {
@@ -33,10 +34,23 @@ const Header = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const history = useNavigate();
+
+    const servicePage = () => {
+        history('/service');
+    };
+    const contactPage = () => {
+        history('/contact');
+    };
+    const homePage = () => {
+        history('/');
+    };
+
+
     return (
         <>
             {isMediumOrLarger ? (
-                <div className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-3 position-fixed top-0 z-3 w-100 text-center ${hasShadow ? 'shadow' : ''}`}>
+                <div id={"header"} className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-3 position-fixed top-0 z-3 w-100 text-center ${hasShadow ? 'shadow' : ''}`}>
                     <div className="col-2">
                         <div className="d-flex align-items-center slideOutToRight">
                             <img src={logo} alt="logo" className="logo-img img-fluid mx-3" />
@@ -49,32 +63,38 @@ const Header = () => {
                     <div className="col-9">
                         <div className="row">
                             <div className={`col-2 offset-1 align-middle slideInFromLeft`}>
-                                <Dropdown
-                                    onMouseEnter={handleMouseEnter}
-                                    onMouseLeave={handleMouseLeave}
-                                    show={showAcceuil}>
-                                    <Dropdown.Toggle
-                                        as="button"
-                                        id="dropdown-custom-components"
-                                        className="btn text-white fs-5 active"
-                                    >
-                                        Acceuil
-                                    </Dropdown.Toggle>
+                                {idActive===1 ? (
+                                    <Dropdown
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave}
+                                        show={showAcceuil}>
+                                        <Dropdown.Toggle
+                                            as="button"
+                                            id="dropdown-custom-components"
+                                            onClick={homePage}
+                                            className={`btn text-white fs-5 ${idActive===1 ? 'active' : ''}`}
+                                        >
+                                            Acceuil
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item href="#activity">Nos secteur</Dropdown.Item>
+                                            <Dropdown.Item href="#moyen">Nos équipements</Dropdown.Item>
+                                            <Dropdown.Item href="#collaboration">Notre collaboration</Dropdown.Item>
+                                            <Dropdown.Item href="#aspiration">Nos aspirations</Dropdown.Item>
+                                            <Dropdown.Item href="#valeur">Nos Valeurs</Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>):(
+                                    <div className={`col-2 slideInFromLeft`}>
+                                        <button type="button" className={`btn text-white fs-5 ${idActive===1 ? 'active' : ''}`} onClick={homePage}>Acceuil</button>
+                                    </div>
+                                )}
 
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="#activity">Nos secteur</Dropdown.Item>
-                                        <Dropdown.Item href="#moyen">Nos équipements</Dropdown.Item>
-                                        <Dropdown.Item href="#collaboration">Notre collaboration</Dropdown.Item>
-                                        <Dropdown.Item href="#aspiration">Nos aspirations</Dropdown.Item>
-                                        <Dropdown.Item href="#valeur">Nos Valeurs</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
                             </div>
                             <div className={`col-2 slideInFromLeft`}>
-                                <button type="button" className="btn text-white fs-5">Service</button>
+                                <button type="button" className={`btn text-white fs-5 ${idActive===2 ? 'active' : ''}`} onClick={servicePage}>Service</button>
                             </div>
                             <div className={`col-2 slideInFromLeft`}>
-                                <button type="button" className="btn text-white fs-5">Contact</button>
+                                <button type="button" className={`btn text-white fs-5 ${idActive===3 ? 'active' : ''}`} onClick={contactPage}>Contact</button>
                             </div>
                         </div>
                     </div>

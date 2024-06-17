@@ -35,12 +35,12 @@ const Footer = () => {
                                     </div>
                                     <div className="col-lg-7 col-md-10 offset-md-1 col-sm-12">
                                         <Form>
-                                            <Form.Group className="mt-1 mb-2" controlId="formBasicEmail">
+                                            <Form.Group className="mt-1 mb-2" controlId="nom">
                                                 <Form.Label>Nom *</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter votre nom" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Group className="mb-3" controlId="mail">
                                                 <Form.Label>Email *</Form.Label>
                                                 <Form.Control type="email" placeholder="Entrer votre email" />
                                             </Form.Group>
@@ -77,21 +77,21 @@ const Footer = () => {
                                     <i className="fa-brands fa-facebook-f"/>
                                 </a>
                             </li>
-                            <li className="list-inline-item p-2 rounded-circle w-h-30 border d-inline-flex  justify-content-center align-items-center">
+                            {/*<li className="list-inline-item p-2 rounded-circle w-h-30 border d-inline-flex  justify-content-center align-items-center">
                                 <a href="#" target="_blank" rel="noreferrer">
                                     <i className="fa-brands fa-x-twitter"/>
                                 </a>
-                            </li>
+                            </li>*/}
                             <li className="list-inline-item p-2 rounded-circle  w-h-30 border d-inline-flex  justify-content-center align-items-center">
                                 <a href="#" target="_blank" rel="noreferrer">
                                     <i className="fa-brands fa-linkedin-in"/>
                                 </a>
                             </li>
-                            <li className="list-inline-item rounded-circle  w-h-30 border d-inline-flex  justify-content-center align-items-center">
+                            {/*<li className="list-inline-item rounded-circle  w-h-30 border d-inline-flex  justify-content-center align-items-center">
                                 <a href="#"  target="_blank" rel="noreferrer">
                                     <i className="fa-brands fa-instagram"/>
                                 </a>
-                            </li>
+                            </li>*/}
                         </ul>
                     </div>
                     <div className="float-end text-light p-2">

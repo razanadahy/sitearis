@@ -28,6 +28,7 @@ const DisplayText = () => {
     const [isDisplayed,setIsDisplay]=useState(false)
     useEffect(() => {
         if (isVisible && !isDisplayed){
+            setDisplayedText('')
             let index = 0;
             const startInterval = () => {
                 const intervalId = setInterval(() => {

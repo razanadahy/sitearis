@@ -11,7 +11,7 @@ import Footer from "../Component/Footer";
 const Acceuil = () => {
     return (
         <>
-            <Header/>
+            <Header idActive={1}/>
             <InfoE/>
             <div id="activity"><Activity/></div>
             <div id="moyen"><Moyen/></div>

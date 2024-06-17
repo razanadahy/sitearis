@@ -24,6 +24,11 @@ const ServicePage = () => {
                     behavior: 'smooth'
                 });
             }
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
     }, [location]);
     return(

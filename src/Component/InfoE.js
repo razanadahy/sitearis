@@ -28,6 +28,16 @@ const InfoE = () => {
         };
     }, [fullText]);
 
+
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = '/BROCHURE_ARIS-Concept.pdf';
+        link.download = 'BROCHURE_ARIS-Concept.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div className="row bg-gradient-info-dark w-100 text-white mt-md-3 mt-sm-2 mx-0 mb-3 font-roboto">
             <br/>
@@ -41,7 +51,7 @@ const InfoE = () => {
                 <br/>
                 <div className="row mt-5">
                     <div className="col-lg-3 col-md-4 col-sm-6 fadeIn">
-                        <button type="button" className="btn btn-light w-100 btn-lg">Plus <i className="fa-solid fa-chevron-right"/></button>
+                        <button onClick={handleDownload} type="button" className="btn btn-light w-100 btn-lg">Plus <i className="fa-solid fa-chevron-right"/></button>
                     </div>
                 </div>
             </div>

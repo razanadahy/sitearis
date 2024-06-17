@@ -55,11 +55,11 @@ const Header = ({idActive}) => {
     return (
         <>
             {isMediumOrLarger ? (
-                <div id={"header"} className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-3 position-fixed top-0 z-3 w-100 text-center ${hasShadow ? 'shadow' : ''}`}>
+                <div id={"header"} className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-3 position-fixed top-0 z-3 w-100 text-center font-ramona ${hasShadow ? 'shadow' : ''}`}>
                     <div className="col-2">
                         <div className="d-flex align-items-center slideOutToRight">
                             <img src={logo} alt="logo" className="logo-img img-fluid mx-3" />
-                            <h4 className="mb-0">
+                            <h4 className="mb-0 fs-5">
                                 <span style={{ color: '#D10D58' }}>Aris </span> <span style={{ color: '#0e8de8' }}>Concept</span>
                             </h4>
                         </div>
@@ -79,7 +79,7 @@ const Header = ({idActive}) => {
                                             onClick={homePage}
                                             className={`btn text-white fs-5 ${idActive===1 ? 'active' : ''}`}
                                         >
-                                            Acceuil
+                                            Accueil
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
                                             <Dropdown.Item href="#activity">Nos secteur</Dropdown.Item>
@@ -90,7 +90,7 @@ const Header = ({idActive}) => {
                                         </Dropdown.Menu>
                                     </Dropdown>):(
                                     <div className={`col-2 slideInFromLeft`}>
-                                        <button type="button" className={`btn text-white fs-5 ${idActive===1 ? 'active' : ''}`} onClick={homePage}>Acceuil</button>
+                                        <button type="button" className={`btn text-white fs-5 ${idActive===1 ? 'active' : ''}`} onClick={homePage}>Accueil</button>
                                     </div>
                                 )}
 
@@ -103,13 +103,13 @@ const Header = ({idActive}) => {
                             </div>
                         </div>
                     </div>
-                    <div className={`col-1 slideInFromLeft d-flex align-items-end`}>
+                    <div className={`col-1 p-1 pt-0 pb-0 slideInFromLeft d-flex align-items-end`}>
                         <button type="button" className="btn bg-mi-dark-blue text-white fs-5"><span className="p-2">Postuler</span></button>
                     </div>
                 </div>
             ) : (
                 <>
-                    <div className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-2 position-fixed top-0 z-3 w-100 text-center ${hasShadow ? 'shadow' : ''}`}>
+                    <div className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-2 position-fixed top-0 z-3 w-100 text-center font-ramona ${hasShadow ? 'shadow' : ''}`}>
                         <div className="d-flex justify-content-between align-items-center w-100">
                             <div className="d-flex align-items-center mx-auto">
                                 <img src={logo} alt="logo" className="logo-img img-fluid mx-3 " />

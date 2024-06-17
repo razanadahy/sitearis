@@ -57,7 +57,7 @@ const ContatctContainer = () => {
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                             <Form.Label>Commentaire *</Form.Label>
-                                            <Form.Control as="textarea" aria-rowspan={3} placeholder="A propos  de vos besoin..." />
+                                            <Form.Control as="textarea" aria-rowspan={3} placeholder="A propos  de vos besoins..." />
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
                                             <Button variant="primary" className="w-100" type="submit">

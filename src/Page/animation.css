@@ -92,3 +92,13 @@
     background-color: black;
     animation: blinkType 1s step-end infinite;
 }
+
+@font-face {
+    font-family: 'Ramona';
+    src: url('Ramona Light 300.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-ramona{
+    font-family: 'Ramona', serif !important;
+}

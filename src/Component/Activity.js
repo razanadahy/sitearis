@@ -20,8 +20,8 @@ const Activity = () => {
                             <Carousel.Caption className="bg-edit border rounded-2 opacity-75">
                                 <h2 className="color-cyan">Traitement de sons et/ou vidéos</h2>
                                 <p className="fs-5 text-white">Nos spécialistes en informatique offrent une gamme
-                                  complète de services, du développement logiciel au
-                                  traitement de données en ligne et hors ligne.
+                                  complète de services, du développement logiciels aux
+                                  traitements de données en ligne et hors ligne.
                                 </p>
                             </Carousel.Caption>
                         </Carousel.Item>
@@ -30,8 +30,9 @@ const Activity = () => {
                           <Carousel.Caption className="bg-edit border rounded-2 opacity-75">
                               <h2 className="color-cyan">Traitement de données online ou offline</h2>
                               <p className="fs-5 text-white">Nos spécialistes en informatique offrent une gamme
-                                  complète de services, du développement logiciel au
-                                  traitement de données en ligne et hors ligne.</p>
+                                  complète de services, du développement logiciels aux
+                                  traitements de données en ligne et hors ligne.
+                              </p>
                           </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item interval={1000}>
@@ -39,8 +40,9 @@ const Activity = () => {
                           <Carousel.Caption className="bg-edit border rounded-2 opacity-75">
                               <h2 className="color-cyan">Traitement d'image</h2>
                               <p className="fs-5 text-white">Nos spécialistes en informatique offrent une gamme
-                                  complète de services, du développement logiciel au
-                                  traitement de données en ligne et hors ligne.</p>
+                                  complète de services, du développement logiciels aux
+                                  traitements de données en ligne et hors ligne.
+                              </p>
                           </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>

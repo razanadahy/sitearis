@@ -48,12 +48,12 @@ const Moyen = () => {
                             </div>
                             <div className="col-xl-6 d-none d-xl-flex align-items-stretch">
                                 <div className="card h-100 border-0">
-                                    <div>
+                                    <div className=" h-100 d-flex flex-column justify-content-center">
                                         <ul className="list-group list-group-flush">
-                                            <li className="list-group-item">
+                                            <li className="list-group-item ">
                                                 <ElementH5 stylePositionTop={true} isWhite={false} texte={"Nous disposons des ordinateurs portables performants avec une autonomie de plus de 4H pour éviter la coupure de production pendant le délestage très répétitif à Madagascar."}/>
                                             </li>
-                                            <li className="list-group-item">
+                                            <li className="list-group-item ">
                                                 <ElementH5 stylePositionTop={false} isWhite={false} texte={"Un deuxième écran pour chaque ordinateur portable pour faciliter et accélérer la manipulation des outils"}/>
                                             </li>
                                             <li className="list-group-item">
@@ -62,7 +62,7 @@ const Moyen = () => {
                                             <li className="list-group-item">
                                                 <ElementH5 stylePositionTop={false} isWhite={false} texte={"Connexion à haut débit avec deux lignes différentes en loadbalancing en cas de coupure"}/>
                                             </li>
-                                            <li className="list-group-item">
+                                            <li className="list-group-item ">
                                                 <ElementH5 stylePositionTop={false} isWhite={false} texte={"Un local et moyens matériels qui peut accueillir jusqu'à 40 positions"}/>
                                             </li>
                                             <li className="list-group-item">

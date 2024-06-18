@@ -6,6 +6,7 @@ const InfoE = () => {
 
     useEffect(() => {
         let index = 0;
+        setDisplayedText('')
         const startInterval = () => {
             const intervalId = setInterval(() => {
                 setDisplayedText((prev) => {

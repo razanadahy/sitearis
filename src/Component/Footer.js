@@ -51,15 +51,6 @@ const Footer = () => {
                                         </Form>
                                     </div>
                                 </div>
-                                {/*<div className="row m-0 align-items-center">*/}
-                                {/*    <div className="col-7 offset-1">*/}
-                                {/*        <div className="input-group mb-3">*/}
-                                {/*            <input type="mail" className="form-control" placeholder="xyz@gmail.com"*/}
-                                {/*                   aria-label="Recipient's username" aria-describedby="basic-addon2"/>*/}
-                                {/*            <button className="input-group-text btn btn-warning" id="basic-addon2">Inscription</button>*/}
-                                {/*        </div>*/}
-                                {/*    </div>*/}
-                                {/*</div>*/}
                             </div>
 
                         </div>
@@ -73,25 +64,15 @@ const Footer = () => {
                         <span className="p-2">© 2024 Aris Concept company</span>
                         <ul className="list-inline">
                             <li className="list-inline-item rounded-circle w-h-30 border d-inline-flex  justify-content-center align-items-center">
-                                <a href="#" target="_blank" rel="noreferrer">
+                                <a href="https://facebook.com/" target="_blank" rel="noreferrer">
                                     <i className="fa-brands fa-facebook-f"/>
                                 </a>
                             </li>
-                            {/*<li className="list-inline-item p-2 rounded-circle w-h-30 border d-inline-flex  justify-content-center align-items-center">
-                                <a href="#" target="_blank" rel="noreferrer">
-                                    <i className="fa-brands fa-x-twitter"/>
-                                </a>
-                            </li>*/}
                             <li className="list-inline-item p-2 rounded-circle  w-h-30 border d-inline-flex  justify-content-center align-items-center">
-                                <a href="#" target="_blank" rel="noreferrer">
+                                <a href="https://www.linkedin.com/in/aris-concept-567703240" target="_blank" rel="noreferrer">
                                     <i className="fa-brands fa-linkedin-in"/>
                                 </a>
                             </li>
-                            {/*<li className="list-inline-item rounded-circle  w-h-30 border d-inline-flex  justify-content-center align-items-center">
-                                <a href="#"  target="_blank" rel="noreferrer">
-                                    <i className="fa-brands fa-instagram"/>
-                                </a>
-                            </li>*/}
                         </ul>
                     </div>
                     <div className="float-end text-light p-2">

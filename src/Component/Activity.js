@@ -4,6 +4,7 @@ import tImg from '../img/timg.png'
 import tVid from '../img/tvideo.png'
 import {Carousel} from "react-bootstrap";
 import ElementShowTitle from "./ElementShowTitle";
+import TextCarousel from "./TextCarousel";
 
 const Activity = () => {
 
@@ -16,16 +17,16 @@ const Activity = () => {
                 <div className="card border-0  px-lg-5 px-sm-2 px-md-3">
                     <Carousel className="mx-auto" data-bs-theme="dark" pause={"hover"}>
                         <Carousel.Item interval={1000}>
-                            <img src={tVid} className="card-img-top card-img-bottom bg-gradient-info" alt="image traitement de son et video" />
-
+                            <img src={tVid} className="card-img-top card-img-bottom bg-gradient-info" alt="traitement de son et video" />
+                            <TextCarousel title={'Traitement de sons et/ou vidéos'} emplacement={0}/>
                         </Carousel.Item>
                         <Carousel.Item interval={1000}>
-                          <img src={tdonne} className="card-img-top bg-gradient-info card-img-bottom"  alt="image traitement de donnée" />
-
+                            <img src={tdonne} className="card-img-top bg-gradient-info card-img-bottom"  alt="traitement de donnée" />
+                            <TextCarousel title={'Traitement de données online ou offline'} emplacement={1}/>
                         </Carousel.Item>
                         <Carousel.Item interval={1000}>
-                          <img src={tImg} className="card-img-top bg-gradient-info card-img-bottom" alt="image traitement d'image" />
-
+                            <img src={tImg} className="card-img-top bg-gradient-info card-img-bottom" alt="traitement d'image" />
+                            <TextCarousel title={'Traitement d\'image'} emplacement={2}/>
                         </Carousel.Item>
                     </Carousel>
                 </div>

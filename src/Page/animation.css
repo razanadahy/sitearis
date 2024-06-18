@@ -102,3 +102,16 @@
 .color-concept{
     color: #0e8de8 !important;
 }
+.w-40{
+    width: 40% !important;
+}
+
+.top-30 {
+    top: 30% !important;
+}
+.carousel-control-next{
+    z-index: 3 !important;
+}
+.carousel-control-prev{
+    z-index: 3 !important;
+}

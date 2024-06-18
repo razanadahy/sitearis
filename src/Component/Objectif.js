@@ -69,7 +69,7 @@ const Objectif = () => {
                             '                                            une solution anti-délestage, en\n' +
                             '                                            offrant des horaires flexibles, et\n' +
                             '                                            en assurant des affiliations à la\n' +
-                            '                                            CNAPS, OSTIE, et FMFP.'}/>
+                            '                                            CNAPS, OSTIE.'}/>
                         </div>
                         <div className="col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 d-flex align-items-stretch mb-2">
                             {/*<div className="card h-100 border-0 mx-auto w-100 cursor-pointer">*/}

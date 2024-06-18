@@ -96,3 +96,9 @@
     transform: translateY(-5px);
     transition: transform 0.3s ease-in-out;
 }
+.color-aris{
+    color: #D10D58 !important;
+}
+.color-concept{
+    color: #0e8de8 !important;
+}

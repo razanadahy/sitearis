@@ -36,12 +36,7 @@ const Difference = () => {
                         '                                    et expérimentés,\n' +
                         '                                    représentant une expertise\n' +
                         '                                    diversifiée dans le\n' +
-                        '                                    traitement des données.\n' +
-                        '                                    L\'image devrait illustrer\n' +
-                        '                                    une équipe travaillant\n' +
-                        '                                    ensemble, mettant en\n' +
-                        '                                    avant leur savoir-faire et\n' +
-                        '                                    expérience.'} icon={'fa-cogs'}/>
+                        '                                    traitement des données.'} icon={'fa-cogs'}/>
                     </div>
                     <div className="col-lg-3 col-md-6 offset-md-0 col-sm-10 offset-sm-1 mb-3">
                         {/*<div  className={`card h-100 w-100 rounded-4 mx-auto`}>
@@ -67,10 +62,7 @@ const Difference = () => {
                         '                                    haute qualité, soulignant\n' +
                         '                                    l\'engagement envers des\n' +
                         '                                    normes élevées, la\n' +
-                        '                                    précision et la fiabilité.\n' +
-                        '                                    L\'image devrait évoquer\n' +
-                        '                                    des standards élevés et\n' +
-                        '                                    une approche minutieuse.'} icon={'fa-award'}/>
+                        '                                    précision et la fiabilité.'} icon={'fa-award'}/>
                     </div>
                     <div className="col-lg-3 col-md-6 offset-md-0 col-sm-10 offset-sm-1 mb-3">
                         {/*<div  className={`card h-100 w-100 rounded-4 mx-auto`}>
@@ -97,11 +89,7 @@ const Difference = () => {
                         '                                    l\'entreprise envers ses\n' +
                         '                                    clients, illustrant la\n' +
                         '                                    dévotion, la loyauté et la\n' +
-                        '                                    persévérance. L\'image\n' +
-                        '                                    devrait refléter un\n' +
-                        '                                    engagement durable et\n' +
-                        '                                    sincère envers les clients\n' +
-                        '                                    et les partenaires.'} icon={'fa-flag'}/>
+                        '                                    persévérance. '} icon={'fa-flag'}/>
                     </div>
                     <div className="col-lg-3 col-md-6 offset-md-0 col-sm-10 offset-sm-1 mb-3">
                         {/*<div  className={`card h-100 w-100 rounded-4 mx-auto`}>
@@ -123,10 +111,7 @@ const Difference = () => {
                         <ValeurComponent emplacement={3} title={'Disponibilité'} content={'Une représentation\n' +
                         '                                    visuelle de disponibilité\n' +
                         '                                    constante et d\'accessibilité\n' +
-                        '                                    pour les clients. L\'image\n' +
-                        '                                    devrait transmettre un sens\n' +
-                        '                                    d\'ouverture, d\'accessibilité\n' +
-                        '                                    et de réactivité.'} icon={'fa-tags'}/>
+                        '                                    pour les clients.'} icon={'fa-tags'}/>
                     </div>
                 </div>
             </div>

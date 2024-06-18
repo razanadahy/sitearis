@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 
-const SolutionComponent = ({color,icon,title,content, emplacement}) => {
+const SolutionComponent = ({color,icon,title,children, emplacement}) => {
     const [isVisible, setIsVisible] = useState(false);
     const elementRef = useRef(null);
 
@@ -31,9 +31,7 @@ const SolutionComponent = ({color,icon,title,content, emplacement}) => {
             <div className="card-body">
                 <h3 className={`text-start mb-3 ${color}`}><i className={`fas fa-2xl p-2 ${icon}`}/>{title}</h3>
                 <div className="row w-100">
-                    <p className="fs-6">
-                        {content}
-                    </p>
+                    {children}
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@ const DisplayValeur = ({icon,text,emplacement, bg}) => {
     }, [emplacement]);
     return(
         <>
-            <div ref={elementRef} className={`card h-100 w-100 rounded-4 mx-auto shadow cursor-pointer ${bg} text-bg-primary ${isVisible ? 'showTop' : 'opacity-0'}`}>
+            <div ref={elementRef} className={`card h-100 w-100 rounded-4 mx-auto flotant shadow cursor-pointer ${bg} text-bg-primary ${isVisible ? 'showTop' : 'opacity-0'}`}>
                 <div className="card-body">
                     <div className="mt-4 mb-3 text-center w-100">
                         <i className={`fas ${icon} fa-2xl`}/>

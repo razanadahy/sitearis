@@ -1,13 +1,23 @@
+
+@font-face {
+    font-family: 'Ramona';
+    src: url('./Page/Ramona Light 300.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0;
-    font-family: "Bell MT", serif !important;
+    font-family: "Ramona", serif !important;
     width: 100%;
     overflow-x: hidden !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
 }
-
+.font-ramona{
+    font-family: 'Ramona', serif !important;
+}
 .p-6{
     padding-top: 5rem !important;
 }

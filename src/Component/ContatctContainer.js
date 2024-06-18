@@ -52,10 +52,10 @@ const ContatctContainer = () => {
                                                 <option>Votre besoin concerne....</option>
                                                 <option value="1">Images / Photos</option>
                                                 <option value="2">Vidéos</option>
+                                                <option value="2">Traitements de données </option>
+                                                <option value="2">Web et Marketing</option>
                                                 <option value="2">Comptabilité</option>
-                                                <option value="2">Traitements de données hors ligne</option>
                                                 <option value="2">Externalisation administrative</option>
-                                                <option value="3">Traitements de données en ligne</option>
                                             </Form.Select>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">

@@ -115,9 +115,15 @@
 .top-20{
     top: 18% !important;
 }
+.top-10{
+    top: 10% !important;
+}
 .carousel-control-next{
     z-index: 3 !important;
 }
 .carousel-control-prev{
     z-index: 3 !important;
+}
+.W-90{
+    width: 90% !important;
 }

@@ -11,7 +11,7 @@
     {
       "src": "logoA.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "30x40"
     }
   ],
   "start_url": ".",

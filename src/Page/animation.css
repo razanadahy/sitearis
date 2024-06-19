@@ -109,6 +109,12 @@
 .top-30 {
     top: 30% !important;
 }
+.top-40{
+    top: 40% !important;
+}
+.top-20{
+    top: 20% !important;
+}
 .carousel-control-next{
     z-index: 3 !important;
 }

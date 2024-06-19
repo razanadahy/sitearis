@@ -42,7 +42,7 @@ const Moyen = () => {
                             </div>
 
                             <div className="col-xl-6 d-none d-xl-flex align-items-stretch">
-                                <div className="card h-100 border-0">
+                                <div className="card h-100 border-0 d-flex flex-column justify-content-center">
                                     <img src={imgMoyen} className="card-img bg-gradient-info w-100" alt="..." />
                                 </div>
                             </div>

@@ -12,16 +12,16 @@ const TextCarousel = ({title,emplacement}) => {
         }if (isLG){
             return 'w-75 top-40'
         }if (isMD){
-            return 'w-75 end-0 start-0 top-30'
+            return 'w-75 top-30'
         }if(isSM){
             return 'w-100 top-20'
         }
         return ''
     }
     return(
-        <div className={`position-absolute bg-edit opacity-75 ${(emplacement+1)%2===0 ? 'end-0' : 'start-0'} mx-2 rounded-4 ${clas} pt-3 px-2 pb-1`}>
-            <h3 className="text-center color-cyan">{title}</h3>
-            <p className="fs-5 text-white text-center">Nos spécialistes en informatique offrent une gamme
+        <div className={`position-absolute ${(emplacement+1)%2===0 ? 'end-0' : 'start-0'} mx-2 rounded-4 ${clas()} pt-3 px-2 pb-1`}>
+            <h3 className="text-center color-aris">{title}</h3>
+            <p className={`${isSM ? 'fs-6' : 'fs-5'} text-white text-center`}>Nos spécialistes en informatique offrent une gamme
                 complète de services, du développement logiciels aux
                 traitements de données en ligne et hors ligne.
             </p>

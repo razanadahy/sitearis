@@ -28,7 +28,7 @@ const ValeurComponent = ({title,content,icon,emplacement}) => {
     }, [emplacement]);
 
     return(
-        <div ref={elementRef}  className={`card h-100 w-100 rounded-4 mx-auto ${isVisible ? 'showTop' : 'opacity-0'}`}>
+        <div ref={elementRef}  className={`card h-100 w-100 rounded-4 mx-auto flotant ${isVisible ? 'showTop' : 'opacity-0'}`}>
             <div className="card-body">
                 <h3 className="text-center mb-3 text-info-emphasis pb-2">
                     <i className={`fas ${icon} fa-2xl p-1`}/>{title}

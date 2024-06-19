@@ -118,12 +118,18 @@
 .top-10{
     top: 10% !important;
 }
+.top-5{
+    top: 2px !important;
+}
+.fs-7{
+    font-size: 0.8rem !important;
+}
 .carousel-control-next{
     z-index: 3 !important;
 }
 .carousel-control-prev{
     z-index: 3 !important;
 }
-.W-90{
-    width: 90% !important;
+.w-60{
+    width: 60% !important;
 }

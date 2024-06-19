@@ -77,11 +77,11 @@ const ContatctContainer = () => {
                                     <h4 className="text-uppercase text-center text-primary-emphasis">Notre adresse</h4>
                                     <ul className="list-inline d-md-block d-sm-flex align-items-sm-center flex-sm-column">
 
-                                        <DisplayLi icon={'fa-location-dot'} emplacement={0} title={'Lot II T 104 A Iavoloha, Antananarivo 102'}/>
+                                        <DisplayLi color={'color-red'} icon={'fa-location-dot'} emplacement={0} title={'Lot II T 104 A Iavoloha, Antananarivo 102'}/>
 
-                                        <DisplayLi icon={'fa-phone'} emplacement={1} title={'+261 38 53 405 34'}/>
+                                        <DisplayLi color={'color-semi-purpule'} icon={'fa-phone'} emplacement={1} title={'+261 38 53 405 34'}/>
                                        
-                                        <DisplayLi icon={'fa-envelope'} emplacement={2} title={'arisconcept.company@gmail.com'}/>
+                                        <DisplayLi color={'color-cyan'} icon={'fa-envelope'} emplacement={2} title={'arisconcept.company@gmail.com'}/>
                                     </ul>
                                 </div>
                             </div>

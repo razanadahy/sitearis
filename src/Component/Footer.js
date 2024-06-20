@@ -1,7 +1,40 @@
-import React from 'react'
-import {Button, Form} from "react-bootstrap";
+import React, {useState} from 'react'
+import {Button, Form, Spinner, Toast} from "react-bootstrap";
+import Newsletter from "../Model/Newsletter.ts";
 
 const Footer = () => {
+    const [nom,setNom]=useState('')
+    const [mail,setMail]=useState('')
+    const [showToast,setShowToast]=useState(false)
+    const [erreur,setErreur]=useState(false)
+    const [loading,setLoading]=useState(false)
+    function validMail(mail) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(mail);
+    }
+    function validString(text) {
+        return text.trim().length > 0;
+    }
+    const sendNewsletter = (event) => {
+        setLoading(true)
+        event.preventDefault()
+        if (validMail(mail) && validString(nom)){
+            Newsletter.sendDataToAdmin(nom,mail).then((res)=>{
+                setErreur(!res)
+                setShowToast(true)
+
+            }).catch(()=>{
+                setErreur(true)
+                setShowToast(true)
+            }).finally(()=>{
+                setLoading(false)
+                setNom('')
+                setMail('')
+            })
+        }else {
+            setLoading(false)
+        }
+    }
     return (
         <>
             <div className="row mx-0 mt-4 mb-0 p-2 w-100 bg-dark-blue">
@@ -34,19 +67,19 @@ const Footer = () => {
                                         Inscrivez-vous à notre newsletter et recevez par email les dernières tendances du digital.
                                     </div>
                                     <div className="col-lg-7 col-md-10 offset-md-1 col-sm-12">
-                                        <Form>
+                                        <Form autoComplete={"off"} onSubmit={(event)=>sendNewsletter(event)}>
                                             <Form.Group className="mt-1 mb-2" controlId="nom">
                                                 <Form.Label>Nom *</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter votre nom" />
+                                                <Form.Control type="text" value={nom} onChange={(event)=>setNom(event.target.value)} placeholder="Enter votre nom" />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="mail">
                                                 <Form.Label>Email *</Form.Label>
-                                                <Form.Control type="email" placeholder="Entrer votre email" />
+                                                <Form.Control type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
                                             </Form.Group>
 
-                                            <Button variant="warning" className="w-100" type="submit">
-                                                Valider
+                                            <Button variant="warning" className="w-100" type={`${loading ? 'button' : 'submit'}`}>
+                                                {loading ? (<Spinner animation="border" variant="secondary" />):("Valider")}
                                             </Button>
                                         </Form>
                                     </div>
@@ -80,6 +113,15 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            <Toast className={`position-fixed ${erreur ? 'bg-danger' : 'bg-success'} bottom-0 end-0`} show={showToast} onClose={()=>setShowToast(false)} delay={5000} autohide>
+                <Toast.Header>
+                    <strong className="me-auto">Message</strong>
+                    <small>Maintenant</small>
+                </Toast.Header>
+                <Toast.Body>
+                    {erreur ? ('Il y a un problème de connexion') : ('Votre information a été envoyée avec succès')}
+                </Toast.Body>
+            </Toast>
         </>
     )
 }

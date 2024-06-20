@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Button, Form} from "react-bootstrap";
+import {Button, Form, Spinner, Toast} from "react-bootstrap";
 import DisplayLi from "./DisplayLi";
+import Newsletter from "../Model/Newsletter.ts";
 
 const ContatctContainer = () => {
     const [isVisible, setIsVisible] = useState(false);
     const elementRef = useRef(null);
-
     useEffect(() => {
         const handleScroll = () => {
             if (elementRef.current) {
@@ -28,6 +28,58 @@ const ContatctContainer = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const [elementOption,]=useState([
+        {id:1, name: 'Images / Photos'},
+        {id:2 , name: 'Vidéos'},
+        {id:3 , name: 'Traitements de données'},
+        {id:4 , name: 'Web et Marketing'},
+        {id:5 , name: 'Comptabilité'},
+        {id:6 , name: 'Externalisation administrative'},
+        {id:7 , name: 'Autre'},
+    ])
+    const[nom,setNom]=useState('')
+    const [mail,setMail]=useState('')
+    const [comment,setComment]=useState('')
+    const [selectedOption,setSelected]=useState('')
+    const handleChange = (event) => {
+        const selectedId = event.target.value;
+        const selectedOptionObj = elementOption.find(option => option.id === parseInt(selectedId,1));
+        const selectedName = selectedOptionObj ? selectedOptionObj.name : '';
+        setSelected(selectedName);
+    };
+
+    const[erreur,setErreur]=useState(false)
+    const [showToast,setShowToast]=useState(false)
+    const [loading,setLoading]=useState(false)
+    const [validated, setValidated] = useState(false);
+
+    const handleSubmit = (event) => {
+        setLoading(true)
+        event.preventDefault();
+        const form = event.currentTarget;
+        if (form.checkValidity() === false ) {
+            event.stopPropagation();
+            setLoading(false)
+        }else{
+            Newsletter.sendContactToAdmin(nom,mail,comment,selectedOption).then((res)=>{
+                setErreur(!res)
+                setShowToast(true)
+
+            }).catch(()=>{
+                setErreur(true)
+                setShowToast(true)
+            }).finally(()=>{
+                setLoading(false)
+                setNom('')
+                setMail('')
+                setComment('')
+                setSelected('')
+            })
+        }
+        setValidated(true);
+    }
+
     return(
         <>
             <div className="row w-100 my-3 mx-0 p-0">
@@ -36,35 +88,46 @@ const ContatctContainer = () => {
                         <div className="col-lg-7 col-md-10 offset-md-1 offset-lg-0 col-sm-12 d-flex align-items-stretch mb-2">
                             <div ref={elementRef} className={`card h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: 'translateY(-70px)'}}>
                                 <div className="card-body">
-                                    <Form className="row" autoComplete={"off"}>
+                                    <Form noValidate validated={validated} className="row" onSubmit={(e)=>handleSubmit(e)} autoComplete={"off"}>
                                         <Form.Group className="mt-1 mb-2 col-lg-6 col-md-12" controlId="nom">
                                             <Form.Label>Nom *</Form.Label>
-                                            <Form.Control type="text" placeholder="Enter votre nom" />
+                                            <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Enter votre nom" />
+                                            <Form.Control.Feedback type="invalid">
+                                                Champ maquant
+                                            </Form.Control.Feedback>
                                         </Form.Group>
 
                                         <Form.Group className="mb-3 col-lg-6 col-md-12" controlId="mail">
                                             <Form.Label>Email *</Form.Label>
-                                            <Form.Control type="email" placeholder="Entrer votre email" />
+                                            <Form.Control required type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
+                                            <Form.Control.Feedback type="invalid">
+                                                Champ maquant
+                                            </Form.Control.Feedback>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                             <Form.Label>Votre besoin *</Form.Label>
-                                            <Form.Select>
+                                            <Form.Select required  onChange={(e)=>handleChange(e)}>
                                                 <option>Votre besoin concerne....</option>
-                                                <option value="1">Images / Photos</option>
-                                                <option value="2">Vidéos</option>
-                                                <option value="2">Traitements de données </option>
-                                                <option value="2">Web et Marketing</option>
-                                                <option value="2">Comptabilité</option>
-                                                <option value="2">Externalisation administrative</option>
+                                                {
+                                                    elementOption.map(({id,name})=>(
+                                                        <option key={id} value={id} >{name}</option>
+                                                    ))
+                                                }
                                             </Form.Select>
+                                            <Form.Control.Feedback type="invalid">
+                                                Champ maquant
+                                            </Form.Control.Feedback>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                             <Form.Label>Commentaire *</Form.Label>
-                                            <Form.Control as="textarea" aria-rowspan={3} placeholder="A propos  de vos besoins..." />
+                                            <Form.Control required as="textarea" value={comment} onChange={(e)=>setComment(e.target.value)} aria-rowspan={3} placeholder="A propos  de vos besoins..." />
+                                            <Form.Control.Feedback type="invalid">
+                                                Champ maquant
+                                            </Form.Control.Feedback>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
-                                            <Button variant="primary" className="w-100" type="submit">
-                                                Valider
+                                            <Button variant="primary" className="w-100" type={`${loading ? 'button' : 'submit'}`}>
+                                                {loading ? (<Spinner animation="border" variant="secondary" />):("Valider")}
                                             </Button>
                                         </Form.Group>
                                     </Form>
@@ -89,6 +152,17 @@ const ContatctContainer = () => {
                     </div>
                 </div>
             </div>
+
+            <Toast className={`position-fixed ${erreur ? 'bg-danger' : 'bg-success'} bottom-0 end-0`} show={showToast} onClose={()=>setShowToast(false)} delay={5000} autohide>
+                <Toast.Header>
+                    <strong className="me-auto">Message</strong>
+                    <small>Maintenant</small>
+                </Toast.Header>
+                <Toast.Body>
+                    {erreur ? ('Il y a un problème de connexion') : ('Votre information a été bien envoyée auprès du responsable d\'Aris Concept')}
+                </Toast.Body>
+
+            </Toast>
         </>
     )
 }

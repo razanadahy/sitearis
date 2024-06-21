@@ -8,17 +8,18 @@ const Footer = () => {
     const [showToast,setShowToast]=useState(false)
     const [erreur,setErreur]=useState(false)
     const [loading,setLoading]=useState(false)
-    function validMail(mail) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(mail);
-    }
-    function validString(text) {
-        return text.trim().length > 0;
-    }
+
+    const [validated, setValidated] = useState(false);
     const sendNewsletter = (event) => {
         setLoading(true)
         event.preventDefault()
-        if (validMail(mail) && validString(nom)){
+        const form = event.currentTarget;
+        if (form.checkValidity() === false ) {
+            event.stopPropagation();
+            setValidated(true);
+            setLoading(false)
+        } else{
+            setLoading(true)
             Newsletter.sendDataToAdmin(nom,mail).then((res)=>{
                 setErreur(!res)
                 setShowToast(true)
@@ -27,12 +28,11 @@ const Footer = () => {
                 setErreur(true)
                 setShowToast(true)
             }).finally(()=>{
+                setValidated(false);
                 setLoading(false)
                 setNom('')
                 setMail('')
             })
-        }else {
-            setLoading(false)
         }
     }
     return (
@@ -67,15 +67,21 @@ const Footer = () => {
                                         Inscrivez-vous à notre newsletter et recevez par email les dernières tendances du digital.
                                     </div>
                                     <div className="col-lg-7 col-md-10 offset-md-1 col-sm-12">
-                                        <Form autoComplete={"off"} onSubmit={(event)=>sendNewsletter(event)}>
+                                        <Form noValidate validated={validated} autoComplete={"off"} onSubmit={(event)=>sendNewsletter(event)}>
                                             <Form.Group className="mt-1 mb-2" controlId="nom">
                                                 <Form.Label>Nom *</Form.Label>
-                                                <Form.Control type="text" value={nom} onChange={(event)=>setNom(event.target.value)} placeholder="Enter votre nom" />
+                                                <Form.Control required type="text" value={nom} onChange={(event)=>setNom(event.target.value)} placeholder="Enter votre nom" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    Champ maquant
+                                                </Form.Control.Feedback>
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="mail">
                                                 <Form.Label>Email *</Form.Label>
-                                                <Form.Control type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
+                                                <Form.Control required type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    Champ maquant
+                                                </Form.Control.Feedback>
                                             </Form.Group>
 
                                             <Button variant="warning" className="w-100" type={`${loading ? 'button' : 'submit'}`}>

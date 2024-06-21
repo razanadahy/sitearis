@@ -59,7 +59,7 @@ const Header = ({idActive}) => {
                     <div className="col-2">
                         <div className="d-flex align-items-center slideOutToRight">
                             <img src={logo} alt="logo" className="logo-img img-fluid mx-3" />
-                            <h4 className="mb-0 fs-5">
+                            <h4 className="mb-0 fs-5 cursor-pointer">
                                 <span style={{ color: '#D10D58' }}>Aris </span> <span style={{ color: '#0e8de8' }}>Concept</span>
                             </h4>
                         </div>
@@ -113,7 +113,7 @@ const Header = ({idActive}) => {
                         <div className="d-flex justify-content-between align-items-center w-100">
                             <div className="d-flex align-items-center mx-auto">
                                 <img src={logo} alt="logo" className="logo-img img-fluid mx-3 " />
-                                <h4 className="mb-0">
+                                <h4 className="mb-0 cursor-pointer">
                                     <span style={{ color: '#D10D58' }}>Aris </span>
                                     <span style={{ color: '#0e8de8' }}>Concept</span>
                                 </h4>

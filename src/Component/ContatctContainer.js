@@ -53,7 +53,6 @@ const ContatctContainer = () => {
     const [showToast,setShowToast]=useState(false)
     const [loading,setLoading]=useState(false)
     const [validated, setValidated] = useState(false);
-
     const handleSubmit = (event) => {
         setLoading(true)
         event.preventDefault();
@@ -61,8 +60,11 @@ const ContatctContainer = () => {
         if (form.checkValidity() === false ) {
             event.stopPropagation();
             setLoading(false)
+            setValidated(true);
         }else{
-            Newsletter.sendContactToAdmin(nom,mail,comment,selectedOption).then((res)=>{
+            setLoading(true)
+            const option=selectedOption.trim().length===0 ? elementOption[0].name : selectedOption
+            Newsletter.sendContactToAdmin(nom,mail,comment,option).then((res)=>{
                 setErreur(!res)
                 setShowToast(true)
 
@@ -70,6 +72,7 @@ const ContatctContainer = () => {
                 setErreur(true)
                 setShowToast(true)
             }).finally(()=>{
+                setValidated(false);
                 setLoading(false)
                 setNom('')
                 setMail('')
@@ -77,7 +80,6 @@ const ContatctContainer = () => {
                 setSelected('')
             })
         }
-        setValidated(true);
     }
 
     return(
@@ -107,10 +109,9 @@ const ContatctContainer = () => {
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                             <Form.Label>Votre besoin *</Form.Label>
                                             <Form.Select required  onChange={(e)=>handleChange(e)}>
-                                                <option>Votre besoin concerne....</option>
                                                 {
                                                     elementOption.map(({id,name})=>(
-                                                        <option key={id} value={id} >{name}</option>
+                                                        <option className="p-2" key={id} value={id} >{name}</option>
                                                     ))
                                                 }
                                             </Form.Select>

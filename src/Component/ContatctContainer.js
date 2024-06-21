@@ -94,17 +94,10 @@ const ContatctContainer = () => {
                                         <Form.Group className="mt-1 mb-2 col-lg-6 col-md-12" controlId="nom">
                                             <Form.Label>Nom *</Form.Label>
                                             <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Enter votre nom" />
-                                            <Form.Control.Feedback type="invalid">
-                                                Champ maquant
-                                            </Form.Control.Feedback>
                                         </Form.Group>
-
                                         <Form.Group className="mb-3 col-lg-6 col-md-12" controlId="mail">
                                             <Form.Label>Email *</Form.Label>
                                             <Form.Control required type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
-                                            <Form.Control.Feedback type="invalid">
-                                                Champ maquant
-                                            </Form.Control.Feedback>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                             <Form.Label>Votre besoin *</Form.Label>
@@ -115,16 +108,10 @@ const ContatctContainer = () => {
                                                     ))
                                                 }
                                             </Form.Select>
-                                            <Form.Control.Feedback type="invalid">
-                                                Champ maquant
-                                            </Form.Control.Feedback>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                             <Form.Label>Commentaire *</Form.Label>
                                             <Form.Control required as="textarea" value={comment} onChange={(e)=>setComment(e.target.value)} aria-rowspan={3} placeholder="A propos  de vos besoins..." />
-                                            <Form.Control.Feedback type="invalid">
-                                                Champ maquant
-                                            </Form.Control.Feedback>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
                                             <Button variant="primary" className="w-100" type={`${loading ? 'button' : 'submit'}`}>

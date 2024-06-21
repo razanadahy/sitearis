@@ -71,17 +71,11 @@ const Footer = () => {
                                             <Form.Group className="mt-1 mb-2" controlId="nom">
                                                 <Form.Label>Nom *</Form.Label>
                                                 <Form.Control required type="text" value={nom} onChange={(event)=>setNom(event.target.value)} placeholder="Enter votre nom" />
-                                                <Form.Control.Feedback type="invalid">
-                                                    Champ maquant
-                                                </Form.Control.Feedback>
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="mail">
                                                 <Form.Label>Email *</Form.Label>
                                                 <Form.Control required type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
-                                                <Form.Control.Feedback type="invalid">
-                                                    Champ maquant
-                                                </Form.Control.Feedback>
                                             </Form.Group>
 
                                             <Button variant="warning" className="w-100" type={`${loading ? 'button' : 'submit'}`}>

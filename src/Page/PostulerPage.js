@@ -4,6 +4,7 @@ import {useLocation} from "react-router-dom";
 import InfoPostule from "../Component/InfoPostule";
 import Footer from "../Component/Footer";
 import OffreEmploye from "../Component/OffreEmploye";
+import CandidatureSpontane from "../Component/CandidatureSpontane";
 
 const PostulerPage = () => {
     const location = useLocation();
@@ -19,6 +20,7 @@ const PostulerPage = () => {
             <Header idActive={4}/>
             <InfoPostule/>
             <OffreEmploye/>
+            <CandidatureSpontane/>
             <Footer/>
         </>
     )

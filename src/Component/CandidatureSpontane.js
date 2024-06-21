@@ -17,11 +17,11 @@ const CandidatureSpontane = () => {
         <>
             <div className="row my-3 mx-0 p-5 bg-edit-2 bg-opacity-25">
                 <div className="card border-0 m-auto">
-                   <div className="row m-4 p-0">
+                   <div className="row m-md-4 m-sm-0 p-0">
                        <h3 className="mb-3">
                            Formulaire pour la candidature spontanée
                        </h3>
-                       <Form className="p-3 m-md-3" noValidate validated={validated} autoComplete={"off"} onSubmit={handleSubmit}>
+                       <Form className="p-md-3 p-sm-2 m-md-3" noValidate validated={validated} autoComplete={"off"} onSubmit={handleSubmit}>
                            <Row className="mb-3">
                                <Form.Group as={Col} lg="4" md="6" sm="12" className="mb-3">
                                    <Form.Label>Nom * </Form.Label>

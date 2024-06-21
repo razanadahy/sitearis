@@ -48,8 +48,10 @@ const Header = ({idActive}) => {
         handleClose()
         history('/');
     };
-
-
+    const postulePage = () => {
+        handleClose()
+        history('/postule-employe');
+    };
 
 
     return (
@@ -104,7 +106,7 @@ const Header = ({idActive}) => {
                         </div>
                     </div>
                     <div className={`col-1 p-1 pt-0 pb-0 slideInFromLeft d-flex align-items-end`}>
-                        <button type="button" className="btn bg-mi-dark-blue text-white fs-5"><span className="p-2">Postuler</span></button>
+                        <button type="button" className={`btn bg-mi-dark-blue text-white fs-5 ${idActive===4 ? 'active' : ''}`} onClick={postulePage}><span className="p-2">Postuler</span></button>
                     </div>
                 </div>
             ) : (
@@ -172,7 +174,7 @@ const Header = ({idActive}) => {
                             </div>
                         </Modal.Body>
                         <Modal.Footer className="bg-black">
-                            <button type="button" className="w-100 btn btn-warning btn-lg text-white blinking-button">Postuler</button>
+                            <button type="button" className={`w-100 btn btn-warning btn-lg text-white ${idActive!==4 ? 'blinking-button' : ''}`} onClick={postulePage}>Postuler</button>
                         </Modal.Footer>
                     </Modal>
                 </>

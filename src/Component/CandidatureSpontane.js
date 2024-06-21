@@ -92,7 +92,6 @@ const CandidatureSpontane = () => {
                        </Form>
                    </div>
                 </div>
-
             </div>
         </>
     )

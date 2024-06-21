@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from "react-bootstrap";
 
-const PostuleElement = ({domaine,titre}) => {
+const PostuleElement = ({domaine,titre, infoClick,postuleClick}) => {
     return (
         <div className="card h-100 shadow-lg cursor-pointer rounded-4 mx-auto w-100">
             <div className="card-title mb-0 bg-success-subtle rounded-4 rounded-bottom-0">
@@ -12,10 +12,10 @@ const PostuleElement = ({domaine,titre}) => {
             </div>
             <div className="row card-footer border-0 bg-body rounded-top-0 rounded-bottom-4 w-100 m-0 p-2">
                 <div className="col-6">
-                    <Button variant="outline-light" className="w-100 text-info">Plus d'info</Button>
+                    <Button variant="outline-light" className="w-100 text-info" onClick={infoClick}>Plus d'info</Button>
                 </div>
                 <div className="col-6">
-                    <Button variant="outline-success" className="w-100">Postuler</Button>
+                    <Button variant="outline-success" className="w-100" onClick={postuleClick}>Postuler</Button>
                 </div>
             </div>
         </div>

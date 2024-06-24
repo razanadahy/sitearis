@@ -79,7 +79,7 @@ const Footer = () => {
                                             </Form.Group>
 
                                             <Button variant="warning" className="w-100" type={`${loading ? 'button' : 'submit'}`}>
-                                                {loading ? (<Spinner animation="border" variant="secondary" />):("Valider")}
+                                                {loading ? (<Spinner animation="border" size={"sm"} variant="secondary" />):("Valider")}
                                             </Button>
                                         </Form>
                                     </div>

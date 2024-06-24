@@ -47,6 +47,7 @@ const CandidatureSpontane = () => {
                                            type="email"
                                            placeholder="Votre email"
                                            aria-describedby="inputGroupPrepend"
+                                           className="z-1"
                                            required
                                        />
                                    </InputGroup>

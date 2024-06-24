@@ -115,7 +115,7 @@ const ContatctContainer = () => {
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
                                             <Button variant="primary" className="w-100" type={`${loading ? 'button' : 'submit'}`}>
-                                                {loading ? (<Spinner animation="border" variant="secondary" />):("Valider")}
+                                                {loading ? (<Spinner animation="border" size="sm" variant="secondary" />):("Valider")}
                                             </Button>
                                         </Form.Group>
                                     </Form>

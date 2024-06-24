@@ -1,4 +1,3 @@
-import './App.css';
 import React from "react";
 import Acceuil from "./Page/Acceuil";
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";

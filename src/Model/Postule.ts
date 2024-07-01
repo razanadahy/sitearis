@@ -17,14 +17,20 @@ export default class Postule {
         this.lm = lm;
         this.cv = cv;
     }
-    static async sendCandidat(candidat,idOffre) {
-        const response = await fetch(BaseURL() + "offre/candidat/"+idOffre, {
+
+    static async sendCandidat(candidat, idOffre) {
+        const formData = new FormData();
+        formData.append('id', candidat.id.toString());
+        formData.append('nom', candidat.nom);
+        formData.append('prenom', candidat.prenom);
+        formData.append('email', candidat.email);
+        formData.append('lm', candidat.lm);
+        formData.append('cv', candidat.cv);
+
+        const response = await fetch(BaseURL() + "offre/candidat/" + idOffre, {
             method: 'post',
-            headers: {
-                "Content-Type": 'application/json'
-            },
-            body: JSON.stringify(candidat)
-        })
+            body: formData
+        });
         return response.ok;
     }
 }

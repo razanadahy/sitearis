@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import PostuleElement from "./PostuleElement";
 import {Button, Col, Form, Modal, Row} from "react-bootstrap";
 import ElementOffre from "../Model/ElementOffre.ts";
+import Postule from "../Model/Postule.ts";
 
 const OffreEmploye = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -24,11 +25,21 @@ const OffreEmploye = () => {
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-            event.preventDefault();
             event.stopPropagation();
             setValidated(true);
+        }else{
+            const candidat = new Postule(-76, nom, prenom, email, lm, cv);
+            Postule.sendCandidat(candidat, elementActive.offre.id).then((res)=>{
+                if (res){
+                    console.log("mety be....")
+                    // confirm("mety eh")
+                }else{
+                    alert('Candidat envoyé avec succès!');
+                }
+            });
         }
     };
 
@@ -42,6 +53,14 @@ const OffreEmploye = () => {
             setLoad(false)
         })
     },[])
+
+    const [nom, setNom] = useState('');
+    const [prenom, setPrenom] = useState('');
+    const [email, setEmail] = useState('');
+    const [lm, setLm] = useState('');
+    const [cv, setCv] = useState(null);
+
+
     return (
         <>
             <div className="row m-0 p-4 w-100">
@@ -140,7 +159,7 @@ const OffreEmploye = () => {
                 backdrop="static"
             >
                 <Modal.Header closeButton>
-                    <Modal.Title className="color-aris text-capitalise">
+                    <Modal.Title className="color-aris text-capitalize">
                         {elementActive?.offre.titre}
                     </Modal.Title>
                 </Modal.Header>
@@ -154,6 +173,7 @@ const OffreEmploye = () => {
                                     placeholder="Entrez votre nom"
                                     autoFocus
                                     required
+                                    value={nom} onChange={(e) => setNom(e.target.value)}
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3" as={Col} md="6" sm="12">
@@ -162,6 +182,7 @@ const OffreEmploye = () => {
                                     type="text"
                                     placeholder="Entrez votre prénom"
                                     required
+                                    value={prenom} onChange={(e) => setPrenom(e.target.value)}
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3" as={Col} md="6" sm="12" >
@@ -170,6 +191,7 @@ const OffreEmploye = () => {
                                     type="email"
                                     placeholder="Entrez votre email"
                                     required
+                                    value={email} onChange={(e) => setEmail(e.target.value)}
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3" as={Col} md="6" sm="12" >
@@ -178,11 +200,12 @@ const OffreEmploye = () => {
                                     type="file"
                                     accept=".pdf, .jpg, .jpeg, .png, .gif"
                                     required
+                                    onChange={(e) => setCv(e.target.files[0])}
                                 />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>Message * </Form.Label>
-                                <Form.Control as="textarea" placeholder="Lettre de motivation" rows={3} required />
+                                <Form.Control  onChange={(e) => setLm(e.target.value)} as="textarea" placeholder="Lettre de motivation" rows={3} required />
                             </Form.Group>
                         </Row>
                     </Modal.Body>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import PostuleElement from "./PostuleElement";
-import {Button, Col, Form, Modal, Row} from "react-bootstrap";
+import {Button, Col, Form, Modal, Row, Spinner} from "react-bootstrap";
 import ElementOffre from "../Model/ElementOffre.ts";
 import Postule from "../Model/Postule.ts";
 
@@ -10,6 +10,12 @@ const OffreEmploye = () => {
     const [load,setLoad]=useState(false)
     const [erreur,setErreur]=useState(false)
     const [elementActive,setElementActive]=useState(null)
+    const [loadP,setLoadP]=useState(false)
+    const [nom, setNom] = useState('');
+    const [prenom, setPrenom] = useState('');
+    const [email, setEmail] = useState('');
+    const [lm, setLm] = useState('');
+    const [cv, setCv] = useState(null);
     const infoClicked = (id) => {
         setShowPostule(false)
         setElementActive(()=>offres.find((elem)=>elem.offre.id===id))
@@ -31,14 +37,22 @@ const OffreEmploye = () => {
             event.stopPropagation();
             setValidated(true);
         }else{
+            setLoadP(true)
             const candidat = new Postule(-76, nom, prenom, email, lm, cv);
             Postule.sendCandidat(candidat, elementActive.offre.id).then((res)=>{
                 if (res){
-                    console.log("mety be....")
-                    // confirm("mety eh")
-                }else{
                     alert('Candidat envoyé avec succès!');
+                    setShowPostule(false)
+                }else{
+                    alert('Verifier, il y a un problème!');
                 }
+            }).finally(()=>{
+                setNom('')
+                setPrenom('')
+                setEmail('')
+                setLm('')
+                setCv(null)
+                setLoadP(false)
             });
         }
     };
@@ -53,13 +67,6 @@ const OffreEmploye = () => {
             setLoad(false)
         })
     },[])
-
-    const [nom, setNom] = useState('');
-    const [prenom, setPrenom] = useState('');
-    const [email, setEmail] = useState('');
-    const [lm, setLm] = useState('');
-    const [cv, setCv] = useState(null);
-
 
     return (
         <>
@@ -215,7 +222,9 @@ const OffreEmploye = () => {
                                 <Button onClick={()=>setShowPostule(false)} variant="danger" className="w-100">Annuler</Button>
                             </div>
                             <div className="col-6 p-2">
-                                <Button type="submit" className="w-100">Postuler</Button>
+                                <Button  className="w-100" type={`${loadP ? 'button' : 'submit'}`}>
+                                    {loadP ? (<Spinner animation="border" size={"sm"} variant="secondary" />):("Postuler")}
+                                </Button>
                             </div>
                         </div>
                     </Modal.Footer>

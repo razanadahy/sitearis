@@ -1,16 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import PostuleElement from "./PostuleElement";
 import {Button, Col, Form, Modal, Row} from "react-bootstrap";
+import ElementOffre from "../Model/ElementOffre.ts";
 
 const OffreEmploye = () => {
     const [modalShow, setModalShow] = useState(false);
+    const [offres,setOffres]=useState([])
+    const [load,setLoad]=useState(false)
+    const [erreur,setErreur]=useState(false)
+    const [elementActive,setElementActive]=useState(null)
     const infoClicked = (id) => {
         setShowPostule(false)
+        setElementActive(()=>offres.find((elem)=>elem.offre.id===id))
         setModalShow(true)
     }
     const [showPostule,setShowPostule]=useState(false)
     const postuleClicked = (id) => {
         setModalShow(false)
+        setElementActive(()=>offres.find((elem)=>elem.offre.id===id))
         setShowPostule(true)
     }
 
@@ -21,24 +28,45 @@ const OffreEmploye = () => {
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+            setValidated(true);
         }
-
-        setValidated(true);
     };
+
+    useEffect(()=>{
+        setLoad(true)
+        ElementOffre.getAllOffre().then((resp)=>{
+            setOffres(resp)
+        }).catch(()=>{
+            setErreur(true)
+        }).finally(()=>{
+            setLoad(false)
+        })
+    },[])
     return (
         <>
             <div className="row m-0 p-4 w-100">
                 <div className="card border-0 pt-3">
                     <div className="row m-0 p-0">
-                        <div className="col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 d-flex align-items-stretch mb-3">
-                            <PostuleElement postuleClick={()=>postuleClicked(1)} infoClick={()=>infoClicked(1)} domaine={"programation"} titre={"Traitement d\'image"}/>
-                        </div>
-                        <div className="col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 d-flex align-items-stretch mb-3">
-                            <PostuleElement postuleClick={()=>postuleClicked(2)} infoClick={()=>infoClicked(2)} domaine={"programation"} titre={"Traitement d\'image"}/>
-                        </div>
-                        <div className="col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 d-flex align-items-stretch mb-3">
-                            <PostuleElement postuleClick={()=>postuleClicked(3)} infoClick={()=>infoClicked(3)} domaine={"programation"} titre={"Traitement d\'image"}/>
-                        </div>
+                        {!erreur && load ? (
+                            <>
+                                <div className="container m-0">
+                                    <div className="placeholder-glow">
+                                        <span className="placeholder col-12 rounded-2"/>
+                                    </div>
+                                    <div className="placeholder-glow">
+                                        <span className="placeholder col-12 rounded-2"/>
+                                    </div>
+                                    <div className="placeholder-glow">
+                                        <span className="placeholder col-12 rounded-2"/>
+                                    </div>
+                                </div>
+                            </>
+                        ):offres.map((lisOffre)=>(
+                            <div key={lisOffre.offre.id} className="col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 d-flex align-items-stretch mb-3">
+                                <PostuleElement postuleClick={()=>postuleClicked(lisOffre.offre.id)} infoClick={()=>infoClicked(lisOffre.offre.id)} domaine={lisOffre.offre.domaine} titre={lisOffre.offre.titre}/>
+                            </div>
+                        ))}
+
                     </div>
                 </div>
             </div>
@@ -52,43 +80,41 @@ const OffreEmploye = () => {
                 fullscreen={"lg-down"}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title className="color-aris">
-                        Programmation
+                    <Modal.Title className="color-aris text-uppercase small">
+                        {elementActive?.offre.domaine}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="row p-0 mt-0 mb-2 mx-0">
                         <h4 className="text-uppercase mb-2 color-concept">DESCRIPTION</h4>
-                        <p className="fw-bolder">Nous cherchons un responsable RH</p>
+                        <p className="fw-bolder">{elementActive?.offre.description}</p>
                     </div>
                     <div className="row p-0 mt-0 mb-2 mx-0">
                         <h4 className="text-uppercase mb-2 color-concept">Profil recherché</h4>
-                        <p className="fw-bolder">Expérience 3 ans minimum</p>
+                        <p className="fw-bolder">{elementActive?.offre.profil}</p>
                     </div>
                     <div className="row p-0 mt-0 mb-2 mx-0">
-                        <h4 className="text-uppercase mb-2 color-concept">Vos mission:</h4>
+                        <h4 className="text-uppercase mb-2 color-concept">Vos missions:</h4>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Concevoir, développer et déployer des sites e-commerce sur Magento (80%)</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Participer à l'optimisation des performances et à l'amélioration continue des sites existants</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Assurer la compatibilité multiplateforme et la réactivité des sites développés</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>An item</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>An item</li>
+                            {elementActive?.mission.map((element)=>(
+                                <li key={element.id} className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>{element.text}</li>
+                            ))}
                         </ul>
                     </div>
                     <div className="row p-0 mt-0 mb-2 mx-0">
                         <h4 className="text-uppercase mb-2 color-concept">COMPÉTENCES TECHNIQUES :</h4>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Concevoir, développer et déployer des sites e-commerce sur Magento (80%)</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Participer à l'optimisation des performances et à l'amélioration continue des sites existants</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Assurer la compatibilité multiplateforme et la réactivité des sites développés</li>
+                            {elementActive?.competence.map((element)=>(
+                                <li key={element.id} className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>{element.text}</li>
+                            ))}
                         </ul>
                     </div>
                     <div className="row p-0 mt-0 mb-2 mx-0">
                         <h4 className="text-uppercase mb-2 color-concept">QUALITÉS REQUISES :</h4>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Concevoir, développer et déployer des sites e-commerce sur Magento (80%)</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Participer à l'optimisation des performances et à l'amélioration continue des sites existants</li>
-                            <li className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>Assurer la compatibilité multiplateforme et la réactivité des sites développés</li>
+                            {elementActive?.qualite.map((element)=>(
+                                <li key={element.id} className="list-group-item"><i className="fa-regular fa-circle-dot pe-2 color-aris"/>{element.text}</li>
+                            ))}
                         </ul>
                     </div>
                 </Modal.Body>
@@ -98,7 +124,7 @@ const OffreEmploye = () => {
                             <Button variant="warning" onClick={()=>setModalShow(false)} className="w-100">Fermer</Button>
                         </div>
                         <div className="col-6 p-2">
-                            <Button onClick={postuleClicked} className="w-100">Postuler</Button>
+                            <Button onClick={()=>postuleClicked(elementActive?.offre.id)} className="w-100">Postuler</Button>
                         </div>
                     </div>
                 </Modal.Footer>
@@ -114,8 +140,8 @@ const OffreEmploye = () => {
                 backdrop="static"
             >
                 <Modal.Header closeButton>
-                    <Modal.Title className="color-aris">
-                        Traitement d'image
+                    <Modal.Title className="color-aris text-capitalise">
+                        {elementActive?.offre.titre}
                     </Modal.Title>
                 </Modal.Header>
                 <Form noValidate validated={validated} autoComplete={"off"} onSubmit={handleSubmit}>

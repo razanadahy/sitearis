@@ -187,3 +187,18 @@ html {
 .color-semi-purpule{
     color: #a169b4 !important;
 }
+
+.block-initial{
+    clip-path: polygon(0% 0%, 100% 0%, 87% 100%, 0% 100%);
+}
+.block-child{
+    transform: translateX(-40%);
+    clip-path: polygon(40% 0%, 100% 0%, 60% 100%, 0% 100%);
+}
+.block-child-1{
+    transform: translateX(-40%);
+    clip-path: polygon(50% 0%, 100% 0%, 60% 100%, 0% 100%);
+}
+.bg-aris{
+    background: linear-gradient(40deg, #D10D58, #1171ef) !important;
+}

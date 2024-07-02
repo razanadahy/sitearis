@@ -1,17 +1,51 @@
 import React, {useState} from "react";
-import {Button, Col, Form, InputGroup, Row} from "react-bootstrap";
+import {Button, Col, Form, InputGroup, Row, Spinner} from "react-bootstrap";
+import CDSpontaneM from "../Model/CDSpontaneM.ts";
 
 const CandidatureSpontane = () => {
+
+    const [load,setLoad]=useState(false)
+    const [erreur,setErreur]=useState(false)
+    const [nom,setNom]=useState('')
+    const [prenom,setPrenom]=useState('')
+    const [titre,setTitre]=useState('')
+    const [telephone,setTel]=useState('')
+    const [email,setEmail]=useState('')
+    const [lm,setLm]=useState('')
+    const [cv,setCv]=useState(null)
+
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
+        event.preventDefault();
         if (form.checkValidity() === false) {
-            event.preventDefault();
             event.stopPropagation();
+            setValidated(true);
+        }else {
+            setValidated(false);
+            setLoad(true)
+            const candidat = new CDSpontaneM(-76, titre,nom, prenom, email, telephone,"", lm,cv);
+            CDSpontaneM.sendCandidat(candidat).then((res)=>{
+                if (res){
+                    alert('Candidat envoyé avec succès!');
+                }else{
+                    alert('Verifier, il y a un problème! Le fichier est trop grand');
+                }
+            }).catch((er)=>{
+                console.log(er)
+            }).finally(()=>{
+                setNom('')
+                setPrenom('')
+                setTitre('')
+                setEmail('')
+                setLm('')
+                setTel('')
+                setCv(null)
+                setLoad(false)
+            });
         }
 
-        setValidated(true);
     };
     return (
         <>
@@ -29,6 +63,8 @@ const CandidatureSpontane = () => {
                                        required
                                        type="text"
                                        placeholder="Votre nom"
+                                       value={nom}
+                                       onChange={(e)=>setNom(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group as={Col} lg="4" md="6" sm="12" className="mb-3">
@@ -37,6 +73,8 @@ const CandidatureSpontane = () => {
                                        required
                                        type="text"
                                        placeholder="Votre prénom"
+                                       value={prenom}
+                                       onChange={(e)=>setPrenom(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group as={Col} lg="4" md="6" sm="12" className="mb-3">
@@ -48,6 +86,8 @@ const CandidatureSpontane = () => {
                                            placeholder="Votre email"
                                            aria-describedby="inputGroupPrepend"
                                            className="z-1"
+                                           value={email}
+                                           onChange={(e)=>setEmail(e.target.value)}
                                            required
                                        />
                                    </InputGroup>
@@ -58,6 +98,8 @@ const CandidatureSpontane = () => {
                                        required
                                        type="text"
                                        placeholder="Entrez votre numéro téléphone"
+                                       value={telephone}
+                                       onChange={(e)=>setTel(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group as={Col} lg="6" md="6" sm="12" className="mb-3">
@@ -66,6 +108,8 @@ const CandidatureSpontane = () => {
                                        required
                                        type="text"
                                        placeholder="Entrez le titre de l'emploi"
+                                       value={titre}
+                                       onChange={(e)=>setTitre(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group className="mb-3" as={Col} lg="12" md="6" sm="12">
@@ -75,11 +119,12 @@ const CandidatureSpontane = () => {
                                        required
                                        name="file"
                                        accept=".pdf, .jpg, .jpeg, .png, .gif"
+                                       onChange={(e) => setCv(e.target.files[0])}
                                    />
                                </Form.Group>
                                <Form.Group className="mb-3 col-12" controlId="besoin">
                                    <Form.Label>Message *</Form.Label>
-                                   <Form.Control required as="textarea" aria-rowspan={3} placeholder="Lettre de motivation..." />
+                                   <Form.Control value={lm} onChange={(e) => setLm(e.target.value)}  required as="textarea" aria-rowspan={3} placeholder="Lettre de motivation..." />
                                </Form.Group>
                            </Row>
                            <div className="row m-0 p-0 w-100">
@@ -87,7 +132,9 @@ const CandidatureSpontane = () => {
                                    <Button className="w-100" variant="danger" type="reset">annuler</Button>
                                </div>
                                <div className="col-md-6 col-sm-12">
-                                   <Button className="w-100" type="submit">Valider</Button>
+                                   <Button  className="w-100" type={`${load ? 'button' : 'submit'}`}>
+                                       {load ? (<Spinner animation="border" size={"sm"} variant="secondary" />):("Postuler")}
+                                   </Button>
                                </div>
                            </div>
                        </Form>

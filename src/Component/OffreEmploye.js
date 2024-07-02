@@ -44,8 +44,10 @@ const OffreEmploye = () => {
                     alert('Candidat envoyé avec succès!');
                     setShowPostule(false)
                 }else{
-                    alert('Verifier, il y a un problème!');
+                    alert('Verifier, il y a un problème! Le fichier est trop grand');
                 }
+            }).catch((er)=>{
+                console.log(er)
             }).finally(()=>{
                 setNom('')
                 setPrenom('')
@@ -212,7 +214,7 @@ const OffreEmploye = () => {
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>Message * </Form.Label>
-                                <Form.Control  onChange={(e) => setLm(e.target.value)} as="textarea" placeholder="Lettre de motivation" rows={3} required />
+                                <Form.Control value={lm} onChange={(e) => setLm(e.target.value)} as="textarea" placeholder="Lettre de motivation" rows={3} required />
                             </Form.Group>
                         </Row>
                     </Modal.Body>

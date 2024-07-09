@@ -3,15 +3,9 @@
   "name": "Aris",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "logoA.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
-    },
-
-    {
-      "src": "logoA.png",
-      "type": "image/png",
-      "sizes": "30x40"
     }
   ],
   "start_url": ".",

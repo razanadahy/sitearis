@@ -59,7 +59,7 @@ const Header = ({idActive}) => {
             {isMediumOrLarger ? (
                 <div id={"header"} className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-3 position-fixed top-0 z-3 w-100 text-center font-ramona ${hasShadow ? 'shadow' : ''}`}>
                     <div className="col-2">
-                        <div className="d-flex align-items-center slideOutToRight">
+                        <div onClick={homePage} className="d-flex align-items-center slideOutToRight">
                             <img src={logo} alt="logo" className="logo-img img-fluid mx-3" />
                             <h4 className="mb-0 fs-5 cursor-pointer">
                                 <span style={{ color: '#D10D58' }}>Aris </span> <span style={{ color: '#0e8de8' }}>Concept</span>
@@ -113,7 +113,7 @@ const Header = ({idActive}) => {
                 <>
                     <div className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-2 position-fixed top-0 z-3 w-100 text-center font-ramona ${hasShadow ? 'shadow' : ''}`}>
                         <div className="d-flex justify-content-between align-items-center w-100">
-                            <div className="d-flex align-items-center mx-auto">
+                            <div onClick={homePage} className="d-flex align-items-center mx-auto">
                                 <img src={logo} alt="logo" className="logo-img img-fluid mx-3 " />
                                 <h4 className="mb-0 cursor-pointer">
                                     <span style={{ color: '#D10D58' }}>Aris </span>

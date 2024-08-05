@@ -102,7 +102,7 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li className="list-inline-item p-2 rounded-circle  w-h-30 border d-inline-flex  justify-content-center align-items-center">
-                                <a href="https://www.linkedin.com/in/aris-concept-567703240" target="_blank" rel="noreferrer">
+                                <a href="https://www.linkedin.com/in/aris-concept-company-567703240" target="_blank" rel="noreferrer">
                                     <i className="fa-brands fa-linkedin-in"/>
                                 </a>
                             </li>

@@ -10,7 +10,7 @@ const InfoPostule = () => {
                         Envie de booster votre carrière avec nous ?
                     </h1>
                     <p className="fs-5 p-3 m-0 me-2 preAnimation fst-italic font-consolas ">
-                        Suivez-nous sur <a className="p-0 m-0" href="https://www.linkedin.com/in/aris-concept-567703240" target="_blank" rel="noreferrer">LinkedIn</a> pour les dernières opportunités d’emploi !
+                        Suivez-nous sur <a className="p-0 m-0" href="https://www.linkedin.com/in/aris-concept-company-567703240" target="_blank" rel="noreferrer">LinkedIn</a> pour les dernières opportunités d’emploi !
                     </p>
                 </div>
             </div>

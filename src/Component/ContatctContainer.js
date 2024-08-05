@@ -149,7 +149,6 @@ const ContatctContainer = () => {
                 <Toast.Body>
                     {erreur ? ('Il y a un problème de connexion') : ('Votre information a été bien envoyée auprès du responsable d\'Aris Concept')}
                 </Toast.Body>
-
             </Toast>
         </>
     )

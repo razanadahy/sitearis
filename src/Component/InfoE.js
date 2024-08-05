@@ -44,7 +44,7 @@ const InfoE = () => {
             <br/>
             <div className="col-lg-9 col-md-11 mt-5 p-6 pb-5 offset-lg-1 offset-md-1 col-sm-12">
                 <h1 className="slideOutToRight font-ramona fs-2 p-sm-2">
-                    <span style={{ color: '#D10D58' }}>ARIS </span> <span style={{ color: '#0e8de8' }}>CONCEPT</span> est une entreprise créée et enregistrée au registre du commerce de Madagascar en 2022, née d'une véritable passion pour le traitement des données informatiques.
+                    <span style={{ color: '#D10D58' }}>ARIS </span> <span style={{ color: '#0e8de8' }}>CONCEPT</span> est une entreprise enregistrée au registre du commerce de Madagascar en 2022, née d'une véritable passion pour le traitement des données informatiques.
                 </h1>
                 <p className="fs-5 p-3 m-0 me-2 preAnimation fst-italic font-consolas border bg-edit rounded-3">
                     {displayedText}

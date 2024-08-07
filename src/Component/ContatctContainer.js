@@ -81,7 +81,11 @@ const ContatctContainer = () => {
             })
         }
     }
-
+    const handleClick = (e) => {
+        e.preventDefault();
+        const mailtoUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${'contact@aris-cc.com'}`;
+        window.open(mailtoUrl, '_blank');
+    };
     return(
         <>
             <div className="row w-100 my-3 mx-0 p-0">
@@ -127,12 +131,17 @@ const ContatctContainer = () => {
                                 <div className="card-body">
                                     <h4 className="text-uppercase text-center text-primary-emphasis">Notre adresse</h4>
                                     <ul className="list-inline d-md-block d-sm-flex align-items-sm-center flex-sm-column">
+                                        <DisplayLi color={'color-red'} icon={'fa-location-dot'} emplacement={0}>
+                                            <span className="ms-2 text-light-emphasis">Lot II T 104 A Iavoloha, Antananarivo 102</span>
+                                        </DisplayLi>
 
-                                        <DisplayLi color={'color-red'} icon={'fa-location-dot'} emplacement={0} title={'Lot II T 104 A Iavoloha, Antananarivo 102'}/>
-
-                                        <DisplayLi color={'color-semi-purpule'} icon={'fa-phone'} emplacement={1} title={'+261 38 53 405 34'}/>
+                                        <DisplayLi color={'color-semi-purpule'} icon={'fa-phone'} emplacement={1} >
+                                            <span className="ms-2 text-light-emphasis">+261 38 53 405 34</span>
+                                        </DisplayLi>
                                        
-                                        <DisplayLi color={'color-cyan'} icon={'fa-envelope'} emplacement={2} title={'contact@aris-cc.com'}/>
+                                        <DisplayLi color={'color-cyan'} icon={'fa-envelope'} emplacement={2} title={'contact@aris-cc.com'}>
+                                            <a  href={`mailto:${'contact@aris-cc.com'}`} onClick={handleClick} className="ms-2 text-decoration-none fs-6 text-light-emphasis">contact@aris-cc.com</a>
+                                        </DisplayLi>
                                     </ul>
                                 </div>
                             </div>

@@ -35,26 +35,46 @@ const Footer = () => {
             })
         }
     }
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        const mailtoUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${'contact@aris-cc.com'}`;
+        window.open(mailtoUrl, '_blank');
+    };
     return (
         <>
             <div className="row mx-0 mt-4 mb-0 p-2 w-100 bg-dark-blue">
                 <div className="row p-0 mt-3 mb-0 mx-0">
-                    <div className="col-xl-4 col-lg-5 col-md-6 col-sm-12 rounded-2 p-3 bg-mi-blue text-white" style={{transform: 'translateY(-50px)'}}>
-                        <h2 className="text-center pb-3">Contactez-nous</h2>
-                        <ul className="list-inline d-md-block d-sm-flex align-items-sm-center flex-sm-column">
-                            <li className="list-inline-item p-2 rounded-2 d-flex align-items-center cursor-pointer">
-                                <i className="fa-solid fa-location-dot fa-2x"/>
-                                <span className="ms-2">Lot II T 104 A Iavoloha, Antananarivo 102</span>
-                            </li>
-                            <li className="list-inline-item p-2 rounded-2 d-flex align-items-center cursor-pointer">
-                                <i className="fa-solid fa-phone fa-2x"/>
-                                <h5 className="ms-2">+261 38 53 405 34</h5>
-                            </li>
-                            <li className="list-inline-item p-2 rounded-2 d-flex align-items-center cursor-pointer">
-                                <i className="fa-solid fa-envelope fa-2x"/>
-                                <h5 className="ms-2">contact@aris-cc.com</h5>
-                            </li>
-                        </ul>
+                    <div className="col-xl-4 col-lg-5 col-md-6 col-sm-12 p-0 text-white" style={{transform: 'translateY(-50px)'}}>
+                        <div className="m-0 p-3 w-100 h-auto bg-mi-blue rounded-3">
+                            <h2 className="text-center pb-3">Contactez-nous</h2>
+                            <ul className="list-inline d-md-block d-sm-flex align-items-sm-center flex-sm-column mb-0">
+                                <li className="list-inline-item p-2 rounded-2 d-flex align-items-stretch cursor-pointer" style={{ height: '50px' }}>
+                                    <div className="h-100 d-flex align-items-center flex-shrink-0">
+                                        <i className="fa-solid fa-location-dot fa-2x"/>
+                                    </div>
+                                    <div className="h-100 d-flex align-items-center flex-grow-1">
+                                        <span className="ms-2">Lot II T 104 A Iavoloha, Antananarivo 102</span>
+                                    </div>
+                                </li>
+                                <li className="list-inline-item p-2 rounded-2 d-flex align-items-stretch cursor-pointer" style={{ height: '50px' }}>
+                                    <div className="h-100 d-flex align-items-center flex-shrink-0" style={{height: '100%'}}>
+                                        <i className="fa-solid fa-phone fa-2x"/>
+                                    </div>
+                                    <div className="h-100 d-flex align-items-center flex-grow-1" style={{height: '100%'}}>
+                                        <h5 className="ms-2 my-auto">+261 38 53 405 34</h5>
+                                    </div>
+                                </li>
+                                <li className="list-inline-item p-2 rounded-2 d-flex align-items-stretch cursor-pointer" style={{ height: '50px' }}>
+                                    <div className="h-100 d-flex align-items-center flex-shrink-0 ">
+                                        <i className="fa-solid fa-envelope fa-2x"/>
+                                    </div>
+                                    <div className="h-100 d-flex align-items-center flex-grow-1">
+                                        <a  href={`mailto:${'contact@aris-cc.com'}`} onClick={handleClick} className="ms-2 email-link">contact@aris-cc.com</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className="col-xl-8 col-lg-7 col-md-6 col-sm-12">
                         <div className="container text-white">

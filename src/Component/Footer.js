@@ -52,7 +52,7 @@ const Footer = () => {
                             </li>
                             <li className="list-inline-item p-2 rounded-2 d-flex align-items-center cursor-pointer">
                                 <i className="fa-solid fa-envelope fa-2x"/>
-                                <h5 className="ms-2">arisconcept.company@gmail.com</h5>
+                                <h5 className="ms-2">contact@aris-cc.com</h5>
                             </li>
                         </ul>
                     </div>

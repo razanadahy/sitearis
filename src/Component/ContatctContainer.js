@@ -132,7 +132,7 @@ const ContatctContainer = () => {
 
                                         <DisplayLi color={'color-semi-purpule'} icon={'fa-phone'} emplacement={1} title={'+261 38 53 405 34'}/>
                                        
-                                        <DisplayLi color={'color-cyan'} icon={'fa-envelope'} emplacement={2} title={'arisconcept.company@gmail.com'}/>
+                                        <DisplayLi color={'color-cyan'} icon={'fa-envelope'} emplacement={2} title={'contact@aris-cc.com'}/>
                                     </ul>
                                 </div>
                             </div>

@@ -19,7 +19,7 @@ const Moyen = () => {
                                     <div className='rounded-2' style={{backgroundImage: `url('${imgMoyen}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', height: 'auto'}}>
                                         <ul className="list-group list-group-flush bg-edit w-100 h-100 opacity-90 rounded-2">
                                             <li className="list-group-item bg-transparent">
-                                                <ElementH5 stylePositionTop={true} texte={"Nous disposons des ordinateurs portables performants avec une autonomie de plus de 4H pour éviter la coupure de production pendant le délestage très répétitif à Madagascar."}/>
+                                                <ElementH5 stylePositionTop={true} texte={"Nous mettons à disposition des ordinateurs portables de haute performance, élaborés pour maintenir la continuité des activités en dépit des interruptions régulières d'électricité à Madagascar."}/>
                                             </li>
                                             <li  className={`list-group-item bg-transparent`}>
                                                 <ElementH5 stylePositionTop={false} texte={"Un deuxième écran pour chaque ordinateur portable pour faciliter et accélérer la manipulation des outils"}/>
@@ -51,7 +51,7 @@ const Moyen = () => {
                                     <div className=" h-100 d-flex flex-column justify-content-center">
                                         <ul className="list-group list-group-flush">
                                             <li className="list-group-item ">
-                                                <ElementH5 stylePositionTop={true} isWhite={false} texte={"Nous disposons des ordinateurs portables performants avec une autonomie de plus de 4H pour éviter la coupure de production pendant le délestage très répétitif à Madagascar."}/>
+                                                <ElementH5 stylePositionTop={true} isWhite={false} texte={"Nous mettons à disposition des ordinateurs portables de haute performance, élaborés pour maintenir la continuité des activités en dépit des interruptions régulières d'électricité à Madagascar."}/>
                                             </li>
                                             <li className="list-group-item ">
                                                 <ElementH5 stylePositionTop={false} isWhite={false} texte={"Un deuxième écran pour chaque ordinateur portable pour faciliter et accélérer la manipulation des outils"}/>

@@ -114,7 +114,7 @@ const ContatctContainer = () => {
                                             </Form.Select>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
-                                            <Form.Label>Commentaire *</Form.Label>
+                                            <Form.Label>Déscription *</Form.Label>
                                             <Form.Control required as="textarea" value={comment} onChange={(e)=>setComment(e.target.value)} aria-rowspan={3} placeholder="A propos  de vos besoins..." />
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
@@ -132,11 +132,11 @@ const ContatctContainer = () => {
                                     <h4 className="text-uppercase text-center text-primary-emphasis">Notre adresse</h4>
                                     <ul className="list-inline d-md-block d-sm-flex align-items-sm-center flex-sm-column">
                                         <DisplayLi color={'color-red'} icon={'fa-location-dot'} emplacement={0}>
-                                            <span className="ms-2 text-light-emphasis">Lot II T 104 A Iavoloha, Antananarivo 102</span>
+                                            <span className="ms-2 text-light-emphasis">Iavoloha, Antananarivo 102</span>
                                         </DisplayLi>
 
                                         <DisplayLi color={'color-semi-purpule'} icon={'fa-phone'} emplacement={1} >
-                                            <span className="ms-2 text-light-emphasis">+261 38 53 405 34</span>
+                                            <a href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="ms-2 text-decoration-none fs-6 text-light-emphasis">+261 38 53 405 34</a>
                                         </DisplayLi>
                                        
                                         <DisplayLi color={'color-cyan'} icon={'fa-envelope'} emplacement={2} title={'contact@aris-cc.com'}>

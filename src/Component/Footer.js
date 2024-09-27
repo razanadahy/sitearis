@@ -1,6 +1,9 @@
-import React, {useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import {Button, Form, Spinner, Toast} from "react-bootstrap";
 import Newsletter from "../Model/Newsletter.ts";
+import IconFooter from "./Footer/IconFooter";
+
+import image from '../img/FileChange/Fond-Aris-Concept.jpg'
 
 const Footer = () => {
     const [nom,setNom]=useState('')
@@ -36,33 +39,41 @@ const Footer = () => {
         }
     }
 
-    const handleClick = (e) => {
+    const handleClick = useCallback((e) => {
         e.preventDefault();
         const mailtoUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${'contact@aris-cc.com'}`;
         window.open(mailtoUrl, '_blank');
-    };
+    },[])
     return (
         <>
-            <div className="row mx-0 mt-4 mb-0 p-2 w-100 bg-dark-blue">
+            <IconFooter/>
+            {/*<div className="row mx-0 mt-4 mb-0 py-0 px-2 w-100 bg-dark-blue">*/}
+            <div className="row mx-0 mt-4 mb-0 py-0 px-2 w-100" style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}>
                 <div className="row p-0 mt-3 mb-0 mx-0">
-                    <div className="col-xl-4 col-lg-5 col-md-6 col-sm-12 p-0 text-white" style={{transform: 'translateY(-50px)'}}>
-                        <div className="m-0 p-3 w-100 h-auto bg-mi-blue rounded-3">
-                            <h2 className="text-center pb-3">Contactez-nous</h2>
+                    <div className="col-xl-4 col-lg-5 col-md-6 col-sm-12 p-0 text-white" >
+                    {/*<div className="col-xl-4 col-lg-5 col-md-6 col-sm-12 p-0 text-white" style={{transform: 'translateY(-50px)'}}>*/}
+                        {/*<div className="m-0 p-3 w-100 h-auto bg-mi-blue rounded-3">*/}
+                        <div className="my-0 p-2 ms-3 me-0 w-100 h-auto rounded-3">
+                            <h2 className="">Contactez-nous</h2>
                             <ul className="list-inline d-md-block d-sm-flex align-items-sm-center flex-sm-column mb-0">
                                 <li className="list-inline-item p-2 rounded-2 d-flex align-items-stretch cursor-pointer" style={{ height: '50px' }}>
                                     <div className="h-100 d-flex align-items-center flex-shrink-0">
                                         <i className="fa-solid fa-location-dot fa-2x"/>
                                     </div>
                                     <div className="h-100 d-flex align-items-center flex-grow-1">
-                                        <span className="ms-2">Lot II T 104 A Iavoloha, Antananarivo 102</span>
+                                        <span className="ms-2">Iavoloha, Antananarivo 102</span>
                                     </div>
                                 </li>
                                 <li className="list-inline-item p-2 rounded-2 d-flex align-items-stretch cursor-pointer" style={{ height: '50px' }}>
                                     <div className="h-100 d-flex align-items-center flex-shrink-0" style={{height: '100%'}}>
                                         <i className="fa-solid fa-phone fa-2x"/>
                                     </div>
-                                    <div className="h-100 d-flex align-items-center flex-grow-1" style={{height: '100%'}}>
-                                        <h5 className="ms-2 my-auto">+261 38 53 405 34</h5>
+                                    <div className="h-100 d-flex align-items-center flex-grow-1">
+                                        <a  href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="ms-2 email-link">+261 38 53 405 34</a>
                                     </div>
                                 </li>
                                 <li className="list-inline-item p-2 rounded-2 d-flex align-items-stretch cursor-pointer" style={{ height: '50px' }}>
@@ -79,9 +90,9 @@ const Footer = () => {
                     <div className="col-xl-8 col-lg-7 col-md-6 col-sm-12">
                         <div className="container text-white">
                             <div className="row m-0 p-0 d-flex align-items-center">
-                                <h3 className="ms-2 text-primary p-2">
+                                <h2 className="ms-2 p-2">
                                     Newsletter
-                                </h3>
+                                </h2>
                                 <div className="row m-0 p-0">
                                     <div className="col-12 p-2" >
                                         Inscrivez-vous à notre newsletter et recevez par email les dernières tendances du digital.
@@ -98,7 +109,7 @@ const Footer = () => {
                                                 <Form.Control required type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
                                             </Form.Group>
 
-                                            <Button variant="warning" className="w-100" type={`${loading ? 'button' : 'submit'}`}>
+                                            <Button variant="info" className="w-100" type={`${loading ? 'button' : 'submit'}`}>
                                                 {loading ? (<Spinner animation="border" size={"sm"} variant="secondary" />):("Valider")}
                                             </Button>
                                         </Form>
@@ -109,26 +120,14 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="text-center pb-1">
-                    <hr className="border-dark-subtle"/>
+                <div className="text-center m-0 p-0">
+                    <hr className="border-dark-subtle w-100"/>
                 </div>
                 <div className="m-0 p-0 w-100">
                     <div className="float-start text-light d-inline-flex">
-                        <span className="p-2">© 2024 Aris Concept company</span>
-                        <ul className="list-inline">
-                            <li className="list-inline-item rounded-circle w-h-30 border d-inline-flex  justify-content-center align-items-center">
-                                <a href="https://facebook.com/" target="_blank" rel="noreferrer">
-                                    <i className="fa-brands fa-facebook-f"/>
-                                </a>
-                            </li>
-                            <li className="list-inline-item p-2 rounded-circle  w-h-30 border d-inline-flex  justify-content-center align-items-center">
-                                <a href="https://www.linkedin.com/in/aris-concept-company-567703240" target="_blank" rel="noreferrer">
-                                    <i className="fa-brands fa-linkedin-in"/>
-                                </a>
-                            </li>
-                        </ul>
+                        <span className="pb-1">© 2024 Aris Concept company</span>
                     </div>
-                    <div className="float-end text-light p-2">
+                    <div className="float-end text-light pb-1">
                         <span> Tous droits réservés.</span>
                     </div>
                 </div>

@@ -135,9 +135,12 @@ body {
     width: 100%;
     height: auto !important;
 }
+
+
 .arrow-shape {
     clip-path: polygon(0% 0%, 100% 50%, 90% 30%, 100% 50%, 90% 100%, 90% 100%, 0% 100%);
 }
+
 .dropdown-toggle::after {
     display: none !important;
 }
@@ -206,4 +209,8 @@ html {
     font-size: 1.25em;
     text-decoration: none;
     color: inherit;
+}
+
+.fn-6{
+    font-size: 1rem;
 }

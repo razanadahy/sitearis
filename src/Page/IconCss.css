@@ -1,0 +1,11 @@
+.rounded-bottom-end{
+    border-bottom-right-radius: 30px
+}
+
+.rounded-top-start{
+    border-top-left-radius: 30px
+}
+
+.bg-red-gradient{
+    background: linear-gradient(90deg, #8960e9 0%, #9394d5 100% ) !important;
+}

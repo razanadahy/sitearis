@@ -131,8 +131,16 @@
     z-index: 3 !important;
 }
 .w-60{
-    width: 60% !important;
+    width: 62% !important;
 }
 .bg-edit-2{
     background-color: #147d7d !important;
+}
+.w-70{
+    width: 75% !important;
+}
+
+.pst-icon{
+    bottom: 10% !important;
+    right: 10px !important;
 }

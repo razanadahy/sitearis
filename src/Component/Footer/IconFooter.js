@@ -9,19 +9,19 @@ const IconFooter = () => {
     },[])
     return(
         <>
-            <div className="position-fixed shadow pst-icon rounded-top-start p-2 rounded-bottom-end bg-red-gradient">
+            <div className="position-fixed shadow pst-icon rounded-top-start p-2 z-3 rounded-bottom-end bg-footer">
                 <ul className="list-group">
-                    <li className="list-group-item cursor-pointer rounded-circle mb-1 w-h-30 border d-flex justify-content-center align-items-center">
-                        <a className="" href="https://www.linkedin.com/in/aris-concept-company-567703240" target="_blank" rel="noreferrer">
+                    <li className="list-group-item comp mb-1 cursor-pointer rounded-circle w-h-30 bg-li border-0 d-flex justify-content-center align-items-center">
+                        <a href="https://www.linkedin.com/in/aris-concept-company-567703240" target="_blank" rel="noreferrer">
                             <i className="fa-brands fa-linkedin-in fn-6"/>
                         </a>
                     </li>
-                    <li className="list-group-item mb-1 cursor-pointer rounded-circle  w-h-30 border d-flex  justify-content-center align-items-center">
+                    <li className="list-group-item comp mb-1 cursor-pointer rounded-circle  w-h-30 bg-li border-0 d-flex  justify-content-center align-items-center">
                         <a href={`mailto:${'contact@aris-cc.com'}`} onClick={handleClick}>
                             <i className="fa-solid fa-at fn-6"/>
                         </a>
                     </li>
-                    <li className="list-group-item mb-1 cursor-pointer rounded-circle  w-h-30 border d-flex  justify-content-center align-items-center">
+                    <li className="list-group-item comp mb-1 cursor-pointer rounded-circle w-h-30 bg-li border-0 d-flex  justify-content-center align-items-center">
                         <a  href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer">
                             <i className="fa-brands fa-whatsapp fn-6"/>
                         </a>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 const CardCollaboration = ({color, text, icon, emplacement}) => {
@@ -30,10 +30,10 @@ const CardCollaboration = ({color, text, icon, emplacement}) => {
 
     const navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleClick = useCallback( () => {
         const anchors = ["coworking", "sous-traitance", "centre-offshore", "pourquoi-externaliser", "une-equipe-selon-vos-besoins"];
         navigate(`/service#${anchors[emplacement]}`);
-    };
+    },[emplacement])
 
     return (
         <div

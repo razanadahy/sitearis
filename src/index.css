@@ -24,7 +24,7 @@ body {
 .logo-img{
     vertical-align: middle;
     border-style: none;
-    height: 45px ;
+    height: 6rem ;
     width: auto;
 }
 .bg-gradient-info {
@@ -40,9 +40,11 @@ body {
     cursor: pointer;
 }
 .btn:hover{
-    transform: translateY(-2px)!important;
-    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
+    border-right: 1px solid red;
+    transition: all 0.5s ease-in-out !important;
 }
+
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(180%);
@@ -118,7 +120,7 @@ body {
     background-color: #1a2b42 !important;
 }
 .bg-mi-dark-blue{
-    background-color: #00073f !important;
+    background: linear-gradient(90deg,#404d66, #6e1d58) !important;
 }
 .card {
     display: flex;
@@ -213,4 +215,35 @@ html {
 
 .fn-6{
     font-size: 1rem;
+}
+.vw-80{
+    width: 85vw;
+}
+.width-max{
+    width: max-content !important;
+}
+
+.btn-style{
+    background-color: rgba(12, 12, 12, 0.91) !important;
+    border: 2px solid rgba(0, 255, 217, 0.79);
+    box-shadow: 1px 1px 2px 2px rgba(0, 255, 217, 0.15);
+    transition: all 0.5s ease-in !important;
+    color: white !important;
+    overflow: hidden;
+}
+
+.btn-style:hover {
+    background: linear-gradient(90deg, rgba(209, 13, 88, 0.87), #0e8de8)!important;
+    transform: scale(1.06) !important;
+}
+
+.btn-style:active {
+    box-shadow: 1px 1px 2px 2px rgba(0, 255, 217, 0.51) !important;
+    border: 2px solid rgba(255, 0, 221, 0.79) !important;
+}
+.logo-icon{
+    vertical-align: middle;
+    border-style: none;
+    height: 1.8rem ;
+    width: auto;
 }

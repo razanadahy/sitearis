@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../img/logoA.png';
+import logo from '../Asset/icon.png';
 import { Dropdown,Modal } from 'react-bootstrap';
 import {useMediaQuery} from "react-responsive";
 import {useNavigate} from "react-router-dom";
@@ -53,60 +53,50 @@ const Header = ({idActive}) => {
         history('/postule-employe');
     };
 
-
     return (
         <>
             {isMediumOrLarger ? (
-                <div id={"header"} className={`bg-gradient-info-dark row mt-0 mx-0 mb-3 p-3 position-fixed top-0 z-3 w-100 text-center font-ramona ${hasShadow ? 'shadow' : ''}`}>
-                    <div className="col-2">
-                        <div onClick={homePage} className="d-flex align-items-center slideOutToRight">
-                            <img src={logo} alt="logo" className="logo-img img-fluid mx-3" />
-                            <h4 className="mb-0 fs-5 cursor-pointer">
-                                <span style={{ color: '#D10D58' }}>Aris </span> <span style={{ color: '#0e8de8' }}>Concept</span>
-                            </h4>
+                <div id={"header"} className={`d-flex justify-content-between mt-0 mx-0 mb-3 p-2 position-fixed top-0 z-3 w-100 text-center font-ramona ${hasShadow ? 'trasBg shadow z-3' : ''}`}>
+                    <div className={`d-flex justify-content-between`}>
+                        <div className={`mx-3 align-middle slideInFromLeft`}>
+                            {idActive===1 ? (
+                                <Dropdown
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    show={showAcceuil}>
+                                    <Dropdown.Toggle
+                                        as="button"
+                                        id="dropdown-custom-components"
+                                        onClick={homePage}
+                                        className={`btn rounded-pill py-1 px-2 text-info fs-5 ${idActive===1 ? 'active' : ''}`}
+                                    >
+                                        Accueil
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#activity">Nos secteur</Dropdown.Item>
+                                        <Dropdown.Item href="#moyen">Nos équipements</Dropdown.Item>
+                                        <Dropdown.Item href="#collaboration">Notre collaboration</Dropdown.Item>
+                                        <Dropdown.Item href="#aspiration">Nos aspirations</Dropdown.Item>
+                                        <Dropdown.Item href="#valeur">Nos Valeurs</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>):(
+                                <div className={`col-2 slideInFromLeft`}>
+                                    <button type="button" className={`btn text-info py-1 rounded-pill px-2 fs-5 ${idActive===1 ? 'active' : ''}`} onClick={homePage}>Accueil</button>
+                                </div>
+                            )}
+
+                        </div>
+                        <div className={`me-2 slideInFromLeft`}>
+                            <button type="button" className={`btn text-info py-1 rounded-pill px-2 fs-5 ${idActive===2 ? 'active' : ''}`} onClick={servicePage}>Services</button>
                         </div>
                     </div>
-
-                    <div className="col-9">
-                        <div className="row">
-                            <div className={`col-2 offset-1 align-middle slideInFromLeft`}>
-                                {idActive===1 ? (
-                                    <Dropdown
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave}
-                                        show={showAcceuil}>
-                                        <Dropdown.Toggle
-                                            as="button"
-                                            id="dropdown-custom-components"
-                                            onClick={homePage}
-                                            className={`btn text-white fs-5 ${idActive===1 ? 'active' : ''}`}
-                                        >
-                                            Accueil
-                                        </Dropdown.Toggle>
-                                        <Dropdown.Menu>
-                                            <Dropdown.Item href="#activity">Nos secteur</Dropdown.Item>
-                                            <Dropdown.Item href="#moyen">Nos équipements</Dropdown.Item>
-                                            <Dropdown.Item href="#collaboration">Notre collaboration</Dropdown.Item>
-                                            <Dropdown.Item href="#aspiration">Nos aspirations</Dropdown.Item>
-                                            <Dropdown.Item href="#valeur">Nos Valeurs</Dropdown.Item>
-                                        </Dropdown.Menu>
-                                    </Dropdown>):(
-                                    <div className={`col-2 slideInFromLeft`}>
-                                        <button type="button" className={`btn text-white fs-5 ${idActive===1 ? 'active' : ''}`} onClick={homePage}>Accueil</button>
-                                    </div>
-                                )}
-
-                            </div>
-                            <div className={`col-2 slideInFromLeft`}>
-                                <button type="button" className={`btn text-white fs-5 ${idActive===2 ? 'active' : ''}`} onClick={servicePage}>Services</button>
-                            </div>
-                            <div className={`col-2 slideInFromLeft`}>
-                                <button type="button" className={`btn text-white fs-5 ${idActive===3 ? 'active' : ''}`} onClick={contactPage}>Contact</button>
-                            </div>
+                    <div className={`d-flex justify-content-between`}>
+                        <div className={`me-2 slideInFromLeft`}>
+                            <button type="button" className={`btn text-info py-1 rounded-pill px-2 fs-5 ${idActive===3 ? 'active' : ''}`} onClick={contactPage}>Contact</button>
                         </div>
-                    </div>
-                    <div className={`col-1 p-1 pt-0 pb-0 slideInFromLeft d-flex align-items-end`}>
-                        <button type="button" className={`btn bg-mi-dark-blue text-white fs-5 ${idActive===4 ? 'active' : ''}`} onClick={postulePage}><span className="p-2">Postuler</span></button>
+                        <div className={`me-2 slideInFromLeft`}>
+                            <button type="button" className={`btn text-info py-1 rounded-pill fs-5 px-2 ${idActive===4 ? 'active' : ''}`} onClick={postulePage}><span className="p-2">Postuler</span></button>
+                        </div>
                     </div>
                 </div>
             ) : (

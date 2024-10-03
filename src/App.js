@@ -4,6 +4,7 @@ import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import ServicePage from "./Page/ServicePage";
 import ContactPage from "./Page/ContactPage";
 import PostulerPage from "./Page/PostulerPage";
+import './Config/i18n.js'
 
 function App() {
   return (

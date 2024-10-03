@@ -144,3 +144,8 @@
     bottom: 10% !important;
     right: 10px !important;
 }
+
+.trasBg{
+    background-color: white !important;
+    transition: background-color 700ms initial;
+}

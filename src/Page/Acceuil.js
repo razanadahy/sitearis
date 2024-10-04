@@ -12,6 +12,8 @@ import EntrepriseInfo from "../Component/Head/EntrepriseInfo";
 import HeaderContent from "../Component/Head/HeaderContent";
 import ValeurDetail from "../Component/Content/ValeurDetail";
 import ServiceDetail from "../Component/Content/ServiceDetail";
+import AccueilFooter from "../Component/Footer/AccueilFooter";
+import AppelAction from "../Component/Content/AppelAction";
 
 const Acceuil = () => {
     const location = useLocation();
@@ -31,12 +33,14 @@ const Acceuil = () => {
             <EntrepriseInfo/>
             <ValeurDetail/>
             <ServiceDetail/>
-            <div id="activity"><Activity/></div>
-            <div id="moyen"><Moyen/></div>
-            <div id="collaboration"><Offre/></div>
-            <div id="aspiration"><Objectif/></div>
-            <div id="valeur"><Valeur/></div>
-            <Footer/>
+            {/*<div id="activity"><Activity/></div>*/}
+            {/*<div id="moyen"><Moyen/></div>*/}
+            {/*<div id="collaboration"><Offre/></div>*/}
+            {/*<div id="aspiration"><Objectif/></div>*/}
+            {/*<div id="valeur"><Valeur/></div>*/}
+            {/*<Footer/>*/}
+            <AppelAction/>
+            <AccueilFooter/>
         </>
     )
 }

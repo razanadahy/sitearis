@@ -66,3 +66,7 @@
 .btn-animate2:nth-child(3) {
     animation-delay: 0.3s;
 }
+
+.bg-darker{
+    background-color: #0a0e59 ;
+}

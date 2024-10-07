@@ -247,3 +247,60 @@ html {
     height: 1.8rem ;
     width: auto;
 }
+
+.email-container {
+    background-color: rgb(3, 7, 65);
+}
+
+.email-label {
+    font-weight: bold;
+    color: #8475a6;
+    padding-inline: 3px;
+}
+
+.email-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #957bda;
+    outline: none;
+    font-size: 16px;
+}
+
+.email-arrow {
+    color: #D10D58;
+    font-size: 1.25rem;
+    font-weight: bolder;
+    transition: transform 0.3s ease-in-out;
+    line-height: 2.25rem;
+}
+
+.email-container:hover .email-arrow {
+    transform: translateX(2px);
+}
+
+.email-input:focus + .email-arrow {
+    transform: translateX(2px);
+}
+
+.email-input:focus ~ .underline {
+    background-color: #f1f1f1;
+}
+.text-jaune{
+    color: #FFD700 !important;
+}
+
+
+.txt-at {
+    position: relative;
+}
+
+.txt-at::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #FFD700;
+    bottom: 0;
+    left: 0;
+}

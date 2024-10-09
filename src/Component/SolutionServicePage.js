@@ -26,7 +26,7 @@ const SolutionServicePage = () => {
 
     return(
         <>
-            <div className="row w-100 m-0 p-4">
+            <div className="row w-100 m-0 p-4 pb-0">
                 <h2 ref={elementRef} className={`text-warning-emphasis ${isVisible ? 'showTop' : 'opacity-0'}`}>
                     Optimisez vos opérations avec nos solutions en:
                 </h2>

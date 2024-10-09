@@ -7,21 +7,22 @@ import rh from "../../Asset/ressources humaines.png"
 import mark from "../../Asset/Web et Marketing.png"
 import ext from "../../Asset/image.png"
 import CardServiceContent from "./CardServiceContent";
+import {useTranslation} from "react-i18next";
 
 
 const ServiceDetail= ()=>{
+    const [date,setDate]=useState(new Date())
+    const { t, i18n } = useTranslation();
     const services=useMemo(()=>{
         return[
-            {id: 1, bg: 'bg-primary', next: 2, prev: 5, img: mark, text: 'Web et Marketing', content: 'Nous offrons une gamme complète de services, incluant la rédaction web, le référencement, la conception graphique et la gestion des médias sociaux, parmi bien d\'autres. Notre approche intégrée vise à renforcer votre présence en ligne et à maximiser l\'impact de votre communication, tout en répondant aux besoins spécifiques de votre entreprise.'},
-            {id: 2, bg: 'bg-cyan', next: 3, prev: 1, img: compta, text: 'Comptabilité', content: 'Nos experts en comptabilité prennent en charge l\'intégralité du processus de tenue de livres, garantissant un suivi rigoureux des comptes clients et un contrôle minutieux des pièces comptables. Grâce à leur performance, nous assurons une gestion financière transparente et fiable, permettant à nos clients de prendre des décisions éclairées pour leur entreprise.'},
-            {id: 3, bg: 'bg-primary-subtle', next: 4, prev: 2, img: web, text: 'Informatique et traitement de données', content: 'Nos spécialistes en informatique proposent une gamme complète de services, allant du développement logiciel sur mesure au traitement efficace des données, tant en ligne qu\'hors ligne. Grâce à leur compétence technique de pointe, nous garantissons des solutions innovantes et adaptées aux besoins spécifiques de nos clients, assurant ainsi une performance optimale de leurs systèmes d\'information.'},
-            {id: 4, bg: 'bg-info-subtle', next: 5, prev: 3, img: rh, text: 'Ressources Humaines', content: 'Nos services de ressources humaines englobent le recrutement, la formation et l\'administration des ressources humaines. Grâce à notre technique de pointe, nous nous engageons à fournir des solutions personnalisées qui favorisent le développement des talents et optimisent la gestion des équipes, contribuant ainsi à la réussite de votre organisation'},
-            {id: 5, bg: 'bg-blue', next: 1, prev: 4, img: ext, text: 'Externalisation administrative', content: 'Nous proposons des services de secrétariat administratif complets, incluant la gestion efficace des agendas, la rédaction et le suivi de la correspondance, ainsi que l\'organisation minutieuse de réunions. Notre équipe dédiée s\'assure que chaque détail est pris en charge, permettant ainsi à nos clients de se concentrer sur leurs priorités stratégiques.'},
+            {id: 1, bg: 'bg-primary', next: 2, prev: 5, img: mark, text: t('marketing'), content: t('textMarketing')},
+            {id: 2, bg: 'bg-cyan', next: 3, prev: 1, img: compta, text: t('compta'), content: t('textCompta')},
+            {id: 3, bg: 'bg-primary-subtle', next: 4, prev: 2, img: web, text: t('info'), content: t('textInfo')},
+            {id: 4, bg: 'bg-info-subtle', next: 5, prev: 3, img: rh, text: t('rh'), content: t('textRh')},
+            {id: 5, bg: 'bg-blue', next: 1, prev: 4, img: ext, text: t('ext') , content: t('textExt')},
         ]
-    },[])
+    },[i18n.language])
     const [carDefaultClicked,setClicked]=useState(services[0])
-    const [date,setDate]=useState(new Date())
-
     const afficheCarousel = useMemo(() => {
         let elements = [];
         let servNext = carDefaultClicked;
@@ -40,13 +41,16 @@ const ServiceDetail= ()=>{
         }
 
         return elements;
-    }, [carDefaultClicked]);
+    }, [carDefaultClicked,i18n.language]);
     const [isPaused, setIsPaused] = useState(false);
 
     const clickDetail= useCallback( (id) => {
         setDate(new Date())
         setClicked(services.find((e)=>e.id===id))
-    },[])
+    },[i18n.language,services])
+    useEffect(()=>{
+        setClicked((prev)=>services.find((e)=>e.id===prev.id))
+    },[i18n.language])
     useEffect(() => {
         const updateClickedService = () => {
             setClicked((prevClicked) => {
@@ -61,13 +65,13 @@ const ServiceDetail= ()=>{
             }, 4500);
             return () => clearTimeout(timer);
         }
-    }, [date, isPaused]);
+    }, [date, isPaused,services]);
+
     return (
         <>
             <div className="mx-0 mt-0 mb-2 p-0 w-100 position-relative" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
-                <h2 className="ms-4 fs-1 fw-bold text-white p-5 pb-2 w-100 z-2 position-relative w-100">
-                    Nos Services
-                </h2>
+                <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0"  alt="..."/>
+                <h2 className="ms-4 fs-1 fw-bold text-white p-5 pb-2 w-100 z-2 position-relative w-100 bg-test">{t('serUs')}</h2>
                 <div className="row mx-0 mb-2 mt-2 p-2 w-100 z-1 position-relative">
                     <div  onMouseEnter={() => setIsPaused(true)}
                           onMouseLeave={() => setIsPaused(false)} className="col-6">
@@ -81,7 +85,7 @@ const ServiceDetail= ()=>{
                                     {carDefaultClicked.content}
                                 </p>
                                 <div className="w-100 d-flex justify-content-end">
-                                    <button onClick={()=>carDefaultClicked.id} type="button" className="btn bg-aris text-white fw-bold py-2 rounded-1 btnIcon">En savoir plus</button>
+                                    <button onClick={()=>carDefaultClicked.id} type="button" className="btn bg-aris text-white fw-bold py-2 rounded-1 btnIcon">{t('plus')}</button>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +96,6 @@ const ServiceDetail= ()=>{
                         </div>
                     </div>
                 </div>
-                <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0"  alt="..."/>
             </div>
         </>
     )

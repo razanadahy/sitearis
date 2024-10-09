@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react'
 import Header from "../Component/Header";
 import Footer from "../Component/Footer";
-import InfoService from "../Component/InfoService";
+import InfoService from "../Component/Head/InfoService";
 import Infotraitement from "../Component/Infotraitement";
 import SolutionServicePage from "../Component/SolutionServicePage";
 import Difference from "../Component/Difference";
 import {useLocation} from "react-router-dom";
+import HeaderContent from "../Component/Head/HeaderContent";
+import AccueilFooter from "../Component/Footer/AccueilFooter";
+import AllService from "../Component/Body/AllService";
 
 const ServicePage = () => {
     const location = useLocation();
@@ -33,12 +36,17 @@ const ServicePage = () => {
     }, [location]);
     return(
         <>
-            <Header idActive={2}/>
+            {/*<Header idActive={2}/>*/}
+            {/*<InfoService/>*/}
+            {/*<Infotraitement/>*/}
+            {/*<SolutionServicePage/>*/}
+            {/*<Difference/>*/}
+            {/*<Footer/>*/}
+            <HeaderContent active={2}/>
             <InfoService/>
-            <Infotraitement/>
+            <AllService/>
             <SolutionServicePage/>
-            <Difference/>
-            <Footer/>
+            <AccueilFooter/>
         </>
     )
 }

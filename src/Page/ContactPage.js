@@ -1,9 +1,9 @@
 import React, {useEffect} from "react";
-import Header from "../Component/Header";
-import Footer from "../Component/Footer";
 import InfoContact from "../Component/InfoContact";
 import ContatctContainer from "../Component/ContatctContainer";
 import {useLocation} from "react-router-dom";
+import HeaderContent from "../Component/Head/HeaderContent";
+import AccueilFooter from "../Component/Footer/AccueilFooter";
 
 const ContactPage = () => {
     const location = useLocation();
@@ -16,10 +16,10 @@ const ContactPage = () => {
     }, [location]);
     return (
         <>
-            <Header idActive={3}/>
+            <HeaderContent active={4}/>
             <InfoContact/>
             <ContatctContainer/>
-            <Footer/>
+            <AccueilFooter/>
         </>
     )
 }

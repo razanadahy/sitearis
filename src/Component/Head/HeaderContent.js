@@ -5,9 +5,12 @@ import usa from '../../Asset/anglais.png'
 import logo from '../../Asset/icon.png'
 import {Dropdown} from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Annimate.css'
+import {useParams} from "react-router-dom";
 
-const HeaderContent=()=>{
+const HeaderContent=({active})=>{
+    const [idActive,setIdActive]=useState(active)
     const [hasShadow, setHasShadow] = useState(false);
     const handleScroll = useCallback( () => {
         if (window.scrollY > 0) {
@@ -23,13 +26,24 @@ const HeaderContent=()=>{
         };
     }, [handleScroll]);
 
-    const { t, i18n } = useTranslation();
-    const changeLanguage = useCallback((lang) => {
-        i18n.changeLanguage(lang);
-    },[])
+    const { t, i18n } = useTranslation()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const { lang } = useParams()
+    const [ch,setCh]=useState(new Date())
 
+    const changeLanguage = useCallback((langage) => {
+        const newPath = `/${langage}${location.pathname.replace(/\/(fr|en)/, '')}`;
+        navigate(newPath);
+    },[location,lang])
+
+    useEffect(()=>{
+        if (lang && ['fr', 'en'].includes(lang)) {
+            i18n.changeLanguage(lang);
+            setCh(new Date())
+        }
+    },[location,lang,i18n.language])
     const currentIconLanguage=useMemo(()=>{
-        console.log(i18n.language)
         if (i18n.language==='fr'){
             return fr
         }
@@ -42,23 +56,23 @@ const HeaderContent=()=>{
                 {hasShadow ? (
                     <>
                         <div className="flex-grow-1 d-inline-flex ms-3">
-                            <img src={logo} alt="logo" className="logo-icon img-fluid me-3" />
-                            <h4 className="mb-0 fs-4 cursor-pointer fw-bold">
+                            <img onClick={()=>navigate(`/${lang}/`)} src={logo} alt="logo" className="logo-icon img-fluid me-3 cursor-pointer"/>
+                            <h4 onClick={()=>navigate(`/${lang}/`)} className="mb-0 fs-4 cursor-pointer fw-bold">
                                 <strong style={{ color: '#D10D58' }}>Aris </strong> <strong style={{ color: '#0e8de8' }}>Concept</strong>
                             </h4>
                         </div>
                         <div className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn fff py-1 rounded-0 px-2 fs-6 btn-active text-dark fw-bold`} onClick={null}>{t('ac')}</button>
+                                <button type="button" onClick={()=>navigate(`/${lang}/`)} className={`btn fff py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-dark fw-bold`} >{t('ac')}</button>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 text-dark fw-bold`} onClick={null}>{t("apropos")}</button>
+                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-dark fw-bold`}>{t("apropos")}</button>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 fs-6 px-2 text-dark fw-bold`} onClick={null}><span className="p-2">{t('service')}</span></button>
+                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 text-dark fw-bold`} onClick={null}>{t('contact')}</button>
+                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
                             </div>
                             <div className="me-2 px-2 d-flex align-items-center mx-2 btn-animate">
                                 <Dropdown>
@@ -89,13 +103,13 @@ const HeaderContent=()=>{
                     <>
                         <div className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 btn-active text-white text-opacity-75 fw-bold`} onClick={null}>{t('ac')}</button>
+                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/`)}>{t('ac')}</button>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 fs-6 px-2 text-white text-opacity-75 fw-bold`} onClick={null}><span className="p-2">{t('service')}</span></button>
+                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 text-white text-opacity-75 fw-bold`} onClick={null}>{t('contact')}</button>
+                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
                             </div>
                         </div>
                         <div className="d-flex justify-content-between align-items-end">

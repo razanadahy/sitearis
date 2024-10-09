@@ -1,0 +1,60 @@
+.ps-center{
+    top: 7% !important;
+    width: max-content;
+    left:50% !important;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #D10D58, #0a0e59) !important;
+}
+
+.list {
+    list-style: none; /* Supprime les puces par défaut */
+    padding: 0;
+}
+
+.list li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.list li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 10px; /* Longueur du trait */
+    height: 2px; /* Épaisseur du trait */
+    background-color: #6b7280; /* Couleur du trait */
+}
+
+.text-slate-500 {
+    font-weight: bold;
+    color: #6b7280;
+}
+
+.grid {
+    display: grid;
+}
+
+/* Deux colonnes dans la grille */
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-rows-3 {
+    grid-template-rows: repeat(3, auto);
+}
+
+.gap-y-3 {
+    row-gap: 0.75rem;
+}
+
+.text-sm {
+    font-size: 0.975rem; /* 14px */
+}
+
+@media (min-width: 1024px) {
+    .lg\:text-base {
+        font-size: 1rem; /* 16px */
+    }
+}

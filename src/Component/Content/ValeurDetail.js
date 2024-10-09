@@ -2,25 +2,24 @@ import React from "react";
 import wave from '../../Asset/wave.svg'
 import wave2 from '../../Asset/waveHead.svg'
 import './Service.css'
+import {useTranslation} from "react-i18next";
 const ValeurDetail =()=>{
+    const { t, i18n } = useTranslation();
     return (
         <>
-            <div className="m-0 p-0 w-100 position-relative d-flex bg-dark bg-opacity-10" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
-                <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0" alt="..."/>
+            <div className="m-0 p-0 w-100 position-relative d-flex bg-dark bg-opacity-10 border-0" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
+                <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0 border-0 " alt="..."/>
                 <div className="p-3 z-1 mt-5 w-100">
-                    <h2 className="fs-1 mt-4 mb-4 ms-5 fw-bold text-white p-2 slide-down">Pourquoi Nous?</h2>
+                    <h2 className="fs-1 mt-4 mb-4 ms-5 fw-bold text-white p-2 slide-down ">{t('headText')}</h2>
                     <div className="row w-100 mt-0 mx-0 mb-4 p-0">
                         <div className="col-4 mb-3">
                             <div className={`h-100 w-100 rounded-4 border-box mx-auto`}>
                                 <div className="card-body">
                                     <div className="mt-4 mb-3 w-100 d-inline-flex justify-content-center">
-                                        <h3 className="text-center text-primary fw-bold"><i className="fas fa-bullseye fa-2xl me-3"/>Solutions personnalisées</h3>
+                                        <h3 className="text-center text-primary fw-bold"><i className="fas fa-bullseye fa-2xl me-3"/>{t('solC')}</h3>
                                     </div>
                                     <div className="w-100">
-                                        <p className="m-0 p-0 text-dark">
-                                            Chaque entreprise est unique.
-                                            Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
-                                        </p>
+                                        <p className="m-0 p-0 text-dark">{t('textSolC')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -29,13 +28,10 @@ const ValeurDetail =()=>{
                             <div className={` h-100 w-100 border-box rounded-4 mx-auto`}>
                                 <div className="card-body">
                                     <div className="mt-4 mb-3 w-100 d-inline-flex justify-content-center">
-                                        <h3 className="text-center color-orange fw-bold"><i className="fas fa-award fa-2xl me-3"/>Qualité</h3>
+                                        <h3 className="text-center color-orange fw-bold"><i className="fas fa-award fa-2xl me-3"/>{t('qualt')}</h3>
                                     </div>
                                     <div className="w-100">
-                                        <p className="m-0 p-0">
-                                            Nous avons à cœur de fournir des services irréprochables et adaptés aux besoins de nos clients.
-                                            Chaque projet est mené avec rigueur, afin de vous offrir des résultats fiables et durables.
-                                        </p>
+                                        <p className="m-0 p-0">{t('textQualt')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -44,13 +40,10 @@ const ValeurDetail =()=>{
                             <div className={` h-100 w-100 border-box rounded-4 mx-auto`}>
                                 <div className="card-body">
                                     <div className="mt-4 mb-3 w-100 d-inline-flex justify-content-center">
-                                        <h3 className="text-center color-cyan fw-bold"><i className="far fa-flag fa-2xl me-3"/>Engagement</h3>
+                                        <h3 className="text-center color-cyan fw-bold"><i className="far fa-flag fa-2xl me-3"/>{t('engag')}</h3>
                                     </div>
                                     <div className="w-100">
-                                        <p className="m-0 p-0">
-                                            Nous sommes entièrement dévoués à votre succès. Notre engagement repose sur la transparence, le respect des délais et des solutions
-                                            qui répondent parfaitement à vos besoins. Vous pouvez compter sur nous à chaque étape.
-                                        </p>
+                                        <p className="m-0 p-0">{t('textEng')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -59,13 +52,10 @@ const ValeurDetail =()=>{
                             <div className={` h-100 w-100 border-box rounded-4 mx-auto`}>
                                 <div className="card-body">
                                     <div className="mt-4 mb-3 w-100 d-inline-flex justify-content-center">
-                                        <h3 className="text-center color-red fw-bold"><i className="fas fa-person-chalkboard fa-2xl me-3"/>Accompagnement</h3>
+                                        <h3 className="text-center color-red fw-bold"><i className="fas fa-person-chalkboard fa-2xl me-3"/>{t('accomp')}</h3>
                                     </div>
                                     <div className="w-100">
-                                        <p className="m-0 p-0">
-                                            De la conception à la mise en œuvre, nous vous accompagnons à chaque étape de votre projet.
-                                            Nous restons à vos côtés pour vous apporter des conseils et un suivi constant afin de garantir des résultats à la hauteur de vos attentes.
-                                        </p>
+                                        <p className="m-0 p-0">{t('textAccp')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -74,13 +64,10 @@ const ValeurDetail =()=>{
                             <div className={` h-100 w-100 border-box rounded-4 mx-auto`}>
                                 <div className="card-body">
                                     <div className="mt-4 mb-3 w-100 d-inline-flex justify-content-center">
-                                        <h3 className="text-center text-info-emphasis fw-bold"><i className="fas fa-cogs fa-2xl me-3"/>Savoir-faire</h3>
+                                        <h3 className="text-center text-info-emphasis fw-bold"><i className="fas fa-cogs fa-2xl me-3"/>{t('savF')}</h3>
                                     </div>
                                     <div className="w-100">
-                                        <p className="m-0 p-0">
-                                            Avec des années d'expérience, nous mettons à votre disposition notre expertise éprouvée dans chaque domaine d’activité.
-                                            Nos équipes maîtrisent les dernières technologies et les meilleures pratiques pour vous garantir des services de qualité.
-                                        </p>
+                                        <p className="m-0 p-0">{t('textSav')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -92,10 +79,7 @@ const ValeurDetail =()=>{
                                         <h3 className="text-center color-semi-orange fw-bold"><i className="far fa-chess-queen fa-2xl mx-3"/>Expertise</h3>
                                     </div>
                                     <div className="w-100">
-                                        <p className="m-0 p-0">
-                                            Notre équipe est composée de spécialistes dans chaque domaine que nous couvrons. Que ce soit en comptabilité, informatique,
-                                            ressources humaines ou marketing, vous bénéficiez de conseils avisés et d’un savoir-faire pointu.
-                                        </p>
+                                        <p className="m-0 p-0">{t('textExp')}</p>
                                     </div>
                                 </div>
                             </div>

@@ -109,6 +109,9 @@ const HeaderContent=({active})=>{
                                 <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
                             </div>
                             <div className={`me-2 btn-animate`}>
+                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/`)}>Nos Avantages</button>
+                            </div>
+                            <div className={`me-2 btn-animate`}>
                                 <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
                             </div>
                         </div>

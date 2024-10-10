@@ -6,6 +6,7 @@ import ServiceDetail from "../Component/Content/ServiceDetail";
 import AccueilFooter from "../Component/Footer/AccueilFooter";
 import AppelAction from "../Component/Content/AppelAction";
 import {useLocation} from "react-router-dom";
+import ListMetier from "../Component/Content/ListMetier";
 
 const Acceuil = () => {
     const location = useLocation();
@@ -21,7 +22,8 @@ const Acceuil = () => {
         <>
             <HeaderContent active={1}/>
             <EntrepriseInfo/>
-            <ValeurDetail/>
+            {/*<ValeurDetail/>*/}
+            <ListMetier/>
             <ServiceDetail/>
             <AppelAction/>
             <AccueilFooter/>

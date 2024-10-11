@@ -308,35 +308,20 @@ input:focus {
     outline: none !important;
     box-shadow: none !important;
 }
-
-.title-container {
-    text-align: center;
+.title{
+    width: max-content;
     position: relative;
-    margin-bottom: 20px;
 }
-
-.title {
-    font-size: 1.5rem; /* Ajuster la taille du texte */
-    font-weight: bold;
-    color: #FF4500; /* Couleur du texte (ici en orange) */
-    text-transform: uppercase;
-}
-
-.title-underline {
+.title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 2px;
-    background-color: #FF4500; /* Couleur de la ligne */
-    position: absolute;
-    bottom: -5px; /* Ajuster la position de la ligne */
-    left: 0;
+    background-color: #FF4500;
 }
-
-.title-container::after {
-    content: '';
-    display: block;
-    width: 50px; /* La longueur de la ligne sous le texte */
-    height: 3px; /* L'épaisseur de la ligne sous le texte */
-    background-color: #FF4500; /* La couleur de la ligne (orange ici) */
-    margin: 10px auto 0; /* Centrer la ligne sous le titre */
+.border-aris{
+    border-bottom: 1px solid #FF4500;
 }
 

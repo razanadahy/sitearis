@@ -167,3 +167,18 @@
 .moved{
     animation: moved 0.7s forwards !important;
 }
+
+.custom-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+.custom-list li {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    position: relative;
+}

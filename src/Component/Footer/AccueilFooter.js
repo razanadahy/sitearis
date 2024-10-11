@@ -112,7 +112,7 @@ const AccueilFooter = () => {
                 </div>
                 <div className="m-0 p-2 w-100 d-inline-flex justify-content-between">
                     <div className=" text-light d-inline-flex">
-                        <span className="pb-1">© 2024 Aris Concept company - {t('mention')} - {t('politique')}</span>
+                        <span className="pb-1">© 2024 Aris Concept company - <span className="cursor-pointer">{t('mention')}</span> - <span className="cursor-pointer">{t('politique')}</span></span>
                     </div>
                     <div className=" text-light pb-1">
                         <span>{t('droit')}</span>

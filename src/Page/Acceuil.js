@@ -7,6 +7,7 @@ import AccueilFooter from "../Component/Footer/AccueilFooter";
 import AppelAction from "../Component/Content/AppelAction";
 import {useLocation} from "react-router-dom";
 import ListMetier from "../Component/Content/ListMetier";
+import SolutionServicePage from "../Component/SolutionServicePage";
 
 const Acceuil = () => {
     const location = useLocation();
@@ -26,6 +27,7 @@ const Acceuil = () => {
             <ListMetier/>
             <ServiceDetail/>
             <AppelAction/>
+            <SolutionServicePage/>
             <AccueilFooter/>
         </>
     )

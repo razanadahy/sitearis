@@ -45,7 +45,6 @@ const ServicePage = () => {
             <HeaderContent active={2}/>
             <InfoService/>
             <AllService/>
-            <SolutionServicePage/>
             <AccueilFooter/>
         </>
     )

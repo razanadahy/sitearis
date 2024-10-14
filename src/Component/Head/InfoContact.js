@@ -9,7 +9,7 @@ const InfoContact = () => {
                     Contactez-nous dès aujourd'hui pour une consultation gratuite !
                 </h1>
                 <p className="fs-5 p-3 m-0 me-2 preAnimation fst-italic font-consolas ">
-                    Découvrez comment nos solutions peuvent  transformer votre entreprise.
+                    Découvrez comment nos solutions de l'externalisation  peuvent  transformer votre entreprise.
                 </p>
             </div>
         </div>

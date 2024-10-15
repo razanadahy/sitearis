@@ -36,12 +36,6 @@ const ServicePage = () => {
     }, [location]);
     return(
         <>
-            {/*<Header idActive={2}/>*/}
-            {/*<InfoService/>*/}
-            {/*<Infotraitement/>*/}
-            {/*<SolutionServicePage/>*/}
-            {/*<Difference/>*/}
-            {/*<Footer/>*/}
             <HeaderContent active={2}/>
             <InfoService/>
             <AllService/>

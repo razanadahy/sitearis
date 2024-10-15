@@ -1,6 +1,6 @@
 export  const JobData=[
     {
-        id: 1,
+        id: 2,
         title: 'Administration et Gestion',
         children: [
             {id: 1, description: 'Êtes-vous dans l’attente d’un partenaire offshore pour fournir un soutien administratif de qualité à votre entreprise ? En tant que prestataire de services de Secrétariat Administratif Offshore, nous jouons un rôle essentiel en apportant un soutien administratif de haut niveau à nos clients, tout en opérant à distance depuis notre société basée à Madagascar. Cette opportunité vous permet de collaborer avec nous dans un environnement international tout en profitant des avantages de l’externalisation offshore.',
@@ -52,7 +52,7 @@ export  const JobData=[
         ]
     },
     {
-        id: 2,
+        id: 1,
         title: 'Comptabilité et Finances',
         children: [
             {id: 1, description: 'Êtes-vous dans l’attente d’un partenaire offshore pour fournir un soutien administratif de qualité à votre entreprise ? En tant que prestataire de services de Secrétariat Administratif Offshore, nous jouons un rôle essentiel en apportant un soutien administratif de haut niveau à nos clients, tout en opérant à distance depuis notre société basée à Madagascar. Cette opportunité vous permet de collaborer avec nous dans un environnement international tout en profitant des avantages de l’externalisation offshore.',
@@ -88,7 +88,7 @@ export  const JobData=[
         ]
     },
     {
-        id: 3,
+        id: 5,
         title: 'Ressources Humaines',
         children: [
             {id: 1, description: 'Êtes-vous dans l’attente d’un partenaire offshore pour fournir un soutien administratif de qualité à votre entreprise ? En tant que prestataire de services de Secrétariat Administratif Offshore, nous jouons un rôle essentiel en apportant un soutien administratif de haut niveau à nos clients, tout en opérant à distance depuis notre société basée à Madagascar. Cette opportunité vous permet de collaborer avec nous dans un environnement international tout en profitant des avantages de l’externalisation offshore.',
@@ -168,7 +168,7 @@ export  const JobData=[
         ]
     },
     {
-        id: 5,
+        id: 3,
         title: 'Marketing - Communication',
         children: [
             {id: 1, description: 'Êtes-vous dans l’attente d’un partenaire offshore pour fournir un soutien administratif de qualité à votre entreprise ? En tant que prestataire de services de Secrétariat Administratif Offshore, nous jouons un rôle essentiel en apportant un soutien administratif de haut niveau à nos clients, tout en opérant à distance depuis notre société basée à Madagascar. Cette opportunité vous permet de collaborer avec nous dans un environnement international tout en profitant des avantages de l’externalisation offshore.',

@@ -23,7 +23,6 @@ const Acceuil = () => {
         <>
             <HeaderContent active={1}/>
             <EntrepriseInfo/>
-            {/*<ValeurDetail/>*/}
             <ListMetier/>
             <ServiceDetail/>
             <AppelAction/>

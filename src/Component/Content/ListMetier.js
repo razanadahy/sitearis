@@ -3,9 +3,11 @@ import wave from "../../Asset/wave.svg";
 import wave2 from "../../Asset/waveHead.svg";
 import {Form} from "react-bootstrap";
 import {JobData} from "../../Config/Job";
+import {useNavigate, useParams} from "react-router-dom";
 
 const ListMetier = () => {
-    // const [getAll] = useState(initState);
+    const navigate=useNavigate()
+    const { lang } = useParams()
     return(
         <>
             <div className="m-0 p-0 w-100 position-relative d-flex border-0" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
@@ -37,7 +39,7 @@ const ListMetier = () => {
                         {/*</span>*/}
                         <ul className="custom-list">
                             {JobData.map((e)=>e.children.map((jobDetail)=>(
-                                <li key={`${e.id}-${jobDetail.id}`} className="cursor-pointer"><span> <i className="far fa-dot-circle text-aris me-1"/>{jobDetail.title}</span></li>
+                                <li key={`${e.id}-${jobDetail.id}`} onClick={()=>navigate(`/${lang}/service/${e.id}/${jobDetail.id}`)} className="cursor-pointer"><span> <i className="far fa-dot-circle text-aris me-1"/>{jobDetail.title}</span></li>
                             )))}
                             <li>...</li>
                         </ul>

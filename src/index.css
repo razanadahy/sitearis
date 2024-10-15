@@ -324,4 +324,8 @@ input:focus {
 .border-aris{
     border-bottom: 1px solid #FF4500;
 }
+textarea{
+    border: 1px solid blue !important;
+    outline-color: black !important;
+}
 

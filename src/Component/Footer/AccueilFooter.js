@@ -102,7 +102,7 @@ const AccueilFooter = () => {
                                 <label className="email-label" htmlFor="email">
                                     e-mail
                                 </label>
-                                <input type="email" id="email" className="email-input" />
+                                <input type="email" id="email" autoComplete={"off"} className="email-input" />
                                 <span className="email-arrow">
                                     <i className="fa-solid fa-arrow-right-long"/>
                                 </span>
@@ -112,7 +112,7 @@ const AccueilFooter = () => {
                 </div>
                 <div className="m-0 p-2 w-100 d-inline-flex justify-content-between">
                     <div className=" text-light d-inline-flex">
-                        <span className="pb-1">© 2024 Aris Concept company - <span className="cursor-pointer">{t('mention')}</span> - <span className="cursor-pointer">{t('politique')}</span></span>
+                        <span className="pb-1">© 2024 Aris Concept company<i className="mx-2 fa fa-minus"/><span className="cursor-pointer">{t('mention')}</span><i className="mx-2 fa fa-minus"/><span className="cursor-pointer">{t('politique')}</span></span>
                     </div>
                     <div className=" text-light pb-1">
                         <span>{t('droit')}</span>

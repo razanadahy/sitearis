@@ -1,5 +1,5 @@
 import React from "react";
-import {Form} from "react-bootstrap";
+import unique from '../../Asset/Personaliser.png'
 
 const Equipement = () => {
     return(
@@ -10,31 +10,186 @@ const Equipement = () => {
                     <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Service</h4>
                 </div>
                 <div className="mt-2 w-100 mb-2 p-0">
-                    <p>-Solutions personnalisées et unique</p>
-                    <p>-Accompagnement et engagement</p>
-                    <p>-Les prix et le rapport qualité/prix</p>
-                    <p>-Flexibilité et adaptabilité</p>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Solutions personnalisées et unique
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                        <div className="col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="offset-1 col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Accompagnement et engagement
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Les prix et le rapport qualité/prix
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                        <div className="col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="offset-1 col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Flexibilité et adaptabilité
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div className="border-aris text-end p-0 mx-3 my-0">
                     <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Personnels</h4>
                 </div>
-                <div className="mt-2 bg-danger w-100 mb-2 p-0">
-                    <p>-L'innovation et l'adaptabilité</p>
-                    <p>-Compétent et engagé</p>
-                    <p>-Qualifié</p>
+                <div className="mt-2 w-100 mb-2 p-0">
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                L'innovation et l'adaptabilité
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                        <div className="col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="offset-1 col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Compétent et engagé
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Qualifié
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                        <div className="col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                    </div>
                 </div>
                 <div className="border-aris text-start p-0 mx-3 my-0">
                     <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Entreprise</h4>
                 </div>
-                <div className="mt-2 bg-danger w-100 mb-2 p-0">
-                    <p>-contribution au formation du personnel</p>
-                    <p>-Condition de travail au top</p>
-                    <p>-Equipement haute performance</p>
-                    <p>-Stabilité et engagement</p>
+                <div className="mt-2 w-100 mb-2 p-0">
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                contribution au formation du personnel
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                        <div className="col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="offset-1 col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Condition de travail au <strong className="fw-bold">TOP</strong>
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Equipement haute performance
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                        <div className="col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                    </div>
+                    <div className="w-100 row m-0 p-0 align-items-center">
+                        <div className="offset-1 col-auto">
+                            <img src={unique} draggable={"false"} decoding="async" title="img-solution" alt="" width={200} height={200}/>
+                        </div>
+                        <div className="col-8">
+                            <span className="text-primary display-6">
+                                <i className="me-3 ms-2 fa fa-minus"/>
+                                Stabilité et engagement
+                            </span>
+                            <p className="mt-3 mb-0">
+                                Chaque entreprise est unique. Nous analysons vos besoins spécifiques pour créer des solutions sur mesure, parfaitement adaptées à vos objectifs et à vos défis.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            que voulez vous en savoir sur Aris concept?
-            contactez-nous/Notre brochure
+            <div className="mt-3 w-100 bg-danger m-0 px-0 py-4 text-center bg-dark-subtle">
+                <span className="display-6">
+                    Que voulez vous en savoir sur Aris concept?
+                </span>
+
+                <div className="mt-3">
+                    <button className="me-3 btn btn-lg rounded-3 btn-primary">
+                        contactez-nous
+                    </button>
+                    <button className="ms-3 btn btn-lg rounded-3 btn-light">
+                        Nos services
+                    </button>
+                </div>
+            </div>
         </>
     )
 }

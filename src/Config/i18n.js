@@ -103,7 +103,7 @@ const resources = {
             "devService": 'Nous sommes là pour vous accompagner et collaborer avec vous!!!',
             "contactez": 'Contactez-nous',
             "descFooter": 'Nous visons à créer des opportunités d\'emploi pour les jeunes motivés, en leur permettant de développer leurs compétences aux côtés de professionnels expérimentés dans leur domaine.',
-            "ctnUs": 'Nous Contacter',
+            "ctnUs": 'Contactez - Nous',
             "way": 'Par ici',
             "inscrire": 'Inscrivez-vous à notre newsletter et recevez par email les dernières tendances du digital.',
             "mention": 'Mentions légales',

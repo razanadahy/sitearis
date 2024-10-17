@@ -12,7 +12,8 @@ const DetailService = () => {
     const navigate=useNavigate()
     const location = useLocation();
     const {domaine, service}=useParams()
-    const [child,setChild]=useState(null);
+    const [child,setChild]=useState(null)
+    const [parentChild,setParent]=useState(null)
 
     useEffect(() => {
         window.scrollTo({
@@ -23,6 +24,7 @@ const DetailService = () => {
     useEffect(()=>{
         const search=metier.find((e)=>e.id===parseInt(domaine))
         if (search){
+            setParent(search)
             const childrenFind=search.children.find((e)=>e.id===parseInt(service))
             if (childrenFind){
                 setChild(childrenFind)
@@ -35,11 +37,11 @@ const DetailService = () => {
     },[domaine,service])
     return (
         <>
-            {child && (
+            {child && parentChild && (
                 <>
                     <HeaderContent active={2}/>
                     <InfoDetailService/>
-                    <CompDetail element={child}/>
+                    <CompDetail parent={parentChild} element={child}/>
                     <AccueilFooter/>
                 </>
             )}

@@ -1,0 +1,69 @@
+import React, {useEffect, useState} from "react";
+import outsourcing from "../../Asset/outsourcing.jpg";
+import off from "../../Asset/pin.jpg";
+import localisation from "../../Asset/localisation.jpg";
+
+const Superposed = () => {
+    const [activeDiv, setActiveDiv] = useState(1);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveDiv((prevDiv) => (prevDiv === 1 ? 2 : 1));
+        }, 3500);
+
+        return () => clearInterval(interval);
+    }, []);
+    return(
+        <>
+            <div
+                className={`shadow-lg bg-gradient-info-dark transition-all ${
+                    activeDiv === 1 ? "z-2" : "z-1"
+                }`}
+                style={{
+                    width: "70%",
+                    height: "70%",
+                    position: "absolute",
+                    transform: activeDiv === 1 ? "rotate(0deg)" : "rotate(10deg) scale(1.04) translateX(2rem)",
+                    transition: "all 1s ease-in-out"
+                }}
+            >
+                <img draggable="false" decoding={"async"} src={outsourcing} className="w-100" alt=""/>
+                <div className="w-100 mt-3 text-center ">
+          <span
+              className="text-white fw-bold px-1"
+              style={{ lineHeight: "1.85rem", fontSize: "1.85rem", letterSpacing: "0.1rem" }}
+          >
+            Déléguer vos activités avec des équipes spécialisées
+          </span>
+                </div>
+            </div>
+
+            <div
+                className={`shadow bg-gradient-info transition-all ${
+                    activeDiv === 2 ? "z-2" : "z-1"
+                }`}
+                style={{
+                    width: "70%",
+                    height: "70%",
+                    position: "absolute",
+                    transform: activeDiv === 2 ? "rotate(0deg)" : "rotate(10deg) scale(1.04) translateX(2rem)",
+                    transition: "all 1s ease-in-out"
+                }}
+            >
+                <img draggable="false" decoding={"async"} src={off} className="w-100" alt=""/>
+                <div className="w-100 mt-3 text-center">
+          <span
+              className="text-danger fw-bold"
+              style={{ lineHeight: "1.85rem", fontSize: "1.85rem", letterSpacing: "0.1rem" }}
+          >
+            Centre OFFSHORE à Madagascar
+          </span>
+                </div>
+                <div className="position-absolute bottom-0 w-100 d-flex justify-content-center pb-2">
+                    <img draggable="false" decoding={"async"} src={localisation} width={40} alt=""/>
+                </div>
+            </div>
+        </>
+    )
+}
+export default Superposed

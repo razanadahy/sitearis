@@ -39,11 +39,14 @@ body {
 .cursor-pointer{
     cursor: pointer;
 }
-.btn:hover{
-    transform: scale(1.2) !important;
+.btn-header:hover{
+    transform: scale(1.1) !important;
     transition: all 0.5s ease-in-out !important;
 }
-
+.btn-content:hover{
+    transform: translateY(-5px) !important;
+    transition: all 0.5s ease-in-out !important;
+}
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(180%);
@@ -124,10 +127,6 @@ body {
 .card {
     display: flex;
     flex-direction: column;
-}
-.list-inline-item:hover{
-    background-color: rgba(250,250,250,0.6);
-    transition: all 300ms ease-in;
 }
 .card-body {
     flex: 1;
@@ -324,8 +323,16 @@ input:focus {
 .border-aris{
     border-bottom: 1px solid #FF4500;
 }
-textarea{
-    border: 1px solid blue !important;
-    outline-color: black !important;
+textarea:focus, input:focus {
+    outline: none;
+    box-shadow: none !important;
 }
+.espacement{
+    line-height: 1.85rem !important;
+    letter-spacing: 0.1rem;
+}
+.w-20{
+    width: 20% !important;
+}
+
 

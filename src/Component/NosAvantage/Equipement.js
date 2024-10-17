@@ -176,20 +176,6 @@ const Equipement = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-3 w-100 bg-danger m-0 px-0 py-4 text-center bg-dark-subtle">
-                <span className="display-6">
-                    Que voulez vous en savoir sur Aris concept?
-                </span>
-
-                <div className="mt-3">
-                    <button className="me-3 btn btn-lg rounded-3 btn-primary">
-                        contactez-nous
-                    </button>
-                    <button className="ms-3 btn btn-lg rounded-3 btn-light">
-                        Nos services
-                    </button>
-                </div>
-            </div>
         </>
     )
 }

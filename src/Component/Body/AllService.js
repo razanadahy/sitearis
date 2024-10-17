@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 import DetailService from "./DetailService";
 import {useTranslation} from "react-i18next";
 import cp from '../../Asset/ciel-compta.jpg'
@@ -8,6 +8,7 @@ import extAdd from '../../Asset/extAdd.jpg'
 import web from '../../Asset/web-marketing.jpg'
 import {JobData as metier} from "../../Config/Job";
 import {useNavigate, useParams} from "react-router-dom";
+import ShowModalDevis from "./ShowModalDevis";
 
 const AllService = () => {
     const { t, i18n } = useTranslation();
@@ -22,10 +23,16 @@ const AllService = () => {
     }, [i18n.language]);
     const navigate=useNavigate()
     const { lang } = useParams()
+    const [clickModal,setClickModal]=useState(false)
+    const [title,setTitle]=useState('')
+    const setHideModal = useCallback((value, tl) => {
+        setClickModal(!value)
+        setTitle(tl)
+    },[])
     return (
         <>
             {services.map((data,index)=>(
-                <DetailService key={index} position={index+1} element={data}>
+                <DetailService clicked={()=>setHideModal(false,data.title)} key={index} position={index+1} element={data}>
                     <span className="display-6 fw-bold">{data.trans}</span>
                     <ul className="list mt-3 ms-3 text-slate-500 grid grid-cols-2 grid-rows-3 gap-y-3">
                         {metier.find((e)=>e.id===data.id).children.map((child)=>(
@@ -34,6 +41,9 @@ const AllService = () => {
                     </ul>
                 </DetailService>
             ))}
+            {clickModal && (
+                <ShowModalDevis title={title} show={clickModal} onHide={()=>setHideModal(true,'')}/>
+            )}
         </>
     )
 }

@@ -118,7 +118,7 @@ const ContatctContainer = () => {
                                             <Form.Control required as="textarea" value={comment} onChange={(e)=>setComment(e.target.value)} aria-rowspan={3} placeholder="A propos  de vos besoins..." />
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
-                                            <Button variant="primary" className="w-100" type={`${loading ? 'button' : 'submit'}`}>
+                                            <Button variant="primary" className="w-100 btn-content" type={`${loading ? 'button' : 'submit'}`}>
                                                 {loading ? (<Spinner animation="border" size="sm" variant="secondary" />):("Valider")}
                                             </Button>
                                         </Form.Group>

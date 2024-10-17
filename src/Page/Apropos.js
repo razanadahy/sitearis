@@ -5,8 +5,8 @@ import {useLocation} from "react-router-dom";
 import InfoApropos from "../Component/Head/InfoApropos";
 import QuiSommeNous from "../Component/APropos/QuiSommeNous";
 import NosEquipe from "../Component/APropos/NosEquipe";
-import Aspiration from "../Component/APropos/Aspiration";
 import NosValeur from "../Component/APropos/NosValeur";
+import AppelAvantage from "../Component/Body/AppelAvantage";
 
 const Apropos = () => {
     const location = useLocation();
@@ -24,8 +24,8 @@ const Apropos = () => {
             <InfoApropos/>
             <QuiSommeNous/>
             <NosValeur/>
+            <AppelAvantage/>
             <NosEquipe/>
-            <Aspiration/>
             <AccueilFooter/>
         </>
     )

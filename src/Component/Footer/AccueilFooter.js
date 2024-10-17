@@ -44,7 +44,7 @@ const AccueilFooter = () => {
     return (
         <>
              <IconFooter isVisible={!isIconVisible}/>
-            <div ref={footerRef} className="mt-5 p-0 w-100 bg-dark-blue text-white small">
+            <div ref={footerRef} className="m-0 p-0 w-100 bg-dark-blue text-white small">
                 <div className="row w-100 mx-0 mt-2 mb-0 pt-4 px-3 border-bottom">
                     <div className="col-6">
                         <div className="w-100 d-inline-flex align-items-center ">

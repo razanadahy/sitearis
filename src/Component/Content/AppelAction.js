@@ -20,10 +20,10 @@ const AppelAction = () => {
                         </div>
                         <div className="w-100 position-absolute bottom-0 row m-0 px-0 pt-0 pb-2">
                             <div className="col-6">
-                                <button type="button" className="btn btn-primary w-100 py-2 fw-bolder rounded-1">{t('serUs')}</button>
+                                <button type="button" className="btn btn-content btn-primary w-100 py-2 fw-bolder rounded-1">{t('serUs')}</button>
                             </div>
                             <div className="col-6">
-                                <button type="button" className="btn btn-info py-2 fw-bolder w-100 rounded-1">{t('contactez')}</button>
+                                <button type="button" className="btn btn-content btn-info py-2 fw-bolder w-100 rounded-1">{t('contactez')}</button>
                             </div>
                         </div>
                     </div>

@@ -63,19 +63,19 @@ const HeaderContent=({active})=>{
                         </div>
                         <div className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" onClick={()=>navigate(`/${lang}/`)} className={`btn fff py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-dark fw-bold`} >{t('ac')}</button>
+                                <button type="button" onClick={()=>navigate(`/${lang}/`)} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-dark fw-bold`} >{t('ac')}</button>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/apropos`)}>{t("apropos")}</button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/apropos`)}>{t("apropos")}</button>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/avantages`)}>Vos avantages</button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/avantages`)}>Vos avantages</button>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
                             </div>
                             <div className="me-2 px-2 d-flex align-items-center mx-2 btn-animate">
                                 <Dropdown>
@@ -98,7 +98,7 @@ const HeaderContent=({active})=>{
                             </div>
                             <div className="bg-danger h-75 my-auto border-start"/>
                             <div className={`me-2 ps-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 fs-6 px-2 text-dark fw-bold`} onClick={null}><span className="p-2">{t('post')}</span></button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 fs-6 px-2 text-dark fw-bold`} onClick={null}><span className="p-2">{t('post')}</span></button>
                             </div>
                         </div>
                     </>
@@ -106,21 +106,21 @@ const HeaderContent=({active})=>{
                     <>
                         <div className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/`)}>{t('ac')}</button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/`)}>{t('ac')}</button>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/avantages`)}>Vos avantages</button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/avantages`)}>Vos avantages</button>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
                             </div>
                         </div>
                         <div className="d-flex justify-content-between align-items-end">
                             <div className={`me-2 btn-animate2 px-2`}>
-                                <button type="button" className={`btn py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/apropos`)}>{t('apropos')}</button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/apropos`)}>{t('apropos')}</button>
                             </div>
                             <div className="bg-danger h-75 my-auto border-start"/>
                             <div className="me-2 btn-animate2 px-2 my-auto d-flex align-items-center">
@@ -144,7 +144,7 @@ const HeaderContent=({active})=>{
                             </div>
                             <div className="bg-danger h-75 my-auto border-start"/>
                             <div className={`me-2 btn-animate2 px-2`}>
-                                <button type="button" className={`btn py-1 rounded-0 fs-6 ps-2 text-white text-opacity-75 fw-bold`} onClick={null}><span className="p-2">{t('post')}</span></button>
+                                <button type="button" className={`btn btn-header py-1 rounded-0 fs-6 ps-2 text-white text-opacity-75 fw-bold`} onClick={null}><span className="p-2">{t('post')}</span></button>
                             </div>
                         </div>
                     </>

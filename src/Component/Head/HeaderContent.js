@@ -52,7 +52,7 @@ const HeaderContent=({active})=>{
 
     return (
         <>
-            <div className={`position-fixed top-0 start-0 w-100 pt-2 px-3 pb-0 z-3 d-flex justify-content-between text-white text-opacity-75 fw-bold ${hasShadow ? ' bg-white shadow' : ''}`}  style={{ transition: 'background-color 700ms ease-in-out' }}>
+            <div id="header" className={`position-fixed top-0 start-0 w-100 pt-2 px-3 pb-0 z-3 d-flex justify-content-between text-white text-opacity-75 fw-bold ${hasShadow ? ' bg-white shadow' : ''}`}  style={{ transition: 'background-color 700ms ease-in-out' }}>
                 {hasShadow ? (
                     <>
                         <div className="flex-grow-1 d-inline-flex ms-3">
@@ -63,19 +63,19 @@ const HeaderContent=({active})=>{
                         </div>
                         <div className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" onClick={()=>navigate(`/${lang}/`)} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-dark fw-bold`} >{t('ac')}</button>
+                                <a href={`/${lang}/`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-dark fw-bold`} >{t('ac')}</a>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/apropos`)}>{t("apropos")}</button>
+                                <a href={`/${lang}/apropos`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-dark fw-bold`} >{t("apropos")}</a>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
+                                <a href={`/${lang}/service`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-dark fw-bold`} ><span className="p-2">{t('service')}</span></a>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/avantages`)}>Vos avantages</button>
+                                <a href={`/${lang}/avantages`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-dark fw-bold`}>Vos avantages</a>
                             </div>
                             <div className={`me-2 mx-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-dark fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
+                                <a href={`/${lang}/contact`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-dark fw-bold`}>{t('contact')}</a>
                             </div>
                             <div className="me-2 px-2 d-flex align-items-center mx-2 btn-animate">
                                 <Dropdown>
@@ -98,7 +98,7 @@ const HeaderContent=({active})=>{
                             </div>
                             <div className="bg-danger h-75 my-auto border-start"/>
                             <div className={`me-2 ps-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 fs-6 px-2 text-dark fw-bold`} onClick={null}><span className="p-2">{t('post')}</span></button>
+                                <a href={`/${lang}/carrier`} className={`btn btn-header py-1 rounded-0 fs-6 px-2 text-dark fw-bold`}><span className="p-2">{t('post')}</span></a>
                             </div>
                         </div>
                     </>
@@ -106,21 +106,21 @@ const HeaderContent=({active})=>{
                     <>
                         <div className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/`)}>{t('ac')}</button>
+                                <a href={`/${lang}/`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} >{t('ac')}</a>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/service`)}><span className="p-2">{t('service')}</span></button>
+                                <a href={`/${lang}/service`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} ><span className="p-2">{t('service')}</span></a>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/avantages`)}>Vos avantages</button>
+                                <a href={`/${lang}/avantages`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} >Vos avantages</a>
                             </div>
                             <div className={`me-2 btn-animate`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/contact`)}>{t('contact')}</button>
+                                <a href={`/${lang}/contact`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`}>{t('contact')}</a>
                             </div>
                         </div>
                         <div className="d-flex justify-content-between align-items-end">
                             <div className={`me-2 btn-animate2 px-2`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} onClick={()=>navigate(`/${lang}/apropos`)}>{t('apropos')}</button>
+                                <a href={`/${lang}/apropos`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===3 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`}>{t('apropos')}</a>
                             </div>
                             <div className="bg-danger h-75 my-auto border-start"/>
                             <div className="me-2 btn-animate2 px-2 my-auto d-flex align-items-center">
@@ -144,7 +144,7 @@ const HeaderContent=({active})=>{
                             </div>
                             <div className="bg-danger h-75 my-auto border-start"/>
                             <div className={`me-2 btn-animate2 px-2`}>
-                                <button type="button" className={`btn btn-header py-1 rounded-0 fs-6 ps-2 text-white text-opacity-75 fw-bold`} onClick={null}><span className="p-2">{t('post')}</span></button>
+                                <a href={`/${lang}/carrier`} className={`btn btn-header py-1 rounded-0 fs-6 ps-2 text-white text-opacity-75 fw-bold`} ><span className="p-2">{t('post')}</span></a>
                             </div>
                         </div>
                     </>

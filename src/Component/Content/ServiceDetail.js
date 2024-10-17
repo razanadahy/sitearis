@@ -15,11 +15,11 @@ const ServiceDetail= ()=>{
     const { t, i18n } = useTranslation();
     const services=useMemo(()=>{
         return[
-            {id: 1, bg: 'bg-primary', next: 2, prev: 5, img: mark, text: t('marketing'), content: t('textMarketing')},
-            {id: 2, bg: 'bg-cyan', next: 3, prev: 1, img: compta, text: t('compta'), content: t('textCompta')},
-            {id: 3, bg: 'bg-primary-subtle', next: 4, prev: 2, img: web, text: t('info'), content: t('textInfo')},
-            {id: 4, bg: 'bg-info-subtle', next: 5, prev: 3, img: rh, text: t('rh'), content: t('textRh')},
-            {id: 5, bg: 'bg-blue', next: 1, prev: 4, img: ext, text: t('ext') , content: t('textExt')},
+            {id: 1, div: 'web-marketing', bg: 'bg-primary', next: 2, prev: 5, img: mark, text: t('marketing'), content: t('textMarketing')},
+            {id: 2, div: 'accounting', bg: 'bg-cyan', next: 3, prev: 1, img: compta, text: t('compta'), content: t('textCompta')},
+            {id: 3, div: 'info', bg: 'bg-primary-subtle', next: 4, prev: 2, img: web, text: t('info'), content: t('textInfo')},
+            {id: 4, div: 'hr', bg: 'bg-info-subtle', next: 5, prev: 3, img: rh, text: t('rh'), content: t('textRh')},
+            {id: 5, div: 'ext', bg: 'bg-blue', next: 1, prev: 4, img: ext, text: t('ext') , content: t('textExt')},
         ]
     },[i18n.language])
     const [carDefaultClicked,setClicked]=useState(services[0])
@@ -88,7 +88,7 @@ const ServiceDetail= ()=>{
                                     {carDefaultClicked.content}
                                 </p>
                                 <div className="w-100 d-flex justify-content-end">
-                                    <button onClick={()=>carDefaultClicked.id} type="button" className="btn bg-aris text-white fw-bold py-2 rounded-1 btnIcon">{t('plus')}</button>
+                                    <button onClick={()=>carDefaultClicked.id} type="button" className="btn btn-content bg-aris text-white fw-bold py-2 rounded-1 btnIcon">{t('plus')}</button>
                                 </div>
                             </div>
                         </div>

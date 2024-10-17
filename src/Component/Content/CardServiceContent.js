@@ -1,8 +1,11 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
+import {useNavigate, useParams} from "react-router-dom";
 
 const CardServiceContent = ({onClicked,element, id}) => {
     const { t, i18n } = useTranslation();
+    const navigate=useNavigate()
+    const {lang}=useParams()
     return (
         <div onClick={onClicked} className={`card rounded-2 card-transition shadow ${element.bg} h-100 bg-change border-0`}
              style={{ backgroundImage: `url('${element.img}')`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', minHeight: '20rem' }}>
@@ -22,8 +25,8 @@ const CardServiceContent = ({onClicked,element, id}) => {
             <div className="position-absolute bottom-0 end-0 p-2 pe-3">
                 <button type="button" onClick={(e)=>{
                     e.preventDefault()
-                    console.log("elementID : " +element.id)
-                }} className="btn btn-light py-2 rounded-1 btnIcon">{t('plus')}</button>
+                    navigate(`/${lang}/service#${element.div}`);
+                }} className="btn btn-content btn-light py-2 rounded-1 btnIcon">{t('plus')}</button>
             </div>
         </div>
     )

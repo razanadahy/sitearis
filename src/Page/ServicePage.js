@@ -1,6 +1,4 @@
 import React, {useEffect} from 'react'
-import Header from "../Component/Header";
-import Footer from "../Component/Footer";
 import InfoService from "../Component/Head/InfoService";
 import Infotraitement from "../Component/Infotraitement";
 import SolutionServicePage from "../Component/SolutionServicePage";

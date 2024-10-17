@@ -4,10 +4,8 @@ import wave2 from "../../Asset/waveHead.svg";
 import {Form} from "react-bootstrap";
 import {JobData} from "../../Config/Job";
 import {useNavigate, useParams} from "react-router-dom";
-import off from '../../Asset/pin.jpg'
-import outsourcing from '../../Asset/outsourcing.jpg'
-import localisation from '../../Asset/localisation.jpg'
 import Superposed from "../Accueil/Superposed";
+import Pagination from "../Body/Pagination";
 
 const ListMetier = () => {
     const navigate=useNavigate()
@@ -19,6 +17,15 @@ const ListMetier = () => {
                 parentId: e.id
             })))
     },[])
+    const [active,setActive]=useState(1)
+    const len=useMemo(()=>{
+        const am=allJobDetails.length%18
+        if(am===0){
+            return allJobDetails.length/18
+        }else{
+            return Math.floor((allJobDetails.length/18)+1)
+        }
+    },[allJobDetails])
     return(
         <>
             <div className="m-0 p-0 w-100 position-relative d-flex border-0" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
@@ -48,12 +55,12 @@ const ListMetier = () => {
 
                             <div className="col-8">
                                 <ul className="custom-list">
-                                    {allJobDetails.slice(0,18).map((jobDetail)=>(
+                                    {allJobDetails.slice((active-1)*18,(active*18)).map((jobDetail)=>(
                                         <li key={`${jobDetail.parentId}-${jobDetail.id}`} onClick={()=>navigate(`/${lang}/service/${jobDetail.parentId}/${jobDetail.id}`)} className="cursor-pointer"><span> <i className="far fa-dot-circle text-aris me-1"/>{jobDetail.title}</span></li>
                                     ))}
                                 </ul>
-                                <div className="w-100 bg-danger p-2">
-                                    huhu
+                                <div className="w-100 p-2">
+                                    <Pagination length={len} active={active} setActive={setActive}/>
                                 </div>
                             </div>
                         </div>

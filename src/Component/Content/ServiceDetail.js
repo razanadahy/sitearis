@@ -8,6 +8,7 @@ import mark from "../../Asset/Web et Marketing.png"
 import ext from "../../Asset/image.png"
 import CardServiceContent from "./CardServiceContent";
 import {useTranslation} from "react-i18next";
+import {useNavigate, useParams} from "react-router-dom";
 
 
 const ServiceDetail= ()=>{
@@ -66,6 +67,8 @@ const ServiceDetail= ()=>{
             return () => clearTimeout(timer);
         }
     }, [date, isPaused,services]);
+    const navigate=useNavigate()
+    const {lang}=useParams()
 
     return (
         <>
@@ -88,7 +91,7 @@ const ServiceDetail= ()=>{
                                     {carDefaultClicked.content}
                                 </p>
                                 <div className="w-100 d-flex justify-content-end">
-                                    <button onClick={()=>carDefaultClicked.id} type="button" className="btn btn-content bg-aris text-white fw-bold py-2 rounded-1 btnIcon">{t('plus')}</button>
+                                    <button onClick={()=>navigate(`/${lang}/service#${carDefaultClicked.div}`)} type="button" className="btn btn-content bg-aris text-white fw-bold py-2 rounded-1 btnIcon">{t('plus')}</button>
                                 </div>
                             </div>
                         </div>

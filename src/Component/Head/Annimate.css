@@ -109,3 +109,8 @@
         opacity: 0.4;
     }
 }
+
+.letter-spacing{
+    letter-spacing: 0.05rem;
+    text-decoration: none;
+}

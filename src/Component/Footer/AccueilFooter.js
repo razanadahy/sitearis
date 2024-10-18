@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import IconFooter from "./IconFooter";
 import logo from "../../Asset/icon.png";
 import {useTranslation} from "react-i18next";
+import {useParams} from "react-router-dom";
 
 const AccueilFooter = () => {
     const handleClick = useCallback((e) => {
@@ -40,7 +41,7 @@ const AccueilFooter = () => {
     }, []);
 
     const { t, i18n } = useTranslation();
-
+    const {lang}=useParams()
     return (
         <>
              <IconFooter isVisible={!isIconVisible}/>
@@ -80,16 +81,24 @@ const AccueilFooter = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="col-3 px-3">
-                        <h4 className="fs-3 mb-3 ps-4">Services</h4>
-                        <ul className="list-group list-group-flush bg-transparent">
-                            <li className="list-group-item bg-transparent text-white d-inline-flex justify-content-between border-0">
-                                <span className="fw-bolder p-0 m-0">{t('info')}</span>
+                    <div className="col-3">
+                        <h4 className="fs-3 mb-3 text-center">Services</h4>
+                        <ul className="list-group m-0 p-0 bg-transparent list-group-flush">
+                            <li className="list-group-item bg-transparent cursor-pointer text-white d-inline-flex justify-content-between border-0">
+                                <a href={`/${lang}/service#info`} className="fw-bolder p-0 m-0 letter-spacing">{t('info')}</a>
                             </li>
-                            <li className="list-group-item bg-transparent text-white border-0"><span className="fw-bolder p-0 m-0">{t('marketing')}</span></li>
-                            <li className="list-group-item bg-transparent text-white border-0"><span className="fw-bolder p-0 m-0">{t('compta')}</span></li>
-                            <li className="list-group-item bg-transparent text-white border-0"><span className="fw-bolder p-0 m-0">{t('ext')}</span></li>
-                            <li className="list-group-item bg-transparent text-white mb-2 border-0"><span className="fw-bolder p-0 m-0">{t('rh')}</span></li>
+                            <li className="list-group-item bg-transparent text-white border-0 cursor-pointer">
+                                <a href={`/${lang}/service#web-marketing`} className="letter-spacing fw-bolder p-0 m-0">{t('marketing')}</a>
+                            </li>
+                            <li className="list-group-item bg-transparent text-white border-0 cursor-pointer">
+                                <a href={`/${lang}/service#accounting`} className="letter-spacing fw-bolder p-0 m-0">{t('compta')}</a>
+                            </li>
+                            <li className="list-group-item bg-transparent text-white border-0 cursor-pointer">
+                                <a href={`/${lang}/service#ext`} className="letter-spacing fw-bolder p-0 m-0">{t('ext')}</a>
+                            </li>
+                            <li className="list-group-item bg-transparent text-white mb-2 border-0 cursor-pointer">
+                                <a href={`/${lang}/service#hr`} className="letter-spacing fw-bolder p-0 m-0">{t('rh')}</a>
+                            </li>
                         </ul>
                     </div>
                     <div className="col-3">

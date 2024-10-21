@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import IconFooter from "./IconFooter";
 import logo from "../../Asset/icon.png";
 import {useTranslation} from "react-i18next";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const AccueilFooter = () => {
     const handleClick = useCallback((e) => {
@@ -65,7 +65,7 @@ const AccueilFooter = () => {
                                     <span className="fw-bolder txt-at">{t('way')}</span>
                                 </div>
                                 <div>
-                                    <span className="link-primary fw-bold cursor-pointer">Iavoloha, Antananarivo 102</span>
+                                    <a href={`/${lang}/contact#map`} className="link-primary email-link cursor-pointer">Iavoloha, Antananarivo 102</a>
                                 </div>
                                 <div>
                                     <a  href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="ms-2 email-link link-primary cursor-pointer">+261 38 53 405 34</a>

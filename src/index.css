@@ -206,7 +206,7 @@ html {
     background: linear-gradient(40deg, #D10D58, #1171ef) !important;
 }
 .email-link{
-    font-size: 1.25em;
+    font-size: 1.15em;
     text-decoration: none;
     color: inherit;
 }
@@ -333,6 +333,9 @@ textarea:focus, input:focus {
 }
 .w-20{
     width: 20% !important;
+}
+.leaflet-control-attribution {
+    display: none !important;
 }
 
 

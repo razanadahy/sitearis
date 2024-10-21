@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Button, Form, Spinner, Toast} from "react-bootstrap";
 import DisplayLi from "./DisplayLi";
 import Newsletter from "../Model/Newsletter.ts";
+import Localisation from "./Contact/Localisation";
 
 const ContatctContainer = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -30,13 +31,12 @@ const ContatctContainer = () => {
     }, []);
 
     const [elementOption,]=useState([
-        {id:1, name: 'Images / Photos'},
-        {id:2 , name: 'Vidéos'},
-        {id:3 , name: 'Traitements de données'},
+        {id:1, name: 'Informatique et traitement de données'},
+        {id:2 , name: 'Ressources Humaines'},
+        {id:3 , name: 'Externalisation administrative'},
         {id:4 , name: 'Web et Marketing'},
         {id:5 , name: 'Comptabilité'},
-        {id:6 , name: 'Externalisation administrative'},
-        {id:7 , name: 'Autre'},
+        {id:6 , name: 'Autre'},
     ])
     const[nom,setNom]=useState('')
     const [mail,setMail]=useState('')
@@ -86,15 +86,30 @@ const ContatctContainer = () => {
         const mailtoUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${'contact@aris-cc.com'}`;
         window.open(mailtoUrl, '_blank');
     };
+    const [checked,setChecked]=useState(false)
     return(
         <>
             <div className="row w-100 my-3 mx-0 p-0">
                 <div className="card border-0">
-                    <div className="row p-4">
+                    <div id="map" className="row p-2">
                         <div className="col-lg-7 col-md-10 offset-md-1 offset-lg-0 col-sm-12 d-flex align-items-stretch mb-2">
                             <div ref={elementRef} className={`card h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: 'translateY(-70px)'}}>
                                 <div className="card-body">
+                                    <div className="w-100 mb-3 text-center">
+                                        <span className="display-6 text-concept">Formulaire de contact</span>
+                                        <p className="fw-bold color-semi-purpule" style={{letterSpacing: '0.085rem'}}>
+                                            Ce formulaire vous permet de nous transmettre vos informations afin que nous puissions vous recontacter dans les plus brefs délais.
+                                        </p>
+                                    </div>
                                     <Form noValidate validated={validated} className="row" onSubmit={(e)=>handleSubmit(e)} autoComplete={"off"}>
+                                        <Form.Group className="mt-1 mb-2 col-6" controlId="nom">
+                                            <Form.Label>Entreprise *</Form.Label>
+                                            <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Nom de votre entreprise" />
+                                        </Form.Group>
+                                        <Form.Group className="mt-1 mb-2 col-6" controlId="nom">
+                                            <Form.Label>Site web de l'Entreprise *</Form.Label>
+                                            <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Site de votre entreprise" />
+                                        </Form.Group>
                                         <Form.Group className="mt-1 mb-2 col-lg-6 col-md-12" controlId="nom">
                                             <Form.Label>Nom *</Form.Label>
                                             <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Enter votre nom" />
@@ -104,7 +119,7 @@ const ContatctContainer = () => {
                                             <Form.Control required type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
-                                            <Form.Label>Votre besoin *</Form.Label>
+                                            <Form.Label>Domaine *</Form.Label>
                                             <Form.Select required  onChange={(e)=>handleChange(e)}>
                                                 {
                                                     elementOption.map(({id,name})=>(
@@ -117,8 +132,17 @@ const ContatctContainer = () => {
                                             <Form.Label>Déscription *</Form.Label>
                                             <Form.Control required as="textarea" value={comment} onChange={(e)=>setComment(e.target.value)} aria-rowspan={3} placeholder="A propos  de vos besoins..." />
                                         </Form.Group>
+                                        <Form.Group className="mb-3 col-lg-12" controlId="besoin">
+                                            <Form.Check
+                                                type='checkbox'
+                                                id="validation"
+                                                label="En cochant ceci, vous acceptez nos conditions générales et notre politique de confidentialité"
+                                                checked={checked}
+                                                onChange={()=>setChecked(prevState => !prevState)}
+                                            />
+                                        </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
-                                            <Button variant="primary" className="w-100 btn-content" type={`${loading ? 'button' : 'submit'}`}>
+                                            <Button variant="primary" disabled={!checked} className="w-100 btn-content" type={`${loading ? 'button' : 'submit'}`}>
                                                 {loading ? (<Spinner animation="border" size="sm" variant="secondary" />):("Valider")}
                                             </Button>
                                         </Form.Group>
@@ -127,22 +151,10 @@ const ContatctContainer = () => {
                             </div>
                         </div>
                         <div className="col-lg-5 col-md-10 offset-md-1 offset-lg-0 col-sm-12 d-flex align-items-stretch mb-2">
-                            <div className="card h-100 border-0 mx-auto w-100">
-                                <div className="card-body">
-                                    <h4 className="text-uppercase text-center text-primary-emphasis">Notre adresse</h4>
-                                    <ul className="list-inline d-md-block d-sm-flex align-items-sm-center flex-sm-column">
-                                        <DisplayLi color={'color-red'} icon={'fa-location-dot'} emplacement={0}>
-                                            <span className="ms-2 text-light-emphasis">Iavoloha, Antananarivo 102</span>
-                                        </DisplayLi>
-
-                                        <DisplayLi color={'color-semi-purpule'} icon={'fa-phone'} emplacement={1} >
-                                            <a href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="ms-2 text-decoration-none fs-6 text-light-emphasis">+261 38 53 405 34</a>
-                                        </DisplayLi>
-                                       
-                                        <DisplayLi color={'color-cyan'} icon={'fa-envelope'} emplacement={2} title={'contact@aris-cc.com'}>
-                                            <a  href={`mailto:${'contact@aris-cc.com'}`} onClick={handleClick} className="ms-2 text-decoration-none fs-6 text-light-emphasis">contact@aris-cc.com</a>
-                                        </DisplayLi>
-                                    </ul>
+                            <div className="card border-0 mx-auto w-100 z-0
+                            " style={{height: 'calc(100% - 70px)'}}>
+                                <div className="card-body shadow-lg w-100 m-0 p-0 w-100 bg-danger">
+                                    <Localisation/>
                                 </div>
                             </div>
                         </div>

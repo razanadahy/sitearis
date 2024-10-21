@@ -3,7 +3,6 @@ import {Button, Modal} from "react-bootstrap";
 import Devis from "./Devis";
 
 const ShowModalDevis = (props) => {
-    console.log(props.title)
     return (
         <>
             <Modal

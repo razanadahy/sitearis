@@ -1,14 +1,16 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 import {useNavigate, useParams} from "react-router-dom";
+import {useMediaQuery} from "react-responsive";
 
 const CardServiceContent = ({onClicked,element, id}) => {
     const { t, i18n } = useTranslation();
     const navigate=useNavigate()
     const {lang}=useParams()
+    const minW = useMediaQuery({query: "(max-width: 500px)"})
     return (
         <div onClick={onClicked} className={`card rounded-2 card-transition shadow ${element.bg} h-100 bg-change border-0`}
-             style={{ backgroundImage: `url('${element.img}')`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', minHeight: '20rem' }}>
+             style={{ backgroundImage: `url('${element.img}')`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', minHeight: minW ? '12rem' : '20rem' }}>
             <div
                 className="opacity-overlay rounded-2"
                 style={{

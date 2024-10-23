@@ -2,15 +2,19 @@ import React from "react";
 import statistique from '../../img/ofre.png'
 import {useTranslation} from "react-i18next";
 import {useParams} from "react-router-dom";
+import {useMediaQuery} from "react-responsive";
 
 const AppelAction = () => {
     const { t, i18n } = useTranslation();
     const { lang } = useParams()
+    const wMaxText = useMediaQuery({ query: "(max-width: 994px) and (min-width: 768px)" });
+
     return (
         <>
             <div className="container bg-dark bg-opacity-10">
                 <div className="row mx-0 mt-4 p-3">
-                    <div className="col-3 offset-2 bg-primary-subtle">
+                    {/*<div className="col-3 offset-2 bg-primary-subtle">*/}
+                    <div className="col-5 bg-primary-subtle">
                         <img src={statistique} alt="..." height={200}/>
                     </div>
                     <div className="col-7 position-relative">

@@ -9,6 +9,7 @@ import ext from "../../Asset/image.png"
 import CardServiceContent from "./CardServiceContent";
 import {useTranslation} from "react-i18next";
 import {useNavigate, useParams} from "react-router-dom";
+import {useMediaQuery} from "react-responsive";
 
 
 const ServiceDetail= ()=>{
@@ -24,6 +25,8 @@ const ServiceDetail= ()=>{
         ]
     },[i18n.language])
     const [carDefaultClicked,setClicked]=useState(services[0])
+    const wMax = useMediaQuery({ query: "(max-width: 1000px)" });
+    const minW = useMediaQuery({query: "(max-width: 500px)"})
     const afficheCarousel = useMemo(() => {
         let elements = [];
         let servNext = carDefaultClicked;
@@ -40,11 +43,9 @@ const ServiceDetail= ()=>{
             );
             i += 1;
         }
-
         return elements;
     }, [carDefaultClicked,i18n.language]);
     const [isPaused, setIsPaused] = useState(false);
-
     const clickDetail= useCallback( (id) => {
         setDate(new Date())
         setClicked(services.find((e)=>e.id===id))
@@ -73,20 +74,20 @@ const ServiceDetail= ()=>{
     return (
         <>
             <div className="mx-0 mt-0 mb-2 p-0 w-100 position-relative" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
-                <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0"  alt="..."/>
+                <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0" alt="..."/>
                 <h2 className="ms-4 fs-1 fw-bold text-concept p-5 pb-2 w-100 z-2 position-relative w-100 bg-test">
                     {/*{t('serUs')}*/}
                     Nos domaines d'activité
                 </h2>
-                <div className="row mx-0 mb-2 mt-2 p-2 w-100 z-1 position-relative">
+                <div className={`row mx-0 mb-2 mt-2 ${minW ? 'p-0' : 'p-2'} w-100 z-1 position-relative`}>
                     <div  onMouseEnter={() => setIsPaused(true)}
-                          onMouseLeave={() => setIsPaused(false)} className="col-6">
+                          onMouseLeave={() => setIsPaused(false)} className={`${wMax? "col-12": "col-6"}`}>
                         <div className="card shadow-lg rounded-2 border-0 h-100 d-flex justify-content-center scale">
-                            <img src={carDefaultClicked.img} className="mx-auto mt-2" height={300}  alt="..."/>
+                            <img src={carDefaultClicked.img} className="mx-auto mt-2" height={minW ? 150 : 300}  alt="..."/>
                             <div className="card-title text-center mt-3">
                                 <h4 className="fs-3 fw-bold text-aris text-uppercase">{carDefaultClicked.text}</h4>
                             </div>
-                            <div className="card-footer mt-1 mb-2 border-0 bg-transparent">
+                            <div className="card-footer mb-2 border-0 bg-transparent">
                                 <p className="mt-2 text-dark mx-2 mb-0 fs-5">
                                     {carDefaultClicked.content}
                                 </p>
@@ -96,7 +97,7 @@ const ServiceDetail= ()=>{
                             </div>
                         </div>
                     </div>
-                    <div className="col-6 m-0 p-0 my-auto">
+                    <div className={`${wMax ? 'col-12 mt-3': 'col-6 m-0 p-0 my-auto'}`}>
                         <div className="row m-0 p-0 w-100 d-flex h-100 align-items-stretch" >
                             {afficheCarousel}
                         </div>

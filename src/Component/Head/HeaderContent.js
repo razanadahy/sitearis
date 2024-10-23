@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useMemo, useState} from "react";
 import fr from '../../Asset/france.png'
 import usa from '../../Asset/anglais.png'
 import logo from '../../Asset/icon.png'
-import {Dropdown} from "react-bootstrap";
+import {Dropdown, Modal} from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Annimate.css'
@@ -52,19 +52,72 @@ const HeaderContent=({active})=>{
     },[i18n.language])
 
     const wMax = useMediaQuery({ query: "(max-width: 1034px)" });
+    const [showLink,setShowLink]=useState(false)
     return (
         <>
             {wMax ? (
                 <>
                     <nav id="header" className={`navbar navbar-light position-fixed top-0 start-0 w-100 z-3 ${hasShadow ? 'bg-light shadow-lg': 'bg-transparent'}`}>
                         <div className="container-fluid">
-                            <a className="navbar-brand d-inline-flex align-items-center" href="#">
+                            <a className="navbar-brand d-inline-flex align-items-center" href={`/${lang}/`}>
                                 <img src={logo} alt="" width="35" className="d-inline-block align-text-top me-2"/>
                                 <strong className="text-aris me-2">Aris</strong><strong className="text-concept">Concept</strong>
                             </a>
-                            <i className="fa-solid fa-bars"/>
+                            <i onClick={()=>setShowLink(true)} className={`fa-solid fa-bars fa-2x cursor-pointer ${hasShadow ? '' : 'text-white'}`}/>
                         </div>
                     </nav>
+                    <Modal
+                        show={showLink}
+                        onHide={() => setShowLink(false)}
+                        aria-labelledby="link"
+                        backdropClassName="p-0 m-0"
+                        dialogClassName="min-vw-100 border-0 p-0 m-0"
+                        contentClassName="rounded-0 border-0 w-100"
+                    >
+                        <Modal.Header className="m-0" closeButton>
+                            <Dropdown>
+                                <Dropdown.Toggle
+                                    as="span"
+                                    id="lang"
+                                    className={`cursor-pointer fs-6 px-2 rounded-0 text-dark fw-bold`}
+                                >
+                                    <img src={currentIconLanguage} alt={"..."} width={25} className="me-2"/><i className="ms-2 fa-solid fa-angle-down"/>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="mt-3">
+                                    <Dropdown.Item onClick={()=>changeLanguage('fr')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
+                                        <img src={fr} alt={"..."} width={20} className="me-2 "/>{t('fr')}
+                                    </Dropdown.Item>
+                                    <Dropdown.Item onClick={()=>changeLanguage('en')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
+                                        <img src={usa} alt={"..."} width={20} className="me-2 "/>{t('en')}
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </Modal.Header>
+                        <Modal.Body className="p-0 m-0">
+                            <div className="w-100 m-0 p-2">
+                                <ul className="list-group list-group-flush">
+                                    <li className={`list-group-item btn-content ${active===1 ? 'border-aris' : ''}`}>
+                                        <a href={`/${lang}/`} className={`text-decoration-none display-6 ${active===1 ? 'text-aris fw-bold': 'text-dark'}`}>Accueil</a>
+                                    </li>
+                                    <li className={`list-group-item btn-content ${active===3 ? 'border-aris' : ''}`}>
+                                        <a href={`/${lang}/apropos`} className={`text-decoration-none display-6 ${active===3 ? 'text-aris fw-bold': 'text-dark'}`}>A propos de nous</a>
+                                    </li>
+                                    <li className={`list-group-item btn-content ${active===2 ? 'border-aris' : ''}`}>
+                                        <a href={`/${lang}/service`} className={`text-decoration-none display-6 ${active===2 ? 'text-aris fw-bold': 'text-dark'}`}>Nos services</a>
+                                    </li>
+                                    <li className={`list-group-item btn-content ${active===5 ? 'border-aris' : ''}`}>
+                                        <a href={`/${lang}/avantages`} className={`text-decoration-none display-6 ${active===5 ? 'text-aris fw-bold': 'text-dark'}`}>Vos avantages</a>
+                                    </li>
+                                    <li className={`list-group-item btn-content ${active===4 ? 'border-aris' : ''}`}>
+                                        <a href={`/${lang}/contact`} className={`text-decoration-none display-6 ${active===4 ? 'text-aris fw-bold': 'text-dark'}`}>Contact</a>
+                                    </li>
+                                    <li className={`list-group-item btn-content ${active===6 ? 'border-aris' : ''}`}>
+                                        <a href={`/${lang}/carrier`} className={`text-decoration-none display-6 ${active===6 ? 'text-aris fw-bold': 'text-dark'}`}>Nos offres d'employes</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </Modal.Body>
+                    </Modal>
                 </>
             ): (
                 <div id="header" className={`position-fixed top-0 start-0 w-100 pt-2 px-3 pb-0 z-3 d-flex justify-content-between text-white text-opacity-75 fw-bold ${hasShadow ? ' bg-white shadow' : ''}`}  style={{ transition: 'background-color 700ms ease-in-out' }}>

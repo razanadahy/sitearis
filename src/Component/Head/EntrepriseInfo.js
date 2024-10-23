@@ -5,11 +5,13 @@ import {OverlayTrigger, Tooltip} from "react-bootstrap";
 import logo from "../../Asset/icon.png";
 import {useTranslation} from "react-i18next";
 import {useParams} from "react-router-dom";
+import {useMediaQuery} from "react-responsive";
 
 
 const EntrepriseInfo= ()=>{
     const { t, i18n } = useTranslation();
     const {lang}=useParams()
+    const wMax = useMediaQuery({ query: "(max-width: 1034px)" });
     return (
         <>
             <header className="header">
@@ -18,7 +20,7 @@ const EntrepriseInfo= ()=>{
                     Votre navigateur ne supporte pas la video
                 </video>
                 <div className="video-overlay"/>
-                <div className="w-100 p-3 position-relative d-flex justify-content-center">
+                <div className={`w-100 p-3 position-relative d-flex justify-content-center ${wMax ? 'd-none' : ''}`}>
                     <img src={logo} alt="logo" className="logo-img img-fluid"/>
                 </div>
                 <div className="header-content p-0">

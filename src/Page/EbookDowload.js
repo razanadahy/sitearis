@@ -12,12 +12,13 @@ const EbookDowload = () => {
         document.body.removeChild(link);
     },[])
     const maxCol6=useMediaQuery({query: "(max-width: 1100px)"})
+    const minWidth=useMediaQuery({query: "(max-width: 551px)"})
     return(
         <>
             <div className="vh-100 bg-dark bg-opacity-10 w-100">
                 <div className="row p-0 m-0 w-100 h-100">
                     <div className={`h-100 ${maxCol6 ? 'col-12': 'col-6'} d-flex justify-content-center align-items-center`}>
-                        <div className="m-0 p-0 w-75">
+                        <div className={`${minWidth ? 'm-0 p-0 w-100' : 'm-0 p-0 w-75'}`}>
                             <video
                                 src={infoE}
                                 controls

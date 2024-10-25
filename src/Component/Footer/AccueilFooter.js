@@ -3,6 +3,7 @@ import IconFooter from "./IconFooter";
 import logo from "../../Asset/icon.png";
 import {useTranslation} from "react-i18next";
 import {useNavigate, useParams} from "react-router-dom";
+import {useMediaQuery} from "react-responsive";
 
 const AccueilFooter = () => {
     const handleClick = useCallback((e) => {
@@ -42,6 +43,7 @@ const AccueilFooter = () => {
 
     const { t, i18n } = useTranslation();
     const {lang}=useParams()
+    const minW=useMediaQuery({query: "(max-width: 517px)"})
     return (
         <>
              <IconFooter isVisible={!isIconVisible}/>

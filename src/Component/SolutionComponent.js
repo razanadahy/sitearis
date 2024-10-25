@@ -12,7 +12,7 @@ const SolutionComponent = ({color,icon,title,children, emplacement}) => {
                 if (top < windowHeight) {
                     setTimeout(() => {
                         setIsVisible(true);
-                    }, emplacement * 350);
+                    },  350);
                 }else{
                     setIsVisible(false)
                 }
@@ -25,10 +25,10 @@ const SolutionComponent = ({color,icon,title,children, emplacement}) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [emplacement]);
+    }, []);
     return(
         <div ref={elementRef} className={`card h-100 border-0 mx-auto w-100 ${isVisible ? (emplacement+1)%2!==0 ? 'arrow-div' : 'arrow-div-left' : 'opacity-0'}`}>
-            <div className="card-body">
+            <div className="card-body m-0">
                 <h3 className={`text-start mb-3 ${color}`}><i className={`fas fa-2xl p-2 ${icon}`}/>{title}</h3>
                 <div className="row w-100">
                     {children}

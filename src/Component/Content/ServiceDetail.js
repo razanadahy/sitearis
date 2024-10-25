@@ -74,7 +74,7 @@ const ServiceDetail= ()=>{
     return (
         <>
             <div className="mx-0 mt-0 mb-2 p-0 w-100 position-relative" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
-                <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0" alt="..."/>
+                <img src={wave2} decoding={"async"} className="position-absolute w-100 m-0 p-0 top-0 z-0" alt={"wave2"}/>
                 <h2 className="ms-4 fs-1 fw-bold text-concept p-5 pb-2 w-100 z-2 position-relative w-100 bg-test">
                     {/*{t('serUs')}*/}
                     Nos domaines d'activité
@@ -83,7 +83,7 @@ const ServiceDetail= ()=>{
                     <div  onMouseEnter={() => setIsPaused(true)}
                           onMouseLeave={() => setIsPaused(false)} className={`${wMax? "col-12": "col-6"}`}>
                         <div className="card shadow-lg rounded-2 border-0 h-100 d-flex justify-content-center scale">
-                            <img src={carDefaultClicked.img} className="mx-auto mt-2" height={minW ? 150 : 300}  alt="..."/>
+                            <img src={carDefaultClicked.img} decoding={"async"} className="mx-auto mt-2" height={minW ? 150 : 300}  alt={carDefaultClicked.text}/>
                             <div className="card-title text-center mt-3">
                                 <h4 className="fs-3 fw-bold text-aris text-uppercase">{carDefaultClicked.text}</h4>
                             </div>

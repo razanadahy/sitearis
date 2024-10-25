@@ -1,5 +1,6 @@
 import React, {useCallback} from "react";
 import infoE from '../Asset/info.mp4'
+import {useMediaQuery} from "react-responsive";
 
 const EbookDowload = () => {
     const handleDownload = useCallback(() => {
@@ -10,11 +11,12 @@ const EbookDowload = () => {
         link.click();
         document.body.removeChild(link);
     },[])
+    const maxCol6=useMediaQuery({query: "(max-width: 1100px)"})
     return(
         <>
             <div className="vh-100 bg-dark bg-opacity-10 w-100">
                 <div className="row p-0 m-0 w-100 h-100">
-                    <div className="h-100 col-6 d-flex justify-content-center align-items-center">
+                    <div className={`h-100 ${maxCol6 ? 'col-12': 'col-6'} d-flex justify-content-center align-items-center`}>
                         <div className="m-0 p-0 w-75">
                             <video
                                 src={infoE}
@@ -24,7 +26,7 @@ const EbookDowload = () => {
                             />
                         </div>
                     </div>
-                    <div className="h-100 col-6 bg-gradient-info-dark px-4 pt-3 position-relative  d-flex flex-column justify-content-center">
+                    <div className={`h-100 ${maxCol6 ? 'col-12': 'col-6'} bg-gradient-info-dark px-4 pt-3 position-relative  d-flex flex-column justify-content-center`}>
                         <h3 className="mx-4 text-white" style={{fontSize: '2.5rem', letterSpacing: '0.1rem'}}>
                             Découvrez les stratégies gagnantes de l'externalisation avec <strong className="text-aris">Aris</strong> <strong className="text-concept">Concept</strong>
                         </h3>

@@ -166,7 +166,7 @@ const HeaderContent=({active})=>{
                                 </div>
                                 <div className="bg-danger h-75 my-auto border-start"/>
                                 <div className={`me-2 ps-2 btn-animate`}>
-                                    <a href={`/${lang}/carrier`} className={`btn btn-header py-1 rounded-0 fs-6 px-2 text-dark fw-bold`}><span className="p-2">{t('post')}</span></a>
+                                    <a href={`/${lang}/carrier`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===6 ? 'btn-active' : ''} text-dark fw-bold`}><span className="p-2">{t('post')}</span></a>
                                 </div>
                             </div>
                         </>
@@ -212,7 +212,7 @@ const HeaderContent=({active})=>{
                                 </div>
                                 <div className="bg-danger h-75 my-auto border-start"/>
                                 <div className={`me-2 btn-animate2 px-2`}>
-                                    <a href={`/${lang}/carrier`} className={`btn btn-header py-1 rounded-0 fs-6 ps-2 text-white text-opacity-75 fw-bold`} ><span className="p-2">{t('post')}</span></a>
+                                    <a href={`/${lang}/carrier`} className={`btn btn-header py-1 rounded-0 fs-6 ps-2 ${idActive===6 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} ><span className="p-2">{t('post')}</span></a>
                                 </div>
                             </div>
                         </>

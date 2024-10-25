@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
-import Header from "../Component/Header";
 import {useLocation} from "react-router-dom";
-import InfoPostule from "../Component/InfoPostule";
-import Footer from "../Component/Footer";
+import InfoPostule from "../Component/Head/InfoPostule";
 import OffreEmploye from "../Component/OffreEmploye";
 import CandidatureSpontane from "../Component/CandidatureSpontane";
+import HeaderContent from "../Component/Head/HeaderContent";
+import AccueilFooter from "../Component/Footer/AccueilFooter";
 
 const PostulerPage = () => {
     const location = useLocation();
@@ -17,11 +17,11 @@ const PostulerPage = () => {
     }, [location]);
     return (
         <>
-            <Header idActive={4}/>
+            <HeaderContent active={6}/>
             <InfoPostule/>
             <OffreEmploye/>
             <CandidatureSpontane/>
-            <Footer/>
+            <AccueilFooter/>
         </>
     )
 }

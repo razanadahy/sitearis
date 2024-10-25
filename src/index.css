@@ -262,7 +262,7 @@ html {
     border: none;
     color: #957bda;
     outline: none;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .email-arrow {
@@ -270,7 +270,7 @@ html {
     font-size: 1.25rem;
     font-weight: bolder;
     transition: transform 0.3s ease-in-out;
-    line-height: 2.25rem;
+    line-height: 1.25rem;
 }
 
 .email-container:hover .email-arrow {

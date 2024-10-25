@@ -1,8 +1,5 @@
 import React, {useEffect} from 'react'
 import InfoService from "../Component/Head/InfoService";
-import Infotraitement from "../Component/Infotraitement";
-import SolutionServicePage from "../Component/SolutionServicePage";
-import Difference from "../Component/Difference";
 import {useLocation} from "react-router-dom";
 import HeaderContent from "../Component/Head/HeaderContent";
 import AccueilFooter from "../Component/Footer/AccueilFooter";

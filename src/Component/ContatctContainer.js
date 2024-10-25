@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
 import {Button, Form, Spinner, Toast} from "react-bootstrap";
-import DisplayLi from "./DisplayLi";
 import Newsletter from "../Model/Newsletter.ts";
 import Localisation from "./Contact/Localisation";
 

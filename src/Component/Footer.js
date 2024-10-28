@@ -3,8 +3,6 @@ import {Button, Form, Spinner, Toast} from "react-bootstrap";
 import Newsletter from "../Model/Newsletter.ts";
 import IconFooter from "./Footer/IconFooter";
 
-import image from '../img/FileChange/Fond-Aris-Concept.jpg'
-
 const Footer = () => {
     const [nom,setNom]=useState('')
     const [mail,setMail]=useState('')
@@ -49,7 +47,7 @@ const Footer = () => {
             <IconFooter/>
             {/*<div className="row mx-0 mt-4 mb-0 py-0 px-2 w-100 bg-dark-blue">*/}
             <div className="row mx-0 mt-4 mb-0 py-0 px-2 w-100" style={{
-                backgroundImage: `url(${image})`,
+                // backgroundImage: `url(${image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}>

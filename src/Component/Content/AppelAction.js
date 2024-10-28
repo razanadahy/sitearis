@@ -1,5 +1,5 @@
 import React from "react";
-import statistique from '../../img/ofre.png'
+import statistique from '../../Asset/ofre.png'
 import {useTranslation} from "react-i18next";
 import {useParams} from "react-router-dom";
 import {useMediaQuery} from "react-responsive";

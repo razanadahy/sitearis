@@ -1,9 +1,9 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
 import we from '../../Asset/we.jpg'
 import Star from "./Star";
+import {useMediaQuery} from "react-responsive";
 const InfoApropos = () => {
-    const { t, i18n } = useTranslation();
+    const maxVue=useMediaQuery({query: "(max-width: 521px)"})
     return (
         <>
             <div className="row bg-gradient-info-dark w-100 text-white mt-0 mx-0 mb-3 font-ramona position-relative">
@@ -13,7 +13,7 @@ const InfoApropos = () => {
                         <strong style={{ color: '#D10D58' }}>ARIS </strong> <strong style={{ color: '#0e8de8' }}>CONCEPT</strong>
                     </span>
                 </div>
-                <div className="position-absolute w-auto bottom-0 end-0" style={{transform: 'translateY(50px)', shapeOutside: 'cir'}}>
+                <div className={`${maxVue ? 'd-none' : 'position-absolute w-auto bottom-0 end-0 z-1'}`} style={{transform: 'translateY(50px)'}}>
                     <img src={we} className=""  alt=""/>
                 </div>
                 <Star size={'0.1'} left={'70%'} top={'50%'}/>

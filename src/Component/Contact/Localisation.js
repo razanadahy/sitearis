@@ -44,7 +44,7 @@ const Localisation = () => {
                 }
             }}>
                 <Popup>
-                    <div className="d-inline-flex justify-content-center w-100 font-ramona">
+                    <div className="d-inline-flex justify-content-center w-100">
                         <strong className="text-aris me-2" style={{letterSpacing: '0.07rem'}}>Aris</strong><strong style={{letterSpacing: '0.07rem'}} className="text-concept">Concept</strong>
                     </div>
                     <div className="m-0">

@@ -67,6 +67,7 @@ const Equipement = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="border-aris text-end p-0 mx-3 my-0">
                     <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Personnels</h4>
                 </div>
@@ -117,6 +118,7 @@ const Equipement = () => {
                 <div className="border-aris text-start p-0 mx-3 my-0">
                     <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Entreprise</h4>
                 </div>
+
                 <div className="mt-2 w-100 mb-2 p-0">
                     <div className="w-100 row m-0 p-0 align-items-center">
                         <div className="col-8">

@@ -29,8 +29,8 @@ const QuiSommeNous = () => {
                         <div className={`${wMin ? 'd-none' : 'col-6 d-flex align-items-center'}`}>
                             <div className="w-100 position-relative" style={{height: '400px'}}>
                                 <img src={bgAris} draggable={"false"} decoding={"async"} className="position-absolute z-0 bg-info w-100 top-0 start-0"  alt="background photo"/>
-                                <img src={MrMamy} draggable={"false"} decoding={"async"} className="position-absolute z-1 bg-info top-0 start-0" width={370} alt="Mr Mamy Aris Concept"/>
-                                <img src={Esperant} draggable={"false"} decoding={"async"} className="position-absolute z-1 bg-info bottom-0 end-0" width={370} alt="Mr Esperant Aris Concept"/>
+                                <img src={MrMamy} draggable={"false"} decoding={"async"} className="position-absolute z-1 bg-info top-0 start-0" width={400} alt="Mr Mamy Aris Concept"/>
+                                <img src={Esperant} draggable={"false"} decoding={"async"} className="position-absolute z-1 bg-info bottom-0 end-0" width={400} alt="Mr Esperant Aris Concept"/>
                             </div>
                         </div>
                     </div>

@@ -1,11 +1,13 @@
 .ps-center{
-    top: 7% !important;
+    top: 2% !important;
     width: max-content;
     left:50% !important;
     transform: translateX(-50%);
     background: linear-gradient(90deg, #D10D58, #0a0e59) !important;
 }
-
+.bg-linear-dark-aris{
+    background: linear-gradient(90deg, #D10D58, #0a0e59) !important;
+}
 .list {
     list-style: none;
     padding: 0;

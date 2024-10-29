@@ -78,7 +78,7 @@ const AccueilFooter = () => {
                                             </a>
                                         </li>
                                         <li className="mb-2">
-                                            <a href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="email-link link-primary cursor-pointer">
+                                            <a href="https://wa.me/+261381237996" target="_blank" rel="noopener noreferrer" className="email-link link-primary cursor-pointer">
                                                 <i className="fa-brands fa-whatsapp me-2 color-cyan"/>
                                                 +261 38 12 379 96
                                             </a>
@@ -109,7 +109,7 @@ const AccueilFooter = () => {
                                             <a href={`/${lang}/contact#map`} className="link-primary email-link cursor-pointer">Iavoloha, Antananarivo 102</a>
                                         </div>
                                         <div>
-                                            <a href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="ms-2 email-link link-primary cursor-pointer">+261 38 53 405 34</a>
+                                            <a href="https://wa.me/+261381237996" target="_blank" rel="noopener noreferrer" className="ms-2 email-link link-primary cursor-pointer">+261 38 12 379 96</a>
                                         </div>
                                         <div>
                                             <a href={`mailto:${'contact@aris-cc.com'}`} onClick={handleClick} className="ms-2 email-link link-primary cursor-pointer">contact@aris-cc.com</a>

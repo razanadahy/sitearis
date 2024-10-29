@@ -135,7 +135,7 @@ const AccueilFooter = () => {
                         )}
                     </div>
                     <div className={`${wMin ? 'col-12' : wInter ? 'col-6 mt-2' : 'col-3'}`}>
-                        <h4 className="fs-3 mb-3 text-start">Services</h4>
+                        <h4 className="fs-3 mb-3 text-start">Nos Domaines</h4>
                         <ul className="list-group m-0 p-0 bg-transparent list-group-flush">
                             <li className="list-group-item bg-transparent cursor-pointer text-white d-inline-flex justify-content-between border-0">
                                 <a href={`/${lang}/service#info`} className="fw-bolder p-0 m-0 letter-spacing">{t('info')}</a>

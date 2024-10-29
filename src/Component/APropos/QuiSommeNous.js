@@ -1,8 +1,6 @@
 import React from "react";
 import './apropos.css'
-import MrMamy from '../../Asset/MrMamy.jpg'
-import Esperant from '../../Asset/Esperant.jpg'
-import bgAris from '../../Asset/bgAris.png'
+import equipe from '../../Asset/Equipe.png'
 import {useMediaQuery} from "react-responsive";
 
 const QuiSommeNous = () => {
@@ -14,7 +12,7 @@ const QuiSommeNous = () => {
                     <div className="row m-0 p-0 w-100">
                         {wMin && (
                             <div className="col-12 m-0 p-0">
-                                <img src={Esperant} draggable={"false"} decoding={"async"} className="w-100 z-0 shadow-lg" alt="Equipe" style={{transform: 'translateY(-1.55rem)'}}/>
+                                <img src={equipe} draggable={"false"} decoding={"async"} className="w-100 z-0 shadow-lg rounded-2" alt="Equipe" style={{transform: 'translateY(-1.55rem)'}}/>
                             </div>
                         )}
                         <div className={`${wMin ? 'col-12' : 'col-6'}`}>
@@ -28,9 +26,7 @@ const QuiSommeNous = () => {
                         </div>
                         <div className={`${wMin ? 'd-none' : 'col-6 d-flex align-items-center'}`}>
                             <div className="w-100 position-relative" style={{height: '400px'}}>
-                                <img src={bgAris} draggable={"false"} decoding={"async"} className="position-absolute z-0 bg-info w-100 top-0 start-0"  alt="background photo"/>
-                                <img src={MrMamy} draggable={"false"} decoding={"async"} className="position-absolute z-1 bg-info top-0 start-0" width={400} alt="Mr Mamy Aris Concept"/>
-                                <img src={Esperant} draggable={"false"} decoding={"async"} className="position-absolute z-1 bg-info bottom-0 end-0" width={400} alt="Mr Esperant Aris Concept"/>
+                                <img src={equipe} draggable={"false"} decoding={"async"} className="position-absolute z-2 bg-info w-100 top-0 start-0 rounded-3"  alt="background photo"/>
                             </div>
                         </div>
                     </div>

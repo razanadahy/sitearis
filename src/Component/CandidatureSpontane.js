@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Button, Col, Form, InputGroup, Row, Spinner} from "react-bootstrap";
 import CDSpontaneM from "../Model/CDSpontaneM.ts";
+import {useMediaQuery} from "react-responsive";
 
 const CandidatureSpontane = () => {
 
@@ -45,14 +46,14 @@ const CandidatureSpontane = () => {
                 setLoad(false)
             });
         }
-
     };
+    const maxW=useMediaQuery({query: "(max-width: 602px)"})
     return (
         <>
-            <div className="row my-3 mx-0 p-5 bg-edit-2 bg-opacity-25">
+            <div className={`row mt-2 mb-0 mx-0 ${maxW ? 'p-2' :'p-5'} bg-edit-2 bg-opacity-25`}>
                 <div className="card border-0 m-auto">
-                   <div className="row m-md-4 m-sm-0 p-0">
-                       <h3 className="mb-3">
+                   <div className="row m-0 p-2">
+                       <h3 className={`${maxW ? 'my-2' : 'pt-2'} text-center`}>
                            Formulaire pour la candidature spontanée
                        </h3>
                        <Form className="p-md-3 p-sm-2 m-md-3" noValidate validated={validated} autoComplete={"off"} onSubmit={handleSubmit}>
@@ -131,9 +132,9 @@ const CandidatureSpontane = () => {
                                <div className="col-md-6 d-md-block d-none">
                                    <Button className="w-100" variant="danger" type="reset">annuler</Button>
                                </div>
-                               <div className="col-md-6 col-sm-12">
+                               <div className="col-md-6 col-sm-12 p-0 m-0">
                                    <Button  className="w-100" type={`${load ? 'button' : 'submit'}`}>
-                                       {load ? (<Spinner animation="border" size={"sm"} variant="secondary" />):("Postuler")}
+                                       {load ? (<Spinner animation="border" size={"sm"} variant="secondary" />):("Envoyer")}
                                    </Button>
                                </div>
                            </div>

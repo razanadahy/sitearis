@@ -1,7 +1,8 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useMemo, useRef, useState} from "react";
 import {Button, Form, Spinner, Toast} from "react-bootstrap";
 import Newsletter from "../Model/Newsletter.ts";
 import Localisation from "./Contact/Localisation";
+import {useMediaQuery} from "react-responsive";
 
 const ContatctContainer = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +21,6 @@ const ContatctContainer = () => {
                 }
             }
         };
-
         window.addEventListener('scroll', handleScroll);
         handleScroll();
 
@@ -80,32 +80,32 @@ const ContatctContainer = () => {
             })
         }
     }
-    const handleClick = (e) => {
-        e.preventDefault();
-        const mailtoUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${'contact@aris-cc.com'}`;
-        window.open(mailtoUrl, '_blank');
-    };
+
     const [checked,setChecked]=useState(false)
+    const minWidth=useMediaQuery({query: "(max-width:1000px)"})
+    const heig= useMemo(() => {
+        return minWidth ? '375px' : 'calc(100% - 70px)'
+    }, [minWidth]);
     return(
         <>
             <div className="row w-100 my-3 mx-0 p-0">
                 <div className="card border-0">
-                    <div id="map" className="row p-2">
-                        <div className="col-lg-7 col-md-10 offset-md-1 offset-lg-0 col-sm-12 d-flex align-items-stretch mb-2">
-                            <div ref={elementRef} className={`card h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: 'translateY(-70px)'}}>
+                    <div id="map" className={`row m-0 ${minWidth ? 'p-0' : 'p-2'}`}>
+                        <div className={`${minWidth ? 'col-12 p-0 m-0' : 'col-7'} align-items-stretch`}>
+                            <div ref={elementRef} className={`card p-0 h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: 'translateY(-70px)'}}>
                                 <div className="card-body">
                                     <div className="w-100 mb-3 text-center">
                                         <span className="display-6 text-concept">Formulaire de contact</span>
-                                        <p className="fw-bold color-semi-purpule" style={{letterSpacing: '0.085rem'}}>
+                                        <p className="fw-bold color-semi-purpule mt-1" style={{letterSpacing: '0.085rem'}}>
                                             Ce formulaire vous permet de nous transmettre vos informations afin que nous puissions vous recontacter dans les plus brefs délais.
                                         </p>
                                     </div>
                                     <Form noValidate validated={validated} className="row" onSubmit={(e)=>handleSubmit(e)} autoComplete={"off"}>
-                                        <Form.Group className="mt-1 mb-2 col-6" controlId="nom">
+                                        <Form.Group className={`mt-1 mb-2 ${minWidth ? 'col-12' : 'col-6'}`} controlId="entreprise">
                                             <Form.Label>Entreprise *</Form.Label>
                                             <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Nom de votre entreprise" />
                                         </Form.Group>
-                                        <Form.Group className="mt-1 mb-2 col-6" controlId="nom">
+                                        <Form.Group className={`mt-1 mb-2 ${minWidth ? 'col-12' : 'col-6'}`} controlId="nom_entreprise">
                                             <Form.Label>Site web de l'Entreprise *</Form.Label>
                                             <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Site de votre entreprise" />
                                         </Form.Group>
@@ -127,7 +127,7 @@ const ContatctContainer = () => {
                                                 }
                                             </Form.Select>
                                         </Form.Group>
-                                        <Form.Group className="mb-3 col-lg-12" controlId="besoin">
+                                        <Form.Group className="mb-3 col-lg-12" controlId="description">
                                             <Form.Label>Déscription *</Form.Label>
                                             <Form.Control required as="textarea" value={comment} onChange={(e)=>setComment(e.target.value)} aria-rowspan={3} placeholder="A propos  de vos besoins..." />
                                         </Form.Group>
@@ -149,9 +149,8 @@ const ContatctContainer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-5 col-md-10 offset-md-1 offset-lg-0 col-sm-12 d-flex align-items-stretch mb-2">
-                            <div className="card border-0 mx-auto w-100 z-0
-                            " style={{height: 'calc(100% - 70px)'}}>
+                        <div className={`${minWidth ? 'col-12 p-0 mx-0' : 'col-5'} d-flex align-items-stretch mb-2`}>
+                            <div className="card border-0 mx-auto w-100 z-0" style={{height: heig}}>
                                 <div className="card-body shadow-lg w-100 m-0 p-0 w-100 bg-danger">
                                     <Localisation/>
                                 </div>

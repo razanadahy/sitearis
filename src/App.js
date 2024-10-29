@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Acceuil from "./Page/Acceuil";
 import {Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
 import ServicePage from "./Page/ServicePage";
@@ -13,6 +13,27 @@ import DetailService from "./Page/DetailService";
 import EbookDowload from "./Page/EbookDowload";
 
 function App() {
+    useEffect(() => {
+        const handleWheel = (event) => {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        };
+
+        const handleKeyDown = (event) => {
+            if (event.ctrlKey && (event.key === '+' || event.key === '-')) {
+                event.preventDefault();
+            }
+        };
+
+        window.addEventListener('wheel', handleWheel, { passive: false });
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
     return (
         <>
             <Router>

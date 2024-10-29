@@ -3,7 +3,7 @@ import React from "react";
 const InfoPostule = () => {
     return(
         <>
-            <div className="row bg-gradient-info-dark w-100 text-white mx-0 mb-3 font-ramona">
+            <div className="row bg-gradient-info-dark w-100 text-white mx-0 mb-3">
                 <br/>
                 <div className="col-lg-9 col-md-11 mt-5 p-6 pb-5 offset-lg-1 offset-md-1 col-sm-12">
                     <h1 className="slideOutToRight p-sm-2 fs-2">

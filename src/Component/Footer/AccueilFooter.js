@@ -137,6 +137,9 @@ const AccueilFooter = () => {
                     <div className={`${wMin ? 'col-12' : wInter ? 'col-6 mt-2' : 'col-3'}`}>
                         <h4 className="fs-3 mb-3 text-start">Nos Domaines</h4>
                         <ul className="list-group m-0 p-0 bg-transparent list-group-flush">
+                            <li className="list-group-item bg-transparent text-white border-0 cursor-pointer">
+                                <a href={`/${lang}/#adn`} className="letter-spacing fw-bolder p-0 m-0 text-jaune">Notre ADN <i className="ms-1 fa fa-arrow-up-right-from-square small" style={{transform: 'translateY(-4px)'}}/></a>
+                            </li>
                             <li className="list-group-item bg-transparent cursor-pointer text-white d-inline-flex justify-content-between border-0">
                                 <a href={`/${lang}/service#info`} className="fw-bolder p-0 m-0 letter-spacing">{t('info')}</a>
                             </li>
@@ -149,7 +152,7 @@ const AccueilFooter = () => {
                             <li className="list-group-item bg-transparent text-white border-0 cursor-pointer">
                                 <a href={`/${lang}/service#ext`} className="letter-spacing fw-bolder p-0 m-0">{t('ext')}</a>
                             </li>
-                            <li className="list-group-item bg-transparent text-white mb-2 border-0 cursor-pointer">
+                            <li className="list-group-item bg-transparent text-white border-0 mb-2 cursor-pointer">
                                 <a href={`/${lang}/service#hr`} className="letter-spacing fw-bolder p-0 m-0">{t('rh')}</a>
                             </li>
                         </ul>

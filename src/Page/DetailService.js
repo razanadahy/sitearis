@@ -1,26 +1,17 @@
 import React, {useEffect, useState} from "react";
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
 import {JobData as metier} from "../Config/Job";
 import HeaderContent from "../Component/Head/HeaderContent";
-import InfoService from "../Component/Head/InfoService";
-import AllService from "../Component/Body/AllService";
 import AccueilFooter from "../Component/Footer/AccueilFooter";
 import InfoDetailService from "../Component/Head/InfoDetailService";
 import CompDetail from "../Component/DetailService/CompDetail";
 
 const DetailService = () => {
     const navigate=useNavigate()
-    const location = useLocation();
     const {domaine, service}=useParams()
     const [child,setChild]=useState(null)
     const [parentChild,setParent]=useState(null)
 
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }, [location]);
     useEffect(()=>{
         const search=metier.find((e)=>e.id===parseInt(domaine))
         if (search){

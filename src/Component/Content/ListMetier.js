@@ -33,7 +33,7 @@ const ListMetier = () => {
     const contentMax = useMediaQuery({ query: "(max-width: 923px)" });
     return(
         <>
-            <div className="m-0 p-0 w-100 position-relative d-flex border-0" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
+            <div id="adn" className="m-0 p-0 w-100 position-relative d-flex border-0" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
                 <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0 border-0 " alt="..."/>
                 <div className="p-3 z-1 mt-2 w-100">
                     <div className={`${wMaxText ? 'my-1': 'my-4 p-2'} w-100 `}>

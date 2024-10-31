@@ -26,14 +26,16 @@ const Localisation = () => {
     };
 
     return (
-        <MapContainer center={position} zoom={16} style={{ height: '100%', width: '100%' }}>
+        <MapContainer center={position} zoom={16} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
             {active===1 ? (
                 <TileLayer
+                    scrollWheelZoom={false}
                     url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                     attribution='&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, USGS, NOAA'
                 />
             ): (
                 <TileLayer
+                    scrollWheelZoom={false}
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
@@ -57,7 +59,6 @@ const Localisation = () => {
     );
 }
 const ChangeTileLayerButton = ({ changeImage, active }) => {
-
     return (
         <>
             <div onClick={()=>changeImage()} className="position-absolute bottom-0 mb-2 start-0 ms-2 rounded-3 shadow-lg cursor-pointer" style={{zIndex: '1000',width: '50px', height: '50px'}}>

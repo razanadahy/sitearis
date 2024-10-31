@@ -97,22 +97,22 @@ const HeaderContent=({active})=>{
                             <div className="w-100 m-0 p-2">
                                 <ul className="list-group list-group-flush">
                                     <li className={`list-group-item btn-content ${active===1 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/`} className={`text-decoration-none display-6 ${active===1 ? 'text-aris fw-bold': 'text-dark'}`}>Accueil</a>
+                                        <a href={`/${lang}/`} className={`text-decoration-none ${active===1 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Accueil</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===3 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/apropos`} className={`text-decoration-none display-6 ${active===3 ? 'text-aris fw-bold': 'text-dark'}`}>A propos de nous</a>
+                                        <a href={`/${lang}/apropos`} className={`text-decoration-none ${active===3 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>A propos de nous</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===2 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/service`} className={`text-decoration-none display-6 ${active===2 ? 'text-aris fw-bold': 'text-dark'}`}>Nos services</a>
+                                        <a href={`/${lang}/service`} className={`text-decoration-none ${active===2 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Nos services</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===5 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/avantages`} className={`text-decoration-none display-6 ${active===5 ? 'text-aris fw-bold': 'text-dark'}`}>Vos avantages</a>
+                                        <a href={`/${lang}/avantages`} className={`text-decoration-none ${active===5 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Vos avantages</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===4 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/contact`} className={`text-decoration-none display-6 ${active===4 ? 'text-aris fw-bold': 'text-dark'}`}>Contact</a>
+                                        <a href={`/${lang}/contact`} className={`text-decoration-none ${active===4 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Contact</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===6 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/carrier`} className={`text-decoration-none display-6 ${active===6 ? 'text-aris fw-bold': 'text-dark'}`}>Nos offres d'employes</a>
+                                        <a href={`/${lang}/carrier`} className={`text-decoration-none ${active===6 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Nos offres d'employes</a>
                                     </li>
                                 </ul>
                             </div>

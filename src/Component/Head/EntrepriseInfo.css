@@ -64,6 +64,9 @@
 .comp:nth-child(3) {
     animation-delay: 0.3s;
 }
+.comp:nth-child(3) {
+    animation-delay: 0.4s;
+}
 
 
 .comp {

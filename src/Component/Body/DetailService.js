@@ -28,6 +28,12 @@ const DetailService = ({position, element, children,clicked, wMax}) => {
                         <div className="mt-3 mx-0 px-1">
                             <p className="" style={{letterSpacing: '0.065rem'}}>{element.text}</p>
                             {children}
+                            <div className="w-100 mt-0 d-flex justify-content-sm-start align-items-center">
+                                <i className="mx-2 fa-2x fa fa-arrow-right"/>
+                                <span onClick={()=>clicked()} className="fw-bold m-0 color-dark-concept cursor-pointer" style={{letterSpacing: '0.07rem', fontSize: '1.5rem',}}>
+                                    Demander un devis gratuit ici
+                                </span>
+                            </div>
                         </div>
                     </div>
                 ) : (
@@ -73,8 +79,8 @@ const DetailService = ({position, element, children,clicked, wMax}) => {
                                         <div className="w-100 mt-0 d-flex justify-content-sm-start align-items-center">
                                             <i className="mx-2 fa-2x fa fa-arrow-right"/>
                                             <span onClick={()=>clicked()} className="fw-bold p-2 m-0 color-dark-concept cursor-pointer" style={{letterSpacing: '0.07rem', fontSize: '1.65rem',}}>
-                                            Demander un devis gratuit ici
-                                        </span>
+                                                Demander un devis gratuit ici
+                                            </span>
                                         </div>
                                     </div>
                                 </>

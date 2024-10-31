@@ -3,6 +3,7 @@ import {Button, Form, Spinner, Toast} from "react-bootstrap";
 import Newsletter from "../Model/Newsletter.ts";
 import Localisation from "./Contact/Localisation";
 import {useMediaQuery} from "react-responsive";
+import {FormInput, FormSelect, FormTextarea} from "./Contact/FormInput";
 
 const ContatctContainer = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -84,7 +85,7 @@ const ContatctContainer = () => {
     const [checked,setChecked]=useState(false)
     const minWidth=useMediaQuery({query: "(max-width:1000px)"})
     const heig= useMemo(() => {
-        return minWidth ? '375px' : 'calc(100% - 70px)'
+        return minWidth ? '300px' : 'calc(100% - 70px)'
     }, [minWidth]);
     return(
         <>
@@ -96,40 +97,32 @@ const ContatctContainer = () => {
                                 <div className="card-body">
                                     <div className="w-100 mb-3 text-center">
                                         <span className="display-6 text-concept">Formulaire de contact</span>
-                                        <p className="fw-bold color-semi-purpule mt-1" style={{letterSpacing: '0.085rem'}}>
+                                        <p className="fw-bold text-dark mt-1" style={{letterSpacing: '0.085rem'}}>
                                             Ce formulaire vous permet de nous transmettre vos informations afin que nous puissions vous recontacter dans les plus brefs délais.
                                         </p>
                                     </div>
                                     <Form noValidate validated={validated} className="row" onSubmit={(e)=>handleSubmit(e)} autoComplete={"off"}>
-                                        <Form.Group className={`mt-1 mb-2 ${minWidth ? 'col-12' : 'col-6'}`} controlId="entreprise">
-                                            <Form.Label>Entreprise *</Form.Label>
-                                            <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Nom de votre entreprise" />
+                                        <Form.Group as={"div"} className={`mt-2 mb-2 col-lg-6 col-md-12`}>
+                                            <FormInput id="entreprise" placeholder={"Votre entreprise"} label="Entreprise *" />
                                         </Form.Group>
-                                        <Form.Group className={`mt-1 mb-2 ${minWidth ? 'col-12' : 'col-6'}`} controlId="nom_entreprise">
-                                            <Form.Label>Site web de l'Entreprise *</Form.Label>
-                                            <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Site de votre entreprise" />
+                                        <Form.Group as={"div"} className={`mt-2 mb-2 col-lg-6 col-md-12`}>
+                                            <FormInput id="site" placeholder={"www.entreprise.com"} label="Site web de l'Entreprise *" />
                                         </Form.Group>
-                                        <Form.Group className="mt-1 mb-2 col-lg-6 col-md-12" controlId="nom">
-                                            <Form.Label>Nom *</Form.Label>
-                                            <Form.Control required type="text" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder="Enter votre nom" />
+                                        <Form.Group as={"div"} className="mt-2 mb-2 col-lg-6 col-md-12">
+                                            <FormInput id="nom" placeholder={"Votre nom"} label="Nom *" />
                                         </Form.Group>
-                                        <Form.Group className="mb-3 col-lg-6 col-md-12" controlId="mail">
-                                            <Form.Label>Email *</Form.Label>
-                                            <Form.Control required type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="Entrer votre email" />
+                                        <Form.Group as={"div"} className="mb-3 mt-2 col-lg-6 col-md-12">
+                                            <FormInput type={"email"} id={"mail"} label={"Adresse Email *"} placeholder={"Adresse Email"}/>
                                         </Form.Group>
-                                        <Form.Group className="mb-3 col-lg-12" controlId="besoin">
-                                            <Form.Label>Domaine *</Form.Label>
-                                            <Form.Select required  onChange={(e)=>handleChange(e)}>
-                                                {
-                                                    elementOption.map(({id,name})=>(
-                                                        <option className="p-2" key={id} value={id} >{name}</option>
-                                                    ))
-                                                }
-                                            </Form.Select>
+                                        <Form.Group as={"div"} className="mt-2 mb-3 col-lg-12">
+                                            <FormSelect id={'besoin'} label={'Domaine *'} onChange={(e)=>handleChange(e)}>
+                                                {elementOption.map(({id,name})=>(
+                                                    <option className="p-4" key={id} value={id} >{name}</option>
+                                                ))}
+                                            </FormSelect>
                                         </Form.Group>
-                                        <Form.Group className="mb-3 col-lg-12" controlId="description">
-                                            <Form.Label>Déscription *</Form.Label>
-                                            <Form.Control required as="textarea" value={comment} onChange={(e)=>setComment(e.target.value)} aria-rowspan={3} placeholder="A propos  de vos besoins..." />
+                                        <Form.Group as={"div"} className="mb-3 mt-2 col-lg-12">
+                                            <FormTextarea placeholder={'Parlez-nous de votre besoin'} id={'description'} label={'Déscription *'}/>
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                             <Form.Check
@@ -141,17 +134,46 @@ const ContatctContainer = () => {
                                             />
                                         </Form.Group>
                                         <Form.Group className="mb-3 col-lg-12" >
-                                            <Button variant="primary" disabled={!checked} className="w-100 btn-content" type={`${loading ? 'button' : 'submit'}`}>
-                                                {loading ? (<Spinner animation="border" size="sm" variant="secondary" />):("Valider")}
+                                            <Button variant="primary" size={"lg"} disabled={!checked} className="w-100 btn-content fw-bold" style={{letterSpacing: '0.085rem'}} type={`${loading ? 'button' : 'submit'}`}>
+                                                {loading ? (<Spinner animation="border" size="sm" variant="secondary" />):("ENVOYER")}
                                             </Button>
                                         </Form.Group>
                                     </Form>
                                 </div>
                             </div>
                         </div>
-                        <div className={`${minWidth ? 'col-12 p-0 mx-0' : 'col-5'} d-flex align-items-stretch mb-2`}>
-                            <div className="card border-0 mx-auto w-100 z-0" style={{height: heig}}>
-                                <div className="card-body shadow-lg w-100 m-0 p-0 w-100 bg-danger">
+                        <div className={`${minWidth ? 'col-12 p-0 mx-0 mb-3' : 'col-5'} d-flex align-items-stretch mb-0`}>
+                            <div className="card border-0 shadow-lg mx-auto w-100 z-0" style={{height: heig}}>
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                                    <h4 className="color-dark-concept fw-bold section-title pt-2">Où nous sommes?</h4>
+                                    <div className="mb-1">
+                                        <pre className="m-0 fs-5">
+                                            Lieu :<strong> Iavoloha, Antananarivo 102</strong>
+                                        </pre>
+                                    </div>
+                                    <div className="mb-1">
+                                        <pre className="m-0 fs-5">
+                                            Mobile :<strong> +261 38 12 379 96</strong>
+                                        </pre>
+                                    </div>
+                                    <div className="mb-1">
+                                        <pre className="m-0 fs-5">
+                                            Email :<strong> contact@aris-cc.com</strong>
+                                        </pre>
+                                    </div>
+                                    <h4 className="color-dark-concept fw-bold mt-3 section-title" >Heures d'ouverture</h4>
+                                    <div>
+                                        <pre className="m-0 fs-5">Lun<i className="mx-2 fa fa-minus"/>Ven : <strong>7h:30</strong><i className="mx-2 fa fa-minus"/><strong>17h</strong></pre>
+                                    </div>
+                                    <div>
+                                        <pre className="m-0 fs-5">Sam<i className="mx-2 fa fa-minus"/>Dim : Disponible en ligne</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`col-12 p-0 mx-0 d-flex align-items-stretch mb-2`}>
+                            <div className="card border-0 mx-auto w-100 z-0" style={{height: '500px'}}>
+                                <div className="card-body shadow-lg w-100 m-0 p-0">
                                     <Localisation/>
                                 </div>
                             </div>

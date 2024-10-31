@@ -129,7 +129,7 @@ const CandidatureSpontane = () => {
                                </Form.Group>
                            </Row>
                            <div className="row m-0 p-0 w-100">
-                               <div className="col-md-6 d-md-block d-none">
+                               <div className="col-md-6 ms-0 ps-0 d-md-block d-none">
                                    <Button className="w-100" variant="danger" type="reset">annuler</Button>
                                </div>
                                <div className="col-md-6 col-sm-12 p-0 m-0">

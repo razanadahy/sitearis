@@ -234,7 +234,7 @@ input:focus {
     box-shadow: none !important;
 }
 .title{
-    width: max-content;
+    /*width: max-content;*/
     position: relative;
 }
 .title::before {
@@ -265,4 +265,16 @@ textarea:focus, input:focus {
 }
 .width-padding2rem{
     width: calc(100% - 2rem);
+}
+.section-title {
+    letter-spacing: 0.085rem;
+}
+.text-tel{
+    color: #6de8a0;
+}
+.text-whatsapp{
+    color: #0dcaf0;
+}
+.text-linkdein{
+    color: #3da6ef;
 }

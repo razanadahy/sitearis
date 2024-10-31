@@ -72,7 +72,7 @@ const AccueilFooter = () => {
                                             <span className="fw-bolder txt-at">{t('way')}</span>
                                         </li>
                                         <li className="mb-2">
-                                            <a href={`/${lang}/contact#map`} className="link-primary email-link cursor-pointer">
+                                            <a href="https://maps.app.goo.gl/5hp5qcinzUmxCbaj8" target="_blank" rel="noopener noreferrer" className="link-primary email-link cursor-pointer">
                                                 <i className="fa-solid fa-location-dot me-2 color-aris"/>
                                                 Iavoloha, Antananarivo 102
                                             </a>
@@ -106,7 +106,7 @@ const AccueilFooter = () => {
                                             </div>
                                         )}
                                         <div>
-                                            <a href={`/${lang}/contact#map`} className="link-primary email-link cursor-pointer">Iavoloha, Antananarivo 102</a>
+                                            <a href="https://maps.app.goo.gl/5hp5qcinzUmxCbaj8" target="_blank" rel="noopener noreferrer" className="link-primary email-link cursor-pointer">Iavoloha, Antananarivo 102</a>
                                         </div>
                                         <div>
                                             <a href="https://wa.me/+261381237996" target="_blank" rel="noopener noreferrer" className="ms-2 email-link link-primary cursor-pointer">+261 38 12 379 96</a>

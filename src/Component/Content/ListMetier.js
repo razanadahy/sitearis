@@ -52,7 +52,7 @@ const ListMetier = () => {
                             <Form.Control
                                 type="search"
                                 aria-describedby="searchBlock"
-                                placeholder="Recherche un métier ou une activité "
+                                placeholder="Rechercher un métier ou une activité "
                                 autoComplete="off"
                                 className=""
                                 style={{ border: '1px solid blue'}}

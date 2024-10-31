@@ -8,6 +8,8 @@ import comp from '../../Asset/Competant.jpg'
 import innovant from '../../Asset/Innovant.jpg'
 import formation from '../../Asset/Formation.jpg'
 import stable from '../../Asset/Stabilite.jpg'
+import condition from '../../Asset/condition.jpg'
+import equipement from '../../Asset/equipement.jpg'
 import DetailAvantage from "./DetailAvantage";
 
 const Equipement = () => {
@@ -39,8 +41,8 @@ const Equipement = () => {
 
                 <div className="mt-2 w-100 mb-2 p-0">
                     <DetailAvantage emplacement={0} image={formation} title={"contribution au formation du personnel"} text={"Pour rester à la pointe de l'innovation, nous offrons à nos collaborateurs des formations régulières sur les dernières technologies. Cela nous permet de vous proposer des solutions digitales toujours plus performantes et adaptées à vos besoins"}/>
-                    <DetailAvantage emplacement={1} image={flex} title={"Condition de travail au TOP"} text={"Nous croyons que des collaborateurs épanouis sont la clé de notre succès. C'est pourquoi nous mettons tout en œuvre pour offrir un environnement de travail stimulant, où chacun peut s'épanouir et donner le meilleur de lui-même."}/>
-                    <DetailAvantage emplacement={2} image={flex} title={"Equipement haute performance"} text={"Nous croyons fermement que l'innovation passe par l'équipement haute performance. En investissant dans des technologies de pointe, nous offrons à notre équipe les outils nécessaires pour exceller dans leur travail et répondre aux besoins de nos clients avec efficacité."}/>
+                    <DetailAvantage emplacement={1} image={condition} title={"Condition de travail au TOP"} text={"Nous croyons que des collaborateurs épanouis sont la clé de notre succès. C'est pourquoi nous mettons tout en œuvre pour offrir un environnement de travail stimulant, où chacun peut s'épanouir et donner le meilleur de lui-même."}/>
+                    <DetailAvantage emplacement={2} image={equipement} title={"Equipement haute performance"} text={"Nous croyons fermement que l'innovation passe par l'équipement haute performance. En investissant dans des technologies de pointe, nous offrons à notre équipe les outils nécessaires pour exceller dans leur travail et répondre aux besoins de nos clients avec efficacité."}/>
                     <DetailAvantage emplacement={3} image={stable} title={" Stabilité et engagement"} text={"C'est l'assurance d'un partenariat durable. Notre entreprise, solidement implantée, vous offre une stabilité et un engagement à long terme, pour vous accompagner dans toutes les étapes de votre projet."}/>
                 </div>
             </div>

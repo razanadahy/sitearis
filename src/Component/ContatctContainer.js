@@ -85,7 +85,7 @@ const ContatctContainer = () => {
     const [checked,setChecked]=useState(false)
     const minWidth=useMediaQuery({query: "(max-width:1000px)"})
     const heig= useMemo(() => {
-        return minWidth ? '300px' : 'calc(100% - 70px)'
+        return minWidth ? 'auto' : 'calc(100% - 70px)'
     }, [minWidth]);
     return(
         <>

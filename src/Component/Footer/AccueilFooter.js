@@ -49,7 +49,7 @@ const AccueilFooter = () => {
     const footM=useMediaQuery({query: "(max-width: 651px)"})
     return (
         <>
-             <IconFooter isVisible={!isIconVisible}/>
+            <IconFooter isVisible={!isIconVisible}/>
             <div ref={footerRef} className="m-0 p-0 w-100 bg-dark-blue text-white small">
                 <div className="row w-100 mx-0 mt-2 mb-0 pt-4 px-3 border-bottom">
                     <div className={`${wInter ? 'col-12' : 'col-6'}`}>
@@ -168,7 +168,7 @@ const AccueilFooter = () => {
                                     e-mail
                                 </label>
                                 <input type="email" id="email" autoComplete={"off"} className="email-input" />
-                                <span className="email-arrow pe-1">
+                                <span className="email-arrow pe-1 cursor-pointer">
                                     <i className="fa-solid fa-arrow-right-long"/>
                                 </span>
                             </div>

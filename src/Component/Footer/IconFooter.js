@@ -22,12 +22,12 @@ const IconFooter = ({isVisible=true}) => {
                         </a>
                     </li>
                     <li className={`list-group-item comp mb-1 cursor-pointer rounded-circle w-h-30 bg-li border-0 d-flex justify-content-center align-items-center`}>
-                        <a  href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer">
+                        <a  href="https://wa.me/+261381237996" target="_blank" rel="noopener noreferrer">
                             <i className="fa-brands fa-whatsapp fn-6 text-whatsapp"/>
                         </a>
                     </li>
                     <li className={`list-group-item comp mb-1 cursor-pointer rounded-circle w-h-30 bg-li border-0 d-flex justify-content-center align-items-center`}>
-                        <a  href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer">
+                        <a  href="tel:+261381237996" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-phone fn-6 text-tel"/>
                         </a>
                     </li>

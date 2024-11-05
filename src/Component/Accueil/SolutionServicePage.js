@@ -1,36 +1,20 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useState} from "react";
 import SolutionComponent from "./SolutionComponent";
 import {useMediaQuery} from "react-responsive";
+import ViewContent from "../../FunctionComponent/ViewContent";
 
 const SolutionServicePage = () => {
-
     const [isVisible, setIsVisible] = useState(false);
-    const elementRef = useRef(null);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (elementRef.current) {
-                const top = elementRef.current.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                setIsVisible(top < windowHeight);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     const minW=useMediaQuery({query: "(max-width: 517px)"})
     return(
         <>
             <div className="row w-100 m-0 p-4 pb-0">
-                <h2 ref={elementRef} className={`text-warning-emphasis ${isVisible ? 'showTop' : 'opacity-0'}`}>
-                    Optimisez vos opérations avec nos solutions en:
-                </h2>
+                <ViewContent setIsVisible={setIsVisible} time={0}>
+                    <h2 className={`text-warning-emphasis ${isVisible ? 'showTop' : 'opacity-0'}`}>
+                        Optimisez vos opérations avec nos solutions en:
+                    </h2>
+                </ViewContent>
                 <div className={`row mt-2 mb-0 ${minW ? 'p-0 mx-0' : ' mx-3 p-3'}`}>
                     <div id={"coworking"} className="col-lg-6 p-0 offset-lg-0 col-md-10 offset-md-1 col-sm-12 d-flex align-items-stretch mb-2">
 

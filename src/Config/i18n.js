@@ -55,7 +55,14 @@ const resources = {
             //Serice
             "introService": 'offers you a complete range of customized solutions, designed to meet the specific needs of your business.',
             "descService": 'We put our expertise at your service to ensure your success!',
-
+            "videoNotSupported": "Your browser does not support the video.",
+            "avantage": "Your Benefits",
+            "cle": "Turnkey solutions for your business",
+            "delegue": "Delegate your activities with specialized teams in Madagascar",
+            "dna": "Our DNA",
+            "recherche": "Search for a profession or an activity",
+            "deleg": "Delegate your activities with specialized teams",
+            "centre": "OFFSHORE Center in Madagascar",
         }
     },
     fr: {
@@ -66,7 +73,7 @@ const resources = {
             "apropos": 'À Propos de Nous',
             "service": 'Nos services',
             "contact": 'Contact',
-            "post": 'Postuler',
+            "post": 'Carrière',
             "brochure": 'En Savoir plus sur nous!',
             // "brochure": 'Notre plaquette entreprise',
             "dBr": 'Télécharger notre BROCHURE',
@@ -112,7 +119,14 @@ const resources = {
             //Serice
             "introService": ' vous offre une gamme complète de solutions sur mesure, conçues pour répondre aux besoins spécifiques de votre entreprise.',
             "descService": 'Nous mettons notre expertise à votre service pour garantir votre succès!',
-
+            "videoNotSupported": "Votre navigateur ne supporte pas la video",
+            "avantage": "Vos Avantages",
+            "cle": "Solutions clé en main pour votre entreprise",
+            "delegue": "Déléguer vos activités avec des équipes spécialisées à Madagascar",
+            "dna": "Notre ADN",
+            "recherche": "Rechercher un métier ou une activité",
+            "deleg": "Déléguer vos activités avec des équipes spécialisées",
+            "centre": "Centre OFFSHORE à Madagascar",
         }
     }
 };

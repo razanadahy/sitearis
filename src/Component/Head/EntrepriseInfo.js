@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback, useEffect, useMemo, useState} from "react";
 import infoE from '../../Asset/info.mp4'
 import './EntrepriseInfo.css'
 import {OverlayTrigger, Tooltip} from "react-bootstrap";
@@ -9,15 +9,31 @@ import {useMediaQuery} from "react-responsive";
 
 
 const EntrepriseInfo= ()=>{
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const {lang}=useParams()
     const wMax = useMediaQuery({ query: "(max-width: 1034px)" });
+    const [animate, setAnimate] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAnimate(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+    const splitText = useCallback( (text) => {
+        return text.split("").map((char, index) => (
+            <span key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                  {char === " " ? "\u00A0" : char}
+            </span>
+        ));
+    }, []);
+
     return (
         <>
             <header className="header">
                 <video className="header-video" autoPlay muted loop>
                     <source src={infoE} type="video/mp4" />
-                    Votre navigateur ne supporte pas la video
+                    {t('videoNotSupported')}
                 </video>
                 <div className="video-overlay"/>
                 <div className={`w-100 p-3 position-relative d-flex justify-content-center ${wMax ? 'd-none' : ''}`}>
@@ -40,9 +56,7 @@ const EntrepriseInfo= ()=>{
                         </div>
                     </div>
                 </div>
-                <OverlayTrigger
-                    placement="bottom"
-                    overlay={
+                <OverlayTrigger placement="bottom" overlay={
                         <Tooltip id={`tooltip-${1}`}>
                             <div className="position-relative py-2">
                                 <span className=" ">{t('dBr')}</span>
@@ -51,7 +65,9 @@ const EntrepriseInfo= ()=>{
                     }
                 >
                     <div className="position-absolute d-flex z-2 justify-content-center w-100 bottom-0">
-                        <a href={`/${lang}/ebook`} type="button" className="btn mb-4 btn-style btn-lg px-4 py-3 rounded-3"  style={{ transition: 'background-color 700ms ease-in-out', letterSpacing: '0.085rem'}}>{t('brochure')}<i className="fa-solid fa-chevron-right ms-2"/></a>
+                        <a href={`/${lang}/ebook`} type="button" className={`btn ${animate ? 'wave-effect' : ''} mb-4 btn-style btn-lg px-4 py-3 rounded-3`}  style={{ transition: 'background-color 700ms ease-in-out', letterSpacing: '0.085rem'}}>
+                            {splitText(t('brochure'))}<i className="fa-solid fa-chevron-right ms-2"/>
+                        </a>
                     </div>
                 </OverlayTrigger>
             </header>

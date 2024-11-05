@@ -25,7 +25,7 @@ const HeaderContent=({active})=>{
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [handleScroll]);
+    }, []);
 
     const { t, i18n } = useTranslation()
     const navigate = useNavigate()
@@ -51,7 +51,7 @@ const HeaderContent=({active})=>{
         return usa
     },[i18n.language])
 
-    const wMax = useMediaQuery({ query: "(max-width: 1034px)" });
+    const wMax = useMediaQuery({ query: "(max-width: 1120px)" });
     const [showLink,setShowLink]=useState(false)
     return (
         <>
@@ -60,20 +60,13 @@ const HeaderContent=({active})=>{
                     <nav id="header" className={`navbar navbar-light position-fixed top-0 start-0 w-100 z-3 ${hasShadow ? 'bg-light shadow-lg': 'bg-transparent'}`}>
                         <div className="container-fluid">
                             <a className="navbar-brand d-inline-flex align-items-center" href={`/${lang}/`}>
-                                <img src={logo} alt="" width="35" className="d-inline-block align-text-top me-2"/>
+                                <img src={logo} alt="logo" width="35" className="d-inline-block align-text-top me-2"/>
                                 <strong className="text-aris me-2">Aris</strong><strong className="text-concept">Concept</strong>
                             </a>
                             <i onClick={()=>setShowLink(true)} className={`fa-solid fa-bars fa-2x cursor-pointer ${hasShadow ? '' : 'text-white'}`}/>
                         </div>
                     </nav>
-                    <Modal
-                        show={showLink}
-                        onHide={() => setShowLink(false)}
-                        aria-labelledby="link"
-                        backdropClassName="p-0 m-0"
-                        dialogClassName="min-vw-100 border-0 p-0 m-0"
-                        contentClassName="rounded-0 border-0 w-100"
-                    >
+                    <Modal show={showLink} onHide={() => setShowLink(false)} backdropClassName="p-0 m-0" dialogClassName="min-vw-100 border-0 p-0 m-0" contentClassName="rounded-0 border-0 w-100">
                         <Modal.Header className="m-0" closeButton>
                             <Dropdown>
                                 <Dropdown.Toggle
@@ -81,14 +74,14 @@ const HeaderContent=({active})=>{
                                     id="lang"
                                     className={`cursor-pointer fs-6 px-2 rounded-0 text-dark fw-bold`}
                                 >
-                                    <img src={currentIconLanguage} alt={"..."} width={25} className="me-2"/><i className="ms-2 fa-solid fa-angle-down"/>
+                                    <img src={currentIconLanguage} alt={"currentLanguage"} width={25} className="me-2"/><i className="ms-2 fa-solid fa-angle-down"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className="mt-3">
                                     <Dropdown.Item onClick={()=>changeLanguage('fr')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
-                                        <img src={fr} alt={"..."} width={20} className="me-2 "/>{t('fr')}
+                                        <img src={fr} alt={"fr"} width={20} className="me-2 "/>{t('fr')}
                                     </Dropdown.Item>
                                     <Dropdown.Item onClick={()=>changeLanguage('en')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
-                                        <img src={usa} alt={"..."} width={20} className="me-2 "/>{t('en')}
+                                        <img src={usa} alt={"en"} width={20} className="me-2 "/>{t('en')}
                                     </Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
@@ -97,22 +90,22 @@ const HeaderContent=({active})=>{
                             <div className="w-100 m-0 p-2">
                                 <ul className="list-group list-group-flush">
                                     <li className={`list-group-item btn-content ${active===1 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/`} className={`text-decoration-none ${active===1 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Accueil</a>
+                                        <a href={`/${lang}/`} className={`text-decoration-none ${active===1 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>{t('ac')}</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===3 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/apropos`} className={`text-decoration-none ${active===3 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>A propos de nous</a>
+                                        <a href={`/${lang}/apropos`} className={`text-decoration-none ${active===3 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>{t("apropos")}</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===2 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/service`} className={`text-decoration-none ${active===2 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Nos services</a>
+                                        <a href={`/${lang}/service`} className={`text-decoration-none ${active===2 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>{t('service')}</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===5 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/avantages`} className={`text-decoration-none ${active===5 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Vos avantages</a>
+                                        <a href={`/${lang}/avantages`} className={`text-decoration-none ${active===5 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>{t('avantage')}</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===4 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/contact`} className={`text-decoration-none ${active===4 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Contact</a>
+                                        <a href={`/${lang}/contact`} className={`text-decoration-none ${active===4 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>{t('contact')}</a>
                                     </li>
                                     <li className={`list-group-item btn-content ${active===6 ? 'border-aris' : ''}`}>
-                                        <a href={`/${lang}/carrier`} className={`text-decoration-none ${active===6 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>Nos offres d'employes</a>
+                                        <a href={`/${lang}/carrier`} className={`text-decoration-none ${active===6 ? 'text-aris fw-bold': 'text-dark'}`} style={{fontSize: '1.5rem'}}>{t('post')}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -140,7 +133,7 @@ const HeaderContent=({active})=>{
                                     <a href={`/${lang}/service`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-dark fw-bold`} ><span className="p-2">{t('service')}</span></a>
                                 </div>
                                 <div className={`me-2 mx-2 btn-animate`}>
-                                    <a href={`/${lang}/avantages`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-dark fw-bold`}>Vos avantages</a>
+                                    <a href={`/${lang}/avantages`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-dark fw-bold`}>{t('avantage')}</a>
                                 </div>
                                 <div className={`me-2 mx-2 btn-animate`}>
                                     <a href={`/${lang}/contact`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-dark fw-bold`}>{t('contact')}</a>
@@ -152,14 +145,14 @@ const HeaderContent=({active})=>{
                                             id="lang"
                                             className={`cursor-pointer fs-6 px-2 rounded-0 text-dark fw-bold`}
                                         >
-                                            <img src={currentIconLanguage} alt={"..."} width={20} className="me-2 "/><i className="ms-2 fa-solid fa-angle-down"/>
+                                            <img src={currentIconLanguage} alt={"currentLanguage"} width={20} className="me-2 "/><i className="ms-2 fa-solid fa-angle-down"/>
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu className="mt-3">
                                             <Dropdown.Item onClick={()=>changeLanguage('fr')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
-                                                <img src={fr} alt={"..."} width={20} className="me-2 "/>{t('fr')}
+                                                <img src={fr} alt={"fr"} width={20} className="me-2 "/>{t('fr')}
                                             </Dropdown.Item>
                                             <Dropdown.Item onClick={()=>changeLanguage('en')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
-                                                <img src={usa} alt={"..."} width={20} className="me-2 "/>{t('en')}
+                                                <img src={usa} alt={"en"} width={20} className="me-2 "/>{t('en')}
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
@@ -172,7 +165,7 @@ const HeaderContent=({active})=>{
                         </>
                     ): (
                         <>
-                            <div className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
+                            <div id="header" className="d-flex justify-content-between text-white text-opacity-75 fw-bold">
                                 <div className={`me-2 btn-animate`}>
                                     <a href={`/${lang}/`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===1 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} >{t('ac')}</a>
                                 </div>
@@ -180,7 +173,7 @@ const HeaderContent=({active})=>{
                                     <a href={`/${lang}/service`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===2 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} ><span className="p-2">{t('service')}</span></a>
                                 </div>
                                 <div className={`me-2 btn-animate`}>
-                                    <a href={`/${lang}/avantages`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} >Vos avantages</a>
+                                    <a href={`/${lang}/avantages`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===5 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`} >{t('avantage')}</a>
                                 </div>
                                 <div className={`me-2 btn-animate`}>
                                     <a href={`/${lang}/contact`} className={`btn btn-header py-1 rounded-0 px-2 fs-6 ${idActive===4 ? 'btn-active' : ''} text-white text-opacity-75 fw-bold`}>{t('contact')}</a>
@@ -198,14 +191,14 @@ const HeaderContent=({active})=>{
                                             id="lang"
                                             className={`cursor-pointer py-1 fs-6 px-2 rounded-0 text-white text-opacity-75 fw-bold`}
                                         >
-                                            <img src={currentIconLanguage} alt={"..."} width={20} className="me-2 "/><i className="ms-2 fa-solid fa-angle-down"/>
+                                            <img src={currentIconLanguage} alt={"currentLanguage"} width={20} className="me-2 "/><i className="ms-2 fa-solid fa-angle-down"/>
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu className="">
                                             <Dropdown.Item onClick={()=>changeLanguage('fr')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
-                                                <img src={fr} alt={"..."} width={20} className="me-2 "/>{t('fr')}
+                                                <img src={fr} alt={"fr"} width={20} className="me-2 "/>{t('fr')}
                                             </Dropdown.Item>
                                             <Dropdown.Item onClick={()=>changeLanguage('en')} as={"div"} className="d-inline-flex cursor-pointer text-uppercase justify-content-center">
-                                                <img src={usa} alt={"..."} width={20} className="me-2 "/>{t('en')}
+                                                <img src={usa} alt={"en"} width={20} className="me-2 "/>{t('en')}
                                             </Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>

@@ -50,34 +50,38 @@ body {
 
 @keyframes slideOutToRight {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-100%) scale(0.2);
         opacity: 0;
     }
     50%{
-        opacity: 0.5;
-        transform: translateX(-50%);
+        opacity: 1;
+        transform: scale(1.1);
     }
     100% {
-        transform: translateX(0%);
+        transform: translateX(0) scale(1);
         opacity: 1;
     }
 }
 .slideOutToRight {
-    animation: slideOutToRight 0.7s ease-in;
+    animation: slideOutToRight 2s ease-in-out forwards;
 }
 
 @keyframes preAnimation {
     0% {
         opacity: 0;
-        transform: scale(1.2);
+        transform: translateX(200%);
+    }
+    50%{
+        transform: scale(1.1) translateX(0);
+        opacity: 0.5;
     }
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translateX(0);
     }
 }
 .preAnimation {
-    animation: preAnimation 1s ease-in;
+    animation: preAnimation 2.2s ease-in-out forwards;
 }
 
 .color-cyan{
@@ -281,4 +285,21 @@ textarea:focus, input:focus {
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+div >a{
+    letter-spacing: 0.065rem;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.wave-effect span {
+    display: inline-block; /* Permet aux lettres d'être animées indépendamment */
+    animation: wave 0.5s ease-in-out forwards;
 }

@@ -43,20 +43,7 @@
 .text-aris{
     color: #D10D58 !important;
 }
-.arrow-icon {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
 
-
-.btn:hover .arrow-icon {
-    visibility: visible;
-    opacity: 1;
-}
-.mt--4{
-    margin-top: -3.6rem !important;
-}
 .text {
     color: #FFFFFF;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -159,4 +146,22 @@
     background-color: #f0f0f0;
     border-radius: 5px;
     position: relative;
+}
+.icon-media{
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.4s ease-in-out;
+}
+.span-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.span-icon:hover{
+    background-color: rgba(127, 172, 229, 0.2);
+}
+.in-color{
+    color: #0077b5 ;
 }

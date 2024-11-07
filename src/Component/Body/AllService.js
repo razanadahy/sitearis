@@ -15,11 +15,11 @@ const AllService = () => {
     const { t, i18n } = useTranslation();
     const services= useMemo(() => {
         return [
-            {id: 1, div: 'accounting', image: cp, trans:'Nous vous aidons sur : ', title: t('compta'), text: 'Confiez-nous votre comptabilité pour une gestion financière transparente et fiable. Nos experts assurent un suivi rigoureux de vos comptes et vous aident à prendre des décisions éclairées.'},
-            {id: 4, div: 'info', image: traitement, trans:'Sur cela, nous proposons :', title: t('info'), text: 'Bénéficiez de solutions informatiques innovantes et personnalisées. Nos spécialistes optimisent vos systèmes d\'information et traitent vos données avec efficacité.'},
-            {id: 5, div: 'hr', image: rh, trans:'Nous apportons :', title: t('rh'), text: 'Nous vous accompagnons dans la gestion de vos talents. Du recrutement à la formation, nos services RH vous aident à construire des équipes performantes.'},
-            {id: 2, div: 'ext', image: extAdd, trans:'Nous vous aidons à gèrer : ', title: t('ext'), text: 'Déléguez vos tâches administratives pour vous concentrer sur votre cœur de métier.' },
-            {id: 3, div: 'web-marketing', image: web, trans:'Nous vous aidons sur :', title: t('marketing'), text: 'Développez votre présence en ligne et améliorez votre visibilité. Nos experts en marketing digital vous proposent des solutions clés en main pour atteindre vos objectifs.'},
+            {id: 1, div: 'accounting', image: cp, trans: t('aideSur'), title: t('compta'), text: t('introCompta')},
+            {id: 4, div: 'info', image: traitement, trans: t('cela'), title: t('info'), text: t('introTraitement')},
+            {id: 5, div: 'hr', image: rh, trans: t('apport'), title: t('rh'), text: t('introRh')},
+            {id: 2, div: 'ext', image: extAdd, trans: t('aideGerer'), title: t('ext'), text: t('introExt') },
+            {id: 3, div: 'web-marketing', image: web, trans: t('aideSurF'), title: t('marketing'), text: t('introMark')},
         ]
     }, [i18n.language]);
     const navigate=useNavigate()

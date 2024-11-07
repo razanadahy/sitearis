@@ -300,6 +300,19 @@ div >a{
 }
 
 .wave-effect span {
-    display: inline-block; /* Permet aux lettres d'être animées indépendamment */
+    display: inline-block;
     animation: wave 0.5s ease-in-out forwards;
+}
+
+@keyframes showBottom {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.showBottom {
+    animation: showBottom 1s ease-in-out forwards;
 }

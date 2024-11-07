@@ -1,21 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import statistique from '../../Asset/ofre.png'
 import {useTranslation} from "react-i18next";
 import {useParams} from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
+import ViewContent from "../../FunctionComponent/ViewContent";
 
 const AppelAction = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const { lang } = useParams()
     const wMaxText = useMediaQuery({ query: "(max-width: 994px) and (min-width: 768px)" });
     const minWidth = useMediaQuery({query: "(max-width: 767px)"})
-
+    const [visible,setVisible]=useState(false)
     return (
         <>
-            <div className={`${minWidth ? '' : 'container'} bg-dark bg-opacity-10`}>
+            <ViewContent className={`${visible ? 'slideOutToRight' : 'invisible'} ${minWidth ? '' : 'container'} bg-dark bg-opacity-10`} time={0} setIsVisible={setVisible}>
                 <div className={`row ${minWidth ? 'p-0' : 'p-3'} w-100 mx-0 mt-4`}>
                     <div className={`${minWidth ? 'col-12 d-flex justify-content-center': wMaxText ? 'col-5 bg-primary-subtle' : 'col-3 offset-2 bg-primary-subtle'}`}>
-                        <img src={statistique} alt="..." height={200}/>
+                        <img src={statistique} draggable={"false"} decoding={"async"} alt="stat"  height={200}/>
                     </div>
                     <div className={`${minWidth ? 'col-12' : 'col-7 position-relative'}`}>
                         <div className="mt-2">
@@ -33,7 +34,7 @@ const AppelAction = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </ViewContent>
         </>
     )
 }

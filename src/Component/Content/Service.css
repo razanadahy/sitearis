@@ -40,22 +40,6 @@
     transform: scale(1.05);
 }
 
-@keyframes slideDown {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.slide-down {
-    animation: slideDown 1s ease forwards;
-}
-
-
 .text-aris{
     color: #D10D58 !important;
 }
@@ -82,10 +66,12 @@
 .bg-change {
     position: relative;
     overflow: hidden;
+    scale: 1.0;
     transition: all 0.5s ease-in-out!important;
-    border: none !important;
 }
-
+.bg-change:hover{
+    scale: 1.02;
+}
 .bg-change::before {
     content: '';
     position: absolute;
@@ -96,10 +82,7 @@
     background: linear-gradient(90deg, #404d66, #6e1d58);
     opacity: 0;
     z-index: 2;
-    transition: opacity 0.5s ease-in-out !important;
-}
-.bg-change:hover{
-    transform: scale(1.02) !important;
+    transition: all 0.5s ease-in-out !important;
 }
 .bg-change:hover h3{
     color: white !important;
@@ -151,23 +134,18 @@
 }
 
 .card-transition {
-    animation: dfIn 0.8s ease-in-out;
+    animation: dfIn 0.8s ease-in-out forwards;
 }
 
-@keyframes moved {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.opacity-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
-.moved{
-    animation: moved 0.7s forwards !important;
-}
-
 .custom-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -8,6 +8,8 @@ import Superposed from "../Accueil/Superposed";
 import Pagination from "../Body/Pagination";
 import {useMediaQuery} from "react-responsive";
 import {useTranslation} from "react-i18next";
+import ViewContent from "../../FunctionComponent/ViewContent";
+import LiElement from "./LiElement";
 
 const ListMetier = () => {
     const navigate=useNavigate()
@@ -33,50 +35,57 @@ const ListMetier = () => {
     const wMaxText = useMediaQuery({ query: "(max-width: 655px)" });
     const contentMax = useMediaQuery({ query: "(max-width: 923px)" });
     const { t } = useTranslation();
+    const [h2View,setH2View]=useState(false)
+    const [spView,setSpView]=useState(false)
+    const [adnView,setAdnView]=useState(false)
+    const [listView,setListView]=useState(false)
     return(
         <>
             <div id="adn" className="m-0 p-0 w-100 position-relative d-flex border-0" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
                 <img src={wave2} className="position-absolute w-100 m-0 p-0 top-0 z-0 border-0" draggable={"false"} decoding={"async"} alt="wave"/>
                 <div className="p-3 z-1 mt-2 w-100">
                     <div className={`${wMaxText ? 'my-1': 'my-4 p-2'} w-100 `}>
-                        <h2 className={`display-6 ${wMaxText ? 'text-center' : 'ms-5'} fw-bold text-white slide-down`}>{t('cle')}.</h2>
+                        <ViewContent setIsVisible={setH2View} time={150}>
+                            <h2 className={`display-6 ${wMaxText ? 'text-center' : 'ms-5'} fw-bold text-white ${h2View ? 'showTop' : 'invisible'}`}>{t('cle')}.</h2>
+                        </ViewContent>
                         {contentMax &&(
-                            <>
+                            <ViewContent setIsVisible={setSpView} time={150}>
                                 <div className="w-100 text-white mb-2">
-                                    <span className="small" style={{letterSpacing: '0.075rem'}}>{t('delegue')}</span>
+                                    <span className={`small ${spView ? 'slideOutToRight' : 'invisible'}`} style={{letterSpacing: '0.075rem'}}>{t('delegue')}</span>
                                 </div>
-                            </>
+                            </ViewContent>
                         )}
                     </div>
-                    <div className="w-100 border-aris text-start p-0 m-0 d-flex justify-content-between h-auto">
-                        <h4 className="p-0 m-0 text-aris title pb-3 fw-bold">{t('dna')}</h4>
-                        <div className={`h-100  ${wMax ? 'w-50': min ? 'ms-4 flex-grow-1':'w-25'}`}>
-                            <Form.Control
-                                type="search"
-                                aria-describedby="searchBlock"
-                                placeholder={t('recherche')}
-                                autoComplete="off"
-                                className=""
-                                style={{ border: '1px solid blue'}}
-                            />
+                    <ViewContent setIsVisible={setAdnView} time={250}>
+                        <div className="w-100 border-aris text-start p-0 m-0 d-flex justify-content-between h-auto">
+                            <h4 className={`p-0 m-0 text-aris title pb-3 fw-bold ${adnView ? 'showTop' : 'invisible'}`}>{t('dna')}</h4>
+                            <div className={`${adnView ? 'rotate' : 'invisible'} h-100  ${wMax ? 'w-50': min ? 'ms-4 flex-grow-1':'w-25'}`}>
+                                <Form.Control
+                                    type="search"
+                                    aria-describedby="searchBlock"
+                                    placeholder={t('recherche')}
+                                    autoComplete="off"
+                                    className=""
+                                    style={{ border: '1px solid blue'}}
+                                />
+                            </div>
                         </div>
-                    </div>
+                    </ViewContent>
                     <div className="mt-3 w-100">
                         <div className="row w-100 m-0 p-0">
-                            <div className={`${contentMax? 'col-12 mb-3' : 'col-4'} position-relative d-flex justify-content-center align-items-center`}>
+                            <ViewContent className={`${spView ? 'arrow-div' : 'invisible'} ${contentMax? 'col-12 mb-3' : 'col-4'} position-relative d-flex justify-content-center align-items-center`} setIsVisible={setSpView} time={350}>
                                 <Superposed t={t} large={contentMax}/>
-                            </div>
-
-                            <div className={`${contentMax ? "col-12" : "col-8"}`}>
+                            </ViewContent>
+                            <ViewContent setIsVisible={setListView} time={250} className={`${contentMax ? "col-12" : "col-8"}`}>
                                 <ul className="custom-list">
-                                    {allJobDetails.slice((active-1)*18,(active*18)).map((jobDetail)=>(
-                                        <li key={`${jobDetail.parentId}-${jobDetail.id}`} onClick={()=>navigate(`/${lang}/service/${jobDetail.parentId}/${jobDetail.id}`)} className="cursor-pointer"><span> <i className="far fa-dot-circle text-aris me-1"/>{jobDetail.title[lang]}</span></li>
+                                    {allJobDetails.slice((active-1)*18,(active*18)).map((jobDetail,index)=>(
+                                        <LiElement isVisible={listView} index={index} key={`${jobDetail.parentId}-${jobDetail.id}`} jobDetail={jobDetail} lang={lang} navigate={navigate}/>
                                     ))}
                                 </ul>
                                 <div className="w-100 p-2">
                                     <Pagination length={len} active={active} setActive={setActive}/>
                                 </div>
-                            </div>
+                            </ViewContent>
                         </div>
                     </div>
                 </div>

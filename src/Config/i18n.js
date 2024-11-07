@@ -63,6 +63,7 @@ const resources = {
             "recherche": "Search for a profession or an activity",
             "deleg": "Delegate your activities with specialized teams",
             "centre": "OFFSHORE Center in Madagascar",
+            "dom": "Our Areas of Expertise",
         }
     },
     fr: {
@@ -127,6 +128,7 @@ const resources = {
             "recherche": "Rechercher un métier ou une activité",
             "deleg": "Déléguer vos activités avec des équipes spécialisées",
             "centre": "Centre OFFSHORE à Madagascar",
+            "dom": "Nos domaines d'activité",
         }
     }
 };

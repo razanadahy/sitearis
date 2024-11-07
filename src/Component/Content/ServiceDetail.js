@@ -10,6 +10,7 @@ import CardServiceContent from "./CardServiceContent";
 import {useTranslation} from "react-i18next";
 import {useNavigate, useParams} from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
+import ViewContent from "../../FunctionComponent/ViewContent";
 
 
 const ServiceDetail= ()=>{
@@ -67,22 +68,23 @@ const ServiceDetail= ()=>{
             }, 4500);
             return () => clearTimeout(timer);
         }
-    }, [date, isPaused,services]);
+    }, [isPaused,services, date]);
     const navigate=useNavigate()
     const {lang}=useParams()
-
+    const [h2View,setH2View]=useState(false)
+    const [currentView,setCurrentView]=useState(false)
     return (
         <>
             <div className="mx-0 mt-0 mb-2 p-0 w-100 position-relative" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', minHeight: '100vh'}}>
                 <img src={wave2} decoding={"async"} className="position-absolute start-0 w-100 m-0 p-0 top-0 z-0" alt={"wave2"}/>
-                <h2 className="ms-4 fs-1 fw-bold text-concept p-5 pb-2 w-100 z-2 position-relative w-100 bg-test">
-                    {/*{t('serUs')}*/}
-                    Nos domaines d'activité
-                </h2>
+                <ViewContent time={250} setIsVisible={setH2View}>
+                    <h2 className={`ms-4 fs-1 fw-bold text-concept p-5 pb-2 w-100 z-2 position-relative w-100 ${h2View ? 'showTop' : 'invisible'}`}>
+                        {t('dom')}
+                    </h2>
+                </ViewContent>
                 <div className={`row mx-0 mb-2 mt-2 ${minW ? 'p-0' : 'p-2'} w-100 z-1 position-relative`}>
-                    <div  onMouseEnter={() => setIsPaused(true)}
-                          onMouseLeave={() => setIsPaused(false)} className={`${wMax? "col-12": "col-6"}`}>
-                        <div className="card shadow-lg rounded-2 border-0 h-100 d-flex justify-content-center scale">
+                    <div onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className={`${wMax? "col-12": "col-6"}`}>
+                        <ViewContent time={150} setIsVisible={setCurrentView} className={`card shadow-lg rounded-2 border-0 h-100 d-flex justify-content-center scale ${currentView ? 'showTopCard' : 'invisible'}`}>
                             <img src={carDefaultClicked.img} decoding={"async"} className="mx-auto mt-2" height={minW ? 150 : 300}  alt={carDefaultClicked.text}/>
                             <div className="card-title text-center mt-3">
                                 <h4 className="fs-3 fw-bold text-aris text-uppercase">{carDefaultClicked.text}</h4>
@@ -95,7 +97,7 @@ const ServiceDetail= ()=>{
                                     <button onClick={()=>navigate(`/${lang}/service#${carDefaultClicked.div}`)} type="button" className="btn btn-content bg-aris text-white fw-bold py-2 rounded-1 btnIcon">{t('plus')}</button>
                                 </div>
                             </div>
-                        </div>
+                        </ViewContent>
                     </div>
                     <div className={`${wMax ? 'col-12 mt-3': 'col-6 m-0 p-0 my-auto'}`}>
                         <div className="row m-0 p-0 w-100 d-flex h-100 align-items-stretch" >

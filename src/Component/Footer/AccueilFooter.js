@@ -4,6 +4,7 @@ import logo from "../../Asset/icon.png";
 import {useTranslation} from "react-i18next";
 import {useNavigate, useParams} from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
+import logoYour from '../../Asset/YourAndOur.png'
 
 const AccueilFooter = () => {
     const handleClick = useCallback((e) => {
@@ -59,9 +60,7 @@ const AccueilFooter = () => {
                                 <strong style={{ color: '#D10D58' }}>Aris </strong> <strong style={{ color: '#0e8de8' }}>Concept</strong>
                             </h4>
                         </div>
-                        <div className="my-3 w-100 text-center" >
-                            <p className="" style={{fontSize: '0.875rem', lineHeight: '1.35rem'}}>{t('descFooter')}</p>
-                        </div>
+
                         <div className="w-100 mt-3">
                             <span className="fs-5 fw-bolder text-uppercase text-aris">{t('ctnUs')}</span>
                             <div className="w-100 mt-2 p-2">
@@ -133,6 +132,21 @@ const AccueilFooter = () => {
                                 </a>
                             </div>
                         )}
+                        <h4 className="ms-2 mt-3 mb-3 text-white">
+                            Newsletter
+                        </h4>
+                        <div className="mb-2">
+                            {t('inscrire')}
+                            <div className="email-container border-bottom mt-2 w-100 d-inline-flex justify-content-between py-2 px-1 align-items-center">
+                                <label className="email-label" htmlFor="email">
+                                    e-mail
+                                </label>
+                                <input type="email" id="email" autoComplete={"off"} className="email-input" />
+                                <span className="email-arrow pe-1 cursor-pointer">
+                                    <i className="fa-solid fa-arrow-right-long"/>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <div className={`${wMin ? 'col-12' : wInter ? 'col-6 mt-2' : 'col-3'}`}>
                         <h4 className="fs-3 mb-3 text-start">Nos Domaines</h4>
@@ -158,21 +172,15 @@ const AccueilFooter = () => {
                         </ul>
                     </div>
                     <div className={`${wMin ? 'col-12 p-1 mt-2' : wInter ? 'col-6 p-1 mt-2' : 'col-3 p-0'}`}>
-                        <h4 className="ms-2 mb-3 text-primary">
-                            Newsletter
-                        </h4>
-                        <div className="mb-2">
-                            {t('inscrire')}
-                            <div className="email-container border-bottom mt-2 w-100 d-inline-flex justify-content-between py-2 px-1 align-items-center">
-                                <label className="email-label" htmlFor="email">
-                                    e-mail
-                                </label>
-                                <input type="email" id="email" autoComplete={"off"} className="email-input" />
-                                <span className="email-arrow pe-1 cursor-pointer">
-                                    <i className="fa-solid fa-arrow-right-long"/>
-                                </span>
+                        <div className="w-100 justify-content-between row m-0 p-0 mb-2">
+                            <div className="col-7">
+                                <p className="" style={{fontSize: '0.875rem', lineHeight: '1.35rem'}}>{t('descFooter')}</p>
+                            </div>
+                            <div className="col-5 d-flex align-items-center">
+                                <img src={logoYour} decoding={"async"} height={120} alt=""/>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div className="m-0 p-2 w-100 d-inline-flex justify-content-between">

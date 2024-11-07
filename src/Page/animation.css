@@ -9,7 +9,7 @@
     }
 }
 .arrow-div {
-    animation: showArrow 700ms ease-in-out;
+    animation: showArrow 1000ms ease-in-out ;
 }
 
 @keyframes showArrowLeft {
@@ -24,22 +24,6 @@
 }
 .arrow-div-left {
     animation: showArrowLeft 700ms ease-in-out;
-}
-
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-        border-color: rgba(255, 255, 255, 1);
-    }
-    50% {
-        opacity: 0.5;
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-}
-.blinking-button {
-    animation: blink 1s infinite;
-    border-width: 2px;
-    border-style: solid;
 }
 
 @keyframes showTop {
@@ -69,75 +53,15 @@
 .showTop-70 {
     animation: showTop-70 700ms ease-in-out;
 }
-
-.content-contribution:hover{
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-    transform: translateY(-4px);
-    transition: all 0.4s ease-in-out;
-}
-
-
-@keyframes blinkType {
-    from, to {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-.typing .cursor {
-    display: inline-block;
-    margin-left: 2px;
-    width: 1px;
-    background-color: black;
-    animation: blinkType 1s step-end infinite;
-}
-.flotant:hover{
-    transform: translateY(-5px);
-    transition: transform 0.3s ease-in-out;
-}
 .color-aris{
     color: #D10D58 !important;
 }
 .color-concept{
     color: #0e8de8 !important;
 }
-.w-40{
-    width: 40% !important;
-}
 
-.top-30 {
-    top: 30% !important;
-}
-.top-40{
-    top: 40% !important;
-}
-.top-20{
-    top: 18% !important;
-}
-.top-10{
-    top: 10% !important;
-}
-.top-5{
-    top: 2px !important;
-}
-.fs-7{
-    font-size: 0.8rem !important;
-}
-.carousel-control-next{
-    z-index: 3 !important;
-}
-.carousel-control-prev{
-    z-index: 3 !important;
-}
-.w-60{
-    width: 62% !important;
-}
 .bg-edit-2{
     background-color: #147d7d !important;
-}
-.w-70{
-    width: 75% !important;
 }
 
 .pst-icon{
@@ -145,7 +69,34 @@
     right: 5px !important;
 }
 
-.trasBg{
-    background-color: white !important;
-    transition: background-color 700ms initial;
+@keyframes rotation {
+    0% {
+        transform: translateY(-20px) rotate(-20deg) scale(0.8);
+    }
+    50%{
+        transform: translateY(20px) rotate(20deg) scale(0.8);
+    }
+    100% {
+        transform: translateY(0) rotate(0) scale(1);
+    }
+}
+.rotate{
+    animation: rotation 1200ms ease-in-out forwards;
+}
+@keyframes showTopCard {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%) scale(0);
+    }
+    75%{
+        opacity: 0.5;
+        transform: translateY(-10%) scale(0.99);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.showTopCard {
+    animation: showTopCard 700ms ease-in-out;
 }

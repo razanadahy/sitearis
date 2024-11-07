@@ -1,32 +1,38 @@
-import React, { useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef} from "react";
 
-const ViewContent = ({children,time,setIsVisible}) => {
+const ViewContent = ({children,time,setIsVisible, className = ''}) => {
     const elementRef = useRef(null);
 
     useEffect(() => {
+        let timeoutId;
         const handleScroll = () => {
             if (elementRef.current) {
                 const top = elementRef.current.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
+
                 if (top < windowHeight) {
-                    setTimeout(() => {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
                         setIsVisible(true);
-                    },  time);
-                }else{
-                    setIsVisible(false)
+                    }, time);
+                } else {
+                    clearTimeout(timeoutId);
+                    setIsVisible(false);
                 }
             }
         };
-
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
         handleScroll();
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener("scroll", handleScroll);
+            clearTimeout(timeoutId);
         };
     }, []);
+
+
     return(
-        <div ref={elementRef}>
+        <div className={className} ref={elementRef}>
             {children}
         </div>
     )

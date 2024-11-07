@@ -43,7 +43,7 @@ const EntrepriseInfo= ()=>{
                     <div className="row w-100 m-0 p-0 text-white">
                         <div className="text-center" >
                             <h1 className="slideOutToRight p-0 m-0 fs-2 p-sm-2">
-                                <strong className="fs-1" style={{ color: '#D10D58' }}>ARIS </strong> <strong className="fs-1" style={{ color: '#0e8de8' }}>CONCEPT</strong>
+                                <strong className="fs-1 color-aris">ARIS </strong> <strong className="fs-1 color-concept">CONCEPT</strong>
                                 <br/>
                                 <br/>
                                 <span className="fw-bold ">

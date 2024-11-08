@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import Pagination from "../Body/Pagination";
 import ShowModalDevis from "../Body/ShowModalDevis";
 import {useMediaQuery} from "react-responsive";
+import {useTranslation} from "react-i18next";
 
 const CompDetail = ({element,parent}) => {
     const {lang}=useParams()
@@ -31,6 +32,7 @@ const CompDetail = ({element,parent}) => {
     const setHideModal = useCallback((value) => {
         setClickModal(!value)
     },[])
+    const {t}=useTranslation()
     return(
         <>
             <div className=" w-100 row p-0 m-0">
@@ -65,7 +67,7 @@ const CompDetail = ({element,parent}) => {
                     </div>
                 </div>
                 <div className={`${maxWidth ? 'd-none' : 'col-5'} ps-0 pe-1 m-0 d-flex align-items-center`}>
-                    <Devis objectTitle={parent?.title[lang]}/>
+                    <Devis t={t} objectTitle={parent?.title[lang]}/>
                 </div>
                 <div className="mt-3 w-100 d-inline-flex justify-content-evenly bg-dark-subtle py-4">
                     {parent?.children.slice((idActive - 1)*paginate,(idActive*paginate)).map((e)=>(
@@ -76,7 +78,7 @@ const CompDetail = ({element,parent}) => {
                 </div>
                 <Pagination length={len} active={idActive} setActive={setActive}/>
             </div>
-            <ShowModalDevis title={parent?.title[lang]} show={clickModal} onHide={()=>setHideModal(true)}/>
+            <ShowModalDevis t={t} title={parent?.title[lang]} show={clickModal} onHide={()=>setHideModal(true)}/>
         </>
     )
 }

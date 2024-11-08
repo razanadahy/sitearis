@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Modal} from "react-bootstrap";
+import { Modal} from "react-bootstrap";
 import Devis from "./Devis";
 
 const ShowModalDevis = (props) => {
@@ -12,7 +12,7 @@ const ShowModalDevis = (props) => {
                 centered
             >
                 <Modal.Body>
-                    <Devis objectTitle={props.title}/>
+                    <Devis t={props.t} objectTitle={props.title}/>
                 </Modal.Body>
 
             </Modal>

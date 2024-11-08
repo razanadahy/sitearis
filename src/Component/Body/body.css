@@ -1,10 +1,26 @@
 .ps-center{
-    top: 2% !important;
+    top: 2% ;
     width: max-content;
-    left:50% !important;
+    left:50%;
     transform: translateX(-50%);
     background: linear-gradient(90deg, #D10D58, #0a0e59) !important;
 }
+
+@keyframes showTopTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%) translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+    }
+}
+.showTopTitle {
+    animation: showTopTitle 700ms ease-in-out;
+}
+
+
 .bg-linear-dark-aris{
     background: linear-gradient(90deg, #D10D58, #0a0e59) !important;
 }
@@ -32,4 +48,8 @@
 
 .gap-y-3 {
     row-gap: 0.75rem;
+}
+.p-spacing{
+    letter-spacing: 0.055rem;
+    font-size: 1.1rem;
 }

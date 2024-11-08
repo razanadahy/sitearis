@@ -1,6 +1,6 @@
 import React, { useEffect, useRef} from "react";
 
-const ViewContent = ({children,time,setIsVisible, className = ''}) => {
+const ViewContent = ({children,time,setIsVisible, className = '', style={}}) => {
     const elementRef = useRef(null);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const ViewContent = ({children,time,setIsVisible, className = ''}) => {
 
 
     return(
-        <div className={className} ref={elementRef}>
+        <div className={className} ref={elementRef} style={style}>
             {children}
         </div>
     )

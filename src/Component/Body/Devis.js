@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Button, Form, Spinner} from "react-bootstrap";
 
-const Devis = ({objectTitle}) => {
+const Devis = ({objectTitle,t}) => {
     const [loading, setLoading] = useState(false);
     return(
         <>
@@ -9,21 +9,21 @@ const Devis = ({objectTitle}) => {
                 <div className="card-body border-0 p-0 m-0">
                     <div className="p-2">
                         <h5 className="text-center mt-3 display-6 text-concept">
-                            Demander un devis gratuit ici.
+                            {t('demandeDevis')}
                         </h5>
                     </div>
                     <Form noValidate className="row p-0 m-0" autoComplete={"off"}>
-                        <Form.Group className="mt-1 mb-2 col-lg-12 col-md-12" controlId="nom">
-                            <Form.Label className="fw-bold fs-5">Entreprise *</Form.Label>
+                        <Form.Group className="mt-1 mb-2 col-lg-12 col-md-12" controlId="entreprise">
+                            <Form.Label className="fw-bold fs-5">{t('entreprise')} *</Form.Label>
                             <Form.Control required type="text"
                                 // value={nom} onChange={(e)=>setNom(e.target.value)}
-                                          placeholder="Enter le nom de votre entreprise" />
+                                          placeholder={t('companyName')} />
                         </Form.Group>
                         <Form.Group className="mt-1 mb-2 col-lg-12 col-md-12" controlId="nom">
-                            <Form.Label className="fw-bold fs-5">Nom *</Form.Label>
+                            <Form.Label className="fw-bold fs-5">{t('nom')} *</Form.Label>
                             <Form.Control required type="text"
                                 // value={nom} onChange={(e)=>setNom(e.target.value)}
-                                          placeholder="Enter votre nom" />
+                                          placeholder={t('enterName')} />
                         </Form.Group>
                         <Form.Group className="mb-3 col-lg-12 col-md-12" controlId="mail">
                             <Form.Label className="fw-bold fs-5">Email *</Form.Label>
@@ -32,21 +32,21 @@ const Devis = ({objectTitle}) => {
                                           placeholder="Entrer votre email" />
                         </Form.Group>
                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
-                            <Form.Label className="fw-bold fs-5">Portable *</Form.Label>
+                            <Form.Label className="fw-bold fs-5">{t('phone')} *</Form.Label>
                             <Form.Control required type="text"
                                 // value={mail} onChange={(e)=>setMail(e.target.value)}
-                                          placeholder="Entrez votre tel" />
+                                          placeholder={t('yourTel')} />
                         </Form.Group>
-                        <Form.Group className="mb-3 col-lg-12" controlId="besoin">
-                            <Form.Label className="fw-bold fs-5">Déscription *</Form.Label>
+                        <Form.Group className="mb-3 col-lg-12" controlId="description">
+                            <Form.Label className="fw-bold fs-5">{t('desc')} *</Form.Label>
                             <Form.Control required as="textarea"
                                 // value={comment} onChange={(e)=>setComment(e.target.value)}
                                           aria-rowspan={3}
-                                          placeholder="A propos de vos besoins..." />
+                                          placeholder={t('bes')} />
                         </Form.Group>
                         <Form.Group className="mb-3 col-lg-12" >
                             <Button variant="primary" className="w-100 btn-content text-uppercase fw-bold espacement" type={`${loading ? 'button' : 'submit'}`}>
-                                {loading ? (<Spinner animation="border" size="sm" variant="light" />):("Obtenir un devis gratuit")}
+                                {loading ? (<Spinner animation="border" size="sm" variant="light" />):(t('envoyer'))}
                             </Button>
                         </Form.Group>
                     </Form>

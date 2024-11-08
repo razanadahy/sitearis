@@ -60,7 +60,7 @@ const HeaderContent=({active})=>{
                     <nav id="header" className={`navbar navbar-light position-fixed top-0 start-0 w-100 z-3 ${hasShadow ? 'bg-light shadow-lg': 'bg-transparent'}`}>
                         <div className="container-fluid">
                             <a className="navbar-brand d-inline-flex align-items-center" href={`/${lang}/`}>
-                                <img src={logo} alt="logo" width="35" className="d-inline-block align-text-top me-2"/>
+                                <img src={logo} alt="Aris Concept" width="35" className="d-inline-block align-text-top me-2"/>
                                 <strong className="text-aris me-2">Aris</strong><strong className="text-concept">Concept</strong>
                             </a>
                             <i onClick={()=>setShowLink(true)} className={`fa-solid fa-bars fa-2x cursor-pointer ${hasShadow ? '' : 'text-white'}`}/>
@@ -117,7 +117,7 @@ const HeaderContent=({active})=>{
                     {hasShadow ? (
                         <>
                             <div className="flex-grow-1 d-inline-flex ms-3">
-                                <img onClick={()=>navigate(`/${lang}/`)} src={logo} alt="logo" className="logo-icon img-fluid me-3 cursor-pointer"/>
+                                <img onClick={()=>navigate(`/${lang}/`)} src={logo} alt="Aris Concept" className="logo-icon img-fluid me-3 cursor-pointer"/>
                                 <h4 onClick={()=>navigate(`/${lang}/`)} className="mb-0 fs-4 cursor-pointer fw-bold">
                                     <strong style={{ color: '#D10D58' }}>Aris </strong> <strong style={{ color: '#0e8de8' }}>Concept</strong>
                                 </h4>

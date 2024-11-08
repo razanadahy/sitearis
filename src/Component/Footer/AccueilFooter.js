@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import IconFooter from "./IconFooter";
 import logo from "../../Asset/icon.png";
 import {useTranslation} from "react-i18next";
-import {useNavigate, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
 import logoYour from '../../Asset/YourAndOur.png'
 
@@ -55,7 +55,7 @@ const AccueilFooter = () => {
                 <div className="row w-100 mx-0 mt-2 mb-0 pt-4 px-3 border-bottom">
                     <div className={`${wInter ? 'col-12' : 'col-6'}`}>
                         <div className="w-100 d-inline-flex align-items-center ">
-                            <img src={logo} alt="logo" className="img-fluid me-3" width={40}/>
+                            <img src={logo} alt="Aris Concept" className="img-fluid me-3" width={40}/>
                             <h4 className="mb-0 fs-2 fw-bold">
                                 <strong style={{ color: '#D10D58' }}>Aris </strong> <strong style={{ color: '#0e8de8' }}>Concept</strong>
                             </h4>

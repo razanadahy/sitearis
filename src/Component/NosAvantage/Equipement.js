@@ -18,7 +18,7 @@ const Equipement = () => {
             <div className="w-100 m-0 p-3">
                 <span className="display-4 text-concept fw-bold">Avec nous, vous avez: </span>
                 <div className="border-aris text-start p-0 mx-3 my-0">
-                    <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Service</h4>
+                    <h4 className="p-2 m-0 text-aris title pb-3 display-6 width-max"><i className="me-2 far fa-dot-circle fs-3"/> Service</h4>
                 </div>
                 <div className="mt-3 w-100 mb-2 p-0">
                     <DetailAvantage emplacement={0} image={unique} title={'Solutions personnalisées et unique'} text={'Nous ne faisons pas dans le prêt-à-porter. Chaque solution est un produit unique, façonné à votre image. Bénéficiez d\'un accompagnement personnalisé pour des résultats qui sortent du lot.'}/>
@@ -28,7 +28,7 @@ const Equipement = () => {
                 </div>
 
                 <div className="border-aris text-end p-0 mx-3 my-0">
-                    <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Personnels</h4>
+                    <h4 className="p-2 m-0 width-max text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Personnels</h4>
                 </div>
                 <div className="mt-3 w-100 mb-2 p-0">
                     <DetailAvantage emplacement={0} image={innovant} title={"L'innovant et l'adaptabilité"} text={"Face à un monde en perpétuelle évolution, l'innovation et l'adaptabilité représentent des atouts clé pour notre personnel. En encourageant une culture où la créativité est valorisée et où le changement est perçu comme une opportunité plutôt qu'une contrainte, chaque membre de notre équipe est habilité à proposer des solutions novatrices face aux défis."}/>
@@ -36,7 +36,7 @@ const Equipement = () => {
                     <DetailAvantage emplacement={2} image={qual} title={"Qualifié"} text={"Nous avons une équipe de professionnels d'une grande qualité, avec chacun une connaissance approfondie dans son domaine d'activité. Cette qualification nous permet de relever les défis avec confiance et de fournir des solutions efficaces et innovantes."}/>
                 </div>
                 <div className="border-aris text-start p-0 mx-3 my-0">
-                    <h4 className="p-2 m-0 text-aris title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Entreprise</h4>
+                    <h4 className="p-2 m-0 text-aris width-max title pb-3 display-6"><i className="me-2 far fa-dot-circle fs-3"/> Entreprise</h4>
                 </div>
 
                 <div className="mt-2 w-100 mb-2 p-0">

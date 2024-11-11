@@ -51,3 +51,16 @@
     display: inline-block;
     animation: slideIn3D 1.5s ease forwards;
 }
+/*@keyframes showBottom {*/
+/*    0% {*/
+/*        opacity: 0;*/
+/*        transform: translateY(-100%);*/
+/*    }*/
+/*    100% {*/
+/*        opacity: 1;*/
+/*        transform: translateY(50px);*/
+/*    }*/
+/*}*/
+/*.showBottom {*/
+/*    animation: showWe 700ms ease-in-out;*/
+/*}*/

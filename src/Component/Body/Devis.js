@@ -29,7 +29,7 @@ const Devis = ({objectTitle,t}) => {
                             <Form.Label className="fw-bold fs-5">Email *</Form.Label>
                             <Form.Control required type="email"
                                 // value={mail} onChange={(e)=>setMail(e.target.value)}
-                                          placeholder="Entrer votre email" />
+                                          placeholder={t('emailEnter')} />
                         </Form.Group>
                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                             <Form.Label className="fw-bold fs-5">{t('phone')} *</Form.Label>

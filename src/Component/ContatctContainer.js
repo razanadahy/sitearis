@@ -5,16 +5,18 @@ import Localisation from "./Contact/Localisation";
 import {useMediaQuery} from "react-responsive";
 import {FormInput, FormSelect, FormTextarea} from "./Contact/FormInput";
 import ViewContent from "../FunctionComponent/ViewContent";
+import {useTranslation} from "react-i18next";
 
 const ContatctContainer = () => {
-    const [elementOption,]=useState([
-        {id:1, name: 'Informatique et traitement de données'},
-        {id:2 , name: 'Ressources Humaines'},
-        {id:3 , name: 'Externalisation administrative'},
-        {id:4 , name: 'Web et Marketing'},
-        {id:5 , name: 'Comptabilité'},
-        {id:6 , name: 'Autre'},
-    ])
+    const {t,i18n} = useTranslation()
+    const elementOption=useMemo(()=>[
+        {id:1, name: t('info')},
+        {id:2 , name: t('rh')},
+        {id:3 , name: t('ext')},
+        {id:4 , name: t('marketing')},
+        {id:5 , name: t('compta')},
+        {id:6 , name: t('other')},
+    ] ,[i18n.language])
     const[nom,setNom]=useState('')
     const [mail,setMail]=useState('')
     const [comment,setComment]=useState('')
@@ -64,57 +66,55 @@ const ContatctContainer = () => {
     const heig= useMemo(() => {
         return minWidth ? 'auto' : 'calc(100% - 70px)'
     }, [minWidth]);
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(false)
+    const [vInfo, setVInfo] = useState(false);
     return(
         <>
             <div className="row w-100 my-3 mx-0 p-0">
                 <div className="card border-0">
                     <div id="map" className={`row m-0 ${minWidth ? 'p-0' : 'p-2'}`}>
                         <div className={`${minWidth ? 'col-12 p-0 m-0' : 'col-7'} align-items-stretch`}>
-                           <ViewContent time={350} setIsVisible={setIsVisible}>
+                           <ViewContent time={250} setIsVisible={setIsVisible}>
                                <div className={`card p-0 h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: 'translateY(-70px)'}}>
                                    <div className="card-body">
-                                       <div className="w-100 mb-3 text-center">
-                                           <span className="display-6 text-concept">Formulaire de contact</span>
-                                           <p className="fw-bold text-dark mt-1" style={{letterSpacing: '0.085rem'}}>
-                                               Ce formulaire vous permet de nous transmettre vos informations afin que nous puissions vous recontacter dans les plus brefs délais.
-                                           </p>
+                                       <div className="mb-3 px-0 pt-1 pb-2 mx-3 text-center border-bottom border-2 border-primary">
+                                           <span className="display-6 text-concept">{t('formulaireT')}</span>
                                        </div>
                                        <Form noValidate validated={validated} className="row" onSubmit={(e)=>null} autoComplete={"off"}>
                                            <Form.Group as={"div"} className={`mt-2 mb-2 col-lg-6 col-md-12`}>
-                                               <FormInput id="entreprise" placeholder={"Votre entreprise"} label="Entreprise *" />
+                                               <FormInput id="entreprise" placeholder={t('formEnt')} label={t('company')} />
                                            </Form.Group>
                                            <Form.Group as={"div"} className={`mt-2 mb-2 col-lg-6 col-md-12`}>
-                                               <FormInput id="site" placeholder={"www.entreprise.com"} label="Site web de l'Entreprise *" />
+                                               <FormInput id="site" placeholder={"www.company.com"} label={t('siteCompany')} />
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mt-2 mb-2 col-lg-6 col-md-12">
-                                               <FormInput id="nom" placeholder={"Votre nom"} label="Nom *" />
+                                               <FormInput id="nom" placeholder={t('enterName')} label={t('nom')} />
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mb-3 mt-2 col-lg-6 col-md-12">
-                                               <FormInput type={"email"} id={"mail"} label={"Adresse Email *"} placeholder={"Adresse Email"}/>
+                                               <FormInput type={"email"} id={"mail"} label={t('emailEnter')} placeholder={"Email"}/>
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mt-2 mb-3 col-lg-12">
-                                               <FormSelect id={'besoin'} label={'Domaine *'} onChange={(e)=>handleChange(e)}>
+                                               <FormSelect id={'besoin'} label={'Service'} onChange={(e)=>handleChange(e)}>
                                                    {elementOption.map(({id,name})=>(
                                                        <option className="p-4" key={id} value={id} >{name}</option>
                                                    ))}
                                                </FormSelect>
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mb-3 mt-2 col-lg-12">
-                                               <FormTextarea placeholder={'Parlez-nous de votre besoin'} id={'description'} label={'Déscription *'}/>
+                                               <FormTextarea placeholder={t('bes')} id={'description'} label={t('desc')}/>
                                            </Form.Group>
                                            <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                                <Form.Check
                                                    type='checkbox'
                                                    id="validation"
-                                                   label="En cochant ceci, vous acceptez nos conditions générales et notre politique de confidentialité"
+                                                   label={t('check')}
                                                    checked={checked}
                                                    onChange={()=>setChecked(prevState => !prevState)}
                                                />
                                            </Form.Group>
                                            <Form.Group className="mb-3 col-lg-12" >
-                                               <Button variant="primary" size={"lg"} disabled={!checked} className="w-100 btn-content fw-bold" style={{letterSpacing: '0.085rem'}} type={`${loading ? 'button' : 'submit'}`}>
-                                                   {loading ? (<Spinner animation="border" size="sm" variant="secondary" />):("ENVOYER")}
+                                               <Button variant="primary" size={"lg"} disabled={!checked} className="w-100 btn-content fw-bold text-uppercase" style={{letterSpacing: '0.085rem'}} type={`${loading ? 'button' : 'submit'}`}>
+                                                   {loading ? (<Spinner animation="border" size="sm" variant="secondary" />):(t('envoyer'))}
                                                </Button>
                                            </Form.Group>
                                        </Form>
@@ -123,33 +123,33 @@ const ContatctContainer = () => {
                            </ViewContent>
                         </div>
                         <div className={`${minWidth ? 'col-12 p-0 mx-0 mb-3' : 'col-5'} d-flex align-items-stretch mb-0`}>
-                            <div className="card border-0 shadow-lg mx-auto w-100 z-0" style={{height: heig}}>
+                            <ViewContent time={400} setIsVisible={setVInfo} className={`card border-0 shadow-lg mx-auto w-100 z-0 ${vInfo ? 'arrow-div-left' : 'invisible'}`} style={{height: heig}}>
                                 <div className="card-body d-flex flex-column justify-content-center align-items-center text-center">
-                                    <h4 className="color-dark-concept fw-bold section-title pt-2">Où nous sommes?</h4>
+                                    <h4 className="color-dark-concept fw-bold section-title pt-2">{t('whereAreWe')}</h4>
                                     <div className="mb-1">
-                                        <pre className="m-0 fs-5">
-                                            Lieu :<strong> Iavoloha, Antananarivo 102</strong>
-                                        </pre>
+                                    <pre className="m-0 fs-5 text-danger">
+                                        <i className="fa fa-location-dot"/><strong> Iavoloha, Antananarivo 102</strong>
+                                    </pre>
                                     </div>
                                     <div className="mb-1">
-                                        <pre className="m-0 fs-5">
-                                            Mobile :<strong> +261 38 12 379 96</strong>
-                                        </pre>
+                                    <pre className="m-0 fs-5 text-tel">
+                                        <i className="fa fa-phone"/><strong> +261 38 12 379 96</strong>
+                                    </pre>
                                     </div>
                                     <div className="mb-1">
-                                        <pre className="m-0 fs-5">
-                                            Email :<strong> contact@aris-cc.com</strong>
-                                        </pre>
+                                    <pre className="m-0 fs-5 text-linkdein">
+                                        <i className="fa fa-envelope"/><strong> contact@aris-cc.com</strong>
+                                    </pre>
                                     </div>
-                                    <h4 className="color-dark-concept fw-bold mt-3 section-title" >Heures d'ouverture</h4>
+                                    <h4 className="color-dark-concept fw-bold mt-3 section-title" >{t('heure')}</h4>
                                     <div>
-                                        <pre className="m-0 fs-5">Lun<i className="mx-2 fa fa-minus"/>Ven : <strong>7h:30</strong><i className="mx-2 fa fa-minus"/><strong>17h</strong></pre>
+                                        <pre className="m-0 fs-5">{t('mon')}<i className="mx-2 fa fa-minus"/>{t('ven')} : <strong>{t('h7')}</strong><i className="mx-2 fa fa-minus"/><strong>{t('h17')}</strong></pre>
                                     </div>
                                     <div>
-                                        <pre className="m-0 fs-5">Sam<i className="mx-2 fa fa-minus"/>Dim : Disponible en ligne</pre>
+                                        <pre className="m-0 fs-5">{t('sat')}<i className="mx-2 fa fa-minus"/>{t('sun')} : {t('dLine')}</pre>
                                     </div>
                                 </div>
-                            </div>
+                            </ViewContent>
                         </div>
                         <div className={`col-12 p-0 mx-0 d-flex align-items-stretch mb-2`}>
                             <div className="card border-0 mx-auto w-100 z-0" style={{height: '500px'}}>
@@ -165,10 +165,10 @@ const ContatctContainer = () => {
             <Toast className={`position-fixed ${erreur ? 'bg-danger' : 'bg-success'} bottom-0 end-0`} show={showToast} onClose={()=>setShowToast(false)} delay={5000} autohide>
                 <Toast.Header>
                     <strong className="me-auto">Message</strong>
-                    <small>Maintenant</small>
+                    <small>{t('maintenant')}</small>
                 </Toast.Header>
                 <Toast.Body>
-                    {erreur ? ('Il y a un problème de connexion') : ('Votre information a été bien envoyée auprès du responsable d\'Aris Concept')}
+                    {erreur ? `${t('probConnex')}` : `${t('sucMes')}`}
                 </Toast.Body>
             </Toast>
         </>

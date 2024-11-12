@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from "react";
 import wave from "../../Asset/wave.svg";
 import wave2 from "../../Asset/waveHead.svg";
-import {Form} from "react-bootstrap";
+import {Form, Dropdown} from "react-bootstrap";
 import {JobData} from "../../Config/Job";
 import {useNavigate, useParams} from "react-router-dom";
 import Superposed from "../Accueil/Superposed";
@@ -18,7 +18,8 @@ const ListMetier = () => {
         return JobData.flatMap(e =>
             e.children.map(child => ({
                 ...child,
-                parentId: e.id
+                parentId: e.id,
+                parentTitle: e.title
             })))
     },[])
     const [active,setActive]=useState(1)
@@ -39,6 +40,20 @@ const ListMetier = () => {
     const [spView,setSpView]=useState(false)
     const [adnView,setAdnView]=useState(false)
     const [listView,setListView]=useState(false)
+    const [search, setSearch] = useState('')
+    const [activeIndex, setActiveIndex] = useState(1);
+    const filter = useMemo(()=>{
+        if (search){
+            return allJobDetails.filter((job)=>
+                job.parentTitle[lang].toLowerCase().includes(search.toLowerCase()) ||
+                job.title[lang].toLowerCase().includes(search.toLowerCase())
+            )
+        }
+        return []
+    },[search,allJobDetails,lang])
+    const length = useMemo(()=>{
+        return filter.length % 10 === 0 ? filter.length / 10 : Math.floor(filter.length / 10) + 1;
+    },[filter])
     return(
         <>
             <div id="adn" className="m-0 p-0 w-100 position-relative d-flex border-0" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', width:'100%', minHeight: '100vh'}}>
@@ -59,18 +74,29 @@ const ListMetier = () => {
                     <ViewContent setIsVisible={setAdnView} time={250}>
                         <div className="w-100 border-aris text-start p-0 m-0 d-flex justify-content-between h-auto">
                             <h4 className={`p-0 m-0 text-aris title pb-3 fw-bold ${adnView ? 'showTop' : 'invisible'}`}>{t('dna')}</h4>
-                            <div className={`${adnView ? 'rotate' : 'invisible'} h-100  ${wMax ? 'w-50': min ? 'ms-4 flex-grow-1':'w-25'}`}>
+                            <div className={`${adnView ? 'rotate' : 'invisible'} h-100 ${wMax ? 'w-50': min ? 'ms-4 flex-grow-1':'w-25'}`}>
                                 <Form.Control
                                     type="search"
                                     aria-describedby="searchBlock"
                                     placeholder={t('recherche')}
                                     autoComplete="off"
-                                    className=""
+                                    value={search}
+                                    onChange={(e)=>setSearch(e.target.value)}
                                     style={{ border: '1px solid blue'}}
                                 />
                             </div>
                         </div>
                     </ViewContent>
+                    <Dropdown className="w-100 d-flex justify-content-end z-3" show={search.trim().length !==0}>
+                        <Dropdown.Menu className={`${contentMax ? 'w-100' : 'w-50-rem'} mt-1 shadow-lg m-0 pt-1 pb-0 px-1`}>
+                            <ul className="custom-list">
+                                {filter.slice((activeIndex - 1)*10,(activeIndex*10)).map((e,index)=>(
+                                    <li key={index} onClick={()=>navigate(`/${lang}/service/${e.parentId}/${e.id}`)} className={`cursor-pointer scale bg-cyan py-2`}><span> <i className="far fa-dot-circle text-aris me-1"/>{e.title[lang]}</span></li>
+                                ))}
+                            </ul>
+                            <Pagination length={length } active={activeIndex} setActive={setActiveIndex}/>
+                        </Dropdown.Menu>
+                    </Dropdown>
                     <div className="mt-3 w-100">
                         <div className="row w-100 m-0 p-0">
                             <ViewContent className={`${spView ? 'arrow-div' : 'invisible'} ${contentMax? 'col-12 mb-3' : 'col-4'} position-relative d-flex justify-content-center align-items-center`} setIsVisible={setSpView} time={350}>

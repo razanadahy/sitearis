@@ -84,7 +84,7 @@ const ServiceDetail= ()=>{
                 </ViewContent>
                 <div className={`row mx-0 mb-2 mt-2 ${minW ? 'p-0' : 'p-2'} w-100 z-1 position-relative`}>
                     <div onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className={`${wMax? "col-12": "col-6"}`}>
-                        <ViewContent time={0} setIsVisible={setCurrentView} className={`card shadow-lg rounded-2 border-0 h-100 d-flex justify-content-center scale ${currentView ? 'slideOutToRight' : 'invisible'}`}>
+                        <ViewContent time={0} setIsVisible={setCurrentView} className={`card shadow-lg rounded-2 border-0 h-100 d-flex justify-content-center scaleContentCard ${currentView ? 'slideOutToRight' : 'invisible'}`}>
                             <img src={carDefaultClicked.img} decoding={"async"} className="mx-auto mt-2" height={minW ? 150 : 300}  alt={carDefaultClicked.text}/>
                             <div className="card-title text-center mt-3">
                                 <h4 className="fs-3 fw-bold text-aris text-uppercase">{carDefaultClicked.text}</h4>

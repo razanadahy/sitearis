@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button, Col, Form, InputGroup, Row, Spinner} from "react-bootstrap";
 import CDSpontaneM from "../Model/CDSpontaneM.ts";
 import {useMediaQuery} from "react-responsive";
+import {useTranslation} from "react-i18next";
 
 const CandidatureSpontane = () => {
 
@@ -48,73 +49,72 @@ const CandidatureSpontane = () => {
         }
     };
     const maxW=useMediaQuery({query: "(max-width: 602px)"})
+
+    const {t} = useTranslation()
     return (
         <>
             <div className={`row mt-2 mb-0 mx-0 ${maxW ? 'p-2' :'p-5'} bg-edit-2 bg-opacity-25`}>
                 <div className="card border-0 m-auto">
                    <div className="row m-0 p-2">
                        <h3 className={`${maxW ? 'my-2' : 'pt-2'} text-center`}>
-                           Formulaire pour la candidature spontanée
+                           {t('formSp')}
                        </h3>
                        <Form className="p-md-3 p-sm-2 m-md-3" noValidate validated={validated} autoComplete={"off"} onSubmit={handleSubmit}>
                            <Row className="mb-3">
                                <Form.Group as={Col} lg="4" md="6" sm="12" className="mb-3">
-                                   <Form.Label>Nom * </Form.Label>
+                                   <Form.Label>{t('nom')}*</Form.Label>
                                    <Form.Control
                                        required
                                        type="text"
-                                       placeholder="Votre nom"
+                                       placeholder={t('enterName')}
                                        value={nom}
                                        onChange={(e)=>setNom(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group as={Col} lg="4" md="6" sm="12" className="mb-3">
-                                   <Form.Label> Prénom *</Form.Label>
+                                   <Form.Label> {t('prenom')} *</Form.Label>
                                    <Form.Control
                                        required
                                        type="text"
-                                       placeholder="Votre prénom"
+                                       placeholder={t('plPre')}
                                        value={prenom}
                                        onChange={(e)=>setPrenom(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group as={Col} lg="4" md="6" sm="12" className="mb-3">
                                    <Form.Label> Email * </Form.Label>
-                                   <InputGroup hasValidation>
-                                       <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                                       <Form.Control
-                                           type="email"
-                                           placeholder="Votre email"
-                                           aria-describedby="inputGroupPrepend"
-                                           className="z-1"
-                                           value={email}
-                                           onChange={(e)=>setEmail(e.target.value)}
-                                           required
-                                       />
-                                   </InputGroup>
+                                   <Form.Control
+                                       type="email"
+                                       placeholder={t('emailEnter')}
+                                       aria-describedby="inputGroupPrepend"
+                                       className="z-1"
+                                       value={email}
+                                       onChange={(e)=>setEmail(e.target.value)}
+                                       required
+                                   />
                                </Form.Group>
                                <Form.Group as={Col} lg="6" md="6" sm="12" className="mb-3">
-                                   <Form.Label> Telephone *</Form.Label>
+                                   <Form.Label>{t('phone')}</Form.Label>
                                    <Form.Control
                                        required
                                        type="text"
-                                       placeholder="Entrez votre numéro téléphone"
+                                       placeholder={t('yourTel')}
                                        value={telephone}
                                        onChange={(e)=>setTel(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group as={Col} lg="6" md="6" sm="12" className="mb-3">
-                                   <Form.Label> Titre du poste *</Form.Label>
+                                   <Form.Label>{t('titrePost')} *</Form.Label>
                                    <Form.Control
                                        required
                                        type="text"
-                                       placeholder="Entrez le titre de l'emploi"
+                                       placeholder={t('titrePostC')}
                                        value={titre}
                                        onChange={(e)=>setTitre(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group className="mb-3" as={Col} lg="12" md="6" sm="12">
-                                   <Form.Label>CV * </Form.Label>
+                                   <Form.Label>{t('cv')} * </Form.Label>
                                    <Form.Control
                                        type="file"
                                        required
@@ -123,18 +123,18 @@ const CandidatureSpontane = () => {
                                        onChange={(e) => setCv(e.target.files[0])}
                                    />
                                </Form.Group>
-                               <Form.Group className="mb-3 col-12" controlId="besoin">
+                               <Form.Group className="mb-3 col-12" controlId="">
                                    <Form.Label>Message *</Form.Label>
-                                   <Form.Control value={lm} onChange={(e) => setLm(e.target.value)}  required as="textarea" aria-rowspan={3} placeholder="Lettre de motivation..." />
+                                   <Form.Control value={lm} onChange={(e) => setLm(e.target.value)}  required as="textarea" aria-rowspan={3} placeholder="Message" />
                                </Form.Group>
                            </Row>
                            <div className="row m-0 p-0 w-100">
                                <div className="col-md-6 ms-0 ps-0 d-md-block d-none">
-                                   <Button className="w-100" variant="danger" type="reset">annuler</Button>
+                                   <Button className="w-100" variant="danger" type="reset" style={{letterSpacing: '0.065rem'}}>{t('annuler')}</Button>
                                </div>
                                <div className="col-md-6 col-sm-12 p-0 m-0">
-                                   <Button  className="w-100" type={`${load ? 'button' : 'submit'}`}>
-                                       {load ? (<Spinner animation="border" size={"sm"} variant="secondary" />):("Envoyer")}
+                                   <Button  className="w-100" type={`${load ? 'button' : 'submit'}`} style={{letterSpacing: '0.065rem'}}>
+                                       {load ? (<Spinner animation="border" size={"sm"} variant="secondary" />):(`${t('envoyer')}`)}
                                    </Button>
                                </div>
                            </div>

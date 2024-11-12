@@ -8,7 +8,7 @@ const ViewDesc = ({index,isVisible,strong,text}) => {
             <li  className={`list-group-item d-flex align-items-center ${on ? 'showTop' : 'invisible'}`}>
                 <i className="me-3 fa fa-asterisk color-dark-concept"/>
                 <span>
-                    <strong>{strong}</strong>
+                    <strong className="text-primary">{strong}</strong>
                     {text && `: ${text}`}
                 </span>
             </li>

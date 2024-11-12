@@ -2,8 +2,8 @@ export  const JobData=[
     {
         id: 2,
         title: {
-            fr: 'Administration et Gestion',
-            en: 'Administration and Management'
+            fr: 'Administration et Gestion / Externalisation administrative',
+            en: 'Administration and Management / Administrative Outsourcing'
         },
         children: [
             {
@@ -18,16 +18,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gère les appels téléphoniques et les courriels entrants : filtrer les appels, prendre des messages précis, orienter les appelants vers les interlocuteurs compétents et traiter les courriels de manière efficace et professionnelle.',
+                        en: 'Manages incoming phone calls and emails: screens calls, takes accurate messages, directs callers to the appropriate contacts, and handles emails efficiently and professionally.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Organise et planifie les réunions, rendez-vous et déplacements : réserver les salles de réunion, convier les participants, préparer les ordres du jour et gérer les agendas pour optimiser le temps de tous.',
+                        en: 'Organizes and schedules meetings, appointments, and travel: books meeting rooms, invites participants, prepares agendas, and manages calendars to optimize everyone’s time.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Prépare des documents, rapports et présentations : mettre en forme les informations, réaliser des recherches et assurer la qualité de la production pour faciliter la communication interne et externe.',
+                        en: 'Prepares documents, reports, and presentations: organizes information, conducts research, and ensures the quality of the output to facilitate internal and external communication.',
+                    },
+                    {
+                        fr: 'Assure le classement et l’archivage des documents : organiser les fichiers de manière logique et respecter les procédures de conservation pour garantir la traçabilité et la sécurité des informations.',
+                        en: 'Ensures document filing and archiving: organizes files logically and follows retention procedures to guarantee traceability and the security of information.',
+                    },
+                    {
+                        fr: 'Assiste les équipes dans la gestion des tâches administratives quotidiennes : prendre en charge les tâches récurrentes, effectuer des recherches d\'informations et apporter un soutien administratif polyvalent pour permettre aux équipes de se concentrer sur leurs missions principales.',
+                        en: 'Assists teams in managing daily administrative tasks: handles recurring tasks, conducts information research, and provides versatile administrative support to allow teams to focus on their core responsibilities.',
                     },
                 ]
             },
@@ -43,16 +51,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Assister dans la gestion des tâches administratives courantes : apporter un soutien polyvalent aux équipes, effectuer des recherches, réaliser des tâches de saisie et contribuer à l\'organisation administrative au quotidien.',
+                        en: 'Assists in managing routine administrative tasks: provides versatile support to teams, conducts research, performs data entry tasks, and contributes to daily administrative organization.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Rédiger des courriers, notes et comptes-rendus : utiliser un style clair et concis, en respectant les règles grammaticales et en adaptant le ton en fonction des destinataires pour une communication efficace.',
+                        en: 'Writes letters, memos, and reports: uses a clear and concise style, follows grammatical rules, and adapts the tone based on the recipients to ensure effective communication.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gérer les commandes de fournitures de bureau : passer les commandes, suivre les livraisons, gérer les stocks et s’assurer de la disponibilité des fournitures nécessaires au bon fonctionnement des services.',
+                        en: 'Manages office supply orders: places orders, tracks deliveries, manages inventory, and ensures the availability of necessary supplies for the smooth operation of services.',
+                    },
+                    {
+                        fr: 'Maintenir les dossiers et fichiers à jour : classer les documents de manière méthodique, archiver les informations importantes et s’assurer de la confidentialité des données.',
+                        en: 'Keeps files and records up to date: organizes documents methodically, archives important information, and ensures data confidentiality.',
+                    },
+                    {
+                        fr: 'Assurer le suivi des projets et des actions administratives : établir des plannings, suivre l\'avancement des tâches et alerter les responsables en cas de dépassement de délais ou de difficultés rencontrées.',
+                        en: 'Ensures project and administrative action follow-up: creates schedules, monitors task progress, and alerts managers in case of delays or encountered difficulties.',
                     },
                 ]
             },
@@ -68,16 +84,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Superviser les opérations administratives à distance : suivre en temps réel l\'avancement des tâches, évaluer la qualité du travail produit et apporter un soutien technique et méthodologique à distance pour garantir la performance de l\'équipe.',
+                        en: 'Supervises administrative operations remotely: monitors task progress in real-time, evaluates the quality of work produced, and provides remote technical and methodological support to ensure team performance.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gérer les ressources et les outils numériques utilisés par l\'équipe : attribuer les accès nécessaires, former les collaborateurs à l\'utilisation des outils et assurer la maintenance des équipements pour optimiser leur productivité.',
+                        en: 'Manages the resources and digital tools used by the team: assigns necessary access, trains employees on tool usage, and ensures equipment maintenance to optimize productivity.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Assurer la coordination entre les différents membres de l\'équipe : organiser des réunions virtuelles régulières, favoriser les échanges et clarifier les rôles et responsabilités de chacun pour assurer une collaboration efficace.',
+                        en: 'Ensures coordination among team members: organizes regular virtual meetings, encourages communication, and clarifies each person\'s roles and responsibilities to ensure effective collaboration.',
+                    },
+                    {
+                        fr: 'Organiser et planifier des réunions virtuelles : définir les objectifs, préparer les supports de présentation et animer les discussions pour garantir la participation de tous et l\'atteinte des résultats souhaités.',
+                        en: 'Organizes and schedules virtual meetings: sets objectives, prepares presentation materials, and facilitates discussions to ensure full participation and achievement of desired outcomes.',
+                    },
+                    {
+                        fr: 'Maintenir la communication avec les clients et les partenaires : répondre à leurs demandes, les tenir informés de l\'avancement des projets et assurer une relation de confiance pour renforcer les liens professionnels.',
+                        en: 'Maintains communication with clients and partners: responds to their inquiries, keeps them informed of project progress, and fosters a trusted relationship to strengthen professional ties.',
                     },
                 ]
             },
@@ -93,16 +117,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Organiser et maintenir les dossiers physiques et numériques : adopter une classification logique et cohérente, utiliser des outils de gestion documentaire adaptés et assurer un rangement ordonné pour faciliter la recherche et la consultation des informations.',
+                        en: 'Organizes and maintains physical and digital files: adopts a logical and consistent classification system, uses appropriate document management tools, and ensures orderly storage to facilitate information retrieval and consultation.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Assurer la mise à jour des informations et documents : vérifier régulièrement l\'exactitude des données, intégrer les nouvelles informations et supprimer les documents obsolètes pour garantir la pertinence des informations disponibles.',
+                        en: 'Ensures the update of information and documents: regularly checks the accuracy of data, integrates new information, and removes outdated documents to ensure the relevance of available information.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Garantir la confidentialité et la sécurité des données : mettre en place des mesures de protection rigoureuses, limiter l\'accès aux informations sensibles et respecter les réglementations en vigueur pour prévenir tout risque de perte ou de divulgation de données. ',
+                        en: 'Ensures the confidentiality and security of data: implements strict protection measures, limits access to sensitive information, and complies with applicable regulations to prevent any risk of data loss or disclosure.',
+                    },
+                    {
+                        fr: 'Effectuer des audits réguliers des dossiers : vérifier la conformité des dossiers avec les procédures en vigueur, identifier les éventuelles lacunes et proposer des améliorations pour optimiser la gestion documentaire. ',
+                        en: 'Conducts regular audits of files: verifies compliance with current procedures, identifies any gaps, and suggests improvements to optimize document management.',
+                    },
+                    {
+                        fr: 'Collaborer avec d\'autres services pour assurer une bonne gestion de l\'information : partager les informations pertinentes, harmoniser les procédures et s’assurer d\'une cohérence globale de la gestion documentaire au sein de l\'organisation.',
+                        en: 'Collaborates with other departments to ensure effective information management: shares relevant information, harmonizes procedures, and ensures overall consistency in document management within the organization.',
                     },
                 ]
             },
@@ -118,16 +150,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Assister un dirigeant ou un cadre supérieur à distance : offrir un soutien administratif et logistique personnalisé, anticiper ses besoins et s’adapter à son style de travail pour lui permettre de se concentrer sur ses missions stratégiques. ',
+                        en: 'Assists an executive or senior manager remotely: provides personalized administrative and logistical support, anticipates their needs, and adapts to their work style to allow them to focus on strategic tasks.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gérer son agenda et ses priorités : planifier ses réunions, réserver ses déplacements, filtrer ses courriels et l’alerter sur les échéances importantes pour optimiser son temps et sa productivité. ',
+                        en: 'Manages their schedule and priorities: plans meetings, arranges travel, screens emails, and alerts them to important deadlines to optimize their time and productivity.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Préparer des documents, rapports et présentations : effectuer des recherches approfondies, synthétiser les informations clés et créer des supports visuels de qualité pour faciliter la communication et la prise de décision. ',
+                        en: 'Prepares documents, reports, and presentations: conducts in-depth research, synthesizes key information, and creates high-quality visual aids to facilitate communication and decision-making.',
+                    },
+                    {
+                        fr: 'Organiser des déplacements et des réunions : réserver les billets d\'avion et les hôtels, préparer les ordres du jour et les documents de réunion, et assurer une logistique fluide pour garantir le bon déroulement des événements. ',
+                        en: 'Organizes travel and meetings: books flight tickets and hotels, prepares agendas and meeting documents, and ensures smooth logistics to guarantee the successful execution of events.',
+                    },
+                    {
+                        fr: 'Agir comme point de contact entre le dirigeant et les autres parties prenantes : filtrer les appels et les courriels, transmettre les messages importants, prendre des notes de réunion et assurer une communication efficace avec les collaborateurs, les clients et les partenaires.',
+                        en: 'Acts as a point of contact between the executive and other stakeholders: screens calls and emails, relays important messages, takes meeting notes, and ensures effective communication with colleagues, clients, and partners.',
                     },
                 ]
             },
@@ -143,16 +183,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Émettre les factures et suivre les paiements : éditer les factures dans les délais impartis, contrôler leur exactitude et suivre de près les échéances de paiement pour assurer une gestion efficace de la trésorerie. ',
+                        en: 'Issues invoices and monitors payments: generates invoices within the given deadlines, checks their accuracy, and closely tracks payment due dates to ensure effective cash flow management.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gérer les relances de créances et les litiges : mettre en place des procédures de relance adaptées, négocier les modalités de paiement avec les clients et résoudre les éventuels litiges pour limiter les impayés et préserver les relations commerciales. ',
+                        en: 'Manages debt collection and disputes: establishes appropriate follow-up procedures, negotiates payment terms with clients, and resolves any disputes to minimize unpaid debts and maintain business relationships.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Maintenir les dossiers de facturation à jour : archiver les factures, les justificatifs de paiement et les correspondances liées aux créances dans un système de gestion documentaire sécurisé pour garantir la traçabilité et la conformité des opérations. ',
+                        en: 'Keeps billing records up to date: archives invoices, payment receipts, and correspondence related to receivables in a secure document management system to ensure traceability and compliance with operations.',
+                    },
+                    {
+                        fr: 'Collaborer avec les équipes comptables pour assurer la conformité : partager les informations nécessaires, respecter les procédures comptables et s’assurer de la cohérence entre les données de facturation et les données comptables. ',
+                        en: 'Collaborates with accounting teams to ensure compliance: shares necessary information, adheres to accounting procedures, and ensures consistency between billing data and accounting records.',
+                    },
+                    {
+                        fr: 'Analyser les données de facturation et générer des rapports : utiliser des outils de reporting pour suivre l\'évolution du chiffre d\'affaires, identifier les tendances et les anomalies, et fournir des informations pertinentes à la direction pour la prise de décision.',
+                        en: 'Analyzes billing data and generates reports: uses reporting tools to track revenue trends, identify patterns and anomalies, and provides relevant insights to management for decision-making.',
                     },
                 ]
             },
@@ -168,16 +216,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Assurer le bon fonctionnement des opérations internes : coordonner les activités des différents services, identifier et résoudre les problèmes au quotidien, et mettre en place des actions correctives pour améliorer l\'efficacité des processus. ',
+                        en: 'Ensures the smooth functioning of internal operations: coordinates activities across departments, identifies and resolves daily issues, and implements corrective actions to improve process efficiency.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gérer les processus administratifs et de support : superviser les tâches administratives, fournir un support technique aux utilisateurs, et optimiser les outils et les méthodes de travail pour améliorer la productivité. ',
+                        en: 'Manages administrative and support processes: supervises administrative tasks, provides technical support to users, and optimizes tools and workflows to improve productivity.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Analyser et optimiser les flux de travail : identifier les goulots d\'étranglement, simplifier les procédures et mettre en œuvre des améliorations continues pour réduire les délais et les coûts. ',
+                        en: 'Analyzes and optimizes workflows: identifies bottlenecks, simplifies procedures, and implements continuous improvements to reduce delays and costs.',
+                    },
+                    {
+                        fr: 'Collaborer avec les équipes pour résoudre les problèmes opérationnels : faciliter la communication entre les différents services, trouver des solutions consensuelles et suivre l\'avancement des projets jusqu\'à leur aboutissement. ',
+                        en: 'Collaborates with teams to resolve operational issues: facilitates communication between departments, finds consensus-based solutions, and tracks project progress until completion.',
+                    },
+                    {
+                        fr: 'Maintenir la documentation des procédures et des processus : créer et mettre à jour des documents clairs et concis, former les collaborateurs aux nouvelles procédures, et s’assurer que les documents sont facilement accessibles.',
+                        en: 'Maintains documentation of procedures and processes: creates and updates clear and concise documents, trains employees on new procedures, and ensures that the documents are easily accessible.',
                     },
                 ]
             },
@@ -193,16 +249,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Superviser l\'interaction avec les clients pour garantir une expérience positive : suivre les échanges avec les clients, évaluer la qualité de la réponse apportée et s’assurer que les besoins des clients sont satisfaits rapidement et efficacement. ',
+                        en: 'Supervises client interactions to ensure a positive experience: monitors exchanges with clients, evaluates the quality of responses provided, and ensures that clients\' needs are met quickly and effectively.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Analyser les retours clients et mettre en place des améliorations : collecter les retours clients, identifier les points forts et les points faibles de l\'expérience client, et proposer des actions concrètes pour améliorer la satisfaction client. ',
+                        en: 'Analyzes customer feedback and implements improvements: collects customer feedback, identifies strengths and weaknesses in the customer experience, and proposes concrete actions to enhance customer satisfaction.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Former les équipes sur les meilleures pratiques en matière de service client : organiser des formations régulières, partager les bonnes pratiques et sensibiliser les collaborateurs à l\'importance de l\'expérience client dans la réussite de l\'entreprise. ',
+                        en: 'Trains teams on best practices in customer service: organizes regular training sessions, shares best practices, and raises awareness among employees about the importance of customer experience in the company\'s success.',
+                    },
+                    {
+                        fr: 'Gérer les plaintes et les retours d\'expérience : traiter les réclamations avec empathie et professionnalisme, trouver des solutions adaptées à chaque situation et mettre en place des actions correctives pour éviter la récurrence des problèmes. ',
+                        en: 'Manages complaints and feedback: handles complaints with empathy and professionalism, finds tailored solutions for each situation, and implements corrective actions to prevent recurring issues.',
+                    },
+                    {
+                        fr: 'Collaborer avec d\'autres départements pour améliorer l\'offre : travailler en étroite collaboration avec les équipes commerciales, marketing et produit pour co-construire des offres répondant aux attentes des clients et aligner les stratégies de l\'entreprise sur les besoins du marché.',
+                        en: 'Collaborates with other departments to improve the offering: works closely with sales, marketing, and product teams to co-create offers that meet customer expectations and align the company’s strategies with market needs.',
                     },
                 ]
             },
@@ -218,16 +282,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Établir et maintenir des relations avec les clients existants : instaurer un climat de confiance, personnaliser la communication et offrir un service de qualité pour renforcer le lien avec les clients et les fidéliser. ',
+                        en: 'Establishes and maintains relationships with existing customers: builds trust, personalizes communication, and provides quality service to strengthen the bond with customers and foster loyalty.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Comprendre les besoins des clients et proposer des solutions adaptées : mener des entretiens approfondis, analyser les données clients et élaborer des offres personnalisées pour répondre aux attentes spécifiques de chaque client. ',
+                        en: 'Understands customer needs and offers tailored solutions: conducts in-depth interviews, analyzes customer data, and develops personalized offers to meet the specific expectations of each customer.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Suivre les performances des comptes et établir des rapports :  analyser les indicateurs clés de performance (KPI), identifier les opportunités d\'amélioration et produire des rapports réguliers pour informer la direction et prendre les décisions stratégiques appropriées. ',
+                        en: 'Monitors account performance and generates reports: analyzes key performance indicators (KPIs), identifies opportunities for improvement, and produces regular reports to inform management and support strategic decision-making.',
+                    },
+                    {
+                        fr: 'Collaborer avec les équipes internes pour répondre aux demandes des clients : travailler en étroite collaboration avec les équipes commerciales, marketing, produit et technique pour assurer une prise en charge efficace des demandes clients et une coordination optimale des actions. ',
+                        en: 'Collaborates with internal teams to respond to client requests: works closely with sales, marketing, product, and technical teams to ensure effective handling of client requests and optimal coordination of actions.',
+                    },
+                    {
+                        fr: 'Assurer la satisfaction et la fidélisation des clients : mettre en place des actions proactives pour prévenir les problèmes, résoudre les litiges rapidement et efficacement et mettre en œuvre des programmes de fidélisation pour récompenser les clients les plus fidèles.',
+                        en: 'Ensures customer satisfaction and retention: implements proactive actions to prevent issues, resolves disputes quickly and effectively, and develops loyalty programs to reward the most loyal customers.',
                     },
                 ]
             },
@@ -243,16 +315,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Répondre aux questions et préoccupations des clients par téléphone, e-mail ou chat : offrir une écoute attentive, apporter des réponses claires et concises et s’assurer de la compréhension du client pour résoudre ses problèmes de manière efficace.',
+                        en: 'Answer customers\' questions and concerns via phone, email, or chat: provide attentive listening, offer clear and concise responses, and ensure the customer understands to resolve their issues effectively.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Fournir des informations sur les produits et services de l\'entreprise : maîtriser parfaitement l\'offre de l\'entreprise, présentant les produits et services de manière claire et concise et recommander les solutions les mieux adaptées aux besoins du client.',
+                        en: 'Provide information about the company\'s products and services: have a thorough understanding of the company\'s offerings, present products and services clearly and concisely, and recommend the best solutions to meet the client\'s needs.'
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Traiter les demandes de service et résoudre les problèmes : enregistrer les demandes, suivre leur traitement, escalader les problèmes complexes si nécessaire et informer le client de l\'avancement de sa demande.',
+                        en: 'Handle service requests and resolve issues: log requests, monitor their progress, escalate complex issues if necessary, and keep the client informed about the status of their request.',
+                    },
+                    {
+                        fr: 'Maintenir un haut niveau de satisfaction client : adopter une attitude professionnelle et courtoise, dépasser les attentes des clients, et résoudre les problèmes dans les meilleurs délais pour fidéliser la clientèle.',
+                        en: 'Maintain a high level of customer satisfaction: adopt a professional and courteous attitude, exceed customer expectations, and resolve issues promptly to build customer loyalty.',
+                    },
+                    {
+                        fr: 'Participer à des formations pour améliorer les compétences en service client : être proactif dans le développement de ses compétences, se tenir informé des nouveautés et des meilleures pratiques en matière de service client et appliquer les connaissances acquises dans son travail quotidien.',
+                        en: 'Participate in training to improve customer service skills: be proactive in developing skills, stay informed about the latest trends and best practices in customer service, and apply the knowledge gained in daily work to enhance service quality.',
                     },
                 ]
             },
@@ -420,8 +500,8 @@ export  const JobData=[
     {
         id: 5,
         title: {
-            fr: 'Ressources Humaines',
-            en: 'Human Resources'
+            fr: 'Ressources Humaines / rh',
+            en: 'Human Resources / hr'
         },
         children: [
             {
@@ -502,16 +582,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Supervise l\'ensemble des activités RH de l\'organisation : coordonner les différentes missions du service, en s\'assurant de leur cohérence et en garantissant la mise en œuvre de la stratégie RH de l\'entreprise.',
+                        en: 'Oversee all HR activities within the organization: Coordinate the various tasks of the department, ensuring alignment and coherence while implementing the company\'s HR strategy.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gère le recrutement, l\'intégration et le développement des employés : définir les besoins en personnel, en mettant en place des processus de recrutement efficaces, en accompagnant les nouveaux arrivants dans leur prise de fonction et en favorisant leur évolution professionnelle.',
+                        en: 'Manages recruitment, onboarding, and employee development: defines staffing needs, establishes effective recruitment processes, supports new hires in their onboarding, and promotes their professional growth.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Assure la gestion des performances et des carrières : mettre en place des outils d\'évaluation, en fixant des objectifs clairs et en accompagnant les collaborateurs dans leur parcours professionnel, tout en identifiant les potentiels et en élaborant des plans de développement individualisés.',
+                        en: 'Ensures performance and career management: implements evaluation tools, sets clear objectives, supports employees in their career paths, identifies potential, and develops individualized growth plans.',
+                    },
+                    {
+                        fr: 'Élabore et gère le budget RH : définir les besoins financiers du service, en allouant les ressources de manière optimale et en suivant les dépenses, afin d\'optimiser les coûts et d\'assurer une gestion rigoureuse des ressources humaines.',
+                        en: 'Develops and manages the HR budget: defines the department’s financial needs, allocates resources optimally, and monitors expenses to optimize costs and ensure rigorous human resources management.',
+                    },
+                    {
+                        fr: 'Veille au respect des politiques et procédures internes en s\'assurant de leur application par l\'ensemble du personnel, en communiquant les règles en vigueur et en mettant en place des actions de sensibilisation, afin de garantir un environnement de travail équitable et respectueux des lois et des valeurs de l\'entreprise.',
+                        en: 'Ensures compliance with internal policies and procedures by overseeing their application across all staff, communicating current rules, and implementing awareness initiatives to foster a fair work environment that respects the company\'s laws and values.',
                     },
                 ]
             },
@@ -527,16 +615,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Définir les besoins en recrutement en collaboration avec les managers : analyser les besoins précis de chaque poste à pourvoir, en déterminant les compétences requises et en établissant un profil de candidat idéal.',
+                        en: 'Defines recruitment needs in collaboration with managers: analyzes the specific requirements for each open position, determines the necessary skills, and creates an ideal candidate profile.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Rédiger et diffuser les offres d\'emploi sur les plateformes appropriées : mettre en valeur les atouts de l\'entreprise et du poste, en ciblant les canaux de recrutement les plus pertinents pour attirer les meilleurs candidats.',
+                        en: 'Writes and posts job advertisements on appropriate platforms: highlights the company’s strengths and the benefits of the position, targeting the most relevant recruitment channels to attract top candidates.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gérer le processus de sélection :  trier efficacement les candidatures, en organisant des entretiens individuels ou collectifs et en mettant en place des tests techniques ou comportementaux pour évaluer les compétences des candidats.',
+                        en: 'Manages the selection process: efficiently screens applications, organizes individual or group interviews, and administers technical or behavioral tests to assess candidates’ skills.',
+                    },
+                    {
+                        fr: 'Assurer une bonne expérience candidat : communiquer régulièrement avec les candidats, en leur fournissant un feedback personnalisé et en leur offrant un suivi attentif tout au long du processus de recrutement.',
+                        en: 'Ensures a positive candidate experience: communicates regularly with candidates, providing personalized feedback and offering attentive follow-up throughout the recruitment process.',
+                    },
+                    {
+                        fr: 'Analyser les indicateurs de performance liés au recrutement : mesurer l\'efficacité des différentes actions mises en œuvre, en évaluant la qualité des candidats recrutés et en identifiant les axes d\'amélioration pour optimiser le processus.',
+                        en: 'Analyzes recruitment performance indicators: measures the effectiveness of various actions implemented, evaluates the quality of hired candidates, and identifies areas for improvement to optimize the process.',
                     },
                 ]
             }
@@ -545,8 +641,8 @@ export  const JobData=[
     {
         id: 4,
         title: {
-            fr: 'Informatique et Technologie',
-            en: 'Information Technology'
+            fr: 'Informatique et Technologie / Informatique et traitement de données',
+            en: 'Information Technology / IT and Data Processing'
         },
         children: [
             {
@@ -754,8 +850,8 @@ export  const JobData=[
     {
         id: 3,
         title: {
-            fr: 'Marketing - Communication',
-            en: 'Marketing - Communication'
+            fr: 'Marketing - Communication / Web et Marketing',
+            en: 'Marketing - Communication / Web and Marketing'
         },
         children: [
             {

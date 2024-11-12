@@ -109,6 +109,14 @@
 .scale:hover{
     transform: scale(1.02)!important;
 }
+
+
+.scaleContentCard{
+    transition: scale 0.5s ease-in-out !important;
+}
+.scaleContentCard:hover{
+    scale: 1.02;
+}
 @keyframes dfIn {
     0% {
         opacity: 0;

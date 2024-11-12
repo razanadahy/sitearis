@@ -81,7 +81,7 @@ body {
     }
 }
 .preAnimation {
-    animation: preAnimation 2.2s ease-in-out forwards;
+    animation: preAnimation 2s ease-in-out forwards;
 }
 
 .color-cyan{
@@ -315,4 +315,7 @@ div >a{
 
 .showBottom {
     animation: showBottom 1s ease-in-out forwards;
+}
+.w-50-rem{
+    width: calc(50% + 2rem);
 }

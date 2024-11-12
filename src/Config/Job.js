@@ -357,16 +357,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Saisie des données : enregistrer, saisir, numériser les factures, les notes de frais, les relevés bancaires. ',
+                        en: 'Data Entry: Record, enter, scan invoices, expense reports, and bank statements.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Classement : trier, organiser, archiver les documents comptables. ',
+                        en: 'Sorting: Sort, organize, archive accounting documents.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Vérification : contrôler la cohérence des données, détecter les erreurs de saisie. ',
+                        en: 'Verification: Check data consistency, detect entry errors.',
+                    },
+                    {
+                        fr: 'Mise à jour : mettre à jour les bases de données, les logiciels comptables.',
+                        en: 'Update: Update databases, accounting software.',
+                    },
+                    {
+                        fr: 'Préparation : préparer les documents pour la comptabilisation.',
+                        en: 'Preparation: Prepare documents for accounting.',
                     },
                 ]
             },
@@ -382,16 +390,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Vérification : examiner, analyser, contrôler la conformité des pièces comptables. ',
+                        en: 'Verification: Review, analyze, check the compliance of accounting documents.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Validation : approuver ou rejeter les pièces comptables.',
+                        en: 'Validation: Approve or reject accounting documents.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Détection : identifier les anomalies, les erreurs et les incohérences. ',
+                        en: 'Detection: Identify anomalies, errors, and inconsistencies.',
+                    },
+                    {
+                        fr: 'Justification : demander des justificatifs complémentaires. ',
+                        en: 'Justification: Request additional supporting documents.',
+                    },
+                    {
+                        fr: 'Réconciliation : réconcilier les comptes bancaires, les comptes clients et fournisseurs.',
+                        en: 'Reconciliation: Reconcile bank accounts, customer accounts, and supplier accounts.',
                     },
                 ]
             },
@@ -407,16 +423,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Saisie comptable : enregistrer les opérations comptables courantes. ',
+                        en: 'Accounting Entry: Record routine accounting transactions.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Lettrage : lettrer les factures et les règlements. ',
+                        en: 'Matching: Match invoices and payments.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Préparation des déclarations : préparer les déclarations fiscales (TVA, impôt sur les sociétés). ',
+                        en: 'Preparation of Declarations: Prepare tax declarations (VAT, corporate tax).',
+                    },
+                    {
+                        fr: 'Suivi de la trésorerie : suivre les encaissements et les décaissements. ',
+                        en: 'Cash Flow Monitoring: Monitor receipts and payments.',
+                    },
+                    {
+                        fr: 'Assistance : assister le comptable ou l\'expert-comptable dans leurs missions.',
+                        en: 'Assistance: Assist the accountant or the auditor in their tasks.',
                     },
                 ]
             },
@@ -432,16 +456,28 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Collecte des données : recueillir les éléments variables de paie (absences, heures supplémentaires, primes...). ',
+                        en: 'Data Collection: Gather variable payroll elements (absences, overtime, bonuses, etc.).',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Calcul des salaires : calculer les rémunérations brutes et nettes en appliquant la convention collective et la législation en vigueur. ',
+                        en: 'Salary Calculation: Calculate gross and net salaries by applying the collective agreement and current legislation.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Édition des bulletins : éditer et vérifier les bulletins de salaire. ',
+                        en: 'Payslip Issuance: Issue and verify payslips.',
+                    },
+                    {
+                        fr: 'Déclarations sociales : établir et transmettre les déclarations sociales (URSSAF, impôts...). ',
+                        en: 'Social Declarations: Prepare and submit social declarations (URSSAF, taxes, etc.).',
+                    },
+                    {
+                        fr: 'Gestion des absences : suivre les absences (congés, arrêts maladie) et calculer les indemnités. ',
+                        en: 'Absence Management: Track absences (vacation, sick leave) and calculate allowances.',
+                    },
+                    {
+                        fr: 'Conseil : conseiller les salariés et les managers sur les questions liées à la paie.',
+                        en: 'Advisory: Advise employees and managers on payroll-related issues.',
                     },
                 ]
             },
@@ -457,16 +493,28 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Analyse financière : analyser les comptes de résultats, les bilans et les tableaux de bord. ',
+                        en: 'Financial Analysis: Analyze income statements, balance sheets, and dashboards.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Budgétisation : établir les budgets prévisionnels et suivre leur réalisation. ',
+                        en: 'Budgeting: Prepare forecasted budgets and monitor their implementation.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Reporting : réaliser des reportings financiers réguliers pour la direction. ',
+                        en: 'Reporting: Prepare regular financial reports for management.',
+                    },
+                    {
+                        fr: 'Conseil : conseiller la direction sur les décisions stratégiques. ',
+                        en: 'Advisory: Advise management on strategic decisions.',
+                    },
+                    {
+                        fr: 'Optimisation : identifier les leviers d\'amélioration de la performance financière. ',
+                        en: 'Optimization: Identify levers for improving financial performance.',
+                    },
+                    {
+                        fr: 'Suivi des indicateurs : suivre les indicateurs clés de performance (KPI).',
+                        en: 'Monitoring Indicators: Track key performance indicators (KPIs).',
                     },
                 ]
             },
@@ -482,16 +530,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Commercialisation : prospecter de nouveaux clients, présenter les produits et services. ',
+                        en: 'Marketing: Prospect for new clients, present products and services.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Conseil : conseiller les clients sur les produits d\'assurance et de finance adaptés à leurs besoins. ',
+                        en: 'Advisory: Advise clients on insurance and financial products tailored to their needs.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Gestion de portefeuille : suivre et développer son portefeuille clients. ',
+                        en: 'Portfolio Management: Manage and grow the client portfolio.',
+                    },
+                    {
+                        fr: 'Négociation : négocier les contrats et les conditions. ',
+                        en: 'Negotiation: Negotiate contracts and terms.',
+                    },
+                    {
+                        fr: 'Gestion des sinistres : gérer les déclarations de sinistres et les indemnisations.',
+                        en: 'Claims Management: Handle claims declarations and compensation.',
                     },
                 ]
             }
@@ -598,8 +654,8 @@ export  const JobData=[
                         en: 'Develops and manages the HR budget: defines the department’s financial needs, allocates resources optimally, and monitors expenses to optimize costs and ensure rigorous human resources management.',
                     },
                     {
-                        fr: 'Veille au respect des politiques et procédures internes en s\'assurant de leur application par l\'ensemble du personnel, en communiquant les règles en vigueur et en mettant en place des actions de sensibilisation, afin de garantir un environnement de travail équitable et respectueux des lois et des valeurs de l\'entreprise.',
-                        en: 'Ensures compliance with internal policies and procedures by overseeing their application across all staff, communicating current rules, and implementing awareness initiatives to foster a fair work environment that respects the company\'s laws and values.',
+                        fr: 'Veille au respect des politiques et procédures internes: en s\'assurant de leur application par l\'ensemble du personnel, en communiquant les règles en vigueur et en mettant en place des actions de sensibilisation, afin de garantir un environnement de travail équitable et respectueux des lois et des valeurs de l\'entreprise.',
+                        en: 'Ensures compliance with internal policies and procedures: by overseeing their application across all staff, communicating current rules, and implementing awareness initiatives to foster a fair work environment that respects the company\'s laws and values.',
                     },
                 ]
             },
@@ -635,7 +691,36 @@ export  const JobData=[
                         en: 'Analyzes recruitment performance indicators: measures the effectiveness of various actions implemented, evaluates the quality of hired candidates, and identifies areas for improvement to optimize the process.',
                     },
                 ]
-            }
+            },
+            {
+                id: 5,
+                description: {
+                    fr: 'Développez votre réseau professionnel grâce à nos experts en sourcing LinkedIn. Basés à Madagascar, nos chasseurs de têtes vous offrent une expertise pointue pour identifier et attirer les meilleurs talents sur LinkedIn. Bénéficiez d\'un service sur mesure à des tarifs compétitifs.',
+                    en: 'Expand your professional network with our LinkedIn sourcing experts. Based in Madagascar, our headhunters provide specialized expertise to identify and attract top talent on LinkedIn. Benefit from a tailored service at competitive rates.'
+                },
+                title: {
+                    fr: 'Chasseur LinkedIn',
+                    en: 'LinkedIn Recruiter'
+                },
+                resp: [
+                    {
+                        fr: 'Sourcing : Identifier les cibles, construire des requêtes complexes et prospecter les groupes LinkedIn.',
+                        en: 'Sourcing: Identify targets, build complex queries, and prospect LinkedIn groups.',
+                    },
+                    {
+                        fr: 'Approche directe : Rédiger des messages InMail personnalisés, créer des campagnes ciblées et suivre les taux de réponse pour optimiser la prospection sur LinkedIn.',
+                        en: 'Direct Approach: Write personalized InMail messages, create targeted campaigns, and track response rates to optimize LinkedIn prospecting.',
+                    },
+                    {
+                        fr: 'Évaluation des candidats : Analyser les profils LinkedIn, mener des entretiens téléphoniques et présélectionner les candidats les plus qualifiés pour répondre aux besoins.',
+                        en: 'Candidate Evaluation: Analyze LinkedIn profiles, conduct phone interviews, and pre-select the most qualified candidates to meet the requirements.',
+                    },
+                    {
+                        fr: 'Gestion de la relation candidat : Maintenir un réseau de candidats qualifiés et leur fournir un feedback régulier.',
+                        en: 'Candidate Relationship Management: Maintain a network of qualified candidates and provide them with regular feedback.',
+                    },
+                ]
+            },
         ]
     },
     {
@@ -657,16 +742,20 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Assistance utilisateur : Offrir un support informatique complet, allant de la résolution des incidents à la formation des utilisateurs, en passant par le diagnostic précis des problèmes.',
+                        en: 'User Support: Provide comprehensive IT support, from incident resolution to user training, including accurate problem diagnosis.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Dépannage : Prendre en charge l\'ensemble des besoins informatiques : installation, configuration, dépannage et réparation.',
+                        en: 'Troubleshooting: Handle all IT needs: installation, configuration, troubleshooting, and repair.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Maintenance : Assurer la maintenance du système informatique en effectuant les mises à jour, les sauvegardes et les correctifs de sécurité nécessaires.',
+                        en: 'Maintenance: Ensure IT system maintenance by performing necessary updates, backups, and security patches.',
+                    },
+                    {
+                        fr: 'Gestion des incidents : Assurer un suivi rigoureux des incidents et maintenir une communication transparente avec les utilisateurs.',
+                        en: 'Incident Management: Ensure thorough tracking of incidents and maintain transparent communication with users.',
                     },
                 ]
             },
@@ -682,16 +771,16 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Vente de solutions informatiques : Identifier les besoins des clients, proposer des solutions personnalisées et concluons des ventes.',
+                        en: 'IT Solutions Sales: Identify customer needs, propose customized solutions, and close sales.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Support technique commercial : Assurer un support technique complet, de la mise en service à la résolution des incidents.',
+                        en: 'Commercial Technical Support: Provide comprehensive technical support, from commissioning to incident resolution.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Relation client : Fidéliser les clients en construisant des relations durables basées sur la confiance.',
+                        en: 'Customer Relationship: Retain customers by building long-lasting relationships based on trust.',
                     },
                 ]
             },
@@ -707,16 +796,20 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Conception de tests : Élaborer des plans de tests rigoureux, créer des scénarios de test pertinents et définir des critères d\'acceptation précis pour garantir la qualité de vos produits ou services.',
+                        en: 'Customer Relationship: Retain customers by building long-lasting relationships based on trust.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Exécution de tests : Mettre en œuvre une démarche rigoureuse pour tester les fonctionnalités des logiciels, identifier les anomalies et documenter l\'ensemble des résultats.',
+                        en: 'Test Execution: Implement a thorough approach to test software functionalities, identify anomalies, and document all results.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Reporting : Faciliter la collaboration entre les équipes en rédigeant des rapports de bugs clairs et concis et en assurant un suivi rigoureux de leur traitement.',
+                        en: 'Reporting: Facilitate collaboration between teams by writing clear and concise bug reports and ensuring thorough tracking of their resolution.',
+                    },
+                    {
+                        fr: 'Automatisation des tests : Utiliser des outils d\'automatisation pour exécuter des tests récurrents.',
+                        en: 'Test Automation: Use automation tools to execute recurring tests.',
                     },
                 ]
             },
@@ -732,16 +825,20 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Stratégie : Élaborer une stratégie de contenu personnalisée, sélectionner les réseaux sociaux les plus pertinents et définir un calendrier éditorial pour optimiser la visibilité en ligne.',
+                        en: 'Strategy: Develop a personalized content strategy, select the most relevant social media platforms, and define an editorial calendar to optimize online visibility.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Création de contenu : Créer du contenu visuel percutant et rédiger des posts engageants, adaptés à chaque réseau social pour maximiser la visibilité et l’interaction avec l’audience.',
+                        en: 'Content Creation: Create impactful visual content and write engaging posts tailored to each social media platform to maximize visibility and interaction with the audience.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Animation de communautés : Animer la communauté en répondant aux commentaires, en modérant les discussions et en organisant des événements pour créer de l\'engagement.',
+                        en: 'Community Management: Engage the community by responding to comments, moderating discussions, and organizing events to create engagement.',
+                    },
+                    {
+                        fr: 'Analyse et reporting : Prendre des décisions éclairées en appuyant sur les données : suivi des KPI, analyse de l\'engagement et ajustements stratégiques en conséquence.',
+                        en: 'Analysis and Reporting: Make informed decisions based on data: track KPIs, analyze engagement, and make strategic adjustments accordingly.',
                     },
                 ]
             },
@@ -757,16 +854,16 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Création de campagnes publicitaires : Élaborer une stratégie publicitaire complète, en définissant les objectifs, en ciblant l’audience, en créant des annonces percutantes et en optimisant les paramètres de diffusion.',
+                        en: 'Advertising Campaign Creation: Develop a comprehensive advertising strategy by defining objectives, targeting the audience, creating impactful ads, and optimizing distribution settings.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Optimisation des campagnes : Optimiser les campagnes en suivant les performances, ajustant les budgets et testant différents formats.',
+                        en: 'Campaign Optimization: Optimize campaigns by monitoring performance, adjusting budgets, and testing different formats.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Analyse des résultats : Mesurer le retour sur investissement des campagnes, identifier les leviers d\'optimisation et ajuster en continu la stratégie pour maximiser la rentabilité.',
+                        en: 'Results Analysis: Measure the return on investment of campaigns, identify optimization levers, and continuously adjust the strategy to maximize profitability.',
                     },
                 ]
             },
@@ -782,46 +879,22 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Modération des contenus : Assurer la sécurité de la communauté en supprimant les contenus inappropriés, en signalant les contenus illégaux et en répondant aux questions des utilisateurs pour créer un environnement positif.',
+                        en: 'Content Moderation: Ensure community safety by removing inappropriate content, reporting illegal content, and answering user questions to create a positive environment.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Application des règles de la communauté : Faire respecter les chartes d\'utilisation et gérer les conflits entre utilisateurs pour maintenir un environnement sain et respectueux.',
+                        en: 'Enforcing Community Guidelines: Enforce usage policies and manage conflicts between users to maintain a healthy and respectful environment.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Surveillance des conversations : Identifier les tendances émergentes et les sujets récurrents, tout en détectant les faux comptes et les spams pour garantir la qualité des interactions au sein de la communauté.',
+                        en: 'Conversation Monitoring: Identify emerging trends and recurring topics, while detecting fake accounts and spam to ensure the quality of interactions within the community.',
                     },
                 ]
             },
+
             {
                 id: 7,
-                description: {
-                    fr: 'Développez votre réseau professionnel grâce à nos experts en sourcing LinkedIn. Basés à Madagascar, nos chasseurs de têtes vous offrent une expertise pointue pour identifier et attirer les meilleurs talents sur LinkedIn. Bénéficiez d\'un service sur mesure à des tarifs compétitifs.',
-                    en: 'Expand your professional network with our LinkedIn sourcing experts. Based in Madagascar, our headhunters provide specialized expertise to identify and attract top talent on LinkedIn. Benefit from a tailored service at competitive rates.'
-                },
-                title: {
-                    fr: 'Chasseur LinkedIn',
-                    en: 'LinkedIn Recruiter'
-                },
-                resp: [
-                    {
-                        fr: '',
-                        en: '',
-                    },
-                    {
-                        fr: '',
-                        en: '',
-                    },
-                    {
-                        fr: '',
-                        en: '',
-                    },
-                ]
-            },
-            {
-                id: 8,
                 description: {
                     fr: 'Bénéficiez d\'une équipe experte dans le domaine INFORMATIQUE à des coûts compétitifs. En externalisant vos projets vers Madagascar, vous profiterez d\'une main-d\'œuvre qualifiée et d\'une grande réactivité pour répondre à vos besoins spécifiques. Nos équipes s\'adaptent à vos contraintes et vous offrent des solutions sur-mesure.',
                     en: 'Benefit from a team of experts in the IT field at competitive costs. By outsourcing your projects to Madagascar, you will enjoy a skilled workforce and great responsiveness to meet your specific needs. Our teams adapt to your constraints and provide you with tailored solutions.'
@@ -832,16 +905,20 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Conception : Analyser les besoins, rédiger les spécifications techniques et concevoir l\'architecture logicielle.',
+                        en: 'Design: Analyze requirements, write technical specifications, and design the software architecture.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Développement : Développer des solutions logicielles sur mesure en utilisant les langages de programmation les plus adaptés, en assurant un débogage rigoureux et en intégrant les fonctionnalités requises.',
+                        en: 'Development: Develop custom software solutions using the most suitable programming languages, ensuring thorough debugging, and integrating the required features.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Tests : Réaliser des tests unitaires et d\'intégration pour assurer la qualité du code.',
+                        en: 'Testing: Perform unit and integration tests to ensure code quality.',
+                    },
+                    {
+                        fr: 'Maintenance : Maintenir les applications en condition opérationnelle en effectuant des mises à jour régulières et en intervenant efficacement en cas d\'incident.',
+                        en: 'Maintenance: Keep applications operational by performing regular updates and intervening effectively in case of incidents.',
                     },
                 ]
             }
@@ -866,16 +943,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Audit SEO : évaluation de la performance, qualité du contenu, évaluation de la pertinence, de la clarté et de la cohérence du contenu, analyse de l\'arborescence du site et de la navigation, optimisation pour les moteurs de recherche (SEO on-page) et Évaluation de la facilité d\'utilisation du site afin d’identifier les points faibles et les opportunités d\'amélioration.',
+                        en: 'SEO Audit: Evaluation of performance, content quality, assessment of relevance, clarity, and consistency of content, analysis of site structure and navigation, on-page SEO optimization, and evaluation of site usability to identify weaknesses and improvement opportunities.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Optimisation on-page : optimisation des titres, méta-descriptions et balises Hn pour une meilleure indexation par les moteurs de recherche, mise en place d\'une architecture d\'URL intuitive et optimisée pour le référencement ainsi que l’intégration stratégique des mots-clés pertinents au sein du contenu textuel, des balises et des attributs pour améliorer la visibilité du site sur les moteurs de recherche.',
+                        en: 'On-page Optimization: Optimization of titles, meta descriptions, and Hn tags for better search engine indexing, implementation of an intuitive URL structure optimized for SEO, and strategic integration of relevant keywords within textual content, tags, and attributes to improve the site\'s visibility on search engines.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Optimisation off-page :  améliorer la visibilité et l\'autorité d\'un site web sur les moteurs de recherche en agissant en dehors de ses propres pages, construire une réputation solide en ligne en multipliant les mentions et les liens provenant d\'autres sites web pertinents et acquisition de backlinks de qualité via des partenariats, des publications d\'articles invités ou des communiqués de presse.',
+                        en: 'Off-page Optimization: Improve a website\'s visibility and authority on search engines by acting outside its own pages, build a strong online reputation by increasing mentions and links from relevant external websites, and acquire quality backlinks through partnerships, guest blog posts, or press releases.',
+                    },
+                    {
+                        fr: 'Suivi des performances : surveillance du positionnement de nos mots-clés cibles dans les résultats de recherche afin d\'évaluer l\'impact de nos actions et d\'identifier les opportunités d\'amélioration, analyse du trafic organique pour comprendre le comportement des visiteurs et optimiser leur parcours sur notre site.',
+                        en: 'Performance Tracking: Monitor the ranking of our target keywords in search results to assess the impact of our actions and identify opportunities for improvement, analyze organic traffic to understand visitor behavior and optimize their journey on our site.',
+                    },
+                    {
+                        fr: 'Reporting : Elaborer des rapports détaillés sur l\'évolution de votre référencement naturel et présentation les résultats de manière claire et concise à nos clients ou à la direction, afin de leur permettre de suivre l\'avancement de nos actions et d\'ajuster la stratégie si nécessaire.',
+                        en: 'Reporting: Develop detailed reports on the progress of your organic SEO and present the results clearly and concisely to clients or management, allowing them to track the progress of our actions and adjust the strategy if necessary.',
                     },
                 ]
             },
@@ -891,16 +976,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Production de contenu : Enrichir les contenus en rédigeant des articles de blog informatifs, en créant des fiches produits convaincantes, en rédigeant des descriptions de services percutantes et en rédigeant des communiqués de presse impactant.',
+                        en: 'Content Production: Enrich content by writing informative blog articles, creating compelling product pages, drafting impactful service descriptions, and writing effective press releases.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Optimisation SEO : Optimisation de contenu en identifiant méticuleusement les mots-clés pertinents, en les intégrant naturellement dans les textes, en optimisant soigneusement vos titres, méta-descriptions et en construisant un réseau de liens solides pour renforcer l’autorité en ligne.',
+                        en: 'SEO Optimization: Optimize content by meticulously identifying relevant keywords, naturally integrating them into the text, carefully optimizing titles, meta descriptions, and building a strong link network to enhance online authority.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Veille concurrentielle : Mener une veille concurrentielle rigoureuse en analysant en profondeur le contenu de nos concurrents afin d\'identifier les tendances émergentes du marché et d\'anticiper les attentes de nos clients.',
+                        en: 'Competitive Intelligence: Conduct thorough competitive intelligence by analyzing competitors\' content in depth to identify emerging market trends and anticipate customer expectations.',
+                    },
+                    {
+                        fr: 'Rédaction publicitaire : Concevoir des campagnes publicitaires complètes, de la rédaction d\'annonces percutantes pour Google Ads et les réseaux sociaux à la création de scripts vidéo captivants.',
+                        en: 'Copywriting: Design complete advertising campaigns, from writing impactful ads for Google Ads and social media to creating captivating video scripts.',
+                    },
+                    {
+                        fr: 'Correction et relecture : Assurer la qualité des écrits en vérifiant scrupuleusement l\'orthographe et la grammaire, tout en optimisant la lisibilité des textes.',
+                        en: 'Proofreading and Editing: Ensure the quality of written content by meticulously checking spelling and grammar, while optimizing the readability of the texts.',
                     },
                 ]
             },
@@ -916,16 +1009,20 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Création de visuels : Concevoir l’identité visuelle de A à Z, de la création de logos emblématiques à la mise en page soignée des documents, en passant par la réalisation d\'illustrations personnalisées et de maquettes graphiques attractives.',
+                        en: 'Visual Creation: Design the visual identity from A to Z, from creating iconic logos to carefully formatting documents, including creating custom illustrations and attractive graphic mockups.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Choix des couleurs et des typographies : Définir l’identité visuelle sur mesure en élaborant une charte graphique cohérente, en sélectionnant les couleurs et les polices les plus adaptées à l’univers concerné.',
+                        en: 'Choice of Colors and Typography: Define a tailor-made visual identity by developing a coherent graphic charter, selecting the most suitable colors and fonts for the relevant environment.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Adaptation aux différents supports : Réaliser des visuels percutants pour tous les supports de communication, du web au print.',
+                        en: 'Adaptation to Different Media: Create impactful visuals for all communication platforms, from web to print.',
+                    },
+                    {
+                        fr: 'Suivi de production : Assurer un suivi rigoureux de la fabrication des supports imprimés, du concept à la livraison, en garantissant une qualité irréprochable des rendus finaux.',
+                        en: 'Production Monitoring: Ensure rigorous tracking of the production of printed materials, from concept to delivery, guaranteeing flawless final outputs.',
                     },
                 ]
             },
@@ -941,16 +1038,20 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Recherche utilisateur : Placer l\'utilisateur au cœur de notre processus de développement en créant des personas et en validant nos prototypes grâce à des tests utilisateurs.',
+                        en: 'User Research: Place the user at the heart of our development process by creating personas and validating our prototypes through user testing.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Conception d\'interfaces : Placer l\'utilisateur au cœur de notre processus de développement en créant des wireframes détaillés et en sélectionnant des éléments visuels cohérents avec notre marque.',
+                        en: 'Interface Design: Place the user at the heart of our development process by creating detailed wireframes and selecting visual elements that are consistent with our brand.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Optimisation de l\'expérience utilisateur : Optimisation de l\'expérience utilisateur pour améliorer la navigation sur le site web, faciliter les interactions avec votre application et, ainsi, augmenter significativement le taux de conversion.',
+                        en: 'User Experience Optimization: Optimizing the user experience to improve website navigation, facilitate interactions with your application, and thereby significantly increase the conversion rate.',
+                    },
+                    {
+                        fr: 'Collaboration avec les développeurs : Assurer une transmission claire des spécifications techniques et un suivi rigoureux de la réalisation des interfaces, garantissant ainsi un produit final conforme à vos attentes.',
+                        en: 'Collaboration with Developers: Ensure clear communication of technical specifications and rigorous monitoring of interface implementation, thereby guaranteeing a final product that meets your expectations.',
                     },
                 ]
             },
@@ -966,16 +1067,24 @@ export  const JobData=[
                 },
                 resp: [
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Stratégie de communication : Construire une stratégie de communication cohérente en définissant des objectifs précis, en élaborant un plan d\'action détaillé et en sélectionnant les canaux de diffusion les plus pertinents.',
+                        en: 'Communication Strategy: Build a coherent communication strategy by setting clear objectives, developing a detailed action plan, and selecting the most relevant distribution channels.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Relations presse : Élaborer et mettre en œuvre une stratégie de relations presse complète, incluant la rédaction de communiqués, l\'organisation d\'événements et la gestion des relations avec les journalistes.',
+                        en: 'Press Relations: Develop and implement a comprehensive press relations strategy, including writing press releases, organizing events, and managing relationships with journalists.',
                     },
                     {
-                        fr: '',
-                        en: '',
+                        fr: 'Communication digitale : Développement de la communauté en ligne, à générer du trafic qualifié et à augmenter le taux de conversion grâce à une stratégie digitale sur mesure.',
+                        en: 'Digital Communication: Develop the online community, generate qualified traffic, and increase the conversion rate through a tailored digital strategy.',
+                    },
+                    {
+                        fr: 'Événementiel : Organiser les événements de A à Z, de la conception à la logistique.',
+                        en: 'Event Management: Organize events from A to Z, from conception to logistics.',
+                    },
+                    {
+                        fr: 'Mesure de performance : Analyser les résultats des actions de communication pour ajuster la stratégie et optimiser le retour sur investissement.',
+                        en: 'Performance Measurement: Analyze the results of communication efforts to adjust the strategy and optimize return on investment.',
                     },
                 ]
             }

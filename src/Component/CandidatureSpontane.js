@@ -122,6 +122,20 @@ const CandidatureSpontane = () => {
                                        accept=".pdf, .jpg, .jpeg, .png, .gif"
                                        onChange={(e) => setCv(e.target.files[0])}
                                    />
+                                   {/*<div className="custom-file-input">*/}
+                                   {/*    <input*/}
+                                   {/*        type="file"*/}
+                                   {/*        id="cv-upload"*/}
+                                   {/*        required*/}
+                                   {/*        name="file"*/}
+                                   {/*        accept=".pdf, .jpg, .jpeg, .png, .gif"*/}
+                                   {/*        // onChange={handleFileChange}*/}
+                                   {/*        style={{ display: "none" }} // Cache l'élément input*/}
+                                   {/*    />*/}
+                                   {/*    <label htmlFor="cv-upload" className="btn btn-primary">*/}
+                                   {/*        {cv ? cv.name : t("chooseFile")} /!* Texte dynamique *!/*/}
+                                   {/*    </label>*/}
+                                   {/*</div>*/}
                                </Form.Group>
                                <Form.Group className="mb-3 col-12" controlId="">
                                    <Form.Label>Message *</Form.Label>

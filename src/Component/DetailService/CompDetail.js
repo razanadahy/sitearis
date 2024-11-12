@@ -65,11 +65,11 @@ const CompDetail = ({element,parent}) => {
                         </ViewContent>
                     </div>
                     <div className="w-100 d-flex justify-content-center mt-2">
-                        <button onClick={()=>setHideModal(false)} className="btn-content px-4 py-2 fw-bold btn rounded-3 btn-info text-white " style={{letterSpacing: '0.07rem', fontSize: '1.2rem'}}>{t('contDetail')} {parent?.title[lang]}</button>
+                        <button onClick={()=>setHideModal(false)} className="btn-content px-4 py-2 fw-bold btn rounded-3 btn-info text-white " style={{letterSpacing: '0.07rem', fontSize: '1.2rem'}}>{t('contDetail')} {parent?.title[lang].split('/')[0]}</button>
                     </div>
                 </div>
                 <ViewContent className={`${maxWidth ? 'd-none' : `col-5 ${vDevis ? 'arrow-div-left' : 'invisible'}`} ps-0 pe-1 m-0 d-flex align-items-center`} time={250} setIsVisible={setVDevis}>
-                    <Devis t={t} objectTitle={parent?.title[lang]}/>
+                    <Devis t={t} objectTitle={parent?.title[lang].split('/')[0]}/>
                 </ViewContent>
                 <div className="mt-3 w-100 d-inline-flex justify-content-evenly bg-dark-subtle py-4">
                     {parent?.children.slice((idActive - 1)*paginate,(idActive*paginate)).map((e)=>(
@@ -80,7 +80,7 @@ const CompDetail = ({element,parent}) => {
                 </div>
                 <Pagination length={len} active={idActive} setActive={setActive}/>
             </div>
-            <ShowModalDevis t={t} title={parent?.title[lang]} show={clickModal} onHide={()=>setHideModal(true)}/>
+            <ShowModalDevis t={t} title={parent?.title[lang].split('/')[0]} show={clickModal} onHide={()=>setHideModal(true)}/>
         </>
     )
 }

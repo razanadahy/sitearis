@@ -319,3 +319,56 @@ div >a{
 .w-50-rem{
     width: calc(50% + 2rem);
 }
+
+
+
+/* Masquer l'input de type file */
+.custom-file-input input[type="file"] {
+    display: none;
+}
+
+/* Appliquer le style Bootstrap à l'étiquette de l'input de type file */
+.custom-file-input label {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: auto;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.custom-file-input label:hover {
+    background-color: #e2e6ea;
+    border-color: #b8b8b8;
+}
+
+.custom-file-input label:active {
+    background-color: #d6d8db;
+    border-color: #b8b8b8;
+}
+
+.custom-file-input input[type="file"]:focus + label {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.custom-file-input input[type="file"]:disabled + label {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    cursor: not-allowed;
+}
+
+.custom-file-input label::after {
+    content: '...' /* Ajoute un suffixe "..." pour indiquer la possibilité de choisir un fichier */
+}

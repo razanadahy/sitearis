@@ -1,8 +1,23 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 import {Button, Form, Spinner} from "react-bootstrap";
 
 const Devis = ({objectTitle,t}) => {
     const [loading, setLoading] = useState(false);
+    const [phoneNumber,setPhoneNumber]=useState('+ ')
+    const inputPhone=useCallback(
+        (e) => {
+            const numericValue = e.replace(/\D/g, "");
+            let formattedPhone = numericValue;
+            if (numericValue.length > 3 && numericValue.length <= 6) {
+                formattedPhone = `${numericValue.slice(0, 3)} ${numericValue.slice(3)}`;
+            } else if (numericValue.length > 6) {
+                formattedPhone = `${numericValue.slice(0, 3)} ${numericValue.slice(3, 6)} ${numericValue.slice(6)}`;
+            }
+            setPhoneNumber(`+ ${formattedPhone}`)
+        },
+        [],
+    );
+
     return(
         <>
             <div className="card w-100 p-0 m-0">
@@ -34,7 +49,7 @@ const Devis = ({objectTitle,t}) => {
                         <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                             <Form.Label className="fw-bold fs-5">{t('phone')} *</Form.Label>
                             <Form.Control required type="text"
-                                // value={mail} onChange={(e)=>setMail(e.target.value)}
+                                value={phoneNumber} onChange={(e)=>inputPhone(e.target.value)}
                                           placeholder={t('yourTel')} />
                         </Form.Group>
                         <Form.Group className="mb-3 col-lg-12" controlId="description">

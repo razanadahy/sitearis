@@ -115,27 +115,22 @@ const CandidatureSpontane = () => {
                                </Form.Group>
                                <Form.Group className="mb-3" as={Col} lg="12" md="6" sm="12">
                                    <Form.Label>{t('cv')} * </Form.Label>
-                                   <Form.Control
-                                       type="file"
-                                       required
-                                       name="file"
-                                       accept=".pdf, .jpg, .jpeg, .png, .gif"
-                                       onChange={(e) => setCv(e.target.files[0])}
-                                   />
-                                   {/*<div className="custom-file-input">*/}
-                                   {/*    <input*/}
-                                   {/*        type="file"*/}
-                                   {/*        id="cv-upload"*/}
-                                   {/*        required*/}
-                                   {/*        name="file"*/}
-                                   {/*        accept=".pdf, .jpg, .jpeg, .png, .gif"*/}
-                                   {/*        // onChange={handleFileChange}*/}
-                                   {/*        style={{ display: "none" }} // Cache l'élément input*/}
-                                   {/*    />*/}
-                                   {/*    <label htmlFor="cv-upload" className="btn btn-primary">*/}
-                                   {/*        {cv ? cv.name : t("chooseFile")} /!* Texte dynamique *!/*/}
-                                   {/*    </label>*/}
-                                   {/*</div>*/}
+                                   {/*<Form.Control*/}
+                                   {/*    type="file"*/}
+                                   {/*    required*/}
+                                   {/*    name="file"*/}
+                                   {/*    accept=".pdf, .jpg, .jpeg, .png, .gif"*/}
+                                   {/*    onChange={(e) => setCv(e.target.files[0])}*/}
+                                   {/*/>*/}
+                                   <div className="rounded-2 border d-flex align-items-center gap-2">
+                                       <label style={{ cursor: "pointer" }}>
+                                           <span className="px-3 py-2 bg-light border-end d-inline-block rounded-2">
+                                               {t('chooseFile')}
+                                           </span>
+                                           <input  accept=".pdf, .jpg, .jpeg, .png, .docx" type="file" onChange={(e) => setCv(e.target.files[0])} style={{ display: "none" }}/>
+                                        <span className="ms-2">{t('noFile')}</span>
+                                       </label>
+                                   </div>
                                </Form.Group>
                                <Form.Group className="mb-3 col-12" controlId="">
                                    <Form.Label>Message *</Form.Label>

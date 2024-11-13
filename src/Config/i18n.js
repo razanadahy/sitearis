@@ -158,7 +158,8 @@ const resources = {
             'titrePostC': 'Enter job title',
             'annuler': 'Cancel',
             'formSp': 'Application Form for Unsolicited Applications',
-            "chooseFile": 'Empty file set',
+            "chooseFile": 'Choose a file',
+            'noFile': 'No file chosen',
         }
     },
     fr: {
@@ -317,7 +318,9 @@ const resources = {
             'titrePostC': 'Entrez le titre de l\'emploi',
             'annuler': 'Annuler',
             'formSp': 'Formulaire pour la candidature spontanée',
-            'chooseFile': 'Aucun fichier choisi'
+            'chooseFile': 'Choisir un fichier',
+            'noFile': 'Aucun fichier choisi',
+
         }
     }
 };

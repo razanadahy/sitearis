@@ -26,7 +26,7 @@ const DetailService = ({position, element, children,clicked, wMax, t}) => {
                 {wMax ? (
                     <div className="w-100 p-2 m-0">
                         <div className="w-100 rounded-3 bg-linear-dark-aris py-2 shadow d-flex justify-content-center text-center">
-                            <span className="display-4 text-white">{element.title}</span>
+                            <h1 className="display-4 text-white">{element.title}</h1>
                         </div>
                         <div className="mt-3 mx-0 px-1">
                             <p className="" style={{letterSpacing: '0.065rem'}}>{element.text}</p>

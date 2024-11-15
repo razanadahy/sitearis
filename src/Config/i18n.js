@@ -100,7 +100,7 @@ const resources = {
             "respP": 'Social responsibility',
             "sv": 'What would you like to know about ',
             "withUs": "With us, you have:",
-            "infoHead": 'Our services provide competitive advantages tailored to your needs.',
+            "infoHead": 'Discover what sets us apart: tailored solutions, deep expertise, and a full commitment to our clients\' success.',
             'infoContent': 'Discover our strengths that make us the ideal partner for your success.',
             "staff": 'Staff',
             "company": 'Company',
@@ -160,6 +160,11 @@ const resources = {
             'formSp': 'Application Form for Unsolicited Applications',
             "chooseFile": 'Choose a file',
             'noFile': 'No file chosen',
+            'title': 'Outsourcing Solutions: Accounting, HR, IT, and Marketing | Aris Concept',
+            'description': 'Simplify your business with Aris Concept\'s outsourcing solutions in accounting, HR, IT, and marketing. Tailored services for efficient operations.',
+            'titleService': 'Our Services: Comprehensive Solutions for Your Business | Aris Concept',
+            'descriptionService': 'ARIS CONCEPT provides a full range of services including accounting, HR outsourcing, IT and data processing, web and marketing solutions to optimize your business processes.',
+
         }
     },
     fr: {
@@ -260,7 +265,7 @@ const resources = {
             "respP": 'Responsabilité sociale',
             "sv": 'Que voulez vous en savoir sur ',
             "withUs": 'Avec nous, vous avez:',
-            "infoHead": 'Nos services apportent des avantages compétitifs adaptés à vos besoins.',
+            "infoHead": 'Découvrez ce qui fait notre force : des solutions sur mesure, une expertise approfondie, et un engagement total envers la réussite de nos clients.',
             "infoContent": 'Découvrez nos atouts qui font de nous le partenaire idéal pour votre réussite.',
             "staff": 'Personnels',
             "company": 'Entreprise',
@@ -320,6 +325,10 @@ const resources = {
             'formSp': 'Formulaire pour la candidature spontanée',
             'chooseFile': 'Choisir un fichier',
             'noFile': 'Aucun fichier choisi',
+            'title': "Externalisation: Comptabilité, RH, IT, et Marketing | Aris Concept",
+            'description': "Aris Concept propose des services en administration, comptabilité, ressources humaines, IT et marketing pour simplifier la gestion d'entreprise.",
+            'titleService': 'Nos Services: Solution complète pour votre Entreprise | Aris Concept',
+            'descriptionService': "ARIS CONCEPT offre des services complets : comptabilité, externalisation RH, informatique, traitement de données, web et marketing, pour optimiser votre entreprise.",
 
         }
     }

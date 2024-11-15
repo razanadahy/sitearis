@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useMemo, useState} from "react";
 import infoE from '../Asset/info.mp4'
 import {useMediaQuery} from "react-responsive";
 import {useTranslation} from "react-i18next";
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import ViewContent from "../FunctionComponent/ViewContent";
 
 const EbookDowload = () => {

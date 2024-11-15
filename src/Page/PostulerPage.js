@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import InfoPostule from "../Component/Head/InfoPostule";
 import OffreEmploye from "../Component/OffreEmploye";
 import CandidatureSpontane from "../Component/CandidatureSpontane";

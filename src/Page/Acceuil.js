@@ -23,7 +23,7 @@ const Acceuil = () => {
                 <link rel="alternate" href="https://www.aris-cc.com/en" hrefLang="en"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr" hrefLang="fr"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr" hrefLang="x-default"/>
-
+                <link rel="canonical" href={`/${lang}`}/>
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}`} />
                 <meta property="og:site_name" content="Aris Concept" />
                 <meta property="og:title" content={t('title')} />

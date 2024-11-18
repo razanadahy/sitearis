@@ -25,15 +25,10 @@ const Acceuil = () => {
                 <link rel="alternate" href="https://www.aris-cc.com/fr" hrefLang="x-default"/>
                 <link rel="canonical" href={`/${lang}`}/>
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}`} />
-                <meta property="og:site_name" content="Aris Concept" />
                 <meta property="og:title" content={t('title')} />
                 <meta property="og:description" content={t('description')} />
-                <meta property="og:image" content="%PUBLIC_URL%/logoA.ico"/>
-                <meta property="og:type" content="website" />
-                <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={t('title')} />
                 <meta name="twitter:description" content={t('description')} />
-                <meta name="twitter:image" content="%PUBLIC_URL%/logoA.ico" />
                 <meta name="twitter:url" content={`https://www.aris-cc.com/${lang}`} />
             </Helmet>
             <HeaderContent active={1}/>

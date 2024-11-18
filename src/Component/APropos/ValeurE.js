@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useMediaQuery} from "react-responsive";
 import StepLi from "../../FunctionComponent/StepLi";
 
-const ValeurE = ({emplacement,img,text,title,isVisible}) => {
+const ValeurE = ({emplacement,img,text,title,isVisible,ind}) => {
     const maxW=useMediaQuery({query: "(max-width: 590px)"})
     const [vStep, setVStep] = useState(false)
     const [vPhoto, setVPhoto] = useState(false)
@@ -16,7 +16,7 @@ const ValeurE = ({emplacement,img,text,title,isVisible}) => {
         return () => clearTimeout(timeOut);
     },[vStep])
     return(
-        <StepLi isVisible={isVisible} index={emplacement+1} setTurnOn={setVStep}>
+        <StepLi isVisible={isVisible} index={ind+1} setTurnOn={setVStep}>
             {maxW ? (
                 <>
                     <div className={` mx-0 mt-3 mb-2 p-0 ${maxW ? '' : 'd-flex justify-content-between align-items-center'}`}>

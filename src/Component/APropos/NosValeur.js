@@ -25,10 +25,10 @@ const NosValeur = () => {
                        <p className={`fs-5 mb-0 ${viewP ? 'showTop' : 'invisible'}`}>{t('p1Valeur')}</p>
                    </ViewContent>
                     <ViewContent time={150} setIsVisible={setViewList}>
-                        <ValeurE isVisible={viewList} emplacement={0} text={t('inTP')} img={integite} title={t('inT')}/>
-                        <ValeurE isVisible={viewList} emplacement={5} text={t('exP')} img={excellent} title={'Excellence'}/>
-                        <ValeurE isVisible={viewList} emplacement={8} text={t('eng')} img={eng} title={t('engT')}/>
-                        <ValeurE isVisible={viewList} emplacement={11} text={t('respT')} img={giv} title={t('respP')}/>
+                        <ValeurE isVisible={viewList} emplacement={0} ind={0} text={t('inTP')} img={integite} title={t('inT')}/>
+                        <ValeurE isVisible={viewList} emplacement={1} ind={5} text={t('exP')} img={excellent} title={'Excellence'}/>
+                        <ValeurE isVisible={viewList} emplacement={2} ind={8} text={t('eng')} img={eng} title={t('engT')}/>
+                        <ValeurE isVisible={viewList} emplacement={3} ind={11} text={t('respT')} img={giv} title={t('respP')}/>
                     </ViewContent>
                 </div>
             </div>

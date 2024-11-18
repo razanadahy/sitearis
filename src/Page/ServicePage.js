@@ -21,15 +21,10 @@ const ServicePage = () => {
                 <link rel="alternate" href="https://www.aris-cc.com/fr/service" hrefLang="x-default"/>
 
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}/service`} />
-                <meta property="og:site_name" content="Aris Concept" />
                 <meta property="og:title" content={t('titleService')} />
                 <meta property="og:description" content={t('descriptionService')} />
-                <meta property="og:image" content="%PUBLIC_URL%/logoA.ico"/>
-                <meta property="og:type" content="webpage" />
-                <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={t('titleService')} />
                 <meta name="twitter:description" content={t('descriptionService')} />
-                <meta name="twitter:image" content="%PUBLIC_URL%/logoA.ico" />
                 <meta name="twitter:url" content={`https://www.aris-cc.com/${lang}/service`} />
             </Helmet>
             <HeaderContent active={2}/>

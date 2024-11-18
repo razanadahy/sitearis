@@ -164,7 +164,11 @@ const resources = {
             'description': 'Simplify your business with Aris Concept\'s outsourcing solutions in accounting, HR, IT, and marketing. Tailored services for efficient operations.',
             'titleService': 'Our Services: Comprehensive Solutions for Your Business | Aris Concept',
             'descriptionService': 'ARIS CONCEPT provides a full range of services including accounting, HR outsourcing, IT and data processing, web and marketing solutions to optimize your business processes.',
-
+            'titleAvantage': 'Tailored Solutions and Expertise in the Outsourcing Industry',
+            'descAvantage': 'Aris Concept, expert in tailored solutions and personalized support, guarantees innovation, flexibility, and excellent value for money. Discover our services to boost your project\'s success.',
+            'titleContact': 'Contact Aris Concept – Tailor-Made Solutions and Personalized Support',
+            'descContact': 'Need advice or information? Contact Aris Concept now. Our team of experts is here to meet your needs and support your projects.',
+            'titleApropos': '',
         }
     },
     fr: {
@@ -329,7 +333,11 @@ const resources = {
             'description': "Aris Concept propose des services en administration, comptabilité, ressources humaines, IT et marketing pour simplifier la gestion d'entreprise.",
             'titleService': 'Nos Services: Solution complète pour votre Entreprise | Aris Concept',
             'descriptionService': "ARIS CONCEPT offre des services complets : comptabilité, externalisation RH, informatique, traitement de données, web et marketing, pour optimiser votre entreprise.",
-
+            'titleAvantage': 'Solutions sur Mesure et Expertise dans le domaine d\'Externalisation',
+            'descAvantage': 'Aris Concept, expert en solutions personnalisées et en accompagnement sur-mesure, vous garantit innovation, flexibilité, et un excellent rapport qualité-prix. Découvrez nos services pour booster la réussite de vos projets.',
+            'titleContact': 'Contactez Aris Concept – Solutions Sur Mesure et Accompagnement Personnalisé',
+            'descContact': 'Besoin de conseils ou d\'informations ? Contactez Aris Concept dès maintenant. Notre équipe d\'experts est à votre écoute pour répondre à vos besoins et accompagner vos projets.',
+            'titleApropos': 'À Propos de ARIS CONCEPT',
         }
     }
 };

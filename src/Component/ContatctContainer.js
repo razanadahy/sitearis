@@ -46,7 +46,7 @@ const ContatctContainer = () => {
                     <div id="map" className={`row m-0 ${minWidth ? 'p-0' : 'p-2'}`}>
                         <div className={`${minWidth ? 'col-12 p-0 m-0' : 'col-7'} align-items-stretch`}>
                            <ViewContent time={250} setIsVisible={setIsVisible}>
-                               <div className={`card p-0 h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: col12 ? 'translateY(-30px)' : 'translateY(-70px)'}}>
+                               <div className={`card p-0 h-100 border-0 w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: col12 ? 'translateY(-30px)' : 'translateY(-70px)'}}>
                                    <div className="card-body">
                                        <div className="mb-3 px-0 pt-1 pb-2 mx-3 text-center border-bottom border-2 border-primary">
                                            <span className="display-6 text-concept">{t('formulaireT')}</span>
@@ -94,7 +94,7 @@ const ContatctContainer = () => {
                            </ViewContent>
                         </div>
                         <div className={`${minWidth ? 'col-12 p-0 mx-0 mb-3' : 'col-5'} d-flex align-items-stretch mb-0`}>
-                            <ViewContent time={400} setIsVisible={setVInfo} className={`card border-0 shadow-lg mx-auto w-100 z-0 ${vInfo ? 'arrow-div-left' : 'invisible'}`} style={{height: heig}}>
+                            <ViewContent time={200} setIsVisible={setVInfo} className={`card border-0 shadow-lg mx-auto w-100 z-0 ${vInfo ? 'arrow-div-left' : 'invisible'}`} style={{height: heig}}>
                                 <div className="card-body d-flex flex-column justify-content-center align-items-center text-center">
                                     <h4 className="color-dark-concept fw-bold section-title pt-2">{t('whereAreWe')}</h4>
                                     <div className="mb-1">

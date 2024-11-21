@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+
+Sitemap: https://www.aris-cc.com/sitemap.txt

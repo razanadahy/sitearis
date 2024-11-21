@@ -16,6 +16,15 @@ import ViewContent from "../../FunctionComponent/ViewContent";
 const ServiceDetail= ()=>{
     const [date,setDate]=useState(new Date())
     const { t, i18n } = useTranslation();
+    const navigate=useNavigate()
+    const {lang}=useParams()
+
+    const wMax = useMediaQuery({ query: "(max-width: 1000px)" });
+    const minW = useMediaQuery({query: "(max-width: 500px)"})
+
+    const [h2View,setH2View]=useState(false)
+    const [currentView,setCurrentView]=useState(false)
+
     const services=useMemo(()=>{
         return[
             {id: 1, div: 'web-marketing', bg: 'bg-primary', next: 2, prev: 5, img: mark, text: t('marketing'), content: t('textMarketing')},
@@ -26,8 +35,27 @@ const ServiceDetail= ()=>{
         ]
     },[i18n.language])
     const [carDefaultClicked,setClicked]=useState(services[0])
-    const wMax = useMediaQuery({ query: "(max-width: 1000px)" });
-    const minW = useMediaQuery({query: "(max-width: 500px)"})
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(()=>{
+        setClicked((prev)=>services.find((e)=>e.id===prev.id))
+    },[services])
+    useEffect(() => {
+        const updateClickedService = () => {
+            setClicked((prevClicked) => {
+                return services.find((e) => e.id === prevClicked.next);
+            });
+            setDate(new Date());
+        };
+
+        if (!isPaused) {
+            const timer = setTimeout(() => {
+                updateClickedService();
+            }, 4500);
+            return () => clearTimeout(timer);
+        }
+    }, [isPaused,services, date]);
+
     const afficheCarousel = useMemo(() => {
         let elements = [];
         let servNext = carDefaultClicked;
@@ -45,40 +73,19 @@ const ServiceDetail= ()=>{
             i += 1;
         }
         return elements;
-    }, [carDefaultClicked,i18n.language]);
-    const [isPaused, setIsPaused] = useState(false);
+    }, [carDefaultClicked,services]);
+
     const clickDetail= useCallback( (id) => {
         setDate(new Date())
         setClicked(services.find((e)=>e.id===id))
-    },[i18n.language,services])
-    useEffect(()=>{
-        setClicked((prev)=>services.find((e)=>e.id===prev.id))
-    },[i18n.language])
-    useEffect(() => {
-        const updateClickedService = () => {
-            setClicked((prevClicked) => {
-                return services.find((e) => e.id === prevClicked.next);
-            });
-            setDate(new Date());
-        };
+    },[services])
 
-        if (!isPaused) {
-            const timer = setTimeout(() => {
-                updateClickedService();
-            }, 4500);
-            return () => clearTimeout(timer);
-        }
-    }, [isPaused,services, date]);
-    const navigate=useNavigate()
-    const {lang}=useParams()
-    const [h2View,setH2View]=useState(false)
-    const [currentView,setCurrentView]=useState(false)
     return (
         <>
             <div className="mx-0 mt-0 mb-2 p-0 w-100 position-relative" style={{backgroundImage: `url('${wave}')`,backgroundSize: 'cover',backgroundPosition: 'center', minHeight: '100vh'}}>
                 <img src={wave2} decoding={"async"} className="position-absolute start-0 w-100 m-0 p-0 top-0 z-0" alt={"wave2"}/>
                 <ViewContent time={250} setIsVisible={setH2View}>
-                    <h2 className={`ms-4 fs-1 fw-bold text-concept p-5 pb-2 w-100 z-2 position-relative w-100 ${h2View ? 'showTop' : 'invisible'}`}>
+                    <h2 className={`${wMax ? 'text-center pt-3 px-0 mb-3' : 'ms-4 p-5'} fs-1 fw-bold text-concept z-2 position-relative ${h2View ? 'showTop' : 'invisible'}`}>
                         {t('dom')}
                     </h2>
                 </ViewContent>

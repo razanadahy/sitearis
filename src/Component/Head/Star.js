@@ -6,7 +6,7 @@ const Star = ({ size = '0.1', top = '10px', left = '0px' }) => {
             <div
                 className="etoile"
                 style={{
-                    zIndex: '10',
+                    zIndex: '2',
                     top: top,
                     left: left,
                     transform: `scale(${size})`,

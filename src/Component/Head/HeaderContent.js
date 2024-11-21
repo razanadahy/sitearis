@@ -13,18 +13,10 @@ import {useMediaQuery} from "react-responsive";
 const HeaderContent=({active})=>{
     const [idActive,setIdActive]=useState(active)
     const [hasShadow, setHasShadow] = useState(false);
-    const handleScroll = useCallback( () => {
-        if (window.scrollY > 0) {
-            setHasShadow(true);
-        } else {
-            setHasShadow(false);
-        }
-    },[])
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        const handleScroll = () => setHasShadow(window.scrollY > 0);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const { t, i18n } = useTranslation()

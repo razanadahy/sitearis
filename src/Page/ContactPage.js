@@ -19,6 +19,7 @@ const ContactPage = () => {
                 <link rel="alternate" href="https://www.aris-cc.com/en/contact" hrefLang="en"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/contact" hrefLang="fr"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/contact" hrefLang="x-default"/>
+                <link rel="canonical" href={`https://www.aris-cc.com/${lang}/contact`}/>
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}/contact`} />
                 <meta property="og:title" content={t('titleContact')} />
                 <meta property="og:description" content={t('descContact')} />

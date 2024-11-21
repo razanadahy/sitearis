@@ -4,6 +4,7 @@
     src: url('./Page/Ramona Light 300.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 html {
     scroll-behavior: smooth;

@@ -1,6 +1,5 @@
 import React, { useMemo, useState} from "react";
 import {Button, Form, Spinner, Toast} from "react-bootstrap";
-import Newsletter from "../Model/Newsletter.ts";
 import Localisation from "./Contact/Localisation";
 import {useMediaQuery} from "react-responsive";
 import {FormInput, FormSelect, FormTextarea} from "./Contact/FormInput";
@@ -17,9 +16,7 @@ const ContatctContainer = () => {
         {id:5 , name: t('compta')},
         {id:6 , name: t('other')},
     ] ,[i18n.language])
-    const[nom,setNom]=useState('')
-    const [mail,setMail]=useState('')
-    const [comment,setComment]=useState('')
+
     const [selectedOption,setSelected]=useState('')
     const handleChange = (event) => {
         const selectedId = event.target.value;
@@ -32,37 +29,11 @@ const ContatctContainer = () => {
     const [showToast,setShowToast]=useState(false)
     const [loading,setLoading]=useState(false)
     const [validated, setValidated] = useState(false);
-    const handleSubmit = (event) => {
-        setLoading(true)
-        event.preventDefault();
-        const form = event.currentTarget;
-        if (form.checkValidity() === false ) {
-            event.stopPropagation();
-            setLoading(false)
-            setValidated(true);
-        }else{
-            setLoading(true)
-            const option=selectedOption.trim().length===0 ? elementOption[0].name : selectedOption
-            Newsletter.sendContactToAdmin(nom,mail,comment,option).then((res)=>{
-                setErreur(!res)
-                setShowToast(true)
 
-            }).catch(()=>{
-                setErreur(true)
-                setShowToast(true)
-            }).finally(()=>{
-                setValidated(false);
-                setLoading(false)
-                setNom('')
-                setMail('')
-                setComment('')
-                setSelected('')
-            })
-        }
-    }
 
     const [checked,setChecked]=useState(false)
     const minWidth=useMediaQuery({query: "(max-width:1000px)"})
+    const col12=useMediaQuery({query: "(max-width: 768px)"})
     const heig= useMemo(() => {
         return minWidth ? 'auto' : 'calc(100% - 70px)'
     }, [minWidth]);
@@ -75,7 +46,7 @@ const ContatctContainer = () => {
                     <div id="map" className={`row m-0 ${minWidth ? 'p-0' : 'p-2'}`}>
                         <div className={`${minWidth ? 'col-12 p-0 m-0' : 'col-7'} align-items-stretch`}>
                            <ViewContent time={250} setIsVisible={setIsVisible}>
-                               <div className={`card p-0 h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: 'translateY(-70px)'}}>
+                               <div className={`card p-0 h-100 border-0 mx-auto w-100 shadow ${isVisible ? 'showTop-70' : 'opacity-0'}`} style={{transform: col12 ? 'translateY(-30px)' : 'translateY(-70px)'}}>
                                    <div className="card-body">
                                        <div className="mb-3 px-0 pt-1 pb-2 mx-3 text-center border-bottom border-2 border-primary">
                                            <span className="display-6 text-concept">{t('formulaireT')}</span>

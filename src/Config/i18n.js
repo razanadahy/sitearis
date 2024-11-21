@@ -168,7 +168,14 @@ const resources = {
             'descAvantage': 'Aris Concept, expert in tailored solutions and personalized support, guarantees innovation, flexibility, and excellent value for money. Discover our services to boost your project\'s success.',
             'titleContact': 'Contact Aris Concept – Tailor-Made Solutions and Personalized Support',
             'descContact': 'Need advice or information? Contact Aris Concept now. Our team of experts is here to meet your needs and support your projects.',
-            'titleApropos': '',
+            'titleApropos': 'About ARIS CONCEPT',
+            'descApropos': 'ARIS CONCEPT is a Malagasy company passionate about data processing and the creation of tailored IT solutions. We provide high-quality services while promoting the professional development of our teams and contributing to the economic and social growth of Madagascar',
+            'titleEbook': 'Download Our Ebook | Aris Concept',
+            'descEbook': 'Discover the best outsourcing strategies with Aris Concept. Download our free ebook and learn how to reduce costs, improve processes, and boost your company\'s growth with a dedicated offshore center.',
+            'titleCarrier': 'Join ARIS CONCEPT - Job Opportunities and Spontaneous Applications',
+            'descCarrier': 'Explore our job openings at ARIS CONCEPT and apply now. Submit your spontaneous application and seize the opportunity to join a passionate team dedicated to excellence and innovation.',
+
+
         }
     },
     fr: {
@@ -338,6 +345,12 @@ const resources = {
             'titleContact': 'Contactez Aris Concept – Solutions Sur Mesure et Accompagnement Personnalisé',
             'descContact': 'Besoin de conseils ou d\'informations ? Contactez Aris Concept dès maintenant. Notre équipe d\'experts est à votre écoute pour répondre à vos besoins et accompagner vos projets.',
             'titleApropos': 'À Propos de ARIS CONCEPT',
+            'descApropos': 'ARIS CONCEPT est une entreprise malgache passionnée par le traitement de données et la création de solutions informatiques sur mesure. Nous offrons des services de qualité tout en favorisant le développement professionnel de nos équipes et en contribuant à la croissance économique et sociale de Madagascar',
+            'titleEbook': 'Téléchargez Notre Ebook | Aris Concept',
+            'descEbook': 'Découvrez les meilleures stratégies d\'externalisation avec Aris Concept. Téléchargez notre ebook gratuit et apprenez à réduire vos coûts, améliorer vos processus, et booster la croissance de votre entreprise grâce à un centre d\'offshore dédié.',
+            'titleCarrier': 'Rejoignez ARIS CONCEPT - Offres d\'Emploi et Candidatures Spontanées',
+            'descCarrier': 'Explorez nos offres d\'emploi chez ARIS CONCEPT et postulez dès maintenant. Déposez votre candidature spontanée et saisissez l\'opportunité de rejoindre une équipe passionnée, dédiée à l\'excellence et à l\'innovation.',
+
         }
     }
 };
@@ -346,7 +359,7 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: "en",
+        lng: "fr",
         fallbackLng: "fr",
         interpolation: {
             escapeValue: false,

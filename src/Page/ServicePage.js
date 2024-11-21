@@ -19,7 +19,7 @@ const ServicePage = () => {
                 <link rel="alternate" href="https://www.aris-cc.com/en/service" hrefLang="en"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/service" hrefLang="fr"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/service" hrefLang="x-default"/>
-
+                <link rel="canonical" href={`https://www.aris-cc.com/${lang}/service`}/>
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}/service`} />
                 <meta property="og:title" content={t('titleService')} />
                 <meta property="og:description" content={t('descriptionService')} />

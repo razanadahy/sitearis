@@ -8,7 +8,7 @@ export const FormInput = ({type="text", label, ...props }) => {
                 <label htmlFor={props.id} className="form-label pb-0 mb-0">
                     {label}
                 </label>
-                <input id={props.id} type={type} className="input-field" {...props} />
+                <input id={props.id} type={type} className="input-field" {...props}  aria-label={label}/>
             </div>
         </>
     )
@@ -33,7 +33,7 @@ export const FormTextarea = ({ label, ...props }) => {
             <label htmlFor={props.id} className="form-label pb-0 mb-0">
                 {label}
             </label>
-            <textarea id={props.id} rows={3} className="textarea-field" {...props}/>
+            <textarea id={props.id} rows={3} className="textarea-field" {...props} aria-label={label}/>
         </div>
     );
 }

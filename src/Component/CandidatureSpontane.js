@@ -68,6 +68,7 @@ const CandidatureSpontane = () => {
                                        type="text"
                                        placeholder={t('enterName')}
                                        value={nom}
+                                       aria-label={t('enterName')}
                                        onChange={(e)=>setNom(e.target.value)}
                                    />
                                </Form.Group>
@@ -77,6 +78,7 @@ const CandidatureSpontane = () => {
                                        required
                                        type="text"
                                        placeholder={t('plPre')}
+                                       aria-label={t('plPre')}
                                        value={prenom}
                                        onChange={(e)=>setPrenom(e.target.value)}
                                    />
@@ -89,6 +91,7 @@ const CandidatureSpontane = () => {
                                        aria-describedby="inputGroupPrepend"
                                        className="z-1"
                                        value={email}
+                                       aria-label={t('emailEnter')}
                                        onChange={(e)=>setEmail(e.target.value)}
                                        required
                                    />
@@ -100,6 +103,7 @@ const CandidatureSpontane = () => {
                                        type="text"
                                        placeholder={t('yourTel')}
                                        value={telephone}
+                                       aria-label={t('yourTel')}
                                        onChange={(e)=>setTel(e.target.value)}
                                    />
                                </Form.Group>
@@ -110,31 +114,26 @@ const CandidatureSpontane = () => {
                                        type="text"
                                        placeholder={t('titrePostC')}
                                        value={titre}
+                                       aria-label={t('titrePostC')}
                                        onChange={(e)=>setTitre(e.target.value)}
                                    />
                                </Form.Group>
                                <Form.Group className="mb-3" as={Col} lg="12" md="6" sm="12">
                                    <Form.Label>{t('cv')} * </Form.Label>
-                                   {/*<Form.Control*/}
-                                   {/*    type="file"*/}
-                                   {/*    required*/}
-                                   {/*    name="file"*/}
-                                   {/*    accept=".pdf, .jpg, .jpeg, .png, .gif"*/}
-                                   {/*    onChange={(e) => setCv(e.target.files[0])}*/}
-                                   {/*/>*/}
+
                                    <div className="rounded-2 border d-flex align-items-center gap-2">
                                        <label style={{ cursor: "pointer" }}>
                                            <span className="px-3 py-2 bg-light border-end d-inline-block rounded-2">
                                                {t('chooseFile')}
                                            </span>
-                                           <input  accept=".pdf, .jpg, .jpeg, .png, .docx" type="file" onChange={(e) => setCv(e.target.files[0])} style={{ display: "none" }}/>
+                                           <input aria-label={t('cv')}  accept=".pdf, .jpg, .jpeg, .png, .docx" type="file" onChange={(e) => setCv(e.target.files[0])} style={{ display: "none" }}/>
                                         <span className="ms-2">{t('noFile')}</span>
                                        </label>
                                    </div>
                                </Form.Group>
                                <Form.Group className="mb-3 col-12" controlId="">
                                    <Form.Label>Message *</Form.Label>
-                                   <Form.Control value={lm} onChange={(e) => setLm(e.target.value)}  required as="textarea" aria-rowspan={3} placeholder="Message" />
+                                   <Form.Control aria-label={"message"} value={lm} onChange={(e) => setLm(e.target.value)}  required as="textarea" aria-rowspan={3} placeholder="Message" />
                                </Form.Group>
                            </Row>
                            <div className="row m-0 p-0 w-100">

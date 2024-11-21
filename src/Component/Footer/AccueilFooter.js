@@ -5,6 +5,7 @@ import {useTranslation} from "react-i18next";
 import { useParams} from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
 import logoYour from '../../Asset/YourAndOur.png'
+import ViewContent from "../../FunctionComponent/ViewContent";
 
 const AccueilFooter = () => {
     const handleClick = useCallback((e) => {
@@ -13,35 +14,6 @@ const AccueilFooter = () => {
         window.open(mailtoUrl, '_blank');
     },[])
     const [isIconVisible, setIsIconVisible] = useState(false);
-    const footerRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries[0];
-                if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
-                    setIsIconVisible(true);
-                    footerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                }else{
-                    setIsIconVisible(false);
-                }
-            },
-            {
-                threshold: 0.4,
-            }
-        );
-
-        if (footerRef.current) {
-            observer.observe(footerRef.current);
-        }
-
-        return () => {
-            if (footerRef.current) {
-                observer.unobserve(footerRef.current);
-            }
-        };
-    }, []);
-
     const { t } = useTranslation();
     const {lang}=useParams()
     const minW=useMediaQuery({query: "(max-width: 1180px)"})
@@ -51,7 +23,7 @@ const AccueilFooter = () => {
     return (
         <>
             <IconFooter isVisible={!isIconVisible}/>
-            <div ref={footerRef} className="m-0 p-0 w-100 bg-dark-blue text-white small">
+            <ViewContent className="m-0 p-0 w-100 bg-dark-blue text-white small" time={350} setIsVisible={setIsIconVisible}>
                 <div className="row w-100 mx-0 mt-2 mb-0 pt-4 px-3 border-bottom">
                     <div className={`${wInter ? 'col-12' : 'col-6'}`}>
                         <div className="w-100 d-inline-flex align-items-center ">
@@ -124,13 +96,6 @@ const AccueilFooter = () => {
                                 )}
                             </div>
                         </div>
-                        {/*{!wInter && (*/}
-                        {/*    <div className="mt-2 mb-3">*/}
-                        {/*        <a href="https://www.linkedin.com/in/aris-concept-company-567703240" target="_blank" rel="noreferrer" className="email-link link-primary cursor-pointer">*/}
-                        {/*            LinkedIn*/}
-                        {/*        </a>*/}
-                        {/*    </div>*/}
-                        {/*)}*/}
                         <div className="w-100 mx-0 mb-3 mt-1 p-0 h-auto ">
                             <div className="d-flex align-items-center justify-content-center mb-2">
                                 <div className="flex-grow-1 mx-1 bg-aris rounded-2" style={{height: '3px', maxWidth: '130px'}}/>
@@ -209,7 +174,7 @@ const AccueilFooter = () => {
                                 <label className="email-label" htmlFor="email">
                                     e-mail
                                 </label>
-                                <input type="email" id="email" autoComplete={"off"} className="email-input" />
+                                <input type="email" id="email" autoComplete={"off"} className="email-input" aria-label="e-mail"/>
                                 <span className="email-arrow pe-1 cursor-pointer">
                                     <i className="fa-solid fa-arrow-right-long"/>
                                 </span>
@@ -241,9 +206,8 @@ const AccueilFooter = () => {
                         )}
                     </div>
                 )}
-            </div>
+            </ViewContent>
         </>
     )
 }
-
 export default AccueilFooter

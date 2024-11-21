@@ -4,6 +4,7 @@ import {useMediaQuery} from "react-responsive";
 import {useTranslation} from "react-i18next";
 import {useParams} from "react-router-dom";
 import ViewContent from "../FunctionComponent/ViewContent";
+import {Helmet} from "react-helmet";
 
 const EbookDowload = () => {
     const handleDownload = useCallback(() => {
@@ -35,6 +36,21 @@ const EbookDowload = () => {
     const [viewFooter,setViewFooter]=useState(false)
     return(
         <>
+            <Helmet>
+                <html lang={lang} />
+                <title>{t('titleEbook')}</title>
+                <meta name="description" content={t('descEbook')}/>
+                <link rel="alternate" href="https://www.aris-cc.com/en/ebook" hrefLang="en"/>
+                <link rel="alternate" href="https://www.aris-cc.com/fr/ebook" hrefLang="fr"/>
+                <link rel="alternate" href="https://www.aris-cc.com/fr/ebook" hrefLang="x-default"/>
+
+                <meta property="og:url" content={`https://www.aris-cc.com/${lang}/ebook`} />
+                <meta property="og:title" content={t('titleEbook')} />
+                <meta property="og:description" content={t('descEbook')} />
+                <meta name="twitter:title" content={t('titleEbook')} />
+                <meta name="twitter:description" content={t('descEbook')} />
+                <meta name="twitter:url" content={`https://www.aris-cc.com/${lang}/ebook`} />
+            </Helmet>
             <div className="vh-100 bg-dark bg-opacity-10 w-100 p-0 m-0">
                 <div className="row p-0 m-0 w-100 h-100">
                     <div className={wDnone ? 'd-none' : `h-100 ${maxCol6 ? 'col-12': 'col-6'} d-flex justify-content-center align-items-center`}>

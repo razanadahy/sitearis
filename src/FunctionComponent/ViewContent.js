@@ -16,8 +16,8 @@ const ViewContent = ({children,time,setIsVisible, className = '', style={}}) => 
                         setIsVisible(true);
                     }, time);
                 } else {
-                    clearTimeout(timeoutId);
                     setIsVisible(false);
+                    clearTimeout(timeoutId);
                 }
             }
         };

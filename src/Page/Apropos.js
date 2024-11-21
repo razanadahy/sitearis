@@ -18,16 +18,16 @@ const Apropos = () => {
             <Helmet>
                 <html lang={lang} />
                 <title>{t('titleApropos')}</title>
-                <meta name="description" content={t('descContact')}/>
+                <meta name="description" content={t('descApropos')}/>
                 <link rel="alternate" href="https://www.aris-cc.com/en/apropos" hrefLang="en"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/apropos" hrefLang="fr"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/apropos" hrefLang="x-default"/>
-
+                <link rel="canonical" href={`https://www.aris-cc.com/${lang}/apropos`}/>
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}/apropos`} />
                 <meta property="og:title" content={t('titleApropos')} />
-                <meta property="og:description" content={t('descContact')} />
+                <meta property="og:description" content={t('descApropos')} />
                 <meta name="twitter:title" content={t('titleApropos')} />
-                <meta name="twitter:description" content={t('descContact')} />
+                <meta name="twitter:description" content={t('descApropos')} />
                 <meta name="twitter:url" content={`https://www.aris-cc.com/${lang}/apropos`} />
             </Helmet>
             <HeaderContent active={3}/>

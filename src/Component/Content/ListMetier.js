@@ -78,6 +78,7 @@ const ListMetier = () => {
                                 <Form.Control
                                     type="search"
                                     aria-describedby="searchBlock"
+                                    aria-label={"service"}
                                     placeholder={t('recherche')}
                                     autoComplete="off"
                                     value={search}
@@ -105,7 +106,7 @@ const ListMetier = () => {
                             <ViewContent setIsVisible={setListView} time={250} className={`${contentMax ? "col-12" : "col-8"}`}>
                                 <ul className="custom-list">
                                     {allJobDetails.slice((active-1)*18,(active*18)).map((jobDetail,index)=>(
-                                        <LiElement isVisible={listView} index={index} key={`${jobDetail.parentId}-${jobDetail.id}`} jobDetail={jobDetail} lang={lang} navigate={navigate}/>
+                                        <LiElement isVisible={listView} index={index} key={`${jobDetail.parentId}-${jobDetail.id}`} jobDetail={jobDetail} lang={lang}/>
                                     ))}
                                 </ul>
                                 <div className="w-100 p-2">

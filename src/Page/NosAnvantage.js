@@ -21,7 +21,7 @@ const NosAnvantage = () => {
                 <link rel="alternate" href="https://www.aris-cc.com/en/avantages" hrefLang="en"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/avantages" hrefLang="fr"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/avantages" hrefLang="x-default"/>
-
+                <link rel="canonical" href={`https://www.aris-cc.com/${lang}/avantages`}/>
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}/avantages`} />
                 <meta property="og:title" content={t('titleAvantage')} />
                 <meta property="og:description" content={t('descAvantage')} />

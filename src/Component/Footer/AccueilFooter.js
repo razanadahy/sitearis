@@ -6,6 +6,9 @@ import { useParams} from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
 import logoYour from '../../Asset/YourAndOur.png'
 import ViewContent from "../../FunctionComponent/ViewContent";
+import MailSender from "../../Model/MailSender";
+import {Toast} from "react-bootstrap";
+import Message from "../../Config/Message";
 
 const AccueilFooter = () => {
     const handleClick = useCallback((e) => {
@@ -20,6 +23,32 @@ const AccueilFooter = () => {
     const wInter=useMediaQuery({query: "(max-width: 1073px)"})
     const wMin=useMediaQuery({query: "(max-width: 637px)"})
     const footM=useMediaQuery({query: "(max-width: 651px)"})
+
+    const [mail, setMail] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [showResponse, setShowResponse] = useState(false);
+    const [erreur, setErreur] = useState(false);
+    const sendNewsLetter = useCallback(
+        () => {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) {
+                setErreur(true);
+                return;
+            }
+            setLoading(true)
+            MailSender.sendDataToAdmin("",mail).then(res=>{
+                if (res){
+                    setErreur(false)
+                    setShowResponse(true)
+                    setMail('')
+                }
+            }).catch((e)=>{
+                setErreur(true)
+                setShowResponse(true)
+            }).finally(()=>setLoading(false))
+        },
+        [mail],
+    );
+
     return (
         <>
             <IconFooter isVisible={!isIconVisible}/>
@@ -174,10 +203,17 @@ const AccueilFooter = () => {
                                 <label className="email-label" htmlFor="email">
                                     e-mail
                                 </label>
-                                <input type="email" id="email" autoComplete={"off"} className="email-input" aria-label="e-mail"/>
-                                <span className="email-arrow pe-1 cursor-pointer">
-                                    <i className="fa-solid fa-arrow-right-long"/>
-                                </span>
+                                <input onChange={(e)=>setMail(e.target.value)} type="email" id="email" autoComplete={"off"} className="email-input" aria-label="e-mail"/>
+                                {loading ? (
+                                    <div className="spinner-grow text-danger spinner-grow-sm cursor-pointer" role="status">
+                                        <span className="sr-only">Loading...</span>
+                                    </div>
+                                ) : (
+                                    <span onClick={sendNewsLetter} className="email-arrow pe-1 cursor-pointer">
+                                        <i className="fa-solid fa-arrow-right-long"/>
+                                    </span>
+                                )}
+
                             </div>
                         </div>
                     </div>
@@ -207,6 +243,7 @@ const AccueilFooter = () => {
                     </div>
                 )}
             </ViewContent>
+           <Message erreur={erreur} showResponse={showResponse} setShowResponse={setShowResponse}/>
         </>
     )
 }

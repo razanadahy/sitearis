@@ -43,7 +43,7 @@ const EbookDowload = () => {
                 <link rel="alternate" href="https://www.aris-cc.com/en/ebook" hrefLang="en"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/ebook" hrefLang="fr"/>
                 <link rel="alternate" href="https://www.aris-cc.com/fr/ebook" hrefLang="x-default"/>
-
+                <link rel="canonical" href={`https://www.aris-cc.com/${lang}/ebook`}/>
                 <meta property="og:url" content={`https://www.aris-cc.com/${lang}/ebook`} />
                 <meta property="og:title" content={t('titleEbook')} />
                 <meta property="og:description" content={t('descEbook')} />

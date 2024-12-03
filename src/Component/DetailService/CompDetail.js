@@ -69,7 +69,7 @@ const CompDetail = ({element,parent}) => {
                     </div>
                 </div>
                 <ViewContent className={`${maxWidth ? 'd-none' : `col-5 ${vDevis ? 'arrow-div-left' : 'invisible'}`} ps-0 pe-1 m-0 d-flex align-items-center`} time={250} setIsVisible={setVDevis}>
-                    <Devis t={t} objectTitle={parent?.title[lang].split('/')[0]}/>
+                    <Devis objectTitle={parent?.title[lang].split('/')[0]} setModalVisible={null}/>
                 </ViewContent>
                 <div className="mt-3 w-100 d-inline-flex justify-content-evenly bg-dark-subtle py-4">
                     {parent?.children.slice((idActive - 1)*paginate,(idActive*paginate)).map((e)=>(
@@ -80,7 +80,7 @@ const CompDetail = ({element,parent}) => {
                 </div>
                 <Pagination length={len} active={idActive} setActive={setActive}/>
             </div>
-            <ShowModalDevis t={t} title={parent?.title[lang].split('/')[0]} show={clickModal} onHide={()=>setHideModal(true)}/>
+            <ShowModalDevis title={parent?.title[lang].split('/')[0]} show={clickModal} onHide={()=>setHideModal(true)}/>
         </>
     )
 }

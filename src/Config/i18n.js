@@ -135,7 +135,6 @@ const resources = {
             "other": 'Other',
             "check": 'By checking this, you agree to our terms and conditions and privacy policy',
             "maintenant": 'Now',
-            "probConnex": 'There is a connection issue',
             "sucMes": 'Your information has been successfully sent to the Aris Concept manager',
             "whereAreWe": 'Where are we ?',
             "heure": 'Opening hours',
@@ -174,6 +173,7 @@ const resources = {
             'descEbook': 'Discover the best outsourcing strategies with Aris Concept. Download our free ebook and learn how to reduce costs, improve processes, and boost your company\'s growth with a dedicated offshore center.',
             'titleCarrier': 'Join ARIS CONCEPT - Job Opportunities and Spontaneous Applications',
             'descCarrier': 'Explore our job openings at ARIS CONCEPT and apply now. Submit your spontaneous application and seize the opportunity to join a passionate team dedicated to excellence and innovation.',
+            'probleme': 'There is a connection issue.',
 
 
         }
@@ -311,7 +311,6 @@ const resources = {
             "other": 'Autre',
             "check": "En cochant ceci, vous acceptez nos conditions générales et notre politique de confidentialité",
             "maintenant": 'Maintenant',
-            'probConnex': 'Il y a un problème de connexion',
             "sucMes": 'Votre information a été bien envoyée auprès du responsable d\'Aris Concept',
             "whereAreWe": 'Où nous sommes ?',
             "heure": 'Heures d\'ouverture',
@@ -350,6 +349,8 @@ const resources = {
             'descEbook': 'Découvrez les meilleures stratégies d\'externalisation avec Aris Concept. Téléchargez notre ebook gratuit et apprenez à réduire vos coûts, améliorer vos processus, et booster la croissance de votre entreprise grâce à un centre d\'offshore dédié.',
             'titleCarrier': 'Rejoignez ARIS CONCEPT - Offres d\'Emploi et Candidatures Spontanées',
             'descCarrier': 'Explorez nos offres d\'emploi chez ARIS CONCEPT et postulez dès maintenant. Déposez votre candidature spontanée et saisissez l\'opportunité de rejoindre une équipe passionnée, dédiée à l\'excellence et à l\'innovation.',
+            'probleme': 'Il y a un problème de connexion',
+
 
         }
     }

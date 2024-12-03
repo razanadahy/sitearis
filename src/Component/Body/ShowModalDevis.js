@@ -12,9 +12,8 @@ const ShowModalDevis = (props) => {
                 centered
             >
                 <Modal.Body>
-                    <Devis t={props.t} objectTitle={props.title}/>
+                    <Devis objectTitle={props.title} setModalVisible={props.onHide}/>
                 </Modal.Body>
-
             </Modal>
         </>
     )

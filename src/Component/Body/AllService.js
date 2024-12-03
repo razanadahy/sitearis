@@ -40,7 +40,7 @@ const AllService = () => {
                 </DetailService>
             ))}
             {clickModal && (
-                <ShowModalDevis t={t} title={title} show={clickModal} onHide={()=>setHideModal(true,'')}/>
+                <ShowModalDevis title={title} show={clickModal} onHide={()=>setHideModal(true,'')}/>
             )}
         </>
     )

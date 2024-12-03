@@ -38,6 +38,7 @@ const DetailService = () => {
                         <link rel="alternate" href={`https://www.aris-cc.com/en/service/${domaine}/${service}`} hrefLang="en"/>
                         <link rel="alternate" href={`https://www.aris-cc.com/fr/service/${domaine}/${service}`} hrefLang="fr"/>
                         <link rel="alternate" href={`https://www.aris-cc.com/fr/service/${domaine}/${service}`} hrefLang="x-default"/>
+                        <link rel="canonical" href={`https://www.aris-cc.com/${lang}/service/${domaine}/${service}`}/>
                         <meta property="og:url" content={`https://www.aris-cc.com/${lang}/service/${domaine}/${service}`} />
                         <meta property="og:title" content={child.title[lang] + ' | Aris Concept'} />
                         <meta property="og:description" content={child.description[lang]} />

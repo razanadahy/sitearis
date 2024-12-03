@@ -1,10 +1,12 @@
-import React, { useMemo, useState} from "react";
+import React, {useCallback, useEffect, useMemo, useState} from "react";
 import {Button, Form, Spinner, Toast} from "react-bootstrap";
 import Localisation from "./Contact/Localisation";
 import {useMediaQuery} from "react-responsive";
 import {FormInput, FormSelect, FormTextarea} from "./Contact/FormInput";
 import ViewContent from "../FunctionComponent/ViewContent";
 import {useTranslation} from "react-i18next";
+import Message from "../Config/Message";
+import MailSender from "../Model/MailSender";
 
 const ContatctContainer = () => {
     const {t,i18n} = useTranslation()
@@ -17,18 +19,87 @@ const ContatctContainer = () => {
         {id:6 , name: t('other')},
     ] ,[i18n.language])
 
-    const [selectedOption,setSelected]=useState('')
+    const [selectedOption,setSelected]=useState(elementOption[0])
     const handleChange = (event) => {
         const selectedId = event.target.value;
-        const selectedOptionObj = elementOption.find(option => option.id === parseInt(selectedId,1));
-        const selectedName = selectedOptionObj ? selectedOptionObj.name : '';
+        const selectedOptionObj = elementOption.find(option => option.id === parseInt(selectedId));
+        const selectedName = selectedOptionObj ? selectedOptionObj : elementOption[0];
         setSelected(selectedName);
     };
 
     const[erreur,setErreur]=useState(false)
     const [showToast,setShowToast]=useState(false)
     const [loading,setLoading]=useState(false)
-    const [validated, setValidated] = useState(false);
+
+    const [entreprise, setEntreprise] = useState('');
+    const [site, setSite] = useState('');
+    const [nom, setNom] = useState('');
+    const [mail, setMail] = useState('');
+    const [description, setDescription] = useState('');
+
+    const [invalidEntrePrise, setInvalidEntrePrise] = useState(false);
+    const [invalidNom, setInvalidNom] = useState(false);
+    const [invalidMail, setInvalidMail] = useState(false);
+
+    useEffect(()=>{
+        if (entreprise.length<3 && entreprise!==""){
+            setInvalidEntrePrise(true)
+        }else{
+            setInvalidEntrePrise(false)
+        }
+    },[entreprise])
+    useEffect(()=>{
+        if (nom.length<3 && nom!==""){
+            setInvalidNom(true)
+        }else{
+            setInvalidNom(false)
+        }
+    },[nom])
+    useEffect(()=>{
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail) && mail!==""){
+            setInvalidMail(true)
+        }else{
+            setInvalidMail(false)
+        }
+    },[mail])
+    const handleSubmit= useCallback(
+        (event) => {
+            event.preventDefault()
+            let er=false
+            if (entreprise.length<3){
+                setInvalidEntrePrise(true)
+                er=true
+            }
+            if (nom.length<3){
+                setInvalidNom(true)
+                er=true
+            }
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){
+                setInvalidMail(true)
+                er=true
+            }
+            if (!er){
+                setLoading(true)
+                const servi= selectedOption?.name==='' ? elementOption[0].name : selectedOption.name
+                MailSender.sendContactToAdmin(nom, mail,description,servi,entreprise,site).then(res=>{
+                    if (res){
+                        setErreur(false)
+                    }
+                }).catch((e)=>{
+                    setErreur(true)
+                }).finally(()=> {
+                    setLoading(false)
+                    setShowToast(true)
+                    setEntreprise("")
+                    setSite("")
+                    setNom("")
+                    setMail("")
+                    setDescription("")
+                })
+            }
+        },
+        [entreprise,site,nom,mail,selectedOption,description,elementOption],
+    );
 
 
     const [checked,setChecked]=useState(false)
@@ -39,6 +110,8 @@ const ContatctContainer = () => {
     }, [minWidth]);
     const [isVisible, setIsVisible] = useState(false)
     const [vInfo, setVInfo] = useState(false);
+
+
     return(
         <>
             <div className="row w-100 my-3 mx-0 p-0">
@@ -51,28 +124,28 @@ const ContatctContainer = () => {
                                        <div className="mb-3 px-0 pt-1 pb-2 mx-3 text-center border-bottom border-2 border-primary">
                                            <span className="display-6 text-concept">{t('formulaireT')}</span>
                                        </div>
-                                       <Form noValidate validated={validated} className="row" onSubmit={(e)=>null} autoComplete={"off"}>
+                                       <Form className="row" onSubmit={handleSubmit} autoComplete={"off"}>
                                            <Form.Group as={"div"} className={`mt-2 mb-2 col-lg-6 col-md-12`}>
-                                               <FormInput id="entreprise" placeholder={t('formEnt')} label={t('company')} />
+                                               <FormInput isInvalid={invalidEntrePrise} value={entreprise} onChange={(e)=>setEntreprise(e.target.value)} id="entreprise" placeholder={t('formEnt')} label={t('company')} />
                                            </Form.Group>
                                            <Form.Group as={"div"} className={`mt-2 mb-2 col-lg-6 col-md-12`}>
-                                               <FormInput id="site" placeholder={"www.company.com"} label={t('siteCompany')} />
+                                               <FormInput id="site" value={site} onChange={(e)=>setSite(e.target.value)} placeholder={"www.company.com"} label={t('siteCompany')} />
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mt-2 mb-2 col-lg-6 col-md-12">
-                                               <FormInput id="nom" placeholder={t('enterName')} label={t('nom')} />
+                                               <FormInput isInvalid={invalidNom} id="nom" value={nom} onChange={(e)=>setNom(e.target.value)} placeholder={t('enterName')} label={t('nom')} />
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mb-3 mt-2 col-lg-6 col-md-12">
-                                               <FormInput type={"email"} id={"mail"} label={t('emailEnter')} placeholder={"Email"}/>
+                                               <FormInput isInvalid={invalidMail} type={"email"} value={mail} onChange={(e)=>setMail(e.target.value)} id={"mail"} label={t('emailEnter')} placeholder={"Email"}/>
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mt-2 mb-3 col-lg-12">
-                                               <FormSelect id={'besoin'} label={'Service'} onChange={(e)=>handleChange(e)}>
+                                               <FormSelect id={'besoin'} label={'Service'} value={selectedOption?.id} onChange={(e)=>handleChange(e)}>
                                                    {elementOption.map(({id,name})=>(
                                                        <option className="p-4" key={id} value={id} >{name}</option>
                                                    ))}
                                                </FormSelect>
                                            </Form.Group>
                                            <Form.Group as={"div"} className="mb-3 mt-2 col-lg-12">
-                                               <FormTextarea placeholder={t('bes')} id={'description'} label={t('desc')}/>
+                                               <FormTextarea value={description} onChange={(e)=>setDescription(e.target.value)} placeholder={t('bes')} id={'description'} label={t('desc')}/>
                                            </Form.Group>
                                            <Form.Group className="mb-3 col-lg-12" controlId="besoin">
                                                <Form.Check
@@ -132,16 +205,7 @@ const ContatctContainer = () => {
                     </div>
                 </div>
             </div>
-
-            <Toast className={`position-fixed ${erreur ? 'bg-danger' : 'bg-success'} bottom-0 end-0`} show={showToast} onClose={()=>setShowToast(false)} delay={5000} autohide>
-                <Toast.Header>
-                    <strong className="me-auto">Message</strong>
-                    <small>{t('maintenant')}</small>
-                </Toast.Header>
-                <Toast.Body>
-                    {erreur ? `${t('probConnex')}` : `${t('sucMes')}`}
-                </Toast.Body>
-            </Toast>
+            <Message showResponse={showToast} setShowResponse={setShowToast} erreur={erreur}/>
         </>
     )
 }

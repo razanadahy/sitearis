@@ -44,7 +44,10 @@ const AccueilFooter = () => {
             }).catch((e)=>{
                 setErreur(true)
                 setShowResponse(true)
-            }).finally(()=>setLoading(false))
+            }).finally(()=> {
+                setLoading(false)
+                // setMail('')
+            })
         },
         [mail],
     );
@@ -78,9 +81,9 @@ const AccueilFooter = () => {
                                             </a>
                                         </li>
                                         <li className="mb-2">
-                                            <a href="https://wa.me/+261381237996" target="_blank" rel="noopener noreferrer" className="email-link link-primary cursor-pointer">
+                                            <a href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="email-link link-primary cursor-pointer">
                                                 <i className="fa-brands fa-whatsapp me-2 color-cyan"/>
-                                                +261 38 12 379 96
+                                                +261 38 53 405 34
                                             </a>
                                         </li>
                                         <li className="mb-2">
@@ -109,7 +112,7 @@ const AccueilFooter = () => {
                                             <a href="https://maps.app.goo.gl/5hp5qcinzUmxCbaj8" target="_blank" rel="noopener noreferrer" className="link-primary email-link cursor-pointer">Iavoloha, Antananarivo 102</a>
                                         </div>
                                         <div>
-                                            <a href="https://wa.me/+261381237996" target="_blank" rel="noopener noreferrer" className="ms-2 email-link link-primary cursor-pointer">+261 38 12 379 96</a>
+                                            <a href="https://wa.me/+261385340534" target="_blank" rel="noopener noreferrer" className="ms-2 email-link link-primary cursor-pointer">+261 38 53 405 34</a>
                                         </div>
                                         <div>
                                             <a href={`mailto:${'contact@aris-cc.com'}`} onClick={handleClick} className="ms-2 email-link link-primary cursor-pointer">contact@aris-cc.com</a>
@@ -138,10 +141,10 @@ const AccueilFooter = () => {
                                 <span className="span-icon rounded-circle d-flex"  onClick={() => window.open("https://www.linkedin.com/in/aris-concept-company-567703240", "_blank")} >
                                      <i className="bi bi-linkedin icon-media m-auto pt-1 in-color"/>
                                 </span>
-                                <span className="span-icon rounded-circle d-flex" onClick={() => window.open("https://wa.me/+261381237996", "_blank")}>
+                                <span className="span-icon rounded-circle d-flex" onClick={() => window.open("https://wa.me/+261385340534", "_blank")}>
                                     <i className="bi bi-whatsapp icon-media m-auto pt-1 text-success"/>
                                 </span>
-                                <span className="span-icon rounded-circle d-flex" onClick={() => window.open("tel:+261381237996", "_blank")}>
+                                <span className="span-icon rounded-circle d-flex" onClick={() => window.open("tel:+261385340534", "_blank")}>
                                      <i className="bi bi-phone-fill icon-media m-auto pt-1 color-semi-purpule"/>
                                 </span>
                             </div>
@@ -203,7 +206,7 @@ const AccueilFooter = () => {
                                 <label className="email-label" htmlFor="email">
                                     e-mail
                                 </label>
-                                <input onChange={(e)=>setMail(e.target.value)} type="email" id="email" autoComplete={"off"} className="email-input" aria-label="e-mail"/>
+                                <input onChange={(e)=>setMail(e.target.value)} value={mail} disabled={loading} type="email" id="email" autoComplete={"off"} className="email-input" aria-label="e-mail"/>
                                 {loading ? (
                                     <div className="spinner-grow text-danger spinner-grow-sm cursor-pointer" role="status">
                                         <span className="sr-only">Loading...</span>

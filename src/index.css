@@ -320,3 +320,13 @@ div >a{
 .w-50-rem{
     width: calc(50% + 2rem);
 }
+/*html{*/
+/*    scroll-snap-type: y mandatory;*/
+/*}*/
+/*section{*/
+/*    height: 100vh;*/
+/*    width: 50vw;*/
+/*    scroll-snap-align: start;*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*}*/

@@ -32,7 +32,7 @@ const CandidatureSpontane = () => {
                 if (res){
                     alert('Candidat envoyé avec succès!');
                 }else{
-                    alert('Verifier, il y a un problème! Le fichier est trop grand');
+                    alert('Verifier, il y a un problème! ');
                 }
             }).catch((er)=>{
                 console.log(er)

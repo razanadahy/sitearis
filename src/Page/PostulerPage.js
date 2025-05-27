@@ -6,6 +6,7 @@ import AccueilFooter from "../Component/Footer/AccueilFooter";
 import {Helmet} from "react-helmet";
 import {useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import OffreEmploye from "../Component/OffreEmploye";
 
 const PostulerPage = () => {
     const {lang} = useParams()
@@ -29,7 +30,7 @@ const PostulerPage = () => {
             </Helmet>
             <HeaderContent active={6}/>
             <InfoPostule/>
-            {/*<OffreEmploye/>*/}
+            <OffreEmploye/>
             <CandidatureSpontane/>
             <AccueilFooter/>
         </>

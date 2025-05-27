@@ -177,7 +177,7 @@ const ContatctContainer = () => {
                                     </div>
                                     <div className="mb-1">
                                     <pre className="m-0 fs-5 text-tel">
-                                        <i className="fa fa-phone"/><strong> +261 38 12 379 96</strong>
+                                        <i className="fa fa-phone"/><strong> +261 38 53 405 34</strong>
                                     </pre>
                                     </div>
                                     <div className="mb-1">
